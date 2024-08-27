@@ -15,11 +15,12 @@
         <div class="col-md-12">
             <div class="bg-white p-4 rounded shadow-sm">
                 <h4 class="mb-4 text-center">Add Blog</h4>
-                <form id="add_blog" action="/add_blog" method="post" enctype="multipart/form-data">
+                <form id="add_blog" action="<?= base_url('add_blog') ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3 position-relative">
                         <input type="file" class="form-control ps-5" name="blog_image[]" id="blog_image" required
                             multiple />
-                        <i class="fas fa-image position-absolute top-50 start-0 translate-middle-y ms-3 text-muted fa-2x"></i>
+                        <i
+                            class="fas fa-image position-absolute top-50 start-0 translate-middle-y ms-3 text-muted fa-2x"></i>
                     </div>
                     <!-- Container to hold the image previews -->
                     <div id="image-preview" class="d-flex flex-wrap justify-content-center mb-3"></div>
