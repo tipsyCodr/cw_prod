@@ -33,3 +33,4 @@ application/config/config.php
 /tests/tests/
 /tests/results/
 community_web_dev.code-workspace
+application/config/config.php
