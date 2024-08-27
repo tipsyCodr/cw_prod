@@ -218,16 +218,61 @@
                             <div class="col-md-6">
                                 <div class="form-group app-label mt-2">
                                     <label for="opening-time" class="text-muted">Opening Time</label>
-                                    <input id="opening_time" name="opening_time" type="text" class="form-control resume"
-                                        placeholder="8000" value="<?php echo set_value('opening_time'); ?>">
+                                    <div class="form-button">
+                                        <select id="opening_time" name="opening_time" class="form-select">
+                                            <option value="06:00 AM" <?php echo set_select('opening_time', '06:00 AM'); ?>>06:00 AM</option>
+                                            <option value="07:00 AM" <?php echo set_select('opening_time', '07:00 AM'); ?>>07:00 AM</option>
+                                            <option value="08:00 AM" <?php echo set_select('opening_time', '08:00 AM'); ?>>08:00 AM</option>
+                                            <option value="09:00 AM" <?php echo set_select('opening_time', '09:00 AM'); ?>>09:00 AM</option>
+                                            <option value="10:00 AM" <?php echo set_select('opening_time', '10:00 AM'); ?>>10:00 AM</option>
+                                            <option value="11:00 AM" <?php echo set_select('opening_time', '11:00 AM'); ?>>11:00 AM</option>
+                                            <option value="12:00 PM" <?php echo set_select('opening_time', '12:00 PM'); ?>>12:00 PM</option>
+                                            <option value="01:00 PM" <?php echo set_select('opening_time', '01:00 PM'); ?>>01:00 PM</option>
+                                            <option value="02:00 PM" <?php echo set_select('opening_time', '02:00 PM'); ?>>02:00 PM</option>
+                                            <option value="03:00 PM" <?php echo set_select('opening_time', '03:00 PM'); ?>>03:00 PM</option>
+                                            <option value="04:00 PM" <?php echo set_select('opening_time', '04:00 PM'); ?>>04:00 PM</option>
+                                            <option value="05:00 PM" <?php echo set_select('opening_time', '05:00 PM'); ?>>05:00 PM</option>
+                                            <option value="06:00 PM" <?php echo set_select('opening_time', '06:00 PM'); ?>>06:00 PM</option>
+                                            <option value="07:00 PM" <?php echo set_select('opening_time', '07:00 PM'); ?>>07:00 PM</option>
+                                            <option value="08:00 PM" <?php echo set_select('opening_time', '08:00 PM'); ?>>08:00 PM</option>
+                                        </select>
+                                    </div>
                                     <?php echo form_error('opening_time', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group app-label mt-2">
                                     <label for="closing-time" class="text-muted">Closing Time</label>
-                                    <input id="closing_time" name="closing_time" type="text" class="form-control resume"
-                                        placeholder="20000" value="<?php echo set_value('closing_time'); ?>">
+                                    <div class="form-button">
+                                        <select id="closing_time" name="closing_time" class="form-select">
+                                            <option value="08:00 AM" <?php echo set_select('closing_time', '08:00 AM'); ?>>
+                                                08:00 AM</option>
+                                            <option value="09:00 AM" <?php echo set_select('closing_time', '09:00 AM'); ?>>
+                                                09:00 AM</option>
+                                            <option value="10:00 AM" <?php echo set_select('closing_time', '10:00 AM'); ?>>
+                                                10:00 AM</option>
+                                            <option value="11:00 AM" <?php echo set_select('closing_time', '11:00 AM'); ?>>
+                                                11:00 AM</option>
+                                            <option value="12:00 PM" <?php echo set_select('closing_time', '12:00 PM'); ?>>
+                                                12:00 PM</option>
+                                            <option value="01:00 PM" <?php echo set_select('closing_time', '01:00 PM'); ?>>
+                                                01:00 PM</option>
+                                            <option value="02:00 PM" <?php echo set_select('closing_time', '02:00 PM'); ?>>
+                                                02:00 PM</option>
+                                            <option value="03:00 PM" <?php echo set_select('closing_time', '03:00 PM'); ?>>
+                                                03:00 PM</option>
+                                            <option value="04:00 PM" <?php echo set_select('closing_time', '04:00 PM'); ?>>
+                                                04:00 PM</option>
+                                            <option value="05:00 PM" <?php echo set_select('closing_time', '05:00 PM'); ?>>
+                                                05:00 PM</option>
+                                            <option value="06:00 PM" <?php echo set_select('closing_time', '06:00 PM'); ?>>
+                                                06:00 PM</option>
+                                            <option value="07:00 PM" <?php echo set_select('closing_time', '07:00 PM'); ?>>
+                                                07:00 PM</option>
+                                            <option value="08:00 PM" <?php echo set_select('closing_time', '08:00 PM'); ?>>
+                                                08:00 PM</option>
+                                        </select>
+                                    </div>
                                     <?php echo form_error('closing_time', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
                                 </div>
                             </div>
