@@ -378,6 +378,8 @@
                                                 Software Services</option>
                                             <option value="46" <?php echo set_select('business_category', '46'); ?>>
                                                 Telecommunication Services</option>
+                                            <option value="47" <?php echo set_select('business_category', '47'); ?>>
+                                                Electronics</option>
                                         </select>
                                     </div>
                                     <?php echo form_error('business_category', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
