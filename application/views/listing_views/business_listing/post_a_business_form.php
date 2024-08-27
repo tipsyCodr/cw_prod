@@ -286,6 +286,8 @@
                                                 Software Development</option>
                                             <option value="4" <?php echo set_select('business_category', '4'); ?>>
                                                 Telecommunication</option>
+                                            <option value="47" <?php echo set_select('business_category', '47'); ?>>
+                                                Electronics</option>
                                             <option value="5" <?php echo set_select('business_category', '5'); ?>>
                                                 Real Estate</option>
                                             <option value="6" <?php echo set_select('business_category', '6'); ?>>
@@ -370,8 +372,7 @@
                                                 Software Services</option>
                                             <option value="46" <?php echo set_select('business_category', '46'); ?>>
                                                 Telecommunication Services</option>
-                                            <option value="47" <?php echo set_select('business_category', '47'); ?>>
-                                                Electronics</option>
+
                                         </select>
                                     </div>
                                     <?php echo form_error('business_category', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
@@ -380,74 +381,78 @@
                         </div>
                         <?php echo form_error('business_category', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group app-label mt-2">
-                        <label for="pin-code" class="text-muted">Pin Code</label>
-                        <input id="pin_code" name="pin_code" type="text" class="form-control resume" placeholder=""
-                            value="<?php echo set_value('pin_code'); ?>">
-                        <?php echo form_error('pin_code', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                    <div class="col-md-6">
+                        <div class="form-group app-label mt-2">
+                            <label for="pin-code" class="text-muted">Pin Code</label>
+                            <input id="pin_code" name="pin_code" type="text" class="form-control resume" placeholder=""
+                                value="<?php echo set_value('pin_code'); ?>">
+                            <?php echo form_error('pin_code', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                        </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group app-label mt-2">
+                                <label for="website" class="text-muted">Website</label>
+                                <input id="website" name="website" type="url" class="form-control resume" placeholder=""
+                                    value="<?php echo set_value('website'); ?>">
+                                <?php echo form_error('website', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group app-label mt-2">
+                                <label for="email-address" class="text-muted">Email Address</label>
+                                <input id="email_address" name="email_address" type="text" class="form-control resume"
+                                    placeholder="" value="<?php echo set_value('email_address'); ?>">
+                                <?php echo form_error('email_address', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group app-label mt-2">
+                                <label for="phone-number" class="text-muted">Phone Number</label>
+                                <input id="phone_number" name="phone_number" type="text" class="form-control resume"
+                                    placeholder="" value="<?php echo set_value('phone_number'); ?>">
+                                <?php echo form_error('phone_number', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group app-label mt-2">
+                                <label for="fax" class="text-muted">Fax</label>
+                                <input id="fax" name="fax" type="text" class="form-control resume" placeholder=""
+                                    value="<?php echo set_value('fax'); ?>">
+                                <?php echo form_error('fax', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group app-label mt-2">
+                                <label class="custom-file-label" for="business_image"><i
+                                        class="mdi mdi-cloud-upload mr-1"></i>
+                                    Upload Files</label>
+                                <input id="business_image" name="business_image" type="file" class="custom-file-input"
+                                    value="<?php echo set_value('business_image'); ?>">
+                                <?php echo form_error('business_image', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <button type="submit" class="animated-btn btn btn-primary btn-lg w-100"
+                            data-animation="fadeInUp" data-animation-delay="1000">Submit Business</button>
+                    </div>
+
+
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group app-label mt-2">
-                        <label for="website" class="text-muted">Website</label>
-                        <input id="website" name="website" type="url" class="form-control resume" placeholder=""
-                            value="<?php echo set_value('website'); ?>">
-                        <?php echo form_error('website', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group app-label mt-2">
-                        <label for="email-address" class="text-muted">Email Address</label>
-                        <input id="email_address" name="email_address" type="text" class="form-control resume"
-                            placeholder="" value="<?php echo set_value('email_address'); ?>">
-                        <?php echo form_error('email_address', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group app-label mt-2">
-                        <label for="phone-number" class="text-muted">Phone Number</label>
-                        <input id="phone_number" name="phone_number" type="text" class="form-control resume"
-                            placeholder="" value="<?php echo set_value('phone_number'); ?>">
-                        <?php echo form_error('phone_number', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group app-label mt-2">
-                        <label for="fax" class="text-muted">Fax</label>
-                        <input id="fax" name="fax" type="text" class="form-control resume" placeholder=""
-                            value="<?php echo set_value('fax'); ?>">
-                        <?php echo form_error('fax', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group app-label mt-2">
-                        <label class="custom-file-label" for="business_image"><i class="mdi mdi-cloud-upload mr-1"></i>
-                            Upload Files</label>
-                        <input id="business_image" name="business_image" type="file" class="custom-file-input"
-                            value="<?php echo set_value('business_image'); ?>">
-                        <?php echo form_error('business_image', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group mt-2">
-                <button type="submit" class="animated-btn btn btn-primary btn-lg w-100" data-animation="fadeInUp"
-                    data-animation-delay="1000">Submit Business</button>
-            </div>
 
             <?php echo form_close(); ?>
         </div>
