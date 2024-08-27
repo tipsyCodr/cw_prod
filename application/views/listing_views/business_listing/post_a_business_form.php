@@ -142,7 +142,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group app-label mt-2">
-                                    <label for="country" class="text-muted">Country</label>
+                                    <label for="country" class="text-muted">Select Country</label>
                                     <div class="form-button">
                                         <select id="country" name="country" class="nice-select form-select">
                                             <option data-display="Country">Country</option>
@@ -240,7 +240,7 @@
                                     <div class="form-button">
                                         <select id="business_category" name="business_category"
                                             class="nice-select form-select">
-                                            <option data-display="Category">Category</option>
+                                            <option data-display="Category">Select Category</option>
                                             <option value="1" <?php echo set_select('business_category', '1'); ?>>
                                                 IT Company</option>
                                             <option value="2" <?php echo set_select('business_category', '2'); ?>>
