@@ -447,12 +447,8 @@
                         <button type="submit" class="animated-btn btn btn-primary btn-lg w-100"
                             data-animation="fadeInUp" data-animation-delay="1000">Submit Business</button>
                     </div>
-
-
                 </div>
             </div>
-
-
 
             <?php echo form_close(); ?>
         </div>
