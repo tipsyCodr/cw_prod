@@ -144,72 +144,70 @@
                                 <div class="form-group app-label mt-2">
                                     <label for="country" class="text-muted">Country</label>
                                     <div class="form-button">
-                                        <<<<<<<<<<<<<< ✨ Codeium Command 🌟>>>>>>>>>>>>>>>>
-                                            <select id="country" name="country" class="nice-select form-select">
-                                                <option data-display="Country">Country</option>
-                                                <option value="1" <?php echo set_select('country', '1'); ?>>Afghanistan
-                                                </option>
-                                                <option value="2" <?php echo set_select('country', '2'); ?>>Bangladesh
-                                                </option>
-                                                <option value="3" <?php echo set_select('country', '3'); ?>>Brunei
-                                                </option>
-                                                <option value="4" <?php echo set_select('country', '4'); ?>>Cambodia
-                                                </option>
-                                                <option value="5" <?php echo set_select('country', '5'); ?>>China
-                                                </option>
-                                                <option value="6" <?php echo set_select('country', '6'); ?>>India
-                                                </option>
-                                                <option value="7" <?php echo set_select('country', '7'); ?>>Indonesia
-                                                </option>
-                                                <option value="8" <?php echo set_select('country', '8'); ?>>Japan
-                                                </option>
-                                                <option value="9" <?php echo set_select('country', '9'); ?>>Korea, South
-                                                    Korea</option>
-                                                <option value="10" <?php echo set_select('country', '10'); ?>>Kuwait
-                                                </option>
-                                                <option value="11" <?php echo set_select('country', '11'); ?>>Laos
-                                                </option>
-                                                <option value="12" <?php echo set_select('country', '12'); ?>>Malaysia
-                                                </option>
-                                                <option value="13" <?php echo set_select('country', '13'); ?>>Maldives
-                                                </option>
-                                                <option value="14" <?php echo set_select('country', '14'); ?>>Myanmar
-                                                </option>
-                                                <option value="15" <?php echo set_select('country', '15'); ?>>Nepal
-                                                </option>
-                                                <option value="16" <?php echo set_select('country', '16'); ?>>Oman
-                                                </option>
-                                                <option value="17" <?php echo set_select('country', '17'); ?>>Pakistan
-                                                </option>
-                                                <option value="18" <?php echo set_select('country', '18'); ?>>
-                                                    Philippines</option>
-                                                <option value="19" <?php echo set_select('country', '19'); ?>>Qatar
-                                                </option>
-                                                <option value="20" <?php echo set_select('country', '20'); ?>>Singapore
-                                                </option>
-                                                <option value="21" <?php echo set_select('country', '21'); ?>>Sri Lanka
-                                                </option>
-                                                <option value="22" <?php echo set_select('country', '22'); ?>>Syria
-                                                </option>
-                                                <option value="23" <?php echo set_select('country', '23'); ?>>Taiwan
-                                                </option>
-                                                <option value="24" <?php echo set_select('country', '24'); ?>>Thailand
-                                                </option>
-                                                <option value="25" <?php echo set_select('country', '25'); ?>>
-                                                    Timor-Leste</option>
-                                                <option value="26" <?php echo set_select('country', '26'); ?>>United
-                                                    Arab
-                                                    Emirates</option>
-                                                <option value="27" <?php echo set_select('country', '27'); ?>>Vietnam
-                                                </option>
-                                                <option value="3" <?php echo set_select('country', '3'); ?>>Canada
-                                                </option>
-                                                <option value="4" <?php echo set_select('country', '4'); ?>>Dominica
-                                                </option>
-                                                <option value="5" <?php echo set_select('country', '5'); ?>>India
-                                                </option>
-                                            </select>
-                                            <<<<<<< 13e88a24-0737-4ece-8feb-bf828f93e8ae>>>>>>>
+                                        <select id="country" name="country" class="nice-select form-select">
+                                            <option data-display="Country">Country</option>
+                                            <option value="1" <?php echo set_select('country', '1'); ?>>Afghanistan
+                                            </option>
+                                            <option value="2" <?php echo set_select('country', '2'); ?>>Bangladesh
+                                            </option>
+                                            <option value="3" <?php echo set_select('country', '3'); ?>>Brunei
+                                            </option>
+                                            <option value="4" <?php echo set_select('country', '4'); ?>>Cambodia
+                                            </option>
+                                            <option value="5" <?php echo set_select('country', '5'); ?>>China
+                                            </option>
+                                            <option value="6" <?php echo set_select('country', '6'); ?>>India
+                                            </option>
+                                            <option value="7" <?php echo set_select('country', '7'); ?>>Indonesia
+                                            </option>
+                                            <option value="8" <?php echo set_select('country', '8'); ?>>Japan
+                                            </option>
+                                            <option value="9" <?php echo set_select('country', '9'); ?>>Korea, South
+                                                Korea</option>
+                                            <option value="10" <?php echo set_select('country', '10'); ?>>Kuwait
+                                            </option>
+                                            <option value="11" <?php echo set_select('country', '11'); ?>>Laos
+                                            </option>
+                                            <option value="12" <?php echo set_select('country', '12'); ?>>Malaysia
+                                            </option>
+                                            <option value="13" <?php echo set_select('country', '13'); ?>>Maldives
+                                            </option>
+                                            <option value="14" <?php echo set_select('country', '14'); ?>>Myanmar
+                                            </option>
+                                            <option value="15" <?php echo set_select('country', '15'); ?>>Nepal
+                                            </option>
+                                            <option value="16" <?php echo set_select('country', '16'); ?>>Oman
+                                            </option>
+                                            <option value="17" <?php echo set_select('country', '17'); ?>>Pakistan
+                                            </option>
+                                            <option value="18" <?php echo set_select('country', '18'); ?>>
+                                                Philippines</option>
+                                            <option value="19" <?php echo set_select('country', '19'); ?>>Qatar
+                                            </option>
+                                            <option value="20" <?php echo set_select('country', '20'); ?>>Singapore
+                                            </option>
+                                            <option value="21" <?php echo set_select('country', '21'); ?>>Sri Lanka
+                                            </option>
+                                            <option value="22" <?php echo set_select('country', '22'); ?>>Syria
+                                            </option>
+                                            <option value="23" <?php echo set_select('country', '23'); ?>>Taiwan
+                                            </option>
+                                            <option value="24" <?php echo set_select('country', '24'); ?>>Thailand
+                                            </option>
+                                            <option value="25" <?php echo set_select('country', '25'); ?>>
+                                                Timor-Leste</option>
+                                            <option value="26" <?php echo set_select('country', '26'); ?>>United
+                                                Arab
+                                                Emirates</option>
+                                            <option value="27" <?php echo set_select('country', '27'); ?>>Vietnam
+                                            </option>
+                                            <option value="3" <?php echo set_select('country', '3'); ?>>Canada
+                                            </option>
+                                            <option value="4" <?php echo set_select('country', '4'); ?>>Dominica
+                                            </option>
+                                            <option value="5" <?php echo set_select('country', '5'); ?>>India
+                                            </option>
+                                        </select>
                                     </div>
                                     <?php echo form_error('country', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
                                 </div>
