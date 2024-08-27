@@ -12,18 +12,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class BusinessListController extends CI_Controller
 {
 
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Businesslistingmodel');
+        $this->load->model('joblistingmodel');
+        $this->load->library('form_validation');
+    }
+
+
+
     public function index()
     {
+        $data['states'] = $this->joblistingmodel->getAllStates();
         $this->load->view('header');
         $this->load->view('navbar');
-        $this->load->view('listing_views/business_listing/post_a_business_form');
+        $this->load->view('listing_views/business_listing/post_a_business_form', $data);
         $this->load->view('footer');
 
     }
 
     public function business_listing()
     {
-        $this->load->library('form_validation');
+
 
         // Define validation rules
         $this->form_validation->set_rules('company_name', 'Company Name', 'required');

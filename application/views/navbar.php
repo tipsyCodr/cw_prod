@@ -6,24 +6,24 @@
             <!-- <img src="/uploads/landing_img/banner.jpg" alt="Sahu Samaj" style="width: 70%;"> -->
             <a href="/" class="">
 
-                <img src="<?php echo base_url('/uploads/landing_img/community_site_logo.jpg'); ?>" alt="Logo" class="img-fluid"
-                    style="max-height: 120px;">
+                <img src="<?php echo base_url('/uploads/landing_img/community_site_logo.jpg'); ?>" alt="Logo"
+                    class="img-fluid" style="max-height: 120px;">
             </a>
 
         </div>
         <div class="col-12 col-lg-4">
-                 <?php if (!($this->session->userdata('login'))): ?>
-                                  <a href="<?= base_url() ?>/user_registration" class="btn btn-primary rounded-pill py-2 px-4 flex-shrink-0">
-                   		 <i class="fas fa-user-plus me-2"></i>रजिस्टर करे
+            <?php if (!($this->session->userdata('login'))): ?>
+                <a href="<?= base_url() ?>/user_registration" class="btn btn-primary rounded-pill py-2 px-4 flex-shrink-0">
+                    <i class="fas fa-user-plus me-2"></i>रजिस्टर करे
                 </a>
-                	<a href="<?= base_url('login') ?>" class="btn btn-primary rounded-pill py-2 px-4 m-2 flex-shrink-0">
-                    	<i class="fas fa-sign-in-alt me-2"></i>लॉग इन करे
-                	</a>
-            	<?php else: ?>
-                	<a href="<?= base_url('logout') ?>" class="btn btn-primary rounded-pill py-2 px-4 m-2 flex-shrink-0">
-                 	   <i class="fas fa-sign-out-alt me-2"></i>Logout
-                	</a>
-            	<?php endif; ?>	
+                <a href="<?= base_url('login') ?>" class="btn btn-primary rounded-pill py-2 px-4 m-2 flex-shrink-0">
+                    <i class="fas fa-sign-in-alt me-2"></i>लॉग इन करे
+                </a>
+            <?php else: ?>
+                <a href="<?= base_url('logout') ?>" class="btn btn-primary rounded-pill py-2 px-4 m-2 flex-shrink-0">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -36,7 +36,8 @@
 <div class="container nav-bar sticky-top px-4 py-2 py-lg-0">
     <nav class="navbar navbar-expand-lg navbar-light">
         <a href="/" class="navbar-brand p-0 d-lg-none d-sm-inline">
-            <img src="<?php echo base_url('/uploads/landing_img/community_site_logo.jpg'); ?>" alt="Logo" class="img-fluid">
+            <img src="<?php echo base_url('/uploads/landing_img/community_site_logo.jpg'); ?>" alt="Logo"
+                class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
@@ -61,14 +62,14 @@
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        बिज़नस
+                        व्यवसाय संबंधित जानकारी
                     </a>
                     <div class="dropdown-menu m-0">
                         <a href="<?= base_url() ?>business" class="dropdown-item">
-                            बिज़नस सूचि
+                            व्यवसाय सूचि
                         </a>
                         <a href="<?= base_url() ?>business_listing_form" class="dropdown-item">
-                            पोस्ट करे
+                            व्यवसाय पोस्ट करे
                         </a>
                     </div>
                 </div>
@@ -105,11 +106,12 @@
                 <?php else: ?>
                     <span class="d-lg-none d-sm-inline-block">
 
-                    <a href="<?= base_url('logout') ?>" class="btn btn-primary rounded-pill py-2 px-4 m-2 flex-shrink-0">
-                        <i class="fas fa-sign-out-alt me-2"></i>Logout
-                    </a>
-                </span>
-            <?php endif; ?>
+                        <a href="<?= base_url('logout') ?>"
+                            class="btn btn-primary rounded-pill py-2 px-4 m-2 flex-shrink-0">
+                            <i class="fas fa-sign-out-alt me-2"></i>Logout
+                        </a>
+                    </span>
+                <?php endif; ?>
 
         </div>
     </nav>

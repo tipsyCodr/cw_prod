@@ -85,6 +85,7 @@ $route['add_comments'] = 'blogcontrollers/BlogController/add_comments';
 $route['job_listing_form_submit'] = 'joblistingcontrollers/JobListController/job_listing';
 $route['job_listing_form'] = 'joblistingcontrollers/JobListController';
 $route['job'] = 'joblistingcontrollers/JobListController/get_all_job_list';
+$route['get_all_city'] = 'joblistingcontrollers/JobListController/get_all_cities';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

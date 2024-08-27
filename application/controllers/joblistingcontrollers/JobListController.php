@@ -12,12 +12,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class JobListController extends CI_Controller
 {
 
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->load->model('joblistingmodel');
+
+    }
+
+
     public function index()
     {
 
+        $states['states'] = $this->joblistingmodel->getAllStates();
+
+
+
         $this->load->view('header');
         $this->load->view('navbar');
-        $this->load->view('listing_views/job_listing/post_a_job_form');
+        $this->load->view('listing_views/job_listing/post_a_job_form', $states);
         $this->load->view('footer');
     }
 
@@ -107,6 +121,19 @@ class JobListController extends CI_Controller
         $this->load->view('navbar');
         $this->load->view('listing_views/job_listing/job', $data);
         $this->load->view('footer');
+    }
+    public function get_all_cities()
+    {
+        $this->load->model('joblistingmodel');
+
+        $state_id = $this->input->get('state_id');
+
+        $data['all_cities'] = $this->joblistingmodel->getAllCities($state_id);
+
+        echo json_encode($data['all_cities']);
+
+
+
     }
 }
 ?>

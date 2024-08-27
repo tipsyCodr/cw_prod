@@ -31,17 +31,18 @@ class JobListingModel extends CI_Model
         ];
         // echo "<pre>";
         // print_r($fdata);
-        $q = $this->db->insert('job_listing',$jobData);
-        if($q){
+        $q = $this->db->insert('job_listing', $jobData);
+        if ($q) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
 
     }
 
-    public function getAllJobData(){
+    public function getAllJobData()
+    {
         $this->db->select('*');
         $this->db->from('job_listing');
         $this->db->order_by('job_id', 'DESC');
@@ -50,4 +51,26 @@ class JobListingModel extends CI_Model
 
     }
 
+    public function getAllStates()
+    {
+
+        $this->db->select('*');
+        $this->db->from('states');
+        $query = $this->db->get();
+        return $query->result_array();
+
+    }
+    public function getAllCities($id)
+    {
+
+        $this->db->select('*');
+        $this->db->from('cities');
+        $this->db->where('state_id', $id);
+        $query = $this->db->get();
+        return $query->result_array();
+
+    }
+
 }
+
+

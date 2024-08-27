@@ -127,6 +127,8 @@
     }
 </style>
 <!-- POST A JOB START -->
+
+
 <section class="section bg-light mt-5 wow fadeIn" data-wow-delay="0.2s">
     <div class="container">
         <div class="row justify-content-center">
@@ -204,31 +206,36 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group app-label mt-2">
-                                    <label for="job_city" class="form-label text-muted">City</label>
-                                    <input id="job_city" name="job_city" type="text" class="form-control resume"
-                                        placeholder="" value="<?php echo set_value('job_city'); ?>">
-                                    <?php echo form_error('job_city', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group app-label mt-2">
                                     <label for="job_country" class="form-label text-muted">Country</label>
                                     <div class="form-button">
                                         <select id="job_country" name="job_country" class="nice-select form-select">
-                                            <option data-display="Country">Country</option>
-                                            <option value="1" <?php echo set_select('job_country', '1'); ?>>Afghanistan
-                                            </option>
-                                            <option value="2" <?php echo set_select('job_country', '2'); ?>>Bangladesh
-                                            </option>
-                                            <option value="3" <?php echo set_select('job_country', '3'); ?>>Canada
-                                            </option>
-                                            <option value="4" <?php echo set_select('job_country', '4'); ?>>Dominica
-                                            </option>
+                                            <option data-display="Country"> Select States</option>
+                                            <?php
+                                            foreach ($states as $state) {
+                                                ?>
+                                                <option value="<?= $state['id'] ?>" <?php echo set_select('job_country', '1'); ?>><?= $state['name']; ?>
+                                                </option>
+                                                <?php
+                                            }
+                                            ?>
+
+
                                         </select>
                                     </div>
                                     <?php echo form_error('job_country', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group app-label mt-2">
+                                    <label for="job_city" class="form-label text-muted">City</label>
+                                    <select id="job_city" name="job_city" class="form-select resume">
+                                        <option value="">Select City</option>
+                                        <!-- Options will be populated dynamically -->
+                                    </select>
+                                    <?php echo form_error('job_city', '<div class="mb-4 mt-3 alert alert-danger">', '</div>'); ?>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="row">
@@ -406,3 +413,37 @@
     </div>
 </section>
 <!-- POST A JOB END -->
+
+<script>
+
+    // Dynamic Cities when the use select state the  fetch id and dynamicaly cities
+    $(document).ready(function () {
+        $('#job_country').on('change', function () {
+            var stateId = $(this).val();
+
+            if (stateId) {
+                // Fetch cities based on selected state
+                $.ajax({
+                    url: 'get_all_city', // Replace with the actual URL of your API
+                    type: 'GET',
+                    data: { state_id: stateId },
+                    dataType: 'json',
+                    success: function (data) {
+                        var $citySelect = $('#job_city');
+                        $citySelect.empty(); // Clear previous options
+                        $citySelect.append('<option value="">Select City</option>'); // Default option
+
+                        $.each(data, function (index, city) {
+                            $citySelect.append('<option value="' + city.name + '">' + city.name + '</option>');
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Failed to fetch cities:', error);
+                    }
+                });
+            } else {
+                $('#job_city').empty().append('<option value="">Select City</option>');
+            }
+        });
+    });
+</script>
