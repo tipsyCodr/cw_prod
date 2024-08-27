@@ -3,7 +3,7 @@
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-primary">JOBS</h4>
-            <h1 class="display-5 mb-4">Latest Jobs</h1>
+            <h1 class="display-5 mb-4">जॉब सूचि</h1>
             <p class="mb-0">नई नौकरियों के अवसर आपके लिए उपलब्ध हैं। यदि आप एक उत्साही और सक्षम पेशेवर हैं जो एक नए
                 चैलेंज के लिए तैयार हैं, तो हमारे पास आपके लिए शानदार अवसर हैं। हमारी कंपनी विभिन्न क्षेत्रों में
                 प्रतिभाशाली व्यक्तियों की तलाश कर रही है। जल्द ही आवेदन करें और अपने करियर को नई ऊँचाइयों पर ले जाएँ।
