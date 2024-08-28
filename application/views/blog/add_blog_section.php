@@ -5,6 +5,11 @@
         box-shadow: 2px 7px 6px 0px #ede5e5;
     }
 
+    .footer,
+    .copyright {
+        display: none;
+    }
+
     .main {
         width: 55%;
         box-shadow: 2px 7px 6px 0px #ede5e5;
