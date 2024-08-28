@@ -22,9 +22,10 @@ class BlogController extends CI_Controller
 	{
 		$this->load->view('header');
 		$this->load->view('navbar');
-		$this->load->view('blog/add_blog_section');
 		$data['blogs'] = $this->Blog_model->get_all_blog_posts();
-		$this->load->view('blog/blog_test', $data);
+		$this->load->view('blog/add_blog_section', $data);
+		// temporary disabled
+		// $this->load->view('blog/blog_test', $data);
 		$this->load->view('footer');
 	}
 

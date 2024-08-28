@@ -30,10 +30,6 @@
                 style="overflow:hidden;border-radius: 20px;max-height: 413px;">
                 <div class="splide__track">
                     <ul class="splide__list">
-                          <li class="splide__slide">
-                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
-                                class="d-block w-100" alt="...">
-                        </li>
                         <li class="splide__slide">
                             <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
                                 class="d-block w-100" alt="...">
@@ -41,7 +37,12 @@
                         <li class="splide__slide">
                             <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
                                 class="d-block w-100" alt="...">
-                        </li>                    </ul>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
+                                class="d-block w-100" alt="...">
+                        </li>
+                    </ul>
                 </div>
                 <button class="splide__toggle" type="button">
                     <span class="splide__toggle__play">Play</span>
@@ -54,16 +55,16 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>" class="d-block w-100"
-                                alt="Thumbnail 1" style="max-width: 100px; cursor: pointer;">
+                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
+                                class="d-block w-100" alt="Thumbnail 1" style="max-width: 100px; cursor: pointer;">
                         </li>
                         <li class="splide__slide">
-                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>" class="d-block w-100"
-                                alt="Thumbnail 2" style="max-width: 100px; cursor: pointer;">
+                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
+                                class="d-block w-100" alt="Thumbnail 2" style="max-width: 100px; cursor: pointer;">
                         </li>
                         <li class="splide__slide">
-                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>" class="d-block w-100"
-                                alt="Thumbnail 3" style="max-width: 100px; cursor: pointer;">
+                            <img src="<?php echo base_url('uploads/matrimonial_img/banner/wedding_image.webp'); ?>"
+                                class="d-block w-100" alt="Thumbnail 3" style="max-width: 100px; cursor: pointer;">
                         </li>
                     </ul>
                 </div>
@@ -368,7 +369,7 @@
 
 
 <!-- Attractions Start -->
-<div class="container-fluid attractions py-5">
+<!-- <div class="container-fluid attractions py-5">
     <div class="container attractions-section py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-primary">JOBS</h4>
@@ -405,7 +406,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Attractions End -->
 
 <!-- Gallery Start -->

@@ -55,7 +55,7 @@
     }
 </style>
 <div class="container my-5">
-    <div class="col-md-12 d-flex justify-content-center flex-column align-items-center ">
+    <div class="d-flex flex-column w-50 ">
         <?php if (count($blogs) > 0) {
             foreach ($blogs as $blog) {
                 $uid = $this->session->userdata('login');
@@ -75,8 +75,8 @@
                 $like_count = $likes ? count(array_filter(explode(',', $likes))) : 0;
                 $images = explode(',', $images);
                 ?>
-                <a href="blog_details/<?= $blog_id; ?>" class="text-primary text-decoration-none">
-                    <div class="col-md-4 col-lg-4 mb-4">
+                <a href="blog_details/<?= $blog_id; ?>" class="text-primary text-decoration-none ">
+                    <div class="">
                         <div class="card border-light shadow-sm rounded">
                             <div class="position-relative">
                                 <img src="<?= base_url() ?>/uploads/blog_images/<?= $images[0]; ?>" alt=""
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                 </a>
-                <div class="card-body">
+                <div class="card-body mb-5">
                     <div class="d-flex justify-content-between mb-2">
                         <div class="d-flex align-items-center">
                             <?php if ($likedstatus) { ?>
