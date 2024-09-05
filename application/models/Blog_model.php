@@ -101,6 +101,16 @@ class Blog_model extends CI_Model
         return $comment_data;
     }
 
+    public function getAllComments()
+    {
+        $this->db->select('comments.*, user_registration.*');
+        $this->db->from('comments');
+        $this->db->join('user_registration', 'comments.user_id = user_registration.uid');
+        $query = $this->db->get();
+        $comment_data = $query->result_array();
+        return $comment_data;
+    }
+
     public function add_comment($commentdata)
     {
 

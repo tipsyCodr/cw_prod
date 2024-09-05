@@ -193,13 +193,13 @@
                                         <select id="business_category" name="business_category"
                                             class="nice-select form-select">
                                             <option data-display="Category">Category</option>
-                                            <option value="1" <?php echo set_select('business_category', '1'); ?>>Web
+                                            <option value="Web Developer" <?php echo set_select('business_category', '1'); ?>>Web
                                                 Developer</option>
-                                            <option value="2" <?php echo set_select('business_category', '2'); ?>>PHP
+                                            <option value="PHP Developer" <?php echo set_select('business_category', '2'); ?>>PHP
                                                 Developer</option>
-                                            <option value="3" <?php echo set_select('business_category', '3'); ?>>Web
+                                            <option value="Web Designer" <?php echo set_select('business_category', '3'); ?>>Web
                                                 Designer</option>
-                                            <option value="4" <?php echo set_select('business_category', '4'); ?>>
+                                            <option value="Graphic Designer" <?php echo set_select('business_category', '4'); ?>>
                                                 Graphic Designer</option>
                                         </select>
                                     </div>
