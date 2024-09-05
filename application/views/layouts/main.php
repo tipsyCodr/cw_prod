@@ -38,7 +38,8 @@
     <!-- <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Using Tailwindcss -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
 
     <!-- Template Stylesheet -->
     <link href="assets/landing_assets/css/style.css" rel="stylesheet">
@@ -57,9 +58,10 @@
 
     <link href="assets/landing_assets/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/app.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/app.css" />
 
 
 

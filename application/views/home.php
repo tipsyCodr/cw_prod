@@ -209,7 +209,7 @@
                         </div>
                         <div class="interaction flex justify-end items-center pt-2">
                             <!-- <p class="font-bold">Contact:</p> -->
-                            <a class="px-3 py-2 m-2 bg-blue-500 text-white rounded-full"
+                            <a class="px-3 py-2 m-2 bg-accent text-white rounded-full"
                                 href="tel:<?= $business['phone_number'] ?>">
                                 <i class="fa-solid fa-phone"></i>
                             </a>
@@ -218,7 +218,7 @@
                                 target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
-                            <a class="px-3 py-2 m-2  bg-green-500 text-white rounded-full"
+                            <a class="px-3 py-2 m-2  bg-secondary text-white rounded-full"
                                 href="<?= $business['website'] ?>" target="_blank">
                                 <i class="fa-solid fa-globe"></i>
                             </a>
@@ -260,11 +260,11 @@
                             </div>
                             <div class="interaction flex justify-end items-center pt-2">
                                 <!-- <p class="font-bold">Interested?</p> -->
-                                <a class="px-3 py-2 m-2 bg-blue-500 text-white rounded-full"
+                                <a class="px-3 py-2 m-2 bg-accent text-white rounded-full"
                                     href="tel:<?= $job['job_number'] ?>">
                                     <i class="fa fa-phone"> </i>
                                 </a>
-                                <a class="px-3 py-2 m-2 bg-orange-500 text-white rounded-full"
+                                <a class="px-3 py-2 m-2 bg-secondary text-white rounded-full"
                                     href="mailto:<?= $job['job_email'] ?>">
                                     <i class="fa fa-envelope"> </i>
                                 </a>
