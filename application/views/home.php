@@ -1,7 +1,10 @@
 <style>
     .matrimonial-card>.img-wrapper>img {
-        width: 138px;
-        height: 207px;
+        min-width: 138px;
+        width: 100vw;
+        height: calc(100vw * 1.5);
+        max-width: 207px;
+        max-height: 310px;
     }
 
     .img-wrapper.bg-white {
@@ -70,7 +73,7 @@
             </div>
             <div class=" ">
                 <div
-                    class=" posts-wrapper  py-6 community-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
+                    class=" posts-wrapper  community-item-wrapper py-6  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
 
                     <?php if (!empty($blogs)): ?>
                         <?php foreach ($blogs as $blog): ?>
@@ -134,13 +137,14 @@
                 <h5 class="m-0 text-2xl font-bold">Matrimonial</h5><i class="fa fa-arrow-right"></i>
             </div>
             <p>I am searching for..</p>
-            <div class="matrimonial-wrapper flex flex-row py-4">
+            <div
+                class="matrimonial-wrapper flex flex-row  py-6  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial') ?>">
                         <div class="matrimonial-card">
                             <div class="img-wrapper  overflow-hidden">
                                 <img class="img-fluid rounded-lg transition-all hover:scale-90"
-                                    src="<?= base_url('assets/images/bride.jpg') ?>" alt="">
+                                    src="<?= base_url('assets/images/bride.jpg') ?>" alt="" width="138px">
                             </div>
                             <div class="matrimonial-card-body">
                                 <p class="font-bold text-xl ">Bride</p>
