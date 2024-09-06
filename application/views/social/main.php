@@ -198,6 +198,22 @@
                 $images = explode(',', $images);
                 ?>
                 <div class="mb-4">
+                    <div class="flex items-center my-6 ">
+                        <a href="profile/<?= $blog['user_id']; ?>" class="flex items-center">
+                            <?php if (empty($blog['user_image'])): ?>
+                                <i class="fas fa-3x fa-user-circle h-10 w-10 rounded-full mr-2 text-accent"></i>
+                            <?php else: ?>
+                                <img src="<?= base_url() ?>/uploads/user_images/<?= $blog['user_image']; ?>" alt=""
+                                    class="h-10 w-10 rounded-full mr-2" />
+                            <?php endif; ?>
+                            <div class="flex flex-col">
+                                <span class="font-bold"><?= $blog['first_name'] . ' ' . $blog['last_name']; ?></span>
+                                <span
+                                    class="text-black font-bold text-xl px-4"><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
+                            </div>
+                        </a>
+                    </div>
+
                     <a href="blog_details/<?= $blog_id; ?>" class="text-primary text-decoration-none ">
                         <div class="">
                             <div class="card border-light shadow-sm rounded">
@@ -214,29 +230,40 @@
 
                     </a>
                     <div class="card-body mb-5">
-                        <div class="flex justify-between mb-2">
-                            <div class="flex items-center">
+                        <div class='py-2 border-b-2 bg-gray-100 flex justify-evenly items-center'>
+                            <a class='flex  items-center block cursor-pointer ' href="#"> <i
+                                    class="fa-regular fa-2x fa-heart hover:text-red-500 transition-all "></i>
+                                <p class="p-2">Like</p>
+                            </a>
+                            <a class='flex  items-center block cursor-pointer ' href="#"> <i
+                                    class="fa-regular fa-2x fa-comment hover:text-blue-500 transition-all "></i>
+                                <p class="p-2">Comments</p>
+                            </a>
+                            <a class='flex  items-center block cursor-pointer ' href="#" data-bs-toggle="modal"
+                                data-bs-target="#shareModal"> <i
+                                    class="fa hover:text-blue-500 transition-all fa-2x fa-share"></i>
+                                <p class="p-2">Share</p>
+                            </a>
+                        </div>
+
+                        <div class="flex justify-start my-2">
+                            <div class="flex items-center gap-x-2">
                                 <?php if ($likedstatus) { ?>
-                                    <button class="btn btn-danger btn-sm like-btn" type="button" data-id="<?= $blog_id; ?>">
-                                        <i class="fa fa-heart"></i>
-                                    </button>
+                                    <p class=" " data-id="<?= $blog_id; ?>"><i class="fa fa-heart text-red-400"></i></p>
+
                                 <?php } else { ?>
-                                    <button class="btn btn-outline-primary bg-primary btn-sm like-btn text-white" type="button"
-                                        data-id="<?= $blog_id; ?>">
-                                        <i class="fa fa-heart text-black "></i>
-                                    </button>
+                                    <p class=" rounded-full text-white" data-id="<?= $blog_id; ?>"><i
+                                            class="fa fa-heart text-red-400 "></i>
+                                    </p>
                                 <?php } ?>
-                                <span class="ms-2"><?= $like_count ?></span>
+                                <span><?= $like_count ?></span>
                             </div>
-                            <div class="flex items-center">
+                            <div class="flex items-center px-2">
                                 <a href="blog_details/<?= $blog_id; ?>" class="btn btn-outline-secondary btn-sm me-2">
-                                    <i class="fa fa-comment-alt"></i>
+                                    <i class="fa fa-comment-alt text-blue-400"></i>
                                 </a>
-                                <span>50+</span>
-                                <button class="btn btn-outline-primary btn-sm ms-2" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#shareModal">
-                                    <i class="fas fa-share-alt"></i>
-                                </button>
+                                <span>10+</span>
+
                             </div>
                         </div>
                         <p class="card-text"><?= $blog['content']; ?><br /><a href="blog_details/<?= $blog_id; ?>"
@@ -288,7 +315,7 @@
             </div>
         </div>
         <div class="ads my-3">
-            <h6>Ads</h6>
+            <h6 class="text-2xl font-bold">Ads</h6>
             <div class="items">
                 <img src="https://via.placeholder.com/300x200" alt="Ad 1">
             </div>
@@ -296,30 +323,18 @@
         <div class="joblist-wrapper">
             <h6 class="font-black">Recommended Jobs</h6>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item flex items-center">
-                    <div class="title">
-                        Junior Web Developer
-                    </div>
-                    <div class="ml-auto">
-                        <span class="badge bg-primary text-white">Full Time</span>
-                    </div>
-                </li>
-                <li class="list-group-item flex items-center">
-                    <div class="title">
-                        Software Engineer
-                    </div>
-                    <div class="ml-auto">
-                        <span class="badge bg-primary text-white">Full Time</span>
-                    </div>
-                </li>
-                <li class="list-group-item flex items-center">
-                    <div class="title">
-                        Sales Manager
-                    </div>
-                    <div class="ml-auto">
-                        <span class="badge bg-primary text-white">Part Time</span>
-                    </div>
-                </li>
+                <?php foreach ($jobs as $job) { ?>
+                    <li class="list-group-item flex items-center">
+                        <a href=".#" class="title">
+                            <!-- <a href="#<?= base_url('jobs/detail/' . $job['id']) ?>" class="title"> -->
+                            <?= $job['job_title'] ?>
+                        </a>
+                        <div class="ml-auto">
+                            <span
+                                class="px-2 py-1 rounded-full bg-accent text-white"><?= $job['job_type'] == 1 ? 'Full Time' : 'Part Time' ?></span>
+                        </div>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
@@ -336,44 +351,42 @@
                 onclick="closePopup();"></button>
 
         </div>
-        <div class="popup-body" style=" height: 100%;">
-            <div class="flex flex-row justify-content-center">
-                <div class="container" style="max-width: 500px;">
+        <div class="popup-body h-full">
+            <div class="container mx-auto p-4 max-w-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center py-4">
+                        <i class="fas text-danger fa-user-circle fa-3x"></i>
+                        <?php if (!$this->session->userdata('login')): ?>
+                            <span class="font-black ml-2">Anonymous</span>
+                        <?php else: ?>
+                            <span
+                                class="font-black ml-2"><?= $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
 
-                    <div class="flex flex-row items-center">
-                        <div class="flex flex-row  items-center m-2">
-                            <i class="fas text-danger fa-user-circle fa-3x"></i>
-                            <span class="font-black text-center " style="padding-left: 10px;">User</span>
-                        </div>
+                <form id="add_blog" action="<?= base_url('add_blog') ?>" method="post" enctype="multipart/form-data"
+                    class="space-y-4">
+
+                    <div class="mb-3">
+                        <textarea id="caption"
+                            class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            placeholder="Whats on your mind?" required rows=" 4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="file"
+                            class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            name="blog_image[]" id="blog_image" required multiple />
+                    </div>
+                    <div id="image-preview" class="grid grid-cols-3 gap-4 overflow-y-auto max-h-96">
                     </div>
 
-                    <form id="add_blog" action="<?= base_url('add_blog') ?>" method="post"
-                        enctype="multipart/form-data">
-
-                        <div class="mb-3 position-relative">
-                            <textarea id="caption" class="form-control" name="blog_caption"
-                                placeholder="अपने पोस्ट का कैप्शन लिखे...." required
-                                style="height: 100px; resize: none;"></textarea>
-                        </div>
-                        <div class="">
-                            <!-- <i class="fas fa-image  start-0 translate-middle-y ms-3 text-muted fa-2x"></i> -->
-                            <input type="file" class="form-control " name="blog_image[]" id="blog_image" required
-                                multiple />
-
-                        </div>
-                        <!-- Container to hold the image previews -->
-                        <div id="image-preview"
-                            class="flex flex-row flex-wrap justify-content-center mb-3 overflow-scroll;"
-                            style="max-height: 200px;">
-                        </div>
-
-                        <div class="">
-                            <button type="submit" class="btn btn-primary w-100">
-                                <i class="fas fa-plus me-2"></i>Create Post
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="text-right">
+                        <button type="submit" class="py-2 text-xl font-bold bg-accent text-white w-full rounded-full">
+                            <i class="fas fa-plus my-2"></i> Create Post
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
