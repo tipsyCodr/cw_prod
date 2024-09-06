@@ -129,7 +129,7 @@
                                         <a class="text-white  px-5 py-3  bg-secondary rounded-full" target="_blank"
                                             href="<?= $business['website'] ?>"> <i class="fa fa-globe"></i></a>
                                         <a class="text-white  px-5 py-3  bg-accent rounded-full"
-                                            href="maito:<?= $business['email_address'] ?>"> <i
+                                            href="mailto:<?= $business['email_address'] ?>"> <i
                                                 class="fa fa-envelope"></i></a>
 
                                     </div>
