@@ -124,11 +124,11 @@
                                         </div>
                                     </div>
                                     <div class="p-4">
-                                        <a class="text-white px-4 py-1 bg-green-500  rounded-full"
+                                        <a class="text-white px-5 py-3 bg-green-500  rounded-full"
                                             href="<?= $business['phone_number'] ?>"> <i class="fa fa-phone"></i></a>
-                                        <a class="text-white px-4 py-1 bg-secondary rounded-full"
+                                        <a class="text-white  px-5 py-3  bg-secondary rounded-full"
                                             href="<?= $business['website'] ?>"> <i class="fa fa-globe"></i></a>
-                                        <a class="text-white px-4 py-1 bg-accent rounded-full"
+                                        <a class="text-white  px-5 py-3  bg-accent rounded-full"
                                             href="<?= $business['email_address'] ?>"> <i class="fa fa-envelope"></i></a>
 
                                     </div>
