@@ -34,8 +34,8 @@ class WebController extends CI_Controller
         $this->load->model('Blog_model');
         $data['blogs'] = $this->Blog_model->get_all_blog_posts(); // Get blog posts
 
-        $this->load->model('businesslistingmodel');
-        $data['business_list'] = $this->businesslistingmodel->getAllBusinessData();
+        $this->load->model('BusinessListingModel');
+        $data['business_list'] = $this->BusinessListingModel->getAllBusinessData();
 
         $this->load->model('joblistingmodel');
         $data['job_list'] = $this->joblistingmodel->getAllJobData();
