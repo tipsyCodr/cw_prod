@@ -23,15 +23,14 @@
                     class="fa-regular fa-building"></i> Business</a>
         </nav>
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">
+            <div class=" flex flex-col tab-panel fade show active" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">
 
 
-                <div class="flex m-2 space-x-2">
-                    <a href="<?= base_url('post-a-job') ?>"
-                        class="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-dark"> <i
-                            class="fa fa-plus"></i> Add a Job</a>
-                </div>
-                <p class="text-gray-500 text-sm px-4">All Posts</p>
+                <a href="<?= base_url('post-a-job') ?>" class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i
+                        class="fa fa-plus"></i> Post a
+                    Job Requirement</a>
+
+                <p class="text-gray-500 text-md px-4 pt-6 pb-2">All Posts</p>
 
                 <?php foreach ($job_list as $job) { ?>
 
@@ -98,9 +97,10 @@
                 <div class="flex flex-col">
 
                     <a href="<?= base_url('post-a-business') ?>"
-                        class=" bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-dark"> <i
-                            class="fa fa-plus"></i> Add a Business</a>
+                        class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> List
+                        Your Business</a>
 
+                    <p class="text-gray-500 text-md px-4 pt-6 pb-2">All Business</p>
                     <?php foreach ($business_list as $business) { ?>
 
                         <div class="p-4 mx-2 mb-6 shadow rounded hover:bg-gray-200">
