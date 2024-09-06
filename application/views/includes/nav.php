@@ -32,7 +32,7 @@
                     </i> -->
 
                 </a></li>
-            <li><a href="<?= base_url('post') ?>" class=" nav-item w-full text-decoration-none">
+            <li><a href="<?= base_url('social') ?>" class=" nav-item w-full text-decoration-none">
                     <img src="<?= base_url('assets/images/icons/super.png') ?>" alt="post icon" width="55em"
                         height="55em" />
 

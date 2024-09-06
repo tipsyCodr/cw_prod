@@ -1,7 +1,7 @@
 <!-- Job Start -->
 <div class=" blog pb-5">
     <div class=" pb-5">
-        <div class="mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+        <div class=" pb-5 ">
             <h4 class="font-bold text-3xl p-4 ">Services</h4>
             <h1 class="text-md px-4 "><a class="text-accent" href="<?= base_url() ?>">Home </a> > <a class="text-accent"
                     href="<?= base_url('services') ?>">Services</a></h1>

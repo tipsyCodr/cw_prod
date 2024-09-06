@@ -53,6 +53,7 @@ $route['default_controller'] = 'WebController/index';
 // $route['/'] = 'home';
 
 $route['services'] = 'WebController/services';
+$route['social'] = 'WebController/social';
 
 
 
@@ -88,9 +89,6 @@ $route['job_listing_form'] = 'joblistingcontrollers/JobListController';
 $route['job'] = 'joblistingcontrollers/JobListController/get_all_job_list';
 $route['get_all_city'] = 'joblistingcontrollers/JobListController/get_all_cities';
 
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
-
 //matrimonial section
 $route['matrimonial_form'] = 'matrimonialcontrollers/MatriMonialController';
 $route['matrimonial_form_submit'] = 'matrimonialcontrollers/MatriMonialController/submit_form';
@@ -100,4 +98,5 @@ $route['matrimonial_find_match_result'] = 'matrimonialcontrollers/MatriMonialCon
 $route['matromonial_profile/(:num)'] = 'matrimonialcontrollers/MatriMonialController/matromonial_profile/$1';
 
 
-// echo time();
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;

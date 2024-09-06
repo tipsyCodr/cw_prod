@@ -59,4 +59,12 @@ class WebController extends CI_Controller
         $this->load->view('/layouts/main', $data);
 
     }
+    public function social()
+    {
+        $this->load->model('Blog_model');
+        $data['blogs'] = $this->Blog_model->get_all_blog_posts();
+        $data['slot'] = $this->load->view('social/main', $data, TRUE);
+        $this->load->view('/layouts/main', $data);
+    }
+
 }
