@@ -114,8 +114,10 @@
                                     <div class="p-4">
                                         <h4 class="font-bold text-3xl"><?= $business['company_name'] ?></h4>
 
-                                        <p class=""><span><i class="fa-solid fa-location-dot"></i></span>
-                                            <?= $business['city'] ?>, <?= $business['pin_code'] ?></p>
+                                        <span class="text-gray-500 text-sm px-2"><i class="fa-solid fa-building"></i>
+                                            <?= $business['business_category'] ?></span> <span class=""><i
+                                                class="fa-solid fa-location-dot"></i> <?= $business['city'] ?>,
+                                            <?= $business['pin_code'] ?></span>
                                         <p> <b>Address: </b><?= $business['address_1'] . ", " . $business['address_2'] ?>
                                         </p>
                                         <div class="text-gray-400 text-sm mb-1"><span>Timing:
