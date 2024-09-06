@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.tab-bar.active {
+	border-bottom: 2px solid theme("colors.secondary");
+	color: theme("colors.secondary");
+	font-weight: bold;
+}
+
 body {
 	/* background-color: #d1d1d1; */
 	font-family: "Suse", sans-serif;
