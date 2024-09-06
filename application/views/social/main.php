@@ -164,15 +164,15 @@
         </ul>
     </div>
     <div class="main px-3">
-
-        <div class="flex items-center justify-between mx-4  px-4 my-3 top-bar">
-            <div class="flex items-center">
+        <div class="flex items-center justify-between my-3 top-bar">
+            <div class="text-left">
                 <h2 class="text-2xl  font-black"> <i class="fas  fa-fire-alt text-red-600 mr-2"></i>
-                    Trending <i class="fas fa-angle-down text-muted ml-2"></i></h2>
+                    Trending </h2>
             </div>
-            <p class="font-bold">Recent Posts</p>
+            <p class="font-bold lg:block hidden ">Recent Posts</p>
             <div class="flex items-center">
-                <button class=" bg-black text-white py-2 px-4 rounded-full" onclick="openPopup();">
+                <button class=" bg-black text-white py-2 px-4 rounded-full flex-nowrap text-nowrap"
+                    onclick="openPopup();">
                     <i class="fa fa-plus me-2"></i>Create Post
                 </button>
             </div>
@@ -257,17 +257,33 @@
 </div>
 
 <div class="side-bar right overflow-scroll">
-    <div class="flex flex flex-column">
+    <div class="flex flex-col">
         <div class="stories-wrapper">
-            <h6 class="font-black">Stories</h6>
-            <div class="items flex flex-row justify-content-evenly ">
-                <div style="border-radius: 10px; width: 100px; height: 150px;overflow:hidden;"><img
-                        class="img-fluid w-100 h-100" src="<?= base_url('uploads/blog_images/1.jpg') ?>"
-                        alt="Stories 1">
+            <h6 class="text-black font-black text-2xl p-2">Stories</h6>
+            <div class="stories-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x" draggable="true">
+                <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">
+                    <img class="h-full w-full object-cover object-center"
+                        src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="Stories 1">
                 </div>
-                <div style="border-radius: 10px; width: 100px; height: 150px;overflow:hidden;"><img
-                        class="img-fluid w-100 h-100" src="<?= base_url('uploads/blog_images/3.png') ?>"
-                        alt="Stories 2">
+                <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">
+                    <img class="h-full w-full object-cover object-center"
+                        src="<?= base_url('uploads/blog_images/3.png') ?>" alt="Stories 2">
+                </div>
+                <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">
+                    <img class="h-full w-full object-cover object-center"
+                        src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="Stories 1">
+                </div>
+                <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">
+                    <img class="h-full w-full object-cover object-center"
+                        src="<?= base_url('uploads/blog_images/3.png') ?>" alt="Stories 2">
+                </div>
+                <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">
+                    <img class="h-full w-full object-cover object-center"
+                        src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="Stories 1">
+                </div>
+                <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">
+                    <img class="h-full w-full object-cover object-center"
+                        src="<?= base_url('uploads/blog_images/3.png') ?>" alt="Stories 2">
                 </div>
             </div>
         </div>
@@ -425,4 +441,32 @@
         // $('#image-preview').empty();
     }
 
+    const container = document.querySelector('.stories-wrapper');
+
+    container.addEventListener('dragstart', (e) => {
+        // Store the initial scroll position
+        const initialScrollLeft = container.scrollLeft;
+        const initialScrollTop = container.scrollTop;
+
+        // Store the mouse position
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        // Add event listeners for drag and dragend
+        document.addEventListener('drag', (e) => {
+            // Calculate the new scroll position based on the mouse movement
+            const newScrollLeft = initialScrollLeft + (e.clientX - mouseX);
+            const newScrollTop = initialScrollTop + (e.clientY - mouseY);
+
+            // Update the scroll position
+            container.scrollLeft = newScrollLeft;
+            container.scrollTop = newScrollTop;
+        });
+
+        document.addEventListener('dragend', () => {
+            // Remove the event listeners
+            document.removeEventListener('drag', () => { });
+            document.removeEventListener('dragend', () => { });
+        });
+    });
 </script>

@@ -85,3 +85,7 @@ a {
 ::-webkit-scrollbar-thumb {
 	background-color: transparent;
 }
+
+.story {
+	min-width: 138px;
+}
