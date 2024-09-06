@@ -125,11 +125,12 @@
                                     </div>
                                     <div class="p-4">
                                         <a class="text-white px-5 py-3 bg-green-500  rounded-full"
-                                            href="<?= $business['phone_number'] ?>"> <i class="fa fa-phone"></i></a>
-                                        <a class="text-white  px-5 py-3  bg-secondary rounded-full"
+                                            href="tel:<?= $business['phone_number'] ?>"> <i class="fa fa-phone"></i></a>
+                                        <a class="text-white  px-5 py-3  bg-secondary rounded-full" target="_blank"
                                             href="<?= $business['website'] ?>"> <i class="fa fa-globe"></i></a>
                                         <a class="text-white  px-5 py-3  bg-accent rounded-full"
-                                            href="<?= $business['email_address'] ?>"> <i class="fa fa-envelope"></i></a>
+                                            href="maito:<?= $business['email_address'] ?>"> <i
+                                                class="fa fa-envelope"></i></a>
 
                                     </div>
                                 </div>
