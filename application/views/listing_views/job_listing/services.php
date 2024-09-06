@@ -26,8 +26,8 @@
             <div class=" flex flex-col tab-panel fade show active" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">
 
 
-                <a href="<?= base_url('post-a-job') ?>" class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i
-                        class="fa fa-plus"></i> Post a
+                <a href="<?= base_url('job_listing_form') ?>"
+                    class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> Post a
                     Job Requirement</a>
 
                 <p class="text-gray-500 text-md px-4 pt-6 pb-2">All Posts</p>
@@ -96,7 +96,7 @@
                 style="display:none">
                 <div class="flex flex-col">
 
-                    <a href="<?= base_url('post-a-business') ?>"
+                    <a href="<?= base_url('business_listing_form') ?>"
                         class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> List
                         Your Business</a>
 
