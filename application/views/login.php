@@ -1,3 +1,8 @@
+<?php if ($this->session->flashdata('error')) { ?>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+        <strong class="font-bold"><?php echo $this->session->flashdata('error'); ?></strong>
+    </div>
+<?php } ?>
 <div class="container mx-auto px-4 pt-16 md:pt-24 flex flex-col items-center">
     <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Login</h1>
     <form class="w-full max-w-md"
