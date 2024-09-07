@@ -7,7 +7,12 @@
     </div>
     <div class="user p-4 flex flex-row">
         <a href="#" class="p-2"><img src="<?= base_url() . 'assets/images/icons/chat.png' ?>" width="30px" alt=""></a>
-        <a href="#" class="p-2"><img src="<?= base_url() . 'assets/images/icons/user.png' ?>" width="30px"
-                alt="Logo"></a>
+        <?php if ($this->session->userdata('login')): ?>
+            <a href="<?= base_url('logout') ?>" class="p-2"><img src="<?= base_url() . 'assets/images/icons/logout.png' ?>"
+                    width="30px" alt="Logout"></a>
+        <?php else: ?>
+            <a href="<?= base_url('login') ?>" class="p-2"><img src="<?= base_url() . 'assets/images/icons/user.png' ?>"
+                    width="30px" alt="Logo"></a>
+        <?php endif; ?>
     </div>
 </div>

@@ -96,6 +96,12 @@ class WebController extends CI_Controller
         // Render the main layout view
         $this->load->view('/layouts/main', $data);
     }
+    public function login()
+    {
+        $data['slot'] = $this->load->view('login', '', TRUE);
 
+        $this->load->view('/layouts/main', $data);
+
+    }
 
 }

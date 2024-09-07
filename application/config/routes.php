@@ -54,13 +54,14 @@ $route['default_controller'] = 'WebController/index';
 
 $route['services'] = 'WebController/services';
 $route['social'] = 'WebController/social';
+$route['login'] = 'WebController/login';
 
 
 
 // $route['home'] = 'landing_page_controllers/LandingPagesController';
 
 // login route 
-$route['login'] = 'logincontroller/Login_Controller';
+$route['login-old'] = 'logincontroller/Login_Controller';
 $route['logout'] = 'logincontroller/Logout_Controller';
 //landing page
 

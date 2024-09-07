@@ -42,10 +42,17 @@ class Login_Controller extends CI_Controller
             $this->session->set_userdata('login', $userData->uid);
             $this->session->set_userdata('logged_uname', $userData->user_name);
 
-            echo true;
+            if (isset($_SESSION['intended_url']) && $_SESSION['intended_url'] != "") {
+                $url = $_SESSION['intended_url'];
+                unset($_SESSION['intended_url']);
+                redirect($url);
+            } else {
+                redirect(base_url());
+            }
 
         } else {
-            echo false;
+            $this->session->set_flashdata('error', 'Login Failed. Please try again.');
+            redirect(base_url('logincontroller'));
 
         }
     }

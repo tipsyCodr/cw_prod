@@ -168,9 +168,9 @@
     </div>
     <br>
     <div class="input_container">
-        
-        <div class="error_msg d-none text-center bg-danger fadOut border border-danger rounded p-2" >
-         
+
+        <div class="error_msg d-none text-center bg-danger fadOut border border-danger rounded p-2">
+
         </div>
         <label class="input_label" for="email_field">Email</label>
         <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg" class="icon">
@@ -225,7 +225,7 @@
                         setTimeout(function () {
                             window.location.href = "<?php echo base_url('/') ?>";
 
-                        },1500)
+                        }, 1500)
                     } else {
                         $('.error_msg').removeClass('d-none');
                         $('.error_msg').html('Invalid Credentials..');
