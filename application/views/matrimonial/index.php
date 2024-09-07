@@ -11,7 +11,7 @@
                         src="<?= base_url('assets/images/bride.jpg') ?>" alt="">
                 </div>
                 <div class="matrimonial-card-body">
-                    <p class="font-bold text-xl ">Groom</p>
+                    <p class="font-bold text-xl ">Bride</p>
                 </div>
             </button>
         </div>
