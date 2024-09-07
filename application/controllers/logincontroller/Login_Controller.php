@@ -52,7 +52,7 @@ class Login_Controller extends CI_Controller
 
         } else {
             $this->session->set_flashdata('error', 'Login Failed. Please try again.');
-            redirect(base_url('logincontroller'));
+            redirect(base_url('login'));
 
         }
     }
