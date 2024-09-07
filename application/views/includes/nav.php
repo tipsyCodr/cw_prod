@@ -49,7 +49,12 @@
                     </i> -->
 
                 </a></li>
-            <li><a href="<?= base_url('profile') ?>" class="nav-item w-full text-decoration-none">
+            <li>
+                <a href="<?php if (!$this->session->userdata('login')) {
+                    echo base_url('login');
+                } else {
+                    echo base_url('profile');
+                } ?>" class="nav-item w-full text-decoration-none">
                     <img src="<?= base_url('assets/images/icons/user.png') ?>" alt="profile icon" width="37em"
                         height="37em" />
                     <!-- <i

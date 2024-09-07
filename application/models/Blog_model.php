@@ -83,6 +83,11 @@ class Blog_model extends CI_Model
         $this->db->where('post_id', $post_id);
         $this->db->update('posts', array('post_likes' => $newlikes));
 
+        // Check if the update was successful
+        if (!$this->db->affected_rows()) {
+            log_message('error', 'Failed to update post likes for post_id ' . $post_id);
+        }
+
         // Calculate the new like count
         $like_count = $newlikes ? count(array_filter(explode(',', $newlikes))) : 0;
 

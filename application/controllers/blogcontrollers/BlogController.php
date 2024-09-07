@@ -61,15 +61,19 @@ class BlogController extends CI_Controller
 	{
 		$post_id = $this->input->post('id');
 
-		$likeData = $this->Blog_model->handleLikes($post_id);
-
-		echo json_encode($likeData);
+		try {
+			$likeData = $this->Blog_model->handleLikes($post_id);
+			echo json_encode($likeData);
+		} catch (Exception $e) {
+			echo json_encode(array('status' => 'error', 'message' => $e->getMessage()));
+		}
 
 
 	}
 
 	public function add_blog()
 	{
+
 		$this->load->library('upload');
 		$this->load->database(); // Load the database library
 
@@ -77,6 +81,7 @@ class BlogController extends CI_Controller
 		$imageName = [];
 
 		if (is_array($files['name'])) {
+
 			$cpt = count($files['name']);
 			for ($i = 0; $i < $cpt; $i++) {
 				if ($files['name'][$i] != "") {
@@ -134,17 +139,18 @@ class BlogController extends CI_Controller
 
 		// Combine all image names into a single string
 		$imageNames = implode(',', $imageName);
-
 		// Capture the blog caption
 		$blogCaption = $this->input->post('blog_caption');
 
+
 		$isInserted = $this->Blog_model->add_blog($imageNames, $blogCaption);
+
 		if ($isInserted) {
 			$this->session->set_flashdata('added_blog', 'Blog Added Successfully');
-			redirect("/blog");
+			redirect("/social");
 		} else {
 			$this->session->set_flashdata('error_blog', 'There Is an Error');
-			redirect("/blog");
+			redirect("/social");
 		}
 	}
 

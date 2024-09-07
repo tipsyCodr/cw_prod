@@ -1,12 +1,11 @@
-
-<?php if(!$this->session->has_userdata('login')): ?>
+<?php if (!$this->session->has_userdata('login')): ?>
     <script>
         swal("Information..!", "You need to login first to view this page", "info");
         setTimeout(function () {
-            window.location.href = "<?=base_url()?>login";
+            window.location.href = "<?= base_url() ?>login";
         }, 2000);
     </script>
-   
+
 <?php endif; ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet"
@@ -152,7 +151,7 @@ $image_urls = explode(",", $blog->image_url);
             <p class='fs-5'><?= $blog->content ?></p>
         </div>
 
-        <div class="post-actions mt-4">
+        <div class="post-actions mt-4" id="postActions">
             <div class="actions d-flex justify-content-start gap-5 align-items-center">
                 <span class="d-flex flex-column align-items-center">
 
@@ -268,35 +267,34 @@ $image_urls = explode(",", $blog->image_url);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-
-    // handle like button 
+    // Handle like button
     $(document).on('click', '.like-btn', function () {
-        var $this = $(this);
-        var dataId = $(this).attr('data-id');
-        var likeCountSpan = $this.siblings('span');
+        const $this = $(this);
+        const dataId = $this.attr('data-id');
+        const likeCountSpan = $this.siblings('span');
 
         $.ajax({
             url: '<?= base_url(); ?>increaseLike',
             type: 'POST',
             data: { id: dataId },
+            dataType: 'json',  // Expect JSON response from server
             success: function (response) {
-                var response = JSON.parse(response);
-
-                if (response.status == 'liked') {
+                if (response.status === 'liked') {
                     likeCountSpan.text(response.like_count);
                     $this.removeClass('btn-outline-primary').addClass('btn-danger');
-                }
-                if (response.status == 'disliked') {
+                } else if (response.status === 'disliked') {
                     likeCountSpan.text(response.like_count);
                     $this.removeClass('btn-danger').addClass('btn-outline-primary');
                 }
             }
         });
     });
-    // comment add 
+
+    // Comment add
     $("#comment_form").submit(function (e) {
         e.preventDefault();
-        var formData = $(this).serialize();
+
+        const formData = $(this).serialize();
 
         $.ajax({
             url: "/add_comments",
@@ -304,34 +302,33 @@ $image_urls = explode(",", $blog->image_url);
             data: formData,
             success: function (data) {
                 if (data) {
-                    $('#comment').val('');
-                    $('#comment_form').trigger("reset");
-                    // alert('you have commented on a post');
-                    location.reload();
+                    $('#comment').val(''); // Clear comment box
+                    $('#comment_form').trigger("reset"); // Reset form
+                    location.reload(); // Reload page
                 }
             }
         });
     });
 
-
+    // Initialize Owl Carousel
     $(document).ready(function () {
         $('.owl-carousel').owlCarousel({
             loop: true,                // Enables infinite loop
             margin: 10,                // Margin between items
             dots: true,                // Show pagination dots
-            autoplay: false,            // Automatically play the carousel
-            autoplayTimeout: 2000,     // Time between slides (3 seconds)
+            autoplay: false,           // Disable autoplay
+            autoplayTimeout: 2000,     // Autoplay timeout (if enabled)
             autoplayHoverPause: true,  // Pause on hover
             smartSpeed: 800,           // Transition speed (800ms)
             responsive: {
                 0: {
-                    items: 1           // Number of items for screen width 0-599px
+                    items: 1           // Items for screen width 0-599px
                 },
                 600: {
-                    items: 1        // Number of items for screen width 600-999px
+                    items: 1           // Items for screen width 600-999px
                 },
                 1000: {
-                    items: 1     // Number of items for screen width 1000px and above
+                    items: 1           // Items for screen width 1000px and above
                 }
             }
         });

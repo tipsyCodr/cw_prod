@@ -115,6 +115,16 @@
 
     /* for tablet and mobile */
 </style>
+<?php if ($this->session->flashdata('added_blog')): ?>
+    <div class="fixed bottom-0 left-0 right-0 bg-green-500 text-white p-4 text-center">
+        <?= $this->session->flashdata('added_blog'); ?>
+    </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('error_blog')): ?>
+    <div class="fixed bottom-0 left-0 right-0 bg-green-500 text-white p-4 text-center">
+        <?= $this->session->flashdata('error_blog'); ?>
+    </div>
+<?php endif; ?>
 <!-- popup box -->
 <div id="create_blog" class="popup-overlay transition-all flex justify-center items-start" style="display:none">
 
@@ -158,12 +168,12 @@
                     <div class="mb-3">
                         <textarea id="caption"
                             class=" w-full px-4 text-2xl border-transparent focus:border-transparent focus:ring-0"
-                            placeholder="Whats on your mind?" required rows=" 6"></textarea>
+                            name="blog_caption" placeholder="Whats on your mind?" required rows=" 6"></textarea>
                     </div>
                     <div class="mb-3">
                         <input type="file"
                             class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            name="blog_image[]" id="blog_image" required multiple />
+                            name="blog_image[]" placeholder="Add images" id="blog_image" required multiple />
                     </div>
                     <div id="image-preview" class="grid grid-cols-3 gap-4 overflow-y-auto max-h-96">
                     </div>
@@ -233,7 +243,7 @@
             </li>
         </ul>
     </div>
-    <div class="main px-3">
+    <div class="main px-3 pb-10">
         <div class="flex items-center justify-between my-3 top-bar">
             <div class="text-left">
                 <h2 class="text-2xl  font-black"> <i class="fas  fa-fire-alt text-red-600 mr-2"></i>
@@ -303,16 +313,18 @@
                     </a>
                     <div class="card-body mb-5">
                         <div class='py-2 border-b-2 bg-gray-100 flex justify-evenly items-center'>
-                            <a class='flex  items-center block cursor-pointer ' href="#"> <i
+                            <a class='flex like-btn items-center block cursor-pointer ' data-id="<?= $blog_id; ?>"> <i
                                     class="fa-regular fa-2x fa-heart hover:text-red-500 transition-all "></i>
-                                <p class="p-2">Like</p>
+
+                                <span class="p-2">Like</span>
                             </a>
-                            <a class='flex  items-center block cursor-pointer ' href="#"> <i
+                            <a class='flex  items-center block cursor-pointer '
+                                href="<?= base_url('blog_details/' . $blog_id . "#comment"); ?>"> <i
                                     class="fa-regular fa-2x fa-comment hover:text-blue-500 transition-all "></i>
                                 <p class="p-2">Comments</p>
                             </a>
-                            <a class='flex  items-center block cursor-pointer ' href="#" data-bs-toggle="modal"
-                                data-bs-target="#shareModal"> <i
+                            <a class='flex  items-center block cursor-pointer '
+                                href="<?= base_url('blog_details/' . $blog_id . '?share=true'); ?>" target="_blank"> <i
                                     class="fa hover:text-blue-500 transition-all fa-2x fa-share"></i>
                                 <p class="p-2">Share</p>
                             </a>
@@ -321,7 +333,8 @@
                         <div class="flex justify-start my-2">
                             <div class="flex items-center gap-x-2">
                                 <?php if ($likedstatus) { ?>
-                                    <p class=" " data-id="<?= $blog_id; ?>"><i class="fa fa-heart text-red-400"></i></p>
+                                    <p class=" " id='like-<?= $blog_id; ?>' data-id="<?= $blog_id; ?>"><i
+                                            class="fa fa-heart text-red-400"></i></p>
 
                                 <?php } else { ?>
                                     <p class=" rounded-full text-white" data-id="<?= $blog_id; ?>"><i
@@ -337,6 +350,12 @@
                                 <span>10+</span>
 
                             </div>
+                            <div class="">
+                                <a
+                                    href="https://api.whatsapp.com/send/?text=<?= base_url('blog_details/' . $blog_id . '?share=true'); ?>/&type=custom_url&app_absent=0"><i
+                                        class="fa-brands fa-whatsapp text-green-600"></i></a>
+
+                            </div>
                         </div>
                         <p class="card-text"><?= $blog['content']; ?><br /><a href="blog_details/<?= $blog_id; ?>"
                                 class="text-primary text-decoration-none">Read more..</a></p>
@@ -345,13 +364,15 @@
 
             </div>
         </div>
-
         <?php
             }
         } else {
             ?>
     <h1 class="text-center font-black">There is No Post yet..</h1>
 <?php } ?>
+<div>
+    <p class="text-center text-gray-700 mb-[50px]">End Of Post</p>
+</div>
 <!-- loop ends -->
 </div>
 
@@ -418,47 +439,52 @@
 
 
 <script>
-    $(document).ready(function () {
-        var offset = $(".side-bar.left").offset();
-        var topPadding = 20; //if want a bit padding on top
-        var rightTopPadding = 20; //if want a bit padding on top
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > offset.top) {
-                $('.side-bar.left').css('margin-top', $(window).scrollTop() - offset.top + topPadding);
-                $('.side-bar.right').css('margin-top', $(window).scrollTop() - offset.top + rightTopPadding);
-            } else {
-                $('.side-bar.left').css('margin-top', 0);
-                $('.side-bar.right').css('margin-top', 0);
-            }
+    document.addEventListener('DOMContentLoaded', function () {
+        const $leftSidebar = $('.side-bar.left');
+        const $rightSidebar = $('.side-bar.right');
+        const offset = $leftSidebar.offset();
+        const topPadding = 20;
+        const rightTopPadding = 20;
+
+        // Scroll Event - Using debounce to reduce frequency
+        $(window).on('scroll', function () {
+            const scrollTop = $(window).scrollTop();
+            const marginTop = scrollTop > offset.top ? scrollTop - offset.top : 0;
+
+            $leftSidebar.css('margin-top', marginTop + topPadding);
+            $rightSidebar.css('margin-top', marginTop + rightTopPadding);
         });
 
-        $('#blog_image').on('chan ge', function () {
-            var previewContainer = $('#image-preview');
+        // Image preview for blog image input
+        $('#blog_image').on('change', function () {
+            const previewContainer = $('#image-preview');
             previewContainer.empty(); // Clear previous previews
-            var files = this.files;
+            const files = this.files;
 
-            $.each(files, function (i, file) {
-                // Ensure the file is an image
+            $.each(files, (i, file) => {
                 if (file.type.startsWith('image/')) {
-                    var reader = new FileReader();
+                    const reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        var img = $('<img>').attr('src', e.target.result)
-                            .addClass('img-thumbnail') // Bootstrap class for styling the preview
+                    reader.onload = (e) => {
+                        const img = $('<img>')
+                            .attr('src', e.target.result)
+                            .addClass('img-thumbnail')
                             .css({
-                                'width': '150px',   // Uniform width
-                                'height': '150px',  // Uniform height
-                                'object-fit': 'cover', // Ensure the image covers the space nicely
-                                'border-radius': '10px', // Rounded corners for a polished look
-                                'box-shadow': '0px 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
-                                'margin': '10px',
-                                'cursor': 'pointer', // Change cursor to pointer on hover
-                                'transition': 'transform 0.2s ease' // Smooth hover effect
+                                width: '150px',
+                                height: '150px',
+                                objectFit: 'cover',
+                                borderRadius: '10px',
+                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                                margin: '10px',
+                                cursor: 'pointer',
+                                transition: 'transform 0.2s ease'
                             });
-                        img.on('click', function () {
+
+                        img.on('click', () => {
                             $('#modalImage').attr('src', e.target.result);
                             $('#imageModal').modal('show');
                         });
+
                         previewContainer.append(img);
                     };
 
@@ -467,66 +493,84 @@
             });
         });
 
-    });
-
-    function closePopup() {
-        $('#add_blog')[0].reset();
-        $('#image-preview').empty();
-        $('#create_blog').hide();
-    }
-    function openPopup() {
-        $('#create_blog').show();
-        // $('#add_blog')[0].reset();
-        // $('#image-preview').empty();
-    }
-
-    $(document).keydown(function (e) {
-        if ($('#create_blog').is(':visible') && e.keyCode == 27) {
-            closePopup();
+        // Open/Close popup functions
+        function closePopup() {
+            $('#add_blog')[0].reset();
+            $('#image-preview').empty();
+            $('#create_blog').hide();
         }
-    });
-    const container = document.querySelector('.stories-wrapper');
 
-    container.addEventListener('dragstart', (e) => {
-        // Store the initial scroll position
-        const initialScrollLeft = container.scrollLeft;
-        const initialScrollTop = container.scrollTop;
+        function openPopup() {
+            $('#create_blog').show();
+        }
 
-        // Store the mouse position
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-
-        // Add event listeners for drag and dragend
-        document.addEventListener('drag', (e) => {
-            // Calculate the new scroll position based on the mouse movement
-            const newScrollLeft = initialScrollLeft + (e.clientX - mouseX);
-            const newScrollTop = initialScrollTop + (e.clientY - mouseY);
-
-            // Update the scroll position
-            container.scrollLeft = newScrollLeft;
-            container.scrollTop = newScrollTop;
+        // Close popup on Escape key press
+        $(document).on('keydown', (e) => {
+            if ($('#create_blog').is(':visible') && e.keyCode === 27) {
+                closePopup();
+            }
         });
 
-        document.addEventListener('dragend', () => {
-            // Remove the event listeners
-            document.removeEventListener('drag', () => { });
-            document.removeEventListener('dragend', () => { });
+        // Drag scrolling for stories
+        const container = document.querySelector('.stories-wrapper');
+        container.addEventListener('mousedown', (e) => {
+            const startX = e.pageX - container.offsetLeft;
+            const startScrollLeft = container.scrollLeft;
+
+            const onMouseMove = (e) => {
+                const x = e.pageX - container.offsetLeft;
+                const scrollDistance = (x - startX) * 2; // Adjust the scroll speed
+                container.scrollLeft = startScrollLeft - scrollDistance;
+            };
+
+            const onMouseUp = () => {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+            };
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
         });
+
+        // Disable/Enable post button based on caption input
+        const caption = document.getElementById('caption');
+        const postBtn = document.getElementById('post-btn');
+
+        caption.addEventListener('input', () => {
+            const isCaptionFilled = caption.value.trim() !== '';
+            postBtn.disabled = !isCaptionFilled;
+            postBtn.classList.toggle('bg-gray-300', !isCaptionFilled);
+        });
+
+
+        // Like button handler (Repeated from earlier)
+        $(document).on('click', '.like-btn', function () {
+            const $this = $(this);
+            const dataId = $this.attr('data-id');
+            const likeIcon = $this.children('i');
+            const likeCountSpan = $('#like-' + dataId);
+
+            fetch('<?= base_url(); ?>increaseLike', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: dataId })
+            })
+                .then(response => response.json())
+                .then(response => {
+                    // const likeCountSpan = $this.nextElementSibling;
+                    if (response.status === 'liked') {
+                        console.log(response)
+                        likeIcon.removeClass('fa-regular').addClass('fa-solid text-red-500')
+                    } else if (response.status === 'disliked') {
+                        console.log('Like disliked')
+                        likeIcon.removeClass('fa-solid text-red-500').addClass('fa-regular');
+
+                    }
+                });
+        });
+
     });
 
 
-    // Disable the post button if the caption is empty
-    const caption = document.getElementById('caption');
-    const postBtn = document.getElementById('post-btn');
 
-    caption.addEventListener('input', function () {
-
-        if (caption.value.trim() !== '') {
-            postBtn.disabled = false;
-            postBtn.classList.remove('bg-gray-300');
-        } else {
-            postBtn.classList.add('bg-gray-300');
-            postBtn.disabled = true;
-        }
-    });
 </script>

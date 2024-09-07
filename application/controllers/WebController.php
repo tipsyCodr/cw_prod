@@ -64,10 +64,38 @@ class WebController extends CI_Controller
         $this->load->model('Blog_model');
         $this->load->model('joblistingmodel');
 
+        // Fetch all blog posts
         $data['blogs'] = $this->Blog_model->get_all_blog_posts();
+
+        // Get all user_ids from blog posts
+        $user_ids = array_column($data['blogs'], 'user_id');
+
+        if (!empty($user_ids)) {
+            // Fetch all users in one query
+            $this->db->where_in('uid', $user_ids);
+            $user_query = $this->db->get('user_registration');
+
+            // Map users by their uid
+            $users = [];
+            foreach ($user_query->result() as $user) {
+                $users[$user->uid] = $user->user_name;
+            }
+
+            // Assign the username to each blog post
+            foreach ($data['blogs'] as $key => $blog) {
+                $data['blogs'][$key]['username'] = isset($users[$blog['user_id']]) ? $users[$blog['user_id']] : 'Unknown';
+            }
+        }
+
+        // Fetch all job data
         $data['jobs'] = $this->joblistingmodel->getAllJobData();
+
+        // Render the 'social/main' view
         $data['slot'] = $this->load->view('social/main', $data, TRUE);
+
+        // Render the main layout view
         $this->load->view('/layouts/main', $data);
     }
+
 
 }
