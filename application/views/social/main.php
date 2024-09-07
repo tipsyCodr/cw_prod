@@ -119,7 +119,7 @@
 <div id="create_blog" class="popup-overlay transition-all flex justify-center items-start" style="display:none">
 
     <div
-        class="popup-box rounded-lg  transition-all overflow-hidden shadow fixed  bg-white z-[1022] w-3/4 h-3/4 max-w-[450px] max-h-[600px]">
+        class="popup-box rounded-lg  transition-all overflow-hidden shadow fixed  bg-white z-[1022] w-3/4 h-3/4 min-w-[350px] max-w-[450px] max-h-[600px]">
         <div class="popup-header border border-bottom p-3 flex justify-between">
             <h6 class="font-black text-xl">Create Post</h6>
             <button class="text-black hover:text-gray-800 transition duration-300 focus:outline-none"
