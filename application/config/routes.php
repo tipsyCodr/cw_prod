@@ -55,6 +55,7 @@ $route['default_controller'] = 'WebController/index';
 $route['services'] = 'WebController/services';
 $route['social'] = 'WebController/social';
 $route['login'] = 'WebController/login';
+$route['matrimonial'] = 'WebController/matrimonial';
 
 
 
@@ -93,7 +94,7 @@ $route['get_all_city'] = 'joblistingcontrollers/JobListController/get_all_cities
 //matrimonial section
 $route['matrimonial_form'] = 'matrimonialcontrollers/MatriMonialController';
 $route['matrimonial_form_submit'] = 'matrimonialcontrollers/MatriMonialController/submit_form';
-$route['matrimonial'] = 'matrimonialcontrollers/MatriMonialController/matrimonial';
+$route['matrimonial-old'] = 'matrimonialcontrollers/MatriMonialController/matrimonial';
 $route['matrimonial_find_match'] = 'matrimonialcontrollers/MatriMonialController/find_match';
 $route['matrimonial_find_match_result'] = 'matrimonialcontrollers/MatriMonialController/find_match_result';
 $route['matromonial_profile/(:num)'] = 'matrimonialcontrollers/MatriMonialController/matromonial_profile/$1';
