@@ -91,15 +91,20 @@
                                         </a>
                                     </div>
                                 </div>
+                                <div class="interaction flex justify-evenly items-center pt-2 border-bottom "
+                                    style="border-top:1px solid #dfdfdf">
+                                    <a class="flex justify-evenly items-center like-btn" href="#"><i
+                                            class="p-2 fa-regular fa-heart "
+                                            style="font-size:1.5rem"></i><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?>
+                                    </a>
+                                    <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-message "
+                                            style="font-size:1.5rem"></i>
+                                        <?= $data['comment_count'][$blog['post_id']] ?? 0 ?> </a>
+                                    <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-share "
+                                            style="font-size:1.5rem"></i></a>
+                                </div>
                                 <div class=" cube-body">
-                                    <div class="post-text  overflow-hidden" style="max-height:3rem;">
-                                        <a href="<?= site_url() . 'blog_details/' . $blog['post_id'] ?>">
-                                            <h3 class="font-bold text-2xl"
-                                                style="overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                                <?= $blog['title']; ?>
-                                            </h3>
-                                        </a>
-                                    </div>
+
                                     <div class="post-text pb-4 overflow-hidden" style="max-height: 6rem;">
                                         <a href="<?= site_url() . 'blog_details/' . $blog['post_id'] ?>">
                                             <p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
@@ -107,18 +112,7 @@
                                             </p>
                                         </a>
                                     </div>
-                                    <div class="interaction flex justify-evenly items-center pt-2"
-                                        style="border-top:1px solid #dfdfdf">
-                                        <a class="flex justify-evenly items-center like-btn" href="#"><i
-                                                class="p-2 fa-regular fa-heart "
-                                                style="font-size:1.5rem"></i><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?>
-                                        </a>
-                                        <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-message "
-                                                style="font-size:1.5rem"></i>
-                                            <?= $data['comment_count'][$blog['post_id']] ?? 0 ?> </a>
-                                        <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-share "
-                                                style="font-size:1.5rem"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         <?php endforeach; ?>
