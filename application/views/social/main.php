@@ -79,18 +79,19 @@
         z-index: 1010;
     }
 
+
     .popup-box {
-        position: fixed;
+        /* position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: #fff;
-        z-index: 1022;
         width: 500px;
         height: 70vh;
         max-height: 600px;
         box-shadow: 1px 1px 10px #000;
-        border-radius: 20px;
+        border-radius: 10px; */
+        /* z-index: 1022; */
     }
 
     /* popup styling */
@@ -114,13 +115,82 @@
 
     /* for tablet and mobile */
 </style>
+<!-- popup box -->
+<div id="create_blog" class="popup-overlay transition-all flex justify-center items-start" style="display:none">
+
+    <div
+        class="popup-box rounded-lg  transition-all overflow-hidden shadow fixed  bg-white z-[1022] w-3/4 h-3/4 max-w-[450px] max-h-[600px]">
+        <div class="popup-header border border-bottom p-3 flex justify-between">
+            <h6 class="font-black text-xl">Create Post</h6>
+            <button class="text-black hover:text-gray-800 transition duration-300 focus:outline-none"
+                onclick="closePopup();">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="popup-body h-full">
+            <div class="container mx-auto p-4 max-w-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center py-4">
+                        <i class="fas text-red-500 fa-user-circle fa-2x"></i>
+                        <div class="flex flex-col ">
+                            <?php if (!$this->session->userdata('login')): ?>
+                                <span class="font-black ml-2">Anonymous</span>
+                            <?php else: ?>
+                                <span
+                                    class="font-black ml-2"><?= $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?></span>
+                            <?php endif; ?>
+                            <div class="mt-0">
+                                <!-- <label for="visibility" class="block text-sm font-medium text-gray-700">Visibility</label> -->
+                                <select id="visibility" name="visibility"
+                                    class="px-1 w-fit ml-2 block w-full text-sm text-gray-900 transition duration-150 font-bold ease-in-out bg-gray-300 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option value="open"> Open</option>
+                                    <option value="closed">Closed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <form id="add_blog" action="<?= base_url('add_blog') ?>" method="post" enctype="multipart/form-data"
+                    class="space-y-4">
+                    <div class="mb-3">
+                        <textarea id="caption"
+                            class=" w-full px-4 text-2xl border-transparent focus:border-transparent focus:ring-0"
+                            placeholder="Whats on your mind?" required rows=" 6"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="file"
+                            class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            name="blog_image[]" id="blog_image" required multiple />
+                    </div>
+                    <div id="image-preview" class="grid grid-cols-3 gap-4 overflow-y-auto max-h-96">
+                    </div>
+
+                    <div class="text-right">
+                        <button type="submit" id="post-btn"
+                            class="py-1 text-md font-bold bg-accent bg-gray-300 text-white w-full rounded-lg" disabled>
+                            Post
+                        </button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- popup box -->
+
 
 <div class="post-wrapper flex flex-row">
     <div class="side-bar left sticky-left ">
 
         <ul class="space-y-2">
-            <li
-                class=" rounded-lg p-2 <?= current_url() === base_url('social') ? 'active' : '' ?>   hover:bg-gray-300 transition duration-300">
+            <li class=" rounded-lg p-2 <?= current_url() === base_url('social') ? 'active' : '' ?> hover:bg-gray-300
+                transition duration-300">
                 <div class="flex items-center">
                     <div class="" style="width: 60px;"><i class="fas fa-2x fa-fire-alt text-red-500 mr-2"></i></div>
                     <a class="" href="<?= base_url('social') ?>">Trending </a>
@@ -167,7 +237,7 @@
         <div class="flex items-center justify-between my-3 top-bar">
             <div class="text-left">
                 <h2 class="text-2xl  font-black"> <i class="fas  fa-fire-alt text-red-600 mr-2"></i>
-                    Trending </h2>
+                    Trending Posts </h2>
             </div>
             <p class="font-bold lg:block hidden ">Recent Posts</p>
             <div class="flex items-center">
@@ -175,6 +245,8 @@
                     onclick="openPopup();">
                     <i class="fa fa-plus me-2"></i>Create Post
                 </button>
+
+
             </div>
         </div>
         <!-- loop start -->
@@ -197,19 +269,19 @@
                 $like_count = $likes ? count(array_filter(explode(',', $likes))) : 0;
                 $images = explode(',', $images);
                 ?>
-                <div class="mb-4">
-                    <div class="flex items-center my-6 ">
-                        <a href="profile/<?= $blog['user_id']; ?>" class="flex items-center">
+                <div class="py-6 border-y ">
+                    <div class="flex items-center ">
+                        <a href="profile/<?= $blog['user_id']; ?>" class="flex ">
                             <?php if (empty($blog['user_image'])): ?>
-                                <i class="fas fa-3x fa-user-circle h-10 w-10 rounded-full mr-2 text-accent"></i>
+                                <i class="fas fa-2x fa-user-circle h-10 w-10 rounded-full  text-accent"></i>
                             <?php else: ?>
                                 <img src="<?= base_url() ?>/uploads/user_images/<?= $blog['user_image']; ?>" alt=""
-                                    class="h-10 w-10 rounded-full mr-2" />
+                                    class="h-10 w-10 rounded-full " />
                             <?php endif; ?>
-                            <div class="flex flex-col">
+                            <div class="">
                                 <span class="font-bold"><?= $blog['first_name'] . ' ' . $blog['last_name']; ?></span>
                                 <span
-                                    class="text-black font-bold text-xl px-4"><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
+                                    class="text-black font-bold text-xl "><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
                             </div>
                         </a>
                     </div>
@@ -343,54 +415,7 @@
 
 
 </div>
-<div id="create_blog" class="popup-overlay " style="display:none">
-    <div class="popup-box overflow-hidden">
-        <div class="popup-header p-3 flex flex-row justify-between">
-            <h6 class=" font-black">Create Post</h6>
-            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"
-                onclick="closePopup();"></button>
 
-        </div>
-        <div class="popup-body h-full">
-            <div class="container mx-auto p-4 max-w-md">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center py-4">
-                        <i class="fas text-danger fa-user-circle fa-3x"></i>
-                        <?php if (!$this->session->userdata('login')): ?>
-                            <span class="font-black ml-2">Anonymous</span>
-                        <?php else: ?>
-                            <span
-                                class="font-black ml-2"><?= $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?></span>
-                        <?php endif; ?>
-                    </div>
-                </div>
-
-                <form id="add_blog" action="<?= base_url('add_blog') ?>" method="post" enctype="multipart/form-data"
-                    class="space-y-4">
-
-                    <div class="mb-3">
-                        <textarea id="caption"
-                            class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            placeholder="Whats on your mind?" required rows=" 4"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <input type="file"
-                            class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            name="blog_image[]" id="blog_image" required multiple />
-                    </div>
-                    <div id="image-preview" class="grid grid-cols-3 gap-4 overflow-y-auto max-h-96">
-                    </div>
-
-                    <div class="text-right">
-                        <button type="submit" class="py-2 text-xl font-bold bg-accent text-white w-full rounded-full">
-                            <i class="fas fa-plus my-2"></i> Create Post
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
     $(document).ready(function () {
@@ -407,7 +432,7 @@
             }
         });
 
-        $('#blog_image').on('change', function () {
+        $('#blog_image').on('chan ge', function () {
             var previewContainer = $('#image-preview');
             previewContainer.empty(); // Clear previous previews
             var files = this.files;
@@ -443,6 +468,7 @@
         });
 
     });
+
     function closePopup() {
         $('#add_blog')[0].reset();
         $('#image-preview').empty();
@@ -454,6 +480,11 @@
         // $('#image-preview').empty();
     }
 
+    $(document).keydown(function (e) {
+        if ($('#create_blog').is(':visible') && e.keyCode == 27) {
+            closePopup();
+        }
+    });
     const container = document.querySelector('.stories-wrapper');
 
     container.addEventListener('dragstart', (e) => {
@@ -481,5 +512,21 @@
             document.removeEventListener('drag', () => { });
             document.removeEventListener('dragend', () => { });
         });
+    });
+
+
+    // Disable the post button if the caption is empty
+    const caption = document.getElementById('caption');
+    const postBtn = document.getElementById('post-btn');
+
+    caption.addEventListener('input', function () {
+
+        if (caption.value.trim() !== '') {
+            postBtn.disabled = false;
+            postBtn.classList.remove('bg-gray-300');
+        } else {
+            postBtn.classList.add('bg-gray-300');
+            postBtn.disabled = true;
+        }
     });
 </script>
