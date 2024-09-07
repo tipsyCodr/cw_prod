@@ -51,7 +51,7 @@ class Login_Controller extends CI_Controller
             }
 
         } else {
-            $this->session->set_flashdata('error', 'Login Failed. Please try again.');
+            $this->session->set_flashdata('error', 'Incorrect Username or Password.');
             redirect(base_url('login'));
 
         }
