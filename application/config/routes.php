@@ -56,6 +56,7 @@ $route['services'] = 'WebController/services';
 $route['social'] = 'WebController/social';
 $route['login'] = 'WebController/login';
 $route['matrimonial'] = 'WebController/matrimonial';
+$route['matrimonial/search'] = 'WebController/searchMatrimonial';
 
 
 

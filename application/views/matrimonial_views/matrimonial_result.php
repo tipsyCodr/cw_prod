@@ -22,7 +22,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="row">
-                        <span class="lable-cstm-search" id="total-matches"><?= count($results['matches']) ?> Matches</span>
+                        <span class="lable-cstm-search" id="total-matches"><?= count($results['matches']) ?>
+                            Matches</span>
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12 hidden-sm hidden-xs">
@@ -75,7 +76,7 @@
                                     </a>
 
                                     <div class="profile-card-btn">
-                                        <a href="<?=base_url()?>matromonial_profile/<?php echo $result->uid; ?>"
+                                        <a href="<?= base_url() ?>matromonial_profile/<?php echo $result->uid; ?>"
                                             class="s-card-1 OpenSans-Light">View Full Profile</a>
                                     </div>
                                 </div>

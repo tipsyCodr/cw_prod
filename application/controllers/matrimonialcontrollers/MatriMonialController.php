@@ -193,6 +193,7 @@ class MatrimonialController extends CI_Controller
         $this->load->view('matrimonial_views/matrimonial_result', $viewData);
         $this->load->view('footer');
         $this->load->view('matrimonial_views/result_script');
+
     }
     public function get_cities_by_states()
     {
@@ -215,6 +216,14 @@ class MatrimonialController extends CI_Controller
             echo json_encode([]);
         }
     }
+    /**
+     * Handles member filter form submission
+     *
+     * Fetches member filter criteria from the request, logs the criteria for debugging, and
+     * passes the criteria to the model to fetch filtered results.
+     *
+     * @throws Exception
+     */
     public function member_filter()
     {
         $this->load->model('MatriMonialRegistrationModel');
@@ -282,10 +291,10 @@ class MatrimonialController extends CI_Controller
     {
         // Load the model
         $this->load->model('MatriMonialRegistrationModel');
-    
+
         // Retrieve matrimonial profile data by ID
         $data['matrimonial_profile'] = $this->MatriMonialRegistrationModel->getMatrimonialDataById($matrimonial_id);
-    
+
         // Load views with the data
         $this->load->view('header');
         $this->load->view('matrimonial_views/matrimonial_link');
@@ -294,7 +303,7 @@ class MatrimonialController extends CI_Controller
         $this->load->view('footer');
         $this->load->view('matrimonial_views/result_script');
     }
-    
+
 
 }
 
