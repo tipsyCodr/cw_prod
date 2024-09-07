@@ -40,6 +40,7 @@ class Login_Controller extends CI_Controller
         $userData = $this->userregistrationmodel->checkpassword($user_name, $user_pass);
         if ($userData) {
             $this->session->set_userdata('login', $userData->uid);
+            $this->session->set_userdata('logged_uname', $userData->user_name);
 
             echo true;
 

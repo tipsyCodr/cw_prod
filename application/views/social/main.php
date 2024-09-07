@@ -146,8 +146,7 @@
                             <?php if (!$this->session->userdata('login')): ?>
                                 <span class="font-black ml-2">Anonymous</span>
                             <?php else: ?>
-                                <span
-                                    class="font-black ml-2"><?= $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?></span>
+                                <span class="font-black ml-2"><?= $this->session->userdata('logged_uname'); ?></span>
                             <?php endif; ?>
                             <div class="mt-0">
                                 <!-- <label for="visibility" class="block text-sm font-medium text-gray-700">Visibility</label> -->
@@ -439,6 +438,16 @@
 
 
 <script>
+    // Open/Close popup functions
+    function closePopup() {
+        $('#add_blog')[0].reset();
+        $('#image-preview').empty();
+        $('#create_blog').hide();
+    }
+
+    function openPopup() {
+        $('#create_blog').show();
+    }
     document.addEventListener('DOMContentLoaded', function () {
         const $leftSidebar = $('.side-bar.left');
         const $rightSidebar = $('.side-bar.right');
@@ -493,16 +502,7 @@
             });
         });
 
-        // Open/Close popup functions
-        function closePopup() {
-            $('#add_blog')[0].reset();
-            $('#image-preview').empty();
-            $('#create_blog').hide();
-        }
 
-        function openPopup() {
-            $('#create_blog').show();
-        }
 
         // Close popup on Escape key press
         $(document).on('keydown', (e) => {
