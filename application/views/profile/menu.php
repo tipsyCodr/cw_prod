@@ -8,22 +8,36 @@
             </div>
 
         </div>
-        <div class="id-wrapper shadow-lg  mx-6  p-2 rounded-lg  bg-gradient-to-r from-orange-500 to-yellow-500">
+        <div class="id-wrapper shadow-lg  mx-4  p-2">
 
-            <div class="flex justify-start items-center ">
-                <div class="user-img">
-                    <?php if (isset($user) && !empty($user->user_profile_pic)): ?>
-                        <i class="fas fa-user-circle fa-6x text-accent bg-white rounded-full"></i>
-                    <?php else: ?>
-                        <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
-                            class="rounded-full">
-                    <?php endif; ?>
+            <div class="flex  flex-col justify-start items-center rounded-lg border ">
+                <div class=" p-2 flex logo items-center bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t">
+                    <img class="img-fluid" src="<?= base_url('assets/images/logo.png') ?>" style="width: 25%;" alt="">
+                    <div class="px-4">
+                        <p class="font-black text-2xl text-white uppercase  ">Patel Samaaj</p>
+                        <hr>
+                        <p class="font-thin text-2xl text-white">Address: Bhilai</p>
+                    </div>
                 </div>
-                <div class="user-info px-4">
-                    <h3 class="font-black text-2xl text-white fot"><?= $user->user_name ?></h3>
-                    <p class=" text-sm text-white"><i class="fa p-1.5 fa-envelope "></i> <?= $user->user_email ?></p>
-                    <p class="text-sm text-white"><i class="fa p-1.5 fa-phone"></i> <?= $user->user_mobile ?></p>
-                    <p class="text-sm text-white"><i class="fa p-1.5 fa-home"></i> <?= $user->user_address ?></p>
+                <div class="flex flex-row justify-start ">
+                    <div class="qr-code flex  items-center justify-center">
+                        <img style="width: 50%;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>"
+                            alt="">
+                    </div>
+                    <div class="user-info px-4">
+                        <h3 class="font-black text-2xl  fot"><?= $user->user_name ?></h3>
+                        <p class=" text-sm "><i class="fa p-1.5 fa-envelope "></i> <?= $user->user_email ?></p>
+                        <p class="text-sm "><i class="fa p-1.5 fa-phone"></i> <?= $user->user_mobile ?></p>
+                        <p class="text-sm "><i class="fa p-1.5 fa-home"></i> <?= $user->user_address ?></p>
+                    </div>
+                    <div class="user-img mt-[-50px]">
+                        <?php if (isset($user) && !empty($user->user_profile_pic)): ?>
+                            <i class="fas fa-user-circle fa-6x text-accent bg-white rounded-full"></i>
+                        <?php else: ?>
+                            <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
+                                class="rounded-full">
+                        <?php endif; ?>
+                    </div>
                 </div>
 
                 <!-- <div class="flex-1">

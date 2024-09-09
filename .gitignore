@@ -40,3 +40,4 @@ uploads/job_listing
 uploads/blog_images
 index.php
 .gitignore
+application/views/profile/menu.php
