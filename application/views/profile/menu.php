@@ -20,7 +20,7 @@
                     <?php endif; ?>
                 </div>
                 <div class="user-info px-4">
-                    <h3 class="font-black text-3xl text-white fot"><?= $user->user_name ?></h3>
+                    <h3 class="font-black text-2xl text-white fot"><?= $user->user_name ?></h3>
                     <p class=" text-sm text-white"><i class="fa p-1.5 fa-envelope "></i> <?= $user->user_email ?></p>
                     <p class="text-sm text-white"><i class="fa p-1.5 fa-phone"></i> <?= $user->user_mobile ?></p>
                     <p class="text-sm text-white"><i class="fa p-1.5 fa-home"></i> <?= $user->user_address ?></p>
