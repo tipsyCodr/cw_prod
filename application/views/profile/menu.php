@@ -25,6 +25,7 @@
                     <p class="text-sm text-white"><i class="fa p-1.5 fa-phone"></i> <?= $user->user_mobile ?></p>
                     <p class="text-sm text-white"><i class="fa p-1.5 fa-home"></i> <?= $user->user_address ?></p>
                 </div>
+
                 <!-- <div class="flex-1">
                     <a class="text-white border border-white px-2 py-1 rounded-full hover:bg-accent hover:text-white transition-colors"
                         href="#">View</a>
@@ -41,9 +42,25 @@
             Today's Flyer
         </div>
 
-        <div class="flyer-wrapper flex justify-center items-center  ">
+        <div class="flyer-wrapper flex flex-col justify-center items-center  ">
             <div class="border p-2 rounded-sm w-3/4">
                 <img src="<?= base_url('uploads/flyers/' . rand(1, 3) . '.jpg') ?>" alt="">
+            </div>
+            <div class="flex justify-center mt-4">
+                <a href="https://www.facebook.com/telisahusamaj.in" target="_blank" class="mx-2">
+                    <i class="fab text-blue-500 fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="http://www.x.com/telisahusamaj1" target="_blank" class="mx-2">
+                    <i class="fab  fa-2x fa-square-x-twitter"></i>
+                </a>
+                <a href="https://in.linkedin.com/telisahusamaj" target="_blank" class="mx-2">
+                    <i class="fab text-blue-500 fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://in.linkedin.com/telisahusamaj" target="_blank" class="mx-2">
+                    <i class="text-green-500 fab fa-square-whatsapp fa-2x"></i>
+                </a>
+
+
             </div>
         </div>
 
