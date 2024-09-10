@@ -1472,6 +1472,10 @@ video {
   font-weight: 700;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1486,10 +1490,6 @@ video {
 
 .font-thin {
   font-weight: 100;
-}
-
-.font-light {
-  font-weight: 300;
 }
 
 .uppercase {
@@ -1702,12 +1702,12 @@ body {
 
 .section {
   background-color: white;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  /* margin-top: 7px;
+	margin-bottom: 7px; */
 }
 
 .section > .content {
-  padding: 20px 10px;
+  padding: 5px 10px;
 }
 
 .scrollable {

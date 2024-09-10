@@ -73,7 +73,7 @@
             </div>
             <div class=" ">
                 <div
-                    class=" posts-wrapper  community-item-wrapper py-6  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
+                    class=" posts-wrapper  community-item-wrapper flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
 
                     <?php if (!empty($blogs)): ?>
                         <?php foreach ($blogs as $blog): ?>
@@ -133,7 +133,7 @@
             </div>
             <p>I am searching for..</p>
             <div
-                class="matrimonial-wrapper flex flex-row  py-6  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
+                class="matrimonial-wrapper flex flex-row  py-2  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial') ?>">
                         <div class="matrimonial-card">
