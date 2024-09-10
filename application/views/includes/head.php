@@ -24,13 +24,17 @@
     window.onscroll = function () { myFunction() };
 
     var header = document.querySelector(".sticky-header");
-    var sticky = header.offsetTop + 50;
+    var sticky = header.offsetTop + 150;
 
     function myFunction() {
         if (window.pageYOffset > sticky) {
             header.classList.add("sticky");
+            header.style.transition = "top 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+            header.style.top = "0px";
         } else {
             header.classList.remove("sticky");
+            header.style.transition = "top 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+            header.style.top = "";
         }
     }
 </script>
@@ -40,5 +44,6 @@
         position: fixed;
         top: 0;
         width: 100%;
+        z-index: 10;
     }
 </style>
