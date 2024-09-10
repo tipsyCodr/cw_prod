@@ -67,7 +67,7 @@
         <div class=" content">
             <div class="px-2 ">
                 <a class=" flex justify-between items-center " href="<?= site_url('blog') ?>">
-                    <h5 class="mt-2 text-2xl font-bold">Community Wall </h5>
+                    <h5 class="mt-2 text-xl font-bold">Community Wall </h5>
                     <i class="fa fa-arrow-right"></i>
                 </a>
             </div>
@@ -129,7 +129,7 @@
     <div class="section">
         <div class=" content">
             <div class="flex justify-between items-center">
-                <h5 class="m-0 text-2xl font-bold">Matrimonial</h5><i class="fa fa-arrow-right"></i>
+                <h5 class="m-0 text-xl ">Matrimonial</h5><i class="fa fa-arrow-right"></i>
             </div>
             <p>I am searching for..</p>
             <div
