@@ -6,8 +6,8 @@
         </p>
     </div>
     <div class="user p-0 flex flex-row justify-evenly">
-        <a href="#" class="p-1 m-1  bg-white rounded-full"><img src="<?= base_url() . 'assets/images/icons/chat.png' ?>"
-                width="26px" alt=""></a>
+        <a href="#" class="p-1 px-1.5 m-1  bg-white rounded-full"><img
+                src="<?= base_url() . 'assets/images/icons/chat.png' ?>" width="27px" alt=""></a>
         <?php if ($this->session->userdata('login')): ?>
             <a href="<?= base_url('logout') ?>" class="p-1 m-1 bg-white rounded-full "> <i
                     class="fa-solid fa-right-from-bracket fa-2x"></i></a>
