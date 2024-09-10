@@ -56,7 +56,7 @@
                 </a>
             </li>
             <li class="p-2 nav-item <?= (current_url() === base_url('profile')) ? 'text-activeItem active' : '' ?>">
-                <a href="<?php if (!$this->session->userdata('login')) {
+                <a href="<?php if (!$this->session->userdata('logged_in')) {
                     echo base_url('login');
                 } else {
                     echo base_url('profile');
