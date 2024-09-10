@@ -67,7 +67,7 @@
         <div class=" content">
             <div class="px-2 ">
                 <a class=" flex justify-between items-center " href="<?= site_url('blog') ?>">
-                    <h5 class="m-0 text-2xl font-bold">Community Wall </h5>
+                    <h5 class="mt-2 text-2xl font-bold">Community Wall </h5>
                     <i class="fa fa-arrow-right"></i>
                 </a>
             </div>

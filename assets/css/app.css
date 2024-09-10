@@ -868,6 +868,10 @@ video {
   margin-top: -50px;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .block {
   display: block;
 }
