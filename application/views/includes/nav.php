@@ -9,7 +9,7 @@
 
     .nav-item.active {
         border-top: 4px solid #5c6ac4;
-        background-color: rgb(92 106 196 / 41%);
+        background-color: rgb(92 106 196 / 15%);
     }
 
     /* .nav-item.active {
