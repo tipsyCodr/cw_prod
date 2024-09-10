@@ -16,9 +16,9 @@
     }
 </style>
 
-<div class="my-2">
+<div class="">
     <div class="section bg-white">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-0">
             <div class="border border-gray-200 rounded">
                 <form action="<?php echo site_url('matrimonial/search'); ?>" method="GET" class="flex items-center m-0">
                     <i class="p-2 fa fa-search text-gray-400"></i>
