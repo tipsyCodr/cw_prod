@@ -9,17 +9,18 @@
 
     .nav-item.active {
         border-top: 4px solid #5c6ac4;
+        background-color: rgb(92 106 196 / 41%);
     }
 
     /* .nav-item.active {
         filter: invert(0.5) sepia(46) saturate(61) hue-rotate(190deg);
     } */
 </style>
-<div class="navigation-bar bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
+<div class="navigation-bar border-t border-gray-200 bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
     <div class="wrapper ">
         <ul class="flex text-center  justify-evenly items-center ">
             <li class="p-2 nav-item <?= (current_url() === base_url('/')) ? ' active' : '' ?>"><a
-                    href="<?= base_url('/') ?>" class=" nav-item w-full text-decoration-none  ">
+                    href="<?= base_url('/') ?>" class=" nav-item w-full text-decoration-none  hover:translate-y-1">
                     <img src="<?= base_url('assets/images/icons/home.png') ?>" alt="home icon" width="30em"
                         height="30em" />
                     <!-- <i
