@@ -1,13 +1,13 @@
 <!-- Job Start -->
 <div class=" blog pb-5">
     <div class=" pb-5">
-        <div class=" pb-5 ">
+        <!-- <div class=" pb-5 ">
             <h4 class="font-bold text-3xl p-4 ">Services</h4>
             <h1 class="text-md px-4 "><a class="text-accent" href="<?= base_url() ?>">Home </a> > <a class="text-accent"
                     href="<?= base_url('services') ?>">Services</a></h1>
             <p class="mb-0">
             </p>
-        </div>
+        </div> -->
 
 
         <nav class="sticky top-0 z-10 flex justify-center text-center pt-4 bg-white shadow-md"
