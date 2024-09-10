@@ -21,18 +21,18 @@
                 </div>
                 <div class="flex flex-row justify-start ">
                     <div class="qr-code flex  items-center justify-center">
-                        <img style="width: 50%;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>"
-                            alt="">
+                        <img style="" src="<?= base_url('assets/images/user_profile/main_site.png') ?>" alt="">
                     </div>
-                    <div class="user-info px-4">
-                        <h3 class="font-black text-2xl  fot"><?= $user->user_name ?></h3>
-                        <p class=" text-sm "><i class="fa p-1.5 fa-envelope "></i> <?= $user->user_email ?></p>
+                    <div class="user-info px-0">
+                        <h3 class="font-black text-xl  px-2"><?= $user->user_name ?></h3>
+                        <p class=" text-sm text-nowrap"><i class="fa p-1.5 fa-envelope "></i> <?= $user->user_email ?>
+                        </p>
                         <p class="text-sm "><i class="fa p-1.5 fa-phone"></i> <?= $user->user_mobile ?></p>
                         <p class="text-sm "><i class="fa p-1.5 fa-home"></i> <?= $user->user_address ?></p>
                     </div>
-                    <div class="user-img mt-[-50px]">
+                    <div class="p-2 user-img mt-[-30px]">
                         <?php if (isset($user) && !empty($user->user_profile_pic)): ?>
-                            <i class="fas fa-user-circle fa-6x text-accent bg-white rounded-full"></i>
+                            <i class="fas fa-user-circle fa-4x text-accent bg-white rounded-full"></i>
                         <?php else: ?>
                             <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
                                 class="rounded-full">
