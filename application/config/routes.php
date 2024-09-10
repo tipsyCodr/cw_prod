@@ -65,7 +65,8 @@ $route['register/page'] = 'UserController/registerForm';
 $route['register/submit'] = 'UserController/store';
 
 //Matrimonial Registration
-$route['matrimonial/register/page'] = 'UserController/matrimonialRegisterForm';
+$route['matrimonial/register/page'] = 'WebController/matrimonialForm';
+$route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
 
 //Subpages
 

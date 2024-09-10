@@ -110,5 +110,12 @@ class WebController extends CI_Controller
         $this->load->view('/layouts/main', $data);
 
     }
+    public function matrimonialForm()
+    {
+        $data['slot'] = $this->load->view('matrimonial/register', '', TRUE);
+
+        $this->load->view('/layouts/main', $data);
+
+    }
 
 }

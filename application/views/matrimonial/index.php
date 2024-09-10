@@ -81,7 +81,8 @@
     </div>
 
     <div class="mb-8 mt-2 text-center">
-        <a href="<?= base_url('matrimonial_form') ?>" class="text-indigo-600 hover:text-indigo-900 font-semibold">
+        <a href="<?= base_url('matrimonial/register/page') ?>"
+            class="text-indigo-600 hover:text-indigo-900 font-semibold">
             Don't have a Matrimonial account? Create one now
         </a>
     </div>
