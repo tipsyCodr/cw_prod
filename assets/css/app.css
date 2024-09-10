@@ -684,16 +684,16 @@ video {
   margin: 0px;
 }
 
+.m-1 {
+  margin: 0.25rem;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
 
 .m-auto {
   margin: auto;
-}
-
-.m-1 {
-  margin: 0.25rem;
 }
 
 .mx-1 {
@@ -1297,10 +1297,6 @@ video {
 
 .p-5 {
   padding: 1.25rem;
-}
-
-.p-14 {
-  padding: 3.5rem;
 }
 
 .px-1 {
