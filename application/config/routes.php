@@ -60,10 +60,12 @@ $route['matrimonial/search'] = 'WebController/searchMatrimonial';
 $route['profile'] = 'UserController/index';
 
 //Subpages
-//registration
+//User registration
 $route['register/page'] = 'UserController/registerForm';
 $route['register/submit'] = 'UserController/store';
 
+//Matrimonial Registration
+$route['matrimonial/register/page'] = 'UserController/matrimonialRegisterForm';
 
 //Subpages
 

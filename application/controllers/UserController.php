@@ -1,5 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+/**
+ * @property CI_Form_validation $form_validation
+ * @property CI_Input $input
+ * @property CI_Session $session
+ * @property CI_Upload $upload
+ * @property CasteModel $CasteModel
+ * @property CityModel $CityModel
+ * @property ComplexionModel $ComplexionModel
+ * @property EducationModel $EducationModel
+ * @property EmployeeInModel $EmployeeInModel
+ * @property MatriMonialRegistrationModel $matrimonialmodel
+ * @property MotherTongueModel $MotherTongueModel
+ * @property StateModel $StateModel
+ * @property UserRegistrationModel $userregistrationmodel
+ */
 
 class UserController extends CI_Controller
 {
@@ -77,5 +92,81 @@ class UserController extends CI_Controller
                 redirect('register/page');
             }
         }
+    }
+    public function matrimonialRegisterForm()
+    {
+        $this->load->library('form_validation');
+        $this->load->library('upload');
+        $this->load->model('MatriMonialRegistrationModel');
+
+        // Set validation rules
+        $this->form_validation->set_rules('dob', 'Date of Birth', 'required');
+        // $this->form_validation->set_rules('job_occupation', 'Job Occupation', 'required');
+        // $this->form_validation->set_rules('height', 'Height', 'required');
+        // $this->form_validation->set_rules('weight', 'Weight', 'required');
+        // $this->form_validation->set_rules('mother_ttongue', 'Mother Tongue', 'required');
+        // $this->form_validation->set_rules('gotram', 'Gotram', 'required');
+        // $this->form_validation->set_rules('zodiac', 'Zodiac', 'required');
+        // $this->form_validation->set_rules('education', 'Education', 'required');
+        // $this->form_validation->set_rules('salary', 'Salary', 'required');
+        // $this->form_validation->set_rules('gender', 'Gender', 'required');
+        // $this->form_validation->set_rules('description', 'Description', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->index();
+            return;
+        }
+
+        $formArray = $this->input->post();
+
+        $user_id = $this->session->userdata('login');
+        if (!$user_id) {
+            $this->session->set_flashdata('error', 'User not logged in.');
+            $this->index();
+            return;
+        }
+        $formArray['user_id'] = $user_id;
+        $formArray['created_at'] = date('Y-m-d H:i:s');
+        // File upload configuration
+        $uploadPath = './uploads/matrimonial_img/user_images';
+
+        // Check if directory exists
+        if (!is_dir($uploadPath)) {
+            if (!mkdir($uploadPath, 0755, true)) {
+                $this->session->set_flashdata('error', 'Failed to create directory: ' . realpath($uploadPath));
+                $this->index();
+                return;
+            }
+        }
+
+        // Set upload configuration
+        $config['upload_path'] = $uploadPath;
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = '2048'; // 2MB
+        $config['file_name'] = time() . '_' . $_FILES['images']['name'];
+
+        $this->upload->initialize($config);
+
+        // Attempt to upload file
+        if ($this->upload->do_upload('images')) {
+            $uploadData = $this->upload->data();
+            $formArray['images'] = $uploadData['file_name'];
+        } else {
+            $error = $this->upload->display_errors();
+            $this->session->set_flashdata('error', 'Upload error : ' . $error);
+            $this->index();
+            return;
+        }
+
+        // Insert data into the database
+        $inserted = $this->MatriMonialRegistrationModel->insert_matrimonial($formArray);
+
+        if ($inserted) {
+            $this->session->set_flashdata('success', 'Registration successful.');
+        } else {
+            $this->session->set_flashdata('error', 'Registration failed. Please try again.');
+        }
+
+        $this->index();
     }
 }
