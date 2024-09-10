@@ -59,7 +59,18 @@ $route['matrimonial'] = 'WebController/matrimonial';
 $route['matrimonial/search'] = 'WebController/searchMatrimonial';
 $route['profile'] = 'UserController/index';
 
+//Subpages
+//registration
+$route['register/page'] = 'UserController/registerForm';
+$route['register/submit'] = 'UserController/store';
 
+
+//Subpages
+
+//Backend Routes
+
+
+//Backend Routes
 
 // $route['home'] = 'landing_page_controllers/LandingPagesController';
 

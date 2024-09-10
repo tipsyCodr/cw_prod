@@ -32,7 +32,7 @@ class UserRegController extends CI_Controller
         $this->form_validation->set_rules('user_address', 'User Address', 'required');
         $this->form_validation->set_rules('user_city', 'User City', 'required');
         $this->form_validation->set_rules('user_pincode', 'User Pincode', 'required|numeric|exact_length[6]');
- 
+
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('header');
@@ -42,7 +42,7 @@ class UserRegController extends CI_Controller
         } else {
             $reg_data = $this->input->post();
             $this->load->model('userregistrationmodel');
-            
+
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = '*';
 
@@ -56,7 +56,7 @@ class UserRegController extends CI_Controller
             $isInserted = $this->userregistrationmodel->registeruser($reg_data);
             if ($isInserted) {
                 $this->session->set_flashdata('success', 'User Registered Successfully');
-                
+
                 redirect('/user_registration');
             } else {
                 $this->session->set_flashdata('error', 'User Registration Failed...! Try after some time');
