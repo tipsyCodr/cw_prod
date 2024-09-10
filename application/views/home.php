@@ -129,7 +129,7 @@
     <div class="section">
         <div class=" content">
             <div class="flex justify-between items-center">
-                <h5 class="m-0 text-xl ">Matrimonial</h5><i class="fa fa-arrow-right"></i>
+                <h5 class="m-0 text-xl font-bold">Matrimonial</h5><i class="fa fa-arrow-right"></i>
             </div>
             <p>I am searching for..</p>
             <div
@@ -183,7 +183,7 @@
     <div class="section">
         <div class="content">
             <div class=" px-2 flex justify-between items-center">
-                <h5 class="text-2xl font-bold">Bussiness</h5><i class="fa fa-arrow-right"></i>
+                <h5 class="text-xl font-bold">Bussiness</h5><i class="fa fa-arrow-right"></i>
             </div>
         </div>
         <div class="py-6 bussiness-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
@@ -231,7 +231,7 @@
     <div class="section">
         <div class="content">
             <div class="flex justify-between items-center">
-                <h5 class="m-0 text-2xl font-bold">Jobs </h5><i class="fa fa-arrow-right"></i>
+                <h5 class="m-0 text-xl font-bold">Jobs </h5><i class="fa fa-arrow-right"></i>
             </div>
             <div class="py-6 job-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <?php foreach ($job_list as $job) { ?>
