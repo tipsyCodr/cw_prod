@@ -17,7 +17,7 @@
 </style>
 <div class="navigation-bar bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
     <div class="wrapper ">
-        <ul class="flex text-center p-2 justify-evenly items-center pb-4">
+        <ul class="flex text-center  justify-evenly items-center ">
             <li class="p-2 nav-item <?= (current_url() === base_url('/')) ? ' active' : '' ?>"><a
                     href="<?= base_url('/') ?>" class=" nav-item w-full text-decoration-none  ">
                     <img src="<?= base_url('assets/images/icons/home.png') ?>" alt="home icon" width="30em"
