@@ -112,7 +112,7 @@
                 <?php include_once(APPPATH . "views/includes/head.php"); ?>
             </nav>
         </header>
-        <section class="pb-16">
+        <section class="pb-16 main-content" style="margin-top: 58px;">
             <?= $slot ?> <!-- placeholder for main content -->
         </section>
         <footer>
