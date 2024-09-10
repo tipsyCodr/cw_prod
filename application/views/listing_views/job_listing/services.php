@@ -27,7 +27,7 @@
 
 
                 <a href="<?= base_url('job_listing_form') ?>"
-                    class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> Post a
+                    class=" bg-secondary text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> Post a
                     Job Requirement</a>
 
                 <p class="text-gray-500 text-md px-4 pt-6 pb-2">All Posts</p>
@@ -97,7 +97,7 @@
                 <div class="flex flex-col">
 
                     <a href="<?= base_url('business_listing_form') ?>"
-                        class=" bg-accent text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> List
+                        class=" bg-secondary text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> List
                         Your Business</a>
 
                     <p class="text-gray-500 text-md px-4 pt-6 pb-2">All Business</p>
