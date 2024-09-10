@@ -1,7 +1,7 @@
 <div class="p-1 flex flex-row justify-between items-center bg-blue-500">
     <div class=" flex img-wrapper items-center">
         <a href="#"><img class='m-2' src="<?= base_url() . 'assets/images/logo.png' ?>" alt="menu" width="50px"></a>
-        <p class="px-2 font-black text-white text-2xl uppercase">
+        <p class="px-1 font-black text-white text-2xl uppercase">
             Patel Samaaj
         </p>
     </div>
