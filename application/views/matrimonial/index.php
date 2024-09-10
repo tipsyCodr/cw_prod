@@ -50,7 +50,7 @@
                     <select
                         class="form-select px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="gender" name="looking">
-                        <option value="">Select Gender</option>
+                        <option value="">Gender</option>
                         <option value="M">Male</option>
                         <option value="F">Female</option>
                     </select>
