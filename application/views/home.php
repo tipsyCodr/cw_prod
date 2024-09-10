@@ -128,10 +128,10 @@
 
     <div class="section">
         <div class=" content">
-            <div class="flex justify-between items-center">
+            <div class="px-2 flex justify-between items-center">
                 <h5 class="m-0 text-xl font-bold">Matrimonial</h5><i class="fa fa-arrow-right"></i>
             </div>
-            <p>I am searching for..</p>
+            <p class="px-2">I am searching for..</p>
             <div
                 class="matrimonial-wrapper flex flex-row  py-2  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <div class="p-2">
@@ -186,7 +186,7 @@
                 <h5 class="text-xl font-bold">Bussiness</h5><i class="fa fa-arrow-right"></i>
             </div>
         </div>
-        <div class="py-6 bussiness-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
+        <div class="py-2 bussiness-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
             <?php foreach ($business_list as $business) { ?>
 
                 <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400">
@@ -230,10 +230,10 @@
 
     <div class="section">
         <div class="content">
-            <div class="flex justify-between items-center">
+            <div class=" px-2 flex justify-between items-center">
                 <h5 class="m-0 text-xl font-bold">Jobs </h5><i class="fa fa-arrow-right"></i>
             </div>
-            <div class="py-6 job-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
+            <div class="py-2 job-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <?php foreach ($job_list as $job) { ?>
 
                     <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400">
