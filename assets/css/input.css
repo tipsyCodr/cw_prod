@@ -63,7 +63,7 @@ a {
 .cube > .cube-body > .post-text {
 	padding-top: 10px;
 	font-size: 0.9rem;
-	height: 80px;
+	height: 40px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;

@@ -103,6 +103,7 @@
                                     <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-share "
                                             style="font-size:1.5rem"></i></a>
                                 </div>
+                                <hr>
                                 <div class=" cube-body">
 
                                     <div class="post-text pb-4 overflow-hidden" style="max-height: 6rem;">
