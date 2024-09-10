@@ -99,20 +99,20 @@
 </style>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="spinner flex flex-col h-full justify-center items-center">
             <img class="spinner-img " src="<?= base_url() ?>assets/images/logo.png" width="200" alt="">
             <p class="text-center font-bold py-4">Loading...</p>
         </div>
 
-    </div>
+    </div> -->
     <main>
         <header>
-            <nav>
-                <?php include_once(APPPATH . "views/includes/head.php"); ?>
-            </nav>
+            <div class="flex items-center justify-center pt-6">
+                <img src="<?= base_url() ?>assets/images/logo.png" width="200" alt="Patel Samaj" class="mx-auto">
+            </div>
         </header>
-        <section class="pb-16 main-content" style="margin-top: 58px;">
+        <section class="pb-16 main-content" style="">
             <?php if ($this->session->flashdata('success')): ?>
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
                     role="alert">
@@ -129,9 +129,15 @@
             <?= $slot ?> <!-- placeholder for main content -->
         </section>
         <footer>
-            <nav>
-                <?php include_once(APPPATH . "views/includes/nav.php"); ?>
-            </nav>
+            <div
+                class="container-fluid  text-gray-400 py-4 text-center sm:text-left flex flex-col sm:flex-row justify-between">
+
+                <p class="mb-0">
+                    Designed By <a target="_blank" href="https://pathideamultiskill.com"
+                        class="text-gray-400 hover:underline">Path Idea
+                        Multiskill</a>
+                </p>
+            </div>
         </footer>
     </main>
 </body>

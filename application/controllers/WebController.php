@@ -19,7 +19,26 @@ class WebController extends CI_Controller
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/userguide3/general/urls.html
      */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('session');
+    }
     public function index()
+    {
+        // Check if user is already logged in
+        if ($this->session->userdata('logged_in')) {
+            redirect('home');
+        }
+
+        // Display login form
+        $data['slot'] = $this->load->view('/login', '', TRUE);
+        $this->load->view('/layouts/splash', $data);
+
+
+    }
+
+    public function home()
     {
         $this->load->model('Blog_model');
         $data['comments'] = $this->Blog_model->getAllComments();
@@ -117,5 +136,13 @@ class WebController extends CI_Controller
         $this->load->view('/layouts/main', $data);
 
     }
+    public function registerForm()
+    {
 
+        $data['slot'] = $this->load->view('user/register', "", TRUE);
+
+        // Load main layout with all data
+        $this->load->view('/layouts/main', $data);
+
+    }
 }

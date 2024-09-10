@@ -1,4 +1,5 @@
 <div class="px-2 py-4">
+
     <h1 class="font-bold text-2xl text-center pb-8">Register For An Account</h1>
     <div class="form-wrapper">
         <form class="space-y-6" action="<?= base_url('register/submit') ?>" method="post">

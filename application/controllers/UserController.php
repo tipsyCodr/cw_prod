@@ -32,15 +32,7 @@ class UserController extends CI_Controller
         // Load main layout with all data
         $this->load->view('/layouts/main', $data);
     }
-    public function registerForm()
-    {
 
-        $data['slot'] = $this->load->view('user/register', "", TRUE);
-
-        // Load main layout with all data
-        $this->load->view('/layouts/main', $data);
-
-    }
 
     public function store()
     {

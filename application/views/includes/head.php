@@ -8,11 +8,13 @@
     <div class="user p-0 flex flex-row justify-evenly">
         <a href="#" class="p-1 px-1.5 m-1  bg-white rounded-full"><img
                 src="<?= base_url() . 'assets/images/icons/chat.png' ?>" width="27px" alt=""></a>
-        <?php if ($this->session->userdata('login')): ?>
-            <a href="<?= base_url('logout') ?>" class="p-1 m-1 bg-white rounded-full "> <i
-                    class="fa-solid fa-right-from-bracket fa-2x"></i></a>
+        <?php if ($this->session->userdata('logged_in')): ?>
+            <a href="<?= base_url('logout') ?>"
+                class="p-1 px-1.5 m-1 bg-white rounded-full flex items-center justify-center "
+                style="width:37px;height:37px"> <i class="fa-solid fa-right-from-bracket fa-2x "
+                    style="font-size: 20px"></i></a>
         <?php else: ?>
-            <a href="<?= base_url('login') ?>" class="p-1 m-1 bg-white rounded-full"><img
+            <a href="<?= base_url('login') ?>" class="p-1  m-1 bg-white rounded-full" style="width:37px;height:37px"><img
                     src="<?= base_url() . 'assets/images/icons/user.png' ?>" width="30px" alt="Logo"></a>
         <?php endif; ?>
     </div>

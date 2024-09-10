@@ -50,7 +50,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'WebController/index';
-// $route['/'] = 'home';
+$route['splash-login'] = 'LoginController/authenticate';
+
+$route['home'] = 'WebController/home';
 
 $route['services'] = 'WebController/services';
 $route['social'] = 'WebController/social';
@@ -61,7 +63,7 @@ $route['profile'] = 'UserController/index';
 
 //Subpages
 //User registration
-$route['register/page'] = 'UserController/registerForm';
+$route['register/page'] = 'WebController/registerForm';
 $route['register/submit'] = 'UserController/store';
 
 //Matrimonial Registration
@@ -71,6 +73,8 @@ $route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm'
 //Subpages
 
 //Backend Routes
+$route['authenticate'] = 'LoginController/authenticate';
+$route['logout'] = 'LoginController/logout';
 
 
 //Backend Routes
@@ -79,7 +83,6 @@ $route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm'
 
 // login route 
 $route['login-old'] = 'logincontroller/Login_Controller';
-$route['logout'] = 'logincontroller/Logout_Controller';
 //landing page
 
 $route['about'] = 'landingpagecontroller/about';
