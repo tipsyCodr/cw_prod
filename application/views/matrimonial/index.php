@@ -1,6 +1,6 @@
 <div class="matrimonial-wrapper ">
     <!-- <h1>Matrimonial</h1> -->
-    <h2 class="font-bold text-3xl text-center">Find Your Perfect Pair</h2>
+    <h2 class=" pt-6 font-bold text-3xl text-center">Find Your Perfect Pair</h2>
     <div class="matrimonial-wrapper grid grid-cols-2 gap-4 py-6 px-4">
 
         <div class="col-span-1">
