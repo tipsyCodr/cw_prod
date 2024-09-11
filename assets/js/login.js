@@ -40,7 +40,7 @@ document.getElementById("google-login").addEventListener("click", function () {
 			const user = result.user;
 
 			if (user) {
-				alert("Welcome " + user.displayName);
+				// alert("Welcome " + user.displayName);
 
 				// Create a new XMLHttpRequest object
 				const xhr = new XMLHttpRequest();
