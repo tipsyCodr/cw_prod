@@ -6,5 +6,8 @@
 	},
 	"scripts": {
 		"dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --watch"
+	},
+	"dependencies": {
+		"firebase": "^10.13.1"
 	}
 }
