@@ -74,7 +74,7 @@
                             console.log(response);
                             // If the login was successful, redirect to the main page
                             if (response.success) {
-                                window.location.href = <?= base_url() ?>;
+                                window.location.href = "<?= base_url() ?>";
                             } else {
                                 console.log(response);
                                 // Handle case where login was not successful on server-side
