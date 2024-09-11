@@ -133,7 +133,7 @@
                 class="container-fluid  text-gray-400 py-4 text-center sm:text-left flex flex-col sm:flex-row justify-between">
 
                 <p class="mb-0">
-                    Designed By <a target="_blank" href="https://pathideamultiskill.com"
+                    Designed with ❤️ By <a target="_blank" href="https://pathideamultiskill.com"
                         class="text-gray-400 hover:underline">Path Idea
                         Multiskill</a>
                 </p>
