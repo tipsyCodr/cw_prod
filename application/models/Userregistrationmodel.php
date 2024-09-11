@@ -63,6 +63,12 @@ class UserRegistrationModel extends CI_Model
 
 
     }
+    public function saveGoogleUser($user_data)
+    {
+
+        $this->db->insert('user_registration', $user_data);
+        return $this->db->insert_id();
+    }
     public function generateUniqueToken()
     {
         $token = bin2hex(random_bytes(32));
@@ -90,6 +96,20 @@ class UserRegistrationModel extends CI_Model
         }
 
     }
+    public function getSingleUserByEmail($email)
+    {
+
+
+        $this->db->where('user_email', $email);
+        $q = $this->db->get('user_registration');
+
+        if ($q->num_rows() > 0) {
+            return $q->row();
+        } else {
+            return false;
+        }
+    }
+
     public function getSingleUser($id)
     {
 

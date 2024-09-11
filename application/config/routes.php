@@ -53,6 +53,8 @@ $route['default_controller'] = 'WebController/index';
 $route['splash-login'] = 'LoginController/authenticate';
 $route['phone-login'] = 'LoginController/phoneRegister';
 
+$route['google-auth'] = 'LoginController/googleAuthenticate';
+
 $route['home'] = 'WebController/home';
 
 $route['services'] = 'WebController/services';
