@@ -51,6 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $route['default_controller'] = 'WebController/index';
 $route['splash-login'] = 'LoginController/authenticate';
+$route['phone-login'] = 'LoginController/phoneRegister';
 
 $route['home'] = 'WebController/home';
 

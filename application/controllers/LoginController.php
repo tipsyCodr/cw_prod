@@ -79,6 +79,13 @@ class LoginController extends CI_Controller
         }
     }
 
+    public function phoneRegister()
+    {
+
+        $data['slot'] = $this->load->view('login/phone', '', TRUE);
+        $this->load->view('/layouts/splash', $data);
+    }
+
     /**
      * Log out the user and redirect to login page
      *
