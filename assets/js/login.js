@@ -60,7 +60,7 @@ document.getElementById("google-login").addEventListener("click", function () {
 						console.log(response);
 						// If the login was successful, redirect to the main page
 						if (response.success) {
-							window.location.href = "/";
+							window.location.href = window.location.href + "/";
 						} else {
 							console.log(response);
 							// Handle case where login was not successful on server-side
