@@ -696,10 +696,6 @@ video {
   margin: auto;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -1519,6 +1515,11 @@ video {
   line-height: 1.5rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1526,11 +1527,6 @@ video {
 
 .text-xl {
   font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
