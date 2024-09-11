@@ -44,7 +44,7 @@ document.getElementById("google-login").addEventListener("click", function () {
 
 				// Create a new XMLHttpRequest object
 				const xhr = new XMLHttpRequest();
-				xhr.open("POST", "<?= base_url('google-auth') ?>", true);
+				xhr.open("POST", "<?php echo base_url('google-auth') ?>", true);
 				xhr.setRequestHeader("Content-Type", "application/json");
 
 				// Define what happens on successful data submission
