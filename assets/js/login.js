@@ -50,5 +50,3 @@ document.getElementById("google-login").addEventListener("click", function () {
 			const credential = GoogleAuthProvider.credentialFromError(error);
 		});
 });
-
-/
