@@ -38,14 +38,13 @@ document.getElementById("google-login").addEventListener("click", function () {
 			const token = credential ? credential.accessToken : null;
 			// The signed-in user info.
 			const user = result.user;
-			console.log(result);
 
 			if (user) {
 				// alert("Welcome " + user.displayName);
 
 				// Create a new XMLHttpRequest object
 				const xhr = new XMLHttpRequest();
-				xhr.open("POST", "/google-auth", true);
+				xhr.open("POST", "<?= base_url('google-auth') ?>", true);
 				xhr.setRequestHeader("Content-Type", "application/json");
 
 				// Define what happens on successful data submission
