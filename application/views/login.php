@@ -28,14 +28,14 @@
     </form>
     <div class="flex flex-col w-full  sm:flex-row sm:justify-center sm:space-x-4">
         <button type="button" id="google-login" name="google-login"
-            class="my-2 block w-full sm:w-auto px-4 py-4 text-lg font-bold text-white bg-red-500 rounded-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
+            class="my-2 block w-full sm:w-auto px-4 py-2 text-xl font-bold text-white bg-red-500 rounded-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
             style="width: 100%">
             <i class="fa-brands fa-google mx-2"></i>
             Login with Google
         </button>
 
         <a href='<?= base_url('phone-login') ?>' type="button" id="google-phone-login" name="google-phone-login"
-            class="text-center my-2 block w-full sm:w-auto px-4 py-4 text-lg font-bold text-white bg-black rounded-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
+            class="text-center my-2 block w-full sm:w-auto px-4 py-2 text-xl font-bold text-white bg-black rounded-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
             style="width: 100%">
             <i class="fa-solid fa-phone mx-2"></i>
             Login with Phone
