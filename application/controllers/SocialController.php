@@ -18,4 +18,31 @@ class SocialController extends CI_Controller
 		$this->load->view('layouts/main', $data);
 
 	}
+
+	public function add_comments()
+	{
+
+		$comment = $this->input->post('comment');
+		$blog_id = $this->input->post('blog_id');
+		$user_id = $this->session->userdata('user_id');
+		$comment_data = array(
+			'comment' => $comment,
+			'blog_id' => $blog_id,
+			'user_id' => $user_id
+		);
+
+		// print_r($comment_data);
+		$this->load->model('Blog_model');
+		$result = $this->Blog_model->add_comment($comment_data);
+if($result){
+	$this->session->set_flashdata('success', 'Comment added successfully');
+	redirect('social/post/'.$blog_id);
+}
+else{
+	$this->session->set_flashdata("error", "Something went wrong");
+	redirect('social/post/'.$blog_id);
+}
+		return $result;
+//		Array ( [comment_text] => asd [post_id] => 3 [user_id] => 1 [created_at] => 2024-09-12 12:20:54 )
+	}
 }

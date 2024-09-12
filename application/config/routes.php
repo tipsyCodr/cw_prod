@@ -50,30 +50,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'WebController/index';
-$route['splash-login'] = 'LoginController/authenticate';
-$route['phone-login'] = 'LoginController/phoneRegister';
-
-$route['google-auth'] = 'LoginController/googleAuthenticate';
-$route['flyer'] = 'WebController/flyer';
 
 $route['home'] = 'WebController/home';
-
 $route['services'] = 'WebController/services';
 $route['social'] = 'WebController/social';
-$route['social/post/(:num)'] = 'SocialController/view/$1';
-$route['login'] = 'WebController/login';
 $route['matrimonial'] = 'WebController/matrimonial';
-$route['matrimonial/search'] = 'WebController/searchMatrimonial';
 $route['profile'] = 'UserController/index';
+$route['login'] = 'WebController/login';
+
+
+//Login & Auth
+$route['splash-login'] = 'LoginController/authenticate';
+$route['phone-login'] = 'LoginController/phoneRegister';
+$route['google-auth'] = 'LoginController/googleAuthenticate';
+
+//test
+$route['flyer'] = 'WebController/flyer';
+
 
 //Subpages
-//User registration
-$route['register/page'] = 'WebController/registerForm';
-$route['register/submit'] = 'UserController/store';
+	//Social
+	$route['social/post/(:num)'] = 'SocialController/view/$1';
+	$route['social/post/comment/add'] = 'SocialController/add_comments';
 
-//Matrimonial Registration
-$route['matrimonial/register/page'] = 'WebController/matrimonialForm';
-$route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
+	//User registration
+	$route['register/page'] = 'WebController/registerForm';
+	$route['register/submit'] = 'UserController/store';
+
+	//Matrimonial Registration
+	$route['matrimonial/search'] = 'WebController/searchMatrimonial';
+	$route['matrimonial/register/page'] = 'WebController/matrimonialForm';
+	$route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
 
 //Subpages
 

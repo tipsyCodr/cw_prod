@@ -1,15 +1,19 @@
 <div class="post-wrapper pb-44" style="min-width:300px; max-width: 800px;">
     <div class="p-4 bg-white shadow min-w-[300px] ">
-        <div class="top-section py-4 mt-11" >
-<!--			--><?php //= var_dump($user); ?>
-			<div class="rounded-full overflow-hidden" style="width: 30px; height: 30px;">
-				<?php if( $user->user_profile_pic  !== null):?>
-					<img src="<?=base_url().'uploads/user_profiles/'.$user->user_profile_pic ?> " alt="" style="object-fit: cover; width: 100%; height: 100%;"/>
-				<?php else:?>
-					<i class="fa fa-user-circle" aria-hidden="true"></i>
-				<?php endif;?>
-				<h5 class="mt-0 font-bold text-lg mb-1"><?= $user->user_name ?></h5>
+        <div class="top-section py-4 mt-8" >
 
+			<div class="flex items-center">
+				<div class="rounded-full overflow-hidden" style="width: 30px; height: 30px;">
+
+					<?php if ($user->user_profile_pic !== null): ?>
+						<img src="<?= base_url() . 'uploads/user_profiles/' . $user->user_profile_pic ?> " alt=""
+							 style="object-fit: cover; width: 100%; height: 100%;"/>
+					<?php else: ?>
+						<i class="fa fa-user-circle" aria-hidden="true"></i>
+					<?php endif; ?>
+
+				</div>
+				<h5 class="mt-0 font-bold text-lg mb-1"><?= $user->user_name ?></h5>
 			</div>
 
         </div>
@@ -32,7 +36,7 @@
                     </button>
                     <span><?= count($comments) ?>+</span>
                 </span>
-		<form action="<?=base_url('add_comments')?>" method="POST" id='comment_form' class="mt-3">
+		<form action="<?=base_url('social/post/comment/add')?>" method="POST" id='comment_form' class="mt-3">
 			<div class="comment-form">
 				<div class="form-group ">
                     <textarea name="comment" id="comment" class="w-full border p-1" placeholder="Write your comment here..."
