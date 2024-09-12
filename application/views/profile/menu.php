@@ -19,18 +19,18 @@
                         <p class="font-thin text-2xl text-white">Address: Bhilai</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-4 w-full">
-                    <div class="qr-code flex  items-center justify-center">
-                        <img style="width: 100px;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>" alt="">
+                <div class="grid grid-cols-5 gap-4 w-full">
+                    <div class="qr-code flex  items-center justify-center col-span-1">
+                        <img style="width: 70px;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>" alt="">
                     </div>
-                    <div class="user-info px-0">
-                        <h3 class="font-black text-2xl text-nowrap"><?= isset($user) && is_object($user) ? $user->user_name : '' ?></h3>
+                    <div class="user-info px-0 col-span-2">
+                        <h3 class="font-black text-md text-nowrap"><?= isset($user) && is_object($user) ? $user->user_name : '' ?></h3>
                         <p class=" text-sm text-nowrap"><i class="fa p-1.5 fa-envelope "></i> <?= isset($user) && isset($user->user_email) ? $user->user_email : '' ?>
                         </p>
                         <p class="text-sm "><i class="fa p-1.5 fa-phone"></i> <?= isset($user) && isset($user->user_mobile) ? $user->user_mobile : '<a href="#add-number">< Add Number ></a>' ?></p>
                         <p class="text-sm "><i class="fa p-1.5 fa-home"></i> <?= isset($user) && isset($user->user_address) ? $user->user_address : '<a href="#add-number">< Add Address ></a>' ?></p>
                     </div>
-                    <div class="p-2 user-img mt-[-30px] flex justify-end">
+                    <div class="p-2 user-img mt-[-30px] flex justify-end col-span-2">
                         <?php if (isset($user) && !empty($user->user_profile_pic)): ?>
                             <i class="fas fa-user-circle fa-4x text-accent bg-white rounded-full"></i>
 
