@@ -288,14 +288,12 @@
                                     class="h-10 w-10 rounded-full " />
                             <?php endif; ?>
                             <div class="">
-                                <span class="font-bold"><?= $blog['first_name'] . ' ' . $blog['last_name']; ?></span>
-                                <span
-                                    class="text-black font-bold text-xl "><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
+                                <span class="font-bold text-xl"><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
                             </div>
                         </a>
                     </div>
 
-                    <a href="blog_details/<?= $blog_id; ?>" class="text-primary text-decoration-none ">
+                    <a href="social/post/<?= $blog_id; ?>" class="text-primary text-decoration-none ">
                         <div class="">
                             <div class="card border-light shadow-sm rounded">
                                 <div class="position-relative">
@@ -318,12 +316,12 @@
                                 <span class="p-2">Like</span>
                             </a>
                             <a class='flex  items-center block cursor-pointer '
-                                href="<?= base_url('blog_details/' . $blog_id . "#comment"); ?>"> <i
+                                href="<?= base_url('social/post/' . $blog_id . "#comment"); ?>"> <i
                                     class="fa-regular fa-2x fa-comment hover:text-blue-500 transition-all "></i>
                                 <p class="p-2">Comments</p>
                             </a>
                             <a class='flex  items-center block cursor-pointer '
-                                href="<?= base_url('blog_details/' . $blog_id . '?share=true'); ?>" target="_blank"> <i
+                                href="<?= base_url('social/post/' . $blog_id . '?share=true'); ?>" target="_blank"> <i
                                     class="fa hover:text-blue-500 transition-all fa-2x fa-share"></i>
                                 <p class="p-2">Share</p>
                             </a>
@@ -343,7 +341,7 @@
                                 <span><?= $like_count ?></span>
                             </div>
                             <div class="flex items-center px-2">
-                                <a href="blog_details/<?= $blog_id; ?>" class="btn btn-outline-secondary btn-sm me-2">
+                                <a href="social/post/<?= $blog_id; ?>" class="btn btn-outline-secondary btn-sm me-2">
                                     <i class="fa fa-comment-alt text-blue-400"></i>
                                 </a>
                                 <span>10+</span>
@@ -351,12 +349,12 @@
                             </div>
                             <div class="">
                                 <a
-                                    href="https://api.whatsapp.com/send/?text=<?= base_url('blog_details/' . $blog_id . '?share=true'); ?>/&type=custom_url&app_absent=0"><i
+                                    href="https://api.whatsapp.com/send/?text=<?= base_url('social/post/' . $blog_id . '?share=true'); ?>/&type=custom_url&app_absent=0"><i
                                         class="fa-brands fa-whatsapp text-green-600"></i></a>
 
                             </div>
                         </div>
-                        <p class="card-text"><?= $blog['content']; ?><br /><a href="blog_details/<?= $blog_id; ?>"
+                        <p class="card-text"><?= $blog['content']; ?><br /><a href="social/post/<?= $blog_id; ?>"
                                 class="text-primary text-decoration-none">Read more..</a></p>
                     </div>
                 </div>

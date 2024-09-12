@@ -10,7 +10,11 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				accent: "#5c6ac4",
+				accent: {
+					DEFAULT: "#5c6ac4",
+					dark: "#363b75",
+					light: "#9ba6ef",
+				},
 				secondary: "#ecc94b",
 				activeItem: "#5c6ac4",
 			},
