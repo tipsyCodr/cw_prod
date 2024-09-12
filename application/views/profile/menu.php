@@ -24,7 +24,7 @@
                         <img style="width: 100px;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>" alt="">
                     </div>
                     <div class="user-info px-0">
-                        <h3 class="font-black text-2xl  px-2"><?= isset($user) && is_object($user) ? $user->user_name : '' ?></h3>
+                        <h3 class="font-black text-2xl text-nowrap px-2"><?= isset($user) && is_object($user) ? $user->user_name : '' ?></h3>
                         <p class=" text-sm text-nowrap"><i class="fa p-1.5 fa-envelope "></i> <?= isset($user) && isset($user->user_email) ? $user->user_email : '' ?>
                         </p>
                         <p class="text-sm "><i class="fa p-1.5 fa-phone"></i> <?= isset($user) && isset($user->user_mobile) ? $user->user_mobile : '<a href="#add-number">< Add Number ></a>' ?></p>
