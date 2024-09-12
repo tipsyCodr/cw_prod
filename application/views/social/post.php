@@ -32,7 +32,7 @@
                     </button>
                     <span><?= count($comments) ?>+</span>
                 </span>
-		<form action="/add_comments" method="POST" id='comment_form' class="mt-3">
+		<form action="<?=base_url('add_comments')?>" method="POST" id='comment_form' class="mt-3">
 			<div class="comment-form">
 				<div class="form-group ">
                     <textarea name="comment" id="comment" class="w-full border p-1" placeholder="Write your comment here..."
