@@ -77,7 +77,16 @@ class UserRegistrationModel extends CI_Model
         }
         return $token;
     }
+public function getUserById($id){
 
+	$this->db->where('uid', $id);
+	$q = $this->db->get('user_registration');
+	if ($q->num_rows() > 0) {
+		return $q->row();
+	} else {
+		return false;
+	}
+}
 
     public function checkpassword($email, $password)
     {

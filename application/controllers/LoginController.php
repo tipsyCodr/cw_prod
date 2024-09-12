@@ -103,12 +103,15 @@ class LoginController extends CI_Controller
         if ($this->Userregistrationmodel->isRegistered($email)) {
             $user_data = $this->Userregistrationmodel->getSingleUserByEmail($email);
             $user_name = $user_data->user_name;
-            // var_dump($user_data->user_name);
+			$uid = $user_data->uid;
+
             // Set session for the existing user
             $this->session->set_userdata('logged_in', TRUE);
             $this->session->set_userdata('logged_uname', $user_data->user_name);
+			$this->session->set_userdata('login', $uid); // Store the UID in the session
 
-            // Return success response
+
+			// Return success response
             return $this->output->set_output(json_encode(['success' => true, 'message' => 'User logged in']));
         } else {
             // Prepare data for the new user
@@ -124,11 +127,16 @@ class LoginController extends CI_Controller
 
             // Try saving the new user to the database
             if ($this->Userregistrationmodel->saveGoogleUser($user_data)) {
-                // Set session for the new user
+				// Get the ID of the last inserted row
+				$uid = $this->db->insert_id();
+
+				// Set session for the new user
                 $this->session->set_userdata('logged_in', TRUE);
                 $this->session->set_userdata('logged_uname', $name);
+				$this->session->set_userdata('login', $uid); // Store the UID in the session
 
-                // Return success response
+
+				// Return success response
                 return $this->output->set_output(json_encode(['success' => true, 'message' => 'User registered and logged in']));
             } else {
                 // Handle database error

@@ -54,6 +54,7 @@ $route['splash-login'] = 'LoginController/authenticate';
 $route['phone-login'] = 'LoginController/phoneRegister';
 
 $route['google-auth'] = 'LoginController/googleAuthenticate';
+$route['flyer'] = 'WebController/flyer';
 
 $route['home'] = 'WebController/home';
 

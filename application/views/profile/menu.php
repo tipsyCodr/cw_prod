@@ -8,9 +8,9 @@
             </div>
 
         </div>
-        <div class="id-wrapper shadow-lg  mx-4  p-2">
 
-            <div class="flex  flex-col justify-start items-center rounded-lg border ">
+        <div class="id-wrapper shadow-lg  mx-4  p-2" style="min-width: 376px; min-height:213px ">
+            <div class="flex  flex-col justify-start items-center rounded-lg border " >
                 <div class=" p-2 flex logo items-center bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t">
                     <img class="img-fluid" src="<?= base_url('assets/images/logo.png') ?>" style="width: 25%;" alt="">
                     <div class="px-4">
@@ -19,21 +19,22 @@
                         <p class="font-thin text-2xl text-white">Address: Bhilai</p>
                     </div>
                 </div>
-                <div class="flex flex-row justify-start ">
+                <div class="flex flex-row justify-evenly w-full">
                     <div class="qr-code flex  items-center justify-center">
-                        <img style="" src="<?= base_url('assets/images/user_profile/main_site.png') ?>" alt="">
+                        <img style="width: 100px;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>" alt="">
                     </div>
                     <div class="user-info px-0">
-                        <h3 class="font-black text-xl  px-2"><?= $user->user_name ?></h3>
-                        <p class=" text-sm text-nowrap"><i class="fa p-1.5 fa-envelope "></i> <?= $user->user_email ?>
+                        <h3 class="font-black text-2xl  px-2"><?= isset($user) && is_object($user) ? $user->user_name : '' ?></h3>
+                        <p class=" text-sm text-nowrap"><i class="fa p-1.5 fa-envelope "></i> <?= isset($user) && isset($user->user_email) ? $user->user_email : '' ?>
                         </p>
-                        <p class="text-sm "><i class="fa p-1.5 fa-phone"></i> <?= $user->user_mobile ?></p>
-                        <p class="text-sm "><i class="fa p-1.5 fa-home"></i> <?= $user->user_address ?></p>
+                        <p class="text-sm "><i class="fa p-1.5 fa-phone"></i> <?= isset($user) && isset($user->user_mobile) ? $user->user_mobile : '<a href="#add-number">< Add Number ></a>' ?></p>
+                        <p class="text-sm "><i class="fa p-1.5 fa-home"></i> <?= isset($user) && isset($user->user_address) ? $user->user_address : '<a href="#add-number">< Add Address ></a>' ?></p>
                     </div>
                     <div class="p-2 user-img mt-[-30px]">
                         <?php if (isset($user) && !empty($user->user_profile_pic)): ?>
                             <i class="fas fa-user-circle fa-4x text-accent bg-white rounded-full"></i>
-                        <?php else: ?>
+
+                        <?php elseif (isset($user->user_profile_pic) && !empty($user->user_profile_pic)): ?>
                             <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
                                 class="rounded-full">
                         <?php endif; ?>
@@ -46,8 +47,9 @@
                 </div> -->
             </div>
             <!-- <h1 class="text-white font-bold text-2xl text-center  ">Sahu Samaaj</h1> -->
-
+		</div>
         </div>
+
 
 
     </div>

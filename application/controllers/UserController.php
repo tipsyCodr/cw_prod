@@ -25,9 +25,14 @@ class UserController extends CI_Controller
     }
     public function index()
     {
-        $data['user'] = $this->UserRegistrationModel->getSingleUser($this->session->userdata('login'));
+        $user_id = $this->session->userdata('login');
+//        $user_id = 2;
+//		var_dump($this->session);
 
-        $data['slot'] = $this->load->view('profile/menu', $data, TRUE);
+        if ($user_id) {
+            $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
+            $data['slot'] = $this->load->view('profile/menu', $data, TRUE);
+        }
 
         // Load main layout with all data
         $this->load->view('/layouts/main', $data);
