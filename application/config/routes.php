@@ -69,18 +69,25 @@ $route['flyer'] = 'WebController/flyer';
 
 
 //Subpages
-	//Social
-	$route['social/post/(:num)'] = 'SocialController/view/$1';
-	$route['social/post/comment/add'] = 'SocialController/add_comments';
+//Services
+$route['services/post/job'] = 'ServiceController/postJobForm';
+$route['services/post/job/store'] = 'ServiceController/postJobSave';
+$route['services/post/business'] = 'ServiceController/postBusinessForm';
+$route['services/post/business/store'] = 'ServiceController/postBusinessSave';
 
-	//User registration
-	$route['register/page'] = 'WebController/registerForm';
-	$route['register/submit'] = 'UserController/store';
 
-	//Matrimonial Registration
-	$route['matrimonial/search'] = 'WebController/searchMatrimonial';
-	$route['matrimonial/register/page'] = 'WebController/matrimonialForm';
-	$route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
+//Social
+$route['social/post/(:num)'] = 'SocialController/view/$1';
+$route['social/post/comment/add'] = 'SocialController/add_comments';
+
+//User registration
+$route['register/page'] = 'WebController/registerForm';
+$route['register/submit'] = 'UserController/store';
+
+//Matrimonial Registration
+$route['matrimonial/search'] = 'WebController/searchMatrimonial';
+$route['matrimonial/register/page'] = 'WebController/matrimonialForm';
+$route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
 
 //Subpages
 
@@ -93,6 +100,8 @@ $route['logout'] = 'LoginController/logout';
 
 // $route['home'] = 'landing_page_controllers/LandingPagesController';
 
+
+//Old Routes ==============================================================================================================================
 // login route 
 $route['login-old'] = 'logincontroller/Login_Controller';
 //landing page

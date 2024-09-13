@@ -26,7 +26,7 @@
             <div class=" flex flex-col tab-panel fade show active" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">
 
 
-                <a href="<?= base_url('job_listing_form') ?>"
+                <a href="<?= base_url('services/post/job') ?>"
                     class=" bg-secondary text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> Post a
                     Job Requirement</a>
 
@@ -38,13 +38,13 @@
                     <div
                         class="p-4 shadow mx-2 mb-2 flex flex-col justify-start hover:bg-gray-100 rounded-lg transition-colors  ">
                         <div class="top flex flex-row ">
-                            <img class='rounded self-start' src="uploads/job_listing/<?= $job['job_image'] ?>" alt=""
+                            <img class='rounded self-start' src="uploads/job_listing/<?= $job['job_image'] ?? '' ?>" alt=""
                                 style="width: 50px;">
 
                             <div class="flex flex-col overflow-hidden">
                                 <p class="block"
                                     style="width: 100%; font-size: 1.5rem; font-weight: bold; margin: 0; padding: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                    <?= $job['job_title'] ?> -
+                                    <?= $job['job_title'] ?? '' ?> -
                                     <?= array_key_exists('job_company', $job) ? $job['job_company'] : 'N/A' ?>
                                 </p>
                                 <small
@@ -54,36 +54,37 @@
                         </div>
                         <div class="bottom py-4">
                             <p class="text-sm text-gray-500"><i class=" px-2 fa fa-location-dot"></i>
-                                <?= $job['job_city'] ?>,
-                                <?= $job['job_country'] ?>
+                                <?= $job['job_city'] ?? '' ?>,
+                                <?= $job['job_country'] ?? '' ?>
                             </p>
                             <p class="text-sm text-gray-500"><i class="px-2 fa-solid fa-indian-rupee-sign"></i>
-                                <?= number_format($job['job_minimum_salary'], 0, ',', ',') ?> -
-                                <?= number_format($job['job_maximum_salary'], 0, ',', ',') ?>
+                                <?= (isset($job['job_minimum_salary']) && is_numeric($job['job_minimum_salary']) ? number_format($job['job_minimum_salary'], 0, ',', ',') : 'N/A') ?>
+                                -
+                                <?= (isset($job['job_maximum_salary']) && is_numeric($job['job_maximum_salary']) ? number_format($job['job_maximum_salary'], 0, ',', ',') : 'N/A') ?>
                             </p>
                         </div>
                         <div class="tags flex flex-row justify-between items-center">
                             <div class="overflow-x-auto flex flex-nowrap gap-2">
                                 <p class="bg-accent text-white rounded-full px-3 py-1 text-sm text-nowrap ">
-                                    Type <?= $job['job_type'] ?>
+                                    Type <?= $job['job_type'] ?? '' ?>
                                 </p>
                                 <p class="bg-accent text-white rounded-full px-3 py-1 text-sm text-nowrap ">
-                                    Education <?= $job['job_education_level'] ?>
+                                    Education <?= $job['job_education_level'] ?? '' ?>
                                 </p>
 
                                 <p class="bg-accent text-white rounded-full px-3 py-1 text-sm text-nowrap ">
-                                    Shift <?= $job['job_shift'] ?>
+                                    Shift <?= $job['job_shift'] ?? '' ?>
                                 </p>
 
 
                             </div>
                             <div class="p-2  text-nowrap hidden">
                                 <a class='p-2 mx-1 bg-accent rounded-full text-white'
-                                    href="mailto:<?= $job['job_number'] ?>"><i class="fa fa-phone"></i> Call </a>
+                                    href="mailto:<?= $job['job_number'] ?? '' ?>"><i class="fa fa-phone"></i> Call </a>
                                 <a class='p-2 mx-1 bg-secondary rounded-full text-white'
-                                    href="mailto:<?= $job['job_email'] ?>"><i class="fa fa-envelope"></i> Email </a>
+                                    href="mailto:<?= $job['job_email'] ?? '' ?>"><i class="fa fa-envelope"></i> Email </a>
                                 <a class='p-2 mx-1 bg-green-500 rounded-full text-white'
-                                    href="mailto:<?= $job['job_website'] ?>"><i class="fa fa-globe"></i> Website </a>
+                                    href="mailto:<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i> Website </a>
                             </div>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
                 style="display:none">
                 <div class="flex flex-col">
 
-                    <a href="<?= base_url('business_listing_form') ?>"
+                    <a href="<?= base_url('services/post/business') ?>"
                         class=" bg-secondary text-white px-4 py-4 hover:bg-accent-dark"> <i class="fa fa-plus"></i> List
                         Your Business</a>
 

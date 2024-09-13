@@ -80,7 +80,7 @@ class WebController extends CI_Controller
         $this->load->model('BusinessListingModel');
         $data['business_list'] = $this->BusinessListingModel->getAllBusinessData();
 
-        $data['slot'] = $this->load->view('listing_views/job_listing/services', $data, TRUE);
+        $data['slot'] = $this->load->view('services/services', $data, TRUE);
 
         $this->load->view('/layouts/main', $data);
 
