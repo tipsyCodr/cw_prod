@@ -114,8 +114,8 @@
 
 
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="comm-swiper-button-prev"></div>
+            <div class="comm-swiper-button-next"></div>
 
         </div>
     </div>

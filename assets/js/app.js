@@ -30,14 +30,12 @@ const communitySwiper = new Swiper(".comm-carousel", {
 	loop: true,
 	freeMode: true,
 	// If we need pagination
-	pagination: {
-		el: ".swiper-pagination",
-	},
+
 	freeMode: true,
 	// Navigation arrows
 	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
+		nextEl: ".comm-swiper-button-next",
+		prevEl: ".comm-swiper-button-prev",
 	},
 	slidesPerView: 2,
 	spaceBetween: 10,
