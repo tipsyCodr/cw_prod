@@ -73,7 +73,8 @@
                 <?php if (!empty($blogs)): ?>
                     <?php foreach ($blogs as $blog): ?>
 
-                        <div class="swiper-slide bg-accent-lightest p-2 rounded-lg hover:bg-accent-light hover:-translate-y-2">
+                        <div
+                            class="swiper-slide bg-accent-lightest p-2 rounded-lg transition-all hover:bg-accent-light hover:-translate-y-2">
                             <div class="item-head">
                                 <div class="img-wrapper ">
                                     <!-- <img class='img-fluid' src='uploads/matrimonial_img/banner/wedding_image.webp' alt=""> -->
