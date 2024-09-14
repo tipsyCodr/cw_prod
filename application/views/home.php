@@ -55,43 +55,35 @@
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
-
-
-
-
     </div>
-    <!-- main Carousel -->
 
+    <!-- Community Hub -->
+    <div class="px-4">
+        <div class="px-2 ">
+            <a class=" flex justify-between items-center " href="<?= site_url('blog') ?>">
+                <h5 class="mt-2 text-xl font-bold">Community Wall </h5>
+                <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="swiper comm-carousel py-4">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
 
+                <?php if (!empty($blogs)): ?>
+                    <?php foreach ($blogs as $blog): ?>
 
-    <div class="section">
-        <div class=" content">
-            <div class="px-2 ">
-                <a class=" flex justify-between items-center " href="<?= site_url('blog') ?>">
-                    <h5 class="mt-2 text-xl font-bold">Community Wall </h5>
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class=" ">
-                <div
-                    class=" posts-wrapper  community-item-wrapper flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
-
-                    <?php if (!empty($blogs)): ?>
-                        <?php foreach ($blogs as $blog): ?>
-                            <h2></h2>
-                            <p></p>
-
-                            <div class="cube ">
-                                <div class="card-head">
-
-                                    <div class="img-wrapper ">
-                                        <!-- <img class='img-fluid' src='uploads/matrimonial_img/banner/wedding_image.webp' alt=""> -->
-                                        <a href="<?= site_url() . 'blog_details/' . $blog['post_id'] ?>">
-                                            <img class='img-fluid'
-                                                src='<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>' alt="">
-                                        </a>
-                                    </div>
+                        <div class="swiper-slide bg-accent-lightest p-2 rounded-lg hover:bg-accent-light hover:-translate-y-2">
+                            <div class="item-head">
+                                <div class="img-wrapper ">
+                                    <!-- <img class='img-fluid' src='uploads/matrimonial_img/banner/wedding_image.webp' alt=""> -->
+                                    <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
+                                        <img class='object-cover h-96 w-full'
+                                            src='<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>' alt="">
+                                    </a>
                                 </div>
+                            </div>
+                            <div class="item-body">
                                 <div class="interaction flex justify-evenly items-center pt-2 border-bottom "
                                     style="border-top:1px solid #dfdfdf">
                                     <a class="flex justify-evenly items-center like-btn" href="#"><i
@@ -104,28 +96,31 @@
                                     <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-share "
                                             style="font-size:1.5rem"></i></a>
                                 </div>
-                                <hr>
-                                <div class=" cube-body">
 
-                                    <div class="post-text pb-4 overflow-hidden" style="max-height: 6rem;">
-                                        <a href="<?= site_url() . 'blog_details/' . $blog['post_id'] ?>">
-                                            <p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                                <?= $blog['content']; ?>
-                                            </p>
-                                        </a>
-                                    </div>
-
+                                <div class="post-text p-4 overflow-hidden" style="max-height: 6rem;">
+                                    <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
+                                        <p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                            <?= $blog['content']; ?>
+                                        </p>
+                                    </a>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p>No blogs available.</p>
-                    <?php endif; ?>
-
-                </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>No blogs available.</p>
+                <?php endif; ?>
             </div>
+
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
         </div>
     </div>
+    <!-- Community Hub -->
+
 
     <div class="section">
         <div class=" content">

@@ -1,6 +1,6 @@
 <style>
     .nav-bar {
-        z-index: 100;
+        z-index: 1000;
     }
 
     .nav-item {
@@ -16,7 +16,7 @@
         filter: invert(0.5) sepia(46) saturate(61) hue-rotate(190deg);
     } */
 </style>
-<div class="navigation-bar border-t border-gray-200 bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
+<div class=" nav-bar navigation-bar border-t border-gray-200 bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
     <div class="wrapper ">
         <ul class="flex text-center  justify-evenly items-center ">
             <li

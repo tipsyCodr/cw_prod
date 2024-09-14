@@ -25,7 +25,7 @@ body {
 	overflow-x: scroll;
 }
 @media (min-width: 768px) {
-	.swiper {
+	.main-carousel {
 		width: 600px;
 		/* height: 300px; */
 	}
