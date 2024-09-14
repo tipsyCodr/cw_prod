@@ -65,23 +65,18 @@
     <div class="py-6 px-4 font-bold text-3xl ">
         Today's Flyer
     </div>
-
+    <?php
+    $flyer = rand(1, 3);
+    ?>
     <div class="flyer-wrapper flex flex-col justify-center items-center  ">
         <div class="border p-2 rounded-sm w-3/4">
-            <img src="<?= base_url('uploads/flyers/' . rand(1, 3) . '.jpg') ?>" alt="">
+            <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
         </div>
-        <div class="flex justify-center mt-4">
-            <a href="https://www.facebook.com/telisahusamaj.in" target="_blank" class="mx-2">
-                <i class="fab text-blue-500 fa-facebook-square fa-2x"></i>
-            </a>
-            <a href="http://www.x.com/telisahusamaj1" target="_blank" class="mx-2">
-                <i class="fab  fa-2x fa-square-x-twitter"></i>
-            </a>
-            <a href="https://in.linkedin.com/telisahusamaj" target="_blank" class="mx-2">
-                <i class="fab text-blue-500 fa-linkedin fa-2x"></i>
-            </a>
-            <a href="https://in.linkedin.com/telisahusamaj" target="_blank" class="mx-2">
-                <i class="text-green-500 fab fa-square-whatsapp fa-2x"></i>
+        <div class="flex justify-center items-center mt-4">
+            <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" download="flyer.jpg"
+                class=" flex justify-center items-center mx-2 p-2 rounded bg-accent hover:bg-accent-dark text-white">
+                <i class="fas fa-file-download p-2 fa-2x"></i>
+                Download & Share
             </a>
 
 
