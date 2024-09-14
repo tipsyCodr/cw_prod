@@ -82,7 +82,7 @@
                                     <?php else: ?>
                                         <i class="py-1 fa fa-user-circle h-12 w-12  text-4xl text-accent-dark"></i>
                                     <?php endif; ?>
-                                    <span class="font-bold"><?= $blog['user_name'] ?></span>
+                                    <span class="font-bold text-lg"><?= $blog['user_name'] ?></span>
 
                                 </div>
                                 <div class="img-wrapper ">
