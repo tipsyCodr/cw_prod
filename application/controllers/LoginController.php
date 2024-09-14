@@ -27,6 +27,7 @@ class LoginController extends CI_Controller
         $user_pass = $this->input->post('user_pass');
         $userData = $this->Userregistrationmodel->checkpassword($user_name, $user_pass);
         if ($userData) {
+            $this->session->set_userdata('logged_in', TRUE);
             $this->session->set_userdata('login', $userData->uid);
             $this->session->set_userdata('logged_uname', $userData->user_name);
 
@@ -67,6 +68,8 @@ class LoginController extends CI_Controller
             if ($user) {
                 // Set session variable
                 $this->session->set_userdata('logged_in', TRUE);
+                $this->session->set_userdata('logged_uname', $username);
+                $this->session->set_userdata('login', $user->uid);
 
                 // Set JavaScript local storage variable
                 echo '<script>localStorage.setItem("logged_in", "true");</script>';
@@ -103,15 +106,15 @@ class LoginController extends CI_Controller
         if ($this->Userregistrationmodel->isRegistered($email)) {
             $user_data = $this->Userregistrationmodel->getSingleUserByEmail($email);
             $user_name = $user_data->user_name;
-			$uid = $user_data->uid;
+            $uid = $user_data->uid;
 
             // Set session for the existing user
             $this->session->set_userdata('logged_in', TRUE);
             $this->session->set_userdata('logged_uname', $user_data->user_name);
-			$this->session->set_userdata('login', $uid); // Store the UID in the session
+            $this->session->set_userdata('login', $uid); // Store the UID in the session
 
 
-			// Return success response
+            // Return success response
             return $this->output->set_output(json_encode(['success' => true, 'message' => 'User logged in']));
         } else {
             // Prepare data for the new user
@@ -127,16 +130,16 @@ class LoginController extends CI_Controller
 
             // Try saving the new user to the database
             if ($this->Userregistrationmodel->saveGoogleUser($user_data)) {
-				// Get the ID of the last inserted row
-				$uid = $this->db->insert_id();
+                // Get the ID of the last inserted row
+                $uid = $this->db->insert_id();
 
-				// Set session for the new user
+                // Set session for the new user
                 $this->session->set_userdata('logged_in', TRUE);
                 $this->session->set_userdata('logged_uname', $name);
-				$this->session->set_userdata('login', $uid); // Store the UID in the session
+                $this->session->set_userdata('login', $uid); // Store the UID in the session
 
 
-				// Return success response
+                // Return success response
                 return $this->output->set_output(json_encode(['success' => true, 'message' => 'User registered and logged in']));
             } else {
                 // Handle database error

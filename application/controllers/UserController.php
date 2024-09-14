@@ -26,8 +26,6 @@ class UserController extends CI_Controller
     public function index()
     {
         $user_id = $this->session->userdata('login');
-//        $user_id = 2;
-//		var_dump($this->session);
 
         if ($user_id) {
             $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
