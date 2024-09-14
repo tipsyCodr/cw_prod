@@ -85,7 +85,7 @@ $route['register/page'] = 'WebController/registerForm';
 $route['register/submit'] = 'UserController/store';
 
 //Matrimonial Registration
-$route['matrimonial/search'] = 'WebController/searchMatrimonial';
+$route['matrimonial/search'] = 'MatrimonialController/getProfiles';
 $route['matrimonial/register/page'] = 'WebController/matrimonialForm';
 $route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
 

@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Migration_Create_matrimonial_table extends CI_Migration
 {
@@ -8,15 +8,35 @@ class Migration_Create_matrimonial_table extends CI_Migration
     {
         $this->dbforge->add_field([
             'matrimonial_id' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'user_id' => [
-                'type'       => 'INT',
+                'type' => 'INT',
                 'constraint' => 11,
-                'unsigned'   => true,
+                'unsigned' => true,
+            ],
+            'for' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'name' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'hide_name' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'hide_contact' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'manglik' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
             ],
             'dob' => [
                 'type' => 'DATETIME',
@@ -58,17 +78,17 @@ class Migration_Create_matrimonial_table extends CI_Migration
                 'type' => 'TEXT',
             ],
             'flag' => [
-                'type'       => 'INT',
+                'type' => 'INT',
                 'constraint' => 11,
-                'default'    => 1,
+                'default' => 1,
             ],
             'flag_admin' => [
-                'type'       => 'INT',
+                'type' => 'INT',
                 'constraint' => 11,
-                'default'    => 0,
+                'default' => 0,
             ],
             'created_at' => [
-                'type'    => 'DATETIME',
+                'type' => 'DATETIME',
             ],
             'updated_at' => [
                 'type' => 'DATETIME',

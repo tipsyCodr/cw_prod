@@ -4,7 +4,7 @@
     <div class="matrimonial-wrapper grid grid-cols-2 gap-4 py-6 px-4">
 
         <div class="col-span-1">
-            <button type="submit" form="form_bride" formaction="<?= base_url('matrimonial_find_match') ?>"
+            <button type="submit" form="form_bride" formaction="<?= base_url('matrimonial/search') ?>"
                 class="matrimonial-card">
                 <div class="img-wrapper  overflow-hidden">
                     <img class="img-fluid rounded-lg transition-all hover:scale-90"
@@ -16,7 +16,7 @@
             </button>
         </div>
         <div class="col-span-1">
-            <button type="submit" form="form_groom" formaction="<?= base_url('matrimonial_find_match') ?>"
+            <button type="submit" form="form_groom" formaction="<?= base_url('matrimonial/search') ?>"
                 class="matrimonial-card">
                 <div class="img-wrapper  overflow-hidden">
                     <img class="img-fluid rounded-lg transition-all hover:scale-90"
@@ -28,14 +28,14 @@
             </button>
         </div>
 
-        <form action="<?= base_url('matrimonial_find_match') ?>" method="POST" id="form_groom">
+        <form action="<?= base_url('matrimonial/search') ?>" method="POST" id="form_groom">
             <input type="hidden" name="looking" value="M">
             <input type="hidden" name="from_age" value="18">
             <input type="hidden" name="to_age" value="65">
 
         </form>
 
-        <form action="<?= base_url('matrimonial_find_match') ?>" method="POST" id="form_bride">
+        <form action="<?= base_url('matrimonial/search') ?>" method="POST" id="form_bride">
             <input type="hidden" name="looking" value="F">
             <input type="hidden" name="from_age" value="18">
             <input type="hidden" name="to_age" value="65">
@@ -44,7 +44,7 @@
 
     </div>
     <div class="search-wrapper mx-auto max-w-md px-4 py-6 space-y-4 bg-white rounded-lg ">
-        <form action="<?= base_url('matrimonial_find_match') ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?= base_url('matrimonial/search') ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group flex flex-row space-x-2">
                 <div class="flex-1 ">
                     <select

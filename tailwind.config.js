@@ -13,7 +13,8 @@ module.exports = {
 				accent: {
 					DEFAULT: "#5c6ac4",
 					dark: "#363b75",
-					light: "#9ba6ef",
+					light: "rgb(187 196 255)",
+					lightest: "rgb(242 244 255)",
 				},
 				secondary: "#ecc94b",
 				activeItem: "#5c6ac4",

@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper py-10">
 
     <div class="filter-wrapper hidden">
         <p class="font-bold text-xl text-center py-4">Looking For</p>
@@ -137,147 +137,85 @@
                 </div>
             </div>
         </div>
-        <div class="result-wrapper">
-            <div class="col-md-9 col-sm-9 col-xs-12 hidden-sm hidden-xs">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="row">
-                            <span class="lable-cstm-search" id="total-matches"><?= count($results['matches']) ?>
-                                Matches</span>
-                        </div>
+    </div>
+    <div class="result-wrapper px-2">
+        <div class="result-count font-black text-lg ">
+            <p>Recommended (5)</p>
+        </div>
+        <hr>
+        <div class="result-list">
+            <?php foreach ($profiles as $profile) { ?>
+                <div
+                    class="item-wrapper overflow-hidden my-4 mx-2 flex flex-row justify-start rounded-lg bg-accent-lightest hover:bg-accent-light">
+
+                    <div class="image bg-cover bg-center bg-no-repeat"
+                        style="width: 30% ;background-image:url(uploads/matrimonial_img/user_images/<?= $profile['images'] ?>);">
                     </div>
-                    <div class="col-md-8 col-sm-8 col-xs-12 hidden-sm hidden-xs">
-                        <div class="demo-search pull-right">
-                            <nav class="pagination-outer" aria-label="Page navigation">
-                                <ul id="ajax_pagin_ul" class="pagination">
 
-                                    <li class="page-item last_link ci-pagination-last"><a
-                                            href="https://shaadi.telisahusamaj.in/search/result/22"
-                                            data-ci-pagination-page="1" class="page-link new-class"="22"=""><span
-                                                aria-hidden="true">First</span></a></li>
+                    <div class="info p-2 ml-2" style="width: 70%;">
 
-                                    <li class="page-item last_link ci-pagination-last"><a
-                                            href="https://shaadi.telisahusamaj.in/search/result/22"
-                                            data-ci-pagination-page="1" class="page-link new-class"="22"=""><span
-                                                aria-hidden="true">Prev</span></a></li>
-                                    <li class="page-item active"><a class="page-link">1</a></li>
-                                    <li><a href="https://shaadi.telisahusamaj.in/search/result/2"
-                                            data-ci-pagination-page="1" class="page-link new-class"="2"="">2</a></li>
-                                    <li><a href="https://shaadi.telisahusamaj.in/search/result/3"
-                                            data-ci-pagination-page="1" class="page-link new-class"="3"="">3</a></li>
-                                    <li class="page-item last_link ci-pagination-next"><a
-                                            href="https://shaadi.telisahusamaj.in/search/result/2"
-                                            data-ci-pagination-page="1" class="page-link new-class"="2"=""
-                                            rel="next"><span aria-hidden="true">Next</span></a></li>
-                                    <li class="page-item last_link ci-pagination-last"><a
-                                            href="https://shaadi.telisahusamaj.in/search/result/22"
-                                            data-ci-pagination-page="1" class="page-link new-class"="22"=""><span
-                                                aria-hidden="true">Last</span></a></li>
-                                </ul>
-                            </nav>
+                        <div class="name">
+                            <p class="font-bold text-xl">
+                                <?php if (isset($profile['hide_name']) && $profile['hide_name'] == 0 && isset($profile['name']) && $profile['name'] != '') { ?>
+                                    <?= $profile['name'] ?>
+                                <?php } else { ?>
+                                    <span class="font-light text-sm italic">
+                                        < Hidden> Request to view
+                                    </span>
+                                <?php } ?>,
+                                <span class="text-md age">
+                                    <?php
+                                    $date = new DateTime($profile['dob']);
+                                    $now = new DateTime();
+                                    $interval = $now->diff($date);
+                                    echo $interval->format('%y');
+                                    ?>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="traits">
+                            <ul class="flex items-center overflow-scroll">
+                                <?php if (isset($profile['mother_tongue']) && $profile['mother_tongue'] != '') { ?>
+                                    <li class="text-nowrap text-sm"><?php echo $profile['mother_tongue'] ?> Speaking</li>
+                                    <li class="mx-1 pb-1 text-sm"><span class="bg-accent-dark inline-block rounded-full"
+                                            style="width:5px;height:5px;"></span></li>
+                                <?php } ?>
+
+                                <?php if (isset($profile['job_occupation']) && $profile['job_occupation'] != '') { ?>
+                                    <li class="text-nowrap text-sm"><?= $profile['job_occupation'] ?> </li>
+                                    <li class="mx-1 pb-1 text-sm"><span class="bg-accent-dark inline-block rounded-full"
+                                            style="width:5px;height:5px;"></span></li>
+                                <?php } ?>
+
+                                <?php if (isset($profile['marrital_status']) && $profile['marrital_status'] != '') { ?>
+                                    <li class="text-nowrap text-sm capitalize"><?= $profile['marrital_status'] ?> </li>
+                                    <!-- 
+                                        Single: Never married
+                                        Married: Married and not separated
+                                        Widowed: Widowed and not remarried
+                                        Divorced: Divorced and not remarried
+                                        Separated: Separated, including living common law
+                                        Registered partnership: In some cases.
+                                    -->
+                                <?php } ?>
+
+                            </ul>
+                        </div>
+                        <div class="description pt-2 text-gray-700 "
+                            style="height: 62px;overflow: hidden;text-overflow: ellipsis;">
+                            <p class="text-md"><?php echo $profile['description'] ?></p>
+                        </div>
+                        <div class="interaction p-2 flex justify-evenly items-center">
+                            <a href="#" class="p-2 bg-accent-dark rounded-full text-white text-sm text-nowrap px-3 py-2"><i
+                                    class="fa text-secondary fa-bell pr-2"></i>Send
+                                Request</a>
+                            <a href="#" class="p-2 bg-accent-dark rounded-full text-white text-sm text-nowrap px-3 py-2"><i
+                                    class="fa fa-envelope text-secondary pr-2"></i>Chat</a>
+                            <!-- <a href="#" class=" p-2 "><i class="fas fa-message text-3xl text-secondary "></i></a> -->
+                            <a href="#" class=" p-2 "><i class="far fa-heart text-3xl text-pink-600 "></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="clearfix"></div>
-                <div id="results-container">
-                    <?php
-                    if (!empty($results)) {
-                        foreach ($results['matches'] as $result) { ?>
-                            <div class="m-b ">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-3 col-xs-12">
-
-                                        <a target="_blank"
-                                            href="https://shaadi.telisahusamaj.in/search/view-profile/<?php echo $result->uid; ?>">
-                                            <img src="uploads/matrimonial_img/user_images/<?php echo $result->images; ?>"
-                                                class="img-responsive placeholder-img" title="<?php echo $result->user_name; ?>"
-                                                alt="<?php echo $result->user_id; ?>">
-                                        </a>
-
-                                        <div class="profile-card-btn">
-                                            <a href="<?= base_url() ?>matromonial_profile/<?php echo $result->uid; ?>"
-                                                class="s-card-1 OpenSans-Light">View Full Profile</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <hr class="search-r-hr">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-12 margin-top-10 right-hr new-p">
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Name:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold"><?php echo $result->user_name; ?></p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Age / Height:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold"><?php echo calculateAge($result->dob); ?> Years,
-                                                        <?php echo $result->height; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Religion:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold">Hindu</p>
-                                                </div>
-                                                <!-- <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <p class="sr1 Roboto-Bold">Caste:</p>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                        <p class="sr2 Roboto-Bold"><?php echo $result->caste; ?></p>
-                                    </div> -->
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Mother Tongue:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold"><?php echo $result->mother_tongue; ?></p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Education:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold"><?php echo $result->education; ?></p>
-                                                </div>
-
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Occupation:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold"><?php echo $result->job_occupation; ?></p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Annual Income:</p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold"><?php echo $result->salary; ?></p>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <p class="sr1 Roboto-Bold">Location:</p>
-                                                </div>
-
-                                                <div class="col-md-6 col-sm-6 col-xs-6 float-end">
-                                                    <p class="sr2 Roboto-Bold">
-                                                        <?php echo $result->user_address . ', ' . $result->user_pincode . ' ' . $result->user_city . ', ' . $result->user_state; ?>
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <p class="sr3"><?php echo $result->description; ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php }
-                    } else { ?>
-                        <p class="fs-1 text-center font-weight-bold">No Matches found</p><?php } ?>
-                </div>
-            </div>
+            <?php } ?>
 
         </div>
-    </div>

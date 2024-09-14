@@ -41,7 +41,7 @@ class ServiceController extends CI_Controller
 
 		$this->Joblistingmodel->job_listing($data);
 
-		$this->session->set_flashdata('success', "Data: " . json_encode($data));
+		$this->session->set_flashdata('success', "Data: " . 'Job Listed successfully!');
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 	public function postBusinessForm()
