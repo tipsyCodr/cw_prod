@@ -137,7 +137,7 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div class="popup-body h-full">
+        <div class="popup-body h-full overflow-scroll pb-8">
             <div class="container mx-auto p-4 max-w-md">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center py-4">
@@ -288,7 +288,8 @@
                                     class="h-10 w-10 rounded-full " />
                             <?php endif; ?>
                             <div class="">
-                                <span class="font-bold text-xl"><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
+                                <span
+                                    class="font-bold text-xl"><?= empty($blog['username']) ? 'Anonymous' : $blog['username']; ?></span>
                             </div>
                         </a>
                     </div>

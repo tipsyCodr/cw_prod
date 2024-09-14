@@ -21,12 +21,12 @@
         <ul class="flex text-center  justify-evenly items-center ">
             <li
                 class="p-2 nav-item <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' active' : '' ?>">
-                <a` href="<?= base_url('/') ?>" class=" nav-item w-full text-decoration-none  hover:translate-y-1">
+                <a href="<?= base_url('home') ?>" class=" nav-item w-full text-decoration-none  hover:translate-y-1">
                     <img src="<?= base_url('assets/images/icons/home.png') ?>" alt="home icon" width="30em"
                         height="30em" />
                     <!-- <i
                         class="fas fa-2x fa-home "></i> -->
-                    </a>
+                </a>
             </li>
             <li class="p-2 nav-item <?= (current_url() === base_url('services')) ? 'text-activeItem active' : '' ?>"><a
                     href="<?= base_url('services') ?>" class=" nav-item w-full text-decoration-none ">
