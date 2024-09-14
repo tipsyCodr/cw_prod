@@ -19,13 +19,15 @@
 <div class="navigation-bar border-t border-gray-200 bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
     <div class="wrapper ">
         <ul class="flex text-center  justify-evenly items-center ">
-            <li class="p-2 nav-item <?= (current_url() === base_url('/')) ? ' active' : '' ?>"><a
-                    href="<?= base_url('/') ?>" class=" nav-item w-full text-decoration-none  hover:translate-y-1">
+            <li
+                class="p-2 nav-item <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' active' : '' ?>">
+                <a` href="<?= base_url('/') ?>" class=" nav-item w-full text-decoration-none  hover:translate-y-1">
                     <img src="<?= base_url('assets/images/icons/home.png') ?>" alt="home icon" width="30em"
                         height="30em" />
                     <!-- <i
                         class="fas fa-2x fa-home "></i> -->
-                </a></li>
+                    </a>
+            </li>
             <li class="p-2 nav-item <?= (current_url() === base_url('services')) ? 'text-activeItem active' : '' ?>"><a
                     href="<?= base_url('services') ?>" class=" nav-item w-full text-decoration-none ">
                     <img src="<?= base_url('assets/images/icons/services.png') ?>" alt="services icon" width="33em"
