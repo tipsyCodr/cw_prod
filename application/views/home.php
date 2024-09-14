@@ -77,8 +77,8 @@
                             <div class="item-head">
                                 <div class="post-head flex justify-start items-center">
                                     <?php if (!empty($blog['user_profile_pic'])): ?>
-                                        <img class="rounded-full h-12 w-12 mr-2"
-                                            src="<?= base_url() . 'uploads/user_images/' . $blog['user_profile_pic'] ?>" alt="" />
+                                        <img class=" object-cover rounded-full h-12 w-12 mr-2"
+                                            src="<?= base_url() . 'uploads/user_profiles/' . $blog['user_profile_pic'] ?>" alt="" />
                                     <?php else: ?>
                                         <i class="py-1 fa fa-user-circle h-12 w-12  text-4xl text-accent-dark"></i>
                                     <?php endif; ?>
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="img-wrapper ">
                                 </div>
-                                <div class="img-wrapper ">
+                                <div class="img-wrapper pt-2">
                                     <!-- <img class='img-fluid' src='uploads/matrimonial_img/banner/wedding_image.webp' alt=""> -->
                                     <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
                                         <img class='object-cover h-96 w-full'
@@ -190,8 +190,10 @@
 
     <div class="section">
         <div class="content">
-            <div class=" px-2 flex justify-between items-center">
-                <h5 class="text-xl font-bold">Bussiness</h5><i class="fa fa-arrow-right"></i>
+            <div class=" px-2 flex  w-full">
+                <a class='block flex justify-between items-center w-full' href="<?= base_url('services/#business') ?>">
+                    <h5 class="text-xl font-bold">Bussiness</h5><i class="fa fa-arrow-right"></i>
+                </a>
             </div>
         </div>
         <div class="py-2 bussiness-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
@@ -199,7 +201,7 @@
 
                 <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400">
                     <div class="cube-head">
-                        <div class="img-wrapper bg-white">
+                        <div class="img-wrapper overflow-hidden bg-white">
                             <img src="uploads/business_listing/<?= $business['business_image'] ?>" width="160px" alt="">
                         </div>
                     </div>
@@ -238,16 +240,18 @@
 
     <div class="section">
         <div class="content">
-            <div class=" px-2 flex justify-between items-center">
-                <h5 class="m-0 text-xl font-bold">Jobs </h5><i class="fa fa-arrow-right"></i>
+            <div class=" px-2 flex  w-full">
+                <a class='block flex justify-between items-center w-full' href="<?= base_url('services/#jobs') ?>">
+                    <h5 class="text-xl font-bold">Jobs</h5><i class="fa fa-arrow-right"></i>
+                </a>
             </div>
             <div class="py-2 job-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <?php foreach ($job_list as $job) { ?>
 
                     <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400">
-                        <div class="cube-head">
-                            <div class="img-wrapper bg-white">
-                                <img src="uploads/job_listing/<?= $job['job_image'] ?>" width="160px"
+                        <div class="cube-head overflow-hidden">
+                            <div class="img-wrapper overflow-hidden bg-white">
+                                <img class="object-cover" src="uploads/job_listing/<?= $job['job_image'] ?>" width="160px"
                                     alt="<?= $job['job_title'] ?>">
                             </div>
                         </div>
