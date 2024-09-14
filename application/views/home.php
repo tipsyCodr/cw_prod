@@ -72,10 +72,21 @@
 
                 <?php if (!empty($blogs)): ?>
                     <?php foreach ($blogs as $blog): ?>
-
                         <div
                             class="swiper-slide bg-accent-lightest p-2 rounded-lg transition-all hover:bg-accent-light hover:-translate-y-2">
                             <div class="item-head">
+                                <div class="post-head flex justify-start items-center">
+                                    <?php if (!empty($blog['user_profile_pic'])): ?>
+                                        <img class="rounded-full h-12 w-12 mr-2"
+                                            src="<?= base_url() . 'uploads/user_images/' . $blog['user_profile_pic'] ?>" alt="" />
+                                    <?php else: ?>
+                                        <i class="py-1 fa fa-user-circle h-12 w-12  text-4xl text-accent-dark"></i>
+                                    <?php endif; ?>
+                                    <span class="font-bold"><?= $blog['user_name'] ?></span>
+
+                                </div>
+                                <div class="img-wrapper ">
+                                </div>
                                 <div class="img-wrapper ">
                                     <!-- <img class='img-fluid' src='uploads/matrimonial_img/banner/wedding_image.webp' alt=""> -->
                                     <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">

@@ -51,7 +51,7 @@ class WebController extends CI_Controller
 
 
         $this->load->model('Blog_model');
-        $data['blogs'] = $this->Blog_model->get_all_blog_posts(); // Get blog posts
+        $data['blogs'] = $this->Blog_model->get_all_blog_posts_with_user();
 
         $this->load->model('BusinessListingModel');
         $data['business_list'] = $this->BusinessListingModel->getAllBusinessData();

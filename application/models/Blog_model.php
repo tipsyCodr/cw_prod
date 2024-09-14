@@ -37,6 +37,15 @@ class Blog_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function get_all_blog_posts_with_user()
+    {
+        $this->db->select('posts.*, user_registration.user_name');
+        $this->db->from('posts');
+        $this->db->join('user_registration', 'user_registration.uid = posts.user_id');
+        $this->db->order_by('post_id', 'DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     public function getSinglePost($post_id)
     {
         $this->db->select('*');
@@ -94,12 +103,14 @@ class Blog_model extends CI_Model
         return ["status" => $status, "like_count" => $like_count];
     }
 
-    public function postedBy($post_id){
-		$this->load->model('Userregistrationmodel');
-	$this->load->model('Blog_model');
-	$data['user'] = $this->db->get_where('user_registration', array('uid' => $this->getSinglePost($post_id)->user_id))->row();
-	return $data['user'];
-	}
+    public function postedBy($post_id)
+    {
+        $this->load->model('Userregistrationmodel');
+        $this->load->model('Blog_model');
+        $data['user'] = $this->db->get_where('user_registration', array('uid' => $this->getSinglePost($post_id)->user_id))->row();
+        return $data['user'];
+    }
+
     public function getComments($post_id)
     {
 

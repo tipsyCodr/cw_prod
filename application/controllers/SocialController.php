@@ -7,8 +7,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class SocialController extends CI_Controller
 {
-	public function view($post_id){
-//		$post_id = $this->input->get('post_id');
+
+	public function getAllPosts()
+	{
+		$this->load->model('Blog_model');
+		$data['posts'] = $this->Blog_model->getPosts();
+		foreach ($data['posts'] as $key => $post) {
+			$data['user'][$key] = $this->Blog_model->postedBy($post['post_id']);
+		}
+		return $data;
+		// $data['slot'] = $this->load->view('social/index', $data, TRUE);
+		// $this->load->view('layouts/main', $data);
+	}
+
+	public function view($post_id)
+	{
+		//		$post_id = $this->input->get('post_id');
 		$this->load->model('Blog_model');
 		$data['blog'] = $this->Blog_model->getSinglePost($post_id);
 		$data['comments'] = $this->Blog_model->getComments($post_id);
@@ -34,15 +48,14 @@ class SocialController extends CI_Controller
 		// print_r($comment_data);
 		$this->load->model('Blog_model');
 		$result = $this->Blog_model->add_comment($comment_data);
-if($result){
-	$this->session->set_flashdata('success', 'Comment added successfully');
-	redirect('social/post/'.$blog_id);
-}
-else{
-	$this->session->set_flashdata("error", "Something went wrong");
-	redirect('social/post/'.$blog_id);
-}
+		if ($result) {
+			$this->session->set_flashdata('success', 'Comment added successfully');
+			redirect('social/post/' . $blog_id);
+		} else {
+			$this->session->set_flashdata("error", "Something went wrong");
+			redirect('social/post/' . $blog_id);
+		}
 		return $result;
-//		Array ( [comment_text] => asd [post_id] => 3 [user_id] => 1 [created_at] => 2024-09-12 12:20:54 )
+		//		Array ( [comment_text] => asd [post_id] => 3 [user_id] => 1 [created_at] => 2024-09-12 12:20:54 )
 	}
 }
