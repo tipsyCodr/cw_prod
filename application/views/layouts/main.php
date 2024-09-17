@@ -8,9 +8,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <base href="<?= base_url() ?>">
-    <script type="text/javascript"
+    <!-- <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=66e5a2dfbb2e4200191ddd8c&product=image-share-buttons&source=platform"
-        async="async"></script>
+        async="async"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
