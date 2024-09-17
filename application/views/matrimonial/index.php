@@ -6,7 +6,7 @@
         <div class="col-span-1">
             <button type="submit" form="form_bride" formaction="<?= base_url('matrimonial/search') ?>"
                 class="matrimonial-card">
-                <div class="img-wrapper rounded-lg overflow-hidden h-[180px]">
+                <div class="img-wrapper rounded-lg overflow-hidden h-[200px]">
                     <img class="img-fluid rounded-lg transition-all hover:scale-90"
                         src="<?= base_url('assets/images/bride.jpg') ?>" alt="">
                 </div>
@@ -18,7 +18,7 @@
         <div class="col-span-1">
             <button type="submit" form="form_groom" formaction="<?= base_url('matrimonial/search') ?>"
                 class="matrimonial-card">
-                <div class="img-wrapper rounded-lg overflow-hidden h-[180px]">
+                <div class="img-wrapper rounded-lg overflow-hidden h-[200px]">
                     <img class="img-fluid rounded-lg transition-all hover:scale-90"
                         src="<?= base_url('assets/images/groom.jpg') ?>" alt="">
                 </div>
