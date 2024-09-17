@@ -980,6 +980,10 @@ video {
   height: 150px;
 }
 
+.h-\[180px\] {
+  height: 180px;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1670,6 +1674,10 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
 .text-left {
