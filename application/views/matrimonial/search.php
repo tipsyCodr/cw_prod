@@ -143,14 +143,27 @@
             <p class="" style="color:#f92f60">(<?= count($profiles) ?>) Profile Matched 💞</p>
         </div>
         <hr>
+        <style>
+            .matri_image {
+                width: 60%;
+
+
+            }
+
+            @media (min-width: 768px) {
+                .matri_image {
+                    width: 30%;
+                }
+            }
+        </style>
         <div class="result-list">
             <?php if (!empty($profiles)) {
                 foreach ($profiles as $profile) { ?>
                     <div
                         class="item-wrapper overflow-hidden my-4 mx-2 flex flex-row justify-start rounded-lg bg-accent-lightest hover:bg-accent-light">
 
-                        <div class="image bg-cover bg-center bg-no-repeat"
-                            style="width: 30% ;background-image:url(uploads/matrimonial_img/user_images/<?= $profile['images'] ?>);">
+                        <div class="image matri_image bg-cover bg-center bg-no-repeat"
+                            style=" background-image:url(uploads/matrimonial_img/user_images/<?= $profile['images'] ?>);">
                         </div>
 
                         <div class="info p-2 ml-2" style="width: 70%;">
