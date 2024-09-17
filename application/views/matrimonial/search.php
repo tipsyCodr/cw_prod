@@ -140,7 +140,7 @@
     </div>
     <div class="result-wrapper px-2">
         <div class="result-count font-black text-lg ">
-            <p class="" style="color:#f92f60">(5) Profile Matched 💞</p>
+            <p class="" style="color:#f92f60">(<?= count($profiles) ?>) Profile Matched 💞</p>
         </div>
         <hr>
         <div class="result-list">

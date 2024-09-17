@@ -1,12 +1,12 @@
 <div class="matrimonial-wrapper ">
     <!-- <h1>Matrimonial</h1> -->
     <h2 class=" pt-6 font-bold text-3xl text-center">Find Your Perfect Pair</h2>
-    <div class="matrimonial-wrapper grid grid-cols-2 gap-4 py-6 px-4">
+    <div class="matrimonial-wrapper grid grid-cols-2 gap-4 py-0 px-4">
 
         <div class="col-span-1">
             <button type="submit" form="form_bride" formaction="<?= base_url('matrimonial/search') ?>"
                 class="matrimonial-card">
-                <div class="img-wrapper  overflow-hidden">
+                <div class="img-wrapper rounded-lg overflow-hidden h-[150px]">
                     <img class="img-fluid rounded-lg transition-all hover:scale-90"
                         src="<?= base_url('assets/images/bride.jpg') ?>" alt="">
                 </div>
@@ -18,7 +18,7 @@
         <div class="col-span-1">
             <button type="submit" form="form_groom" formaction="<?= base_url('matrimonial/search') ?>"
                 class="matrimonial-card">
-                <div class="img-wrapper  overflow-hidden">
+                <div class="img-wrapper rounded-lg overflow-hidden h-[150px]">
                     <img class="img-fluid rounded-lg transition-all hover:scale-90"
                         src="<?= base_url('assets/images/groom.jpg') ?>" alt="">
                 </div>
@@ -45,7 +45,7 @@
 
 
     </div>
-    <div class="search-wrapper mx-auto max-w-md px-4 py-6 space-y-4 bg-white rounded-lg ">
+    <div class="search-wrapper mx-auto max-w-md px-4 py-0 space-y-4 bg-white rounded-lg ">
         <form action="<?= base_url('matrimonial/search') ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group flex flex-col sm:flex-row space-x-2">
                 <div class="flex-1 ml-2 my-2">
