@@ -39,8 +39,18 @@
 
 <div class="notif-wrapper transition-all fixed top-14 shadow-xl px-2 py-1 rounded left-0 w-full h-screen z-50">
     <div class="bg-white ">
-        <div class="top-bar p-1 border-b">
+        <div class="flex justify-between top-bar p-1 border-b">
             <p class="text-sm font-bold text-gray-500">Notifications</p>
+
+            <button type="button"
+                class="text-gray-400 hover:text-gray-500 transition duration-150 ease-in-out focus:outline-none"
+                onclick="closePopup()">
+                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
         </div>
         <div class="content px-1 py-2">
             <div class="item flex flex-row justify-between items-center  px-1 py-2">
@@ -81,5 +91,11 @@
             e.preventDefault();
             noti.classList.toggle('hidden');
         })
+
     })
+    function closePopup() {
+        var noti = document.querySelector('.notif-wrapper')
+
+        noti.classList.add('hidden')
+    }
 </script>

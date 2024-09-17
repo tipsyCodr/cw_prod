@@ -47,8 +47,8 @@
     </div>
     <div class="search-wrapper mx-auto max-w-md px-4 py-6 space-y-4 bg-white rounded-lg ">
         <form action="<?= base_url('matrimonial/search') ?>" method="POST" enctype="multipart/form-data">
-            <div class="form-group flex flex-row space-x-2">
-                <div class="flex-1 ">
+            <div class="form-group flex flex-col sm:flex-row space-x-2">
+                <div class="flex-1 my-2">
                     <select
                         class="form-select px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="gender" name="looking">
@@ -57,7 +57,7 @@
                         <option value="F">Female</option>
                     </select>
                 </div>
-                <div class="flex-1 ">
+                <div class="flex-1 my-2">
                     <select
                         class="form-select px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="from_age" name="from_age">
@@ -66,16 +66,16 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div class="flex-1 ">
+                <div class="flex-1 my-2">
                     <select
                         class="form-select px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="to_age" name="to_age">
                         <?php for ($i = 18; $i <= 65; $i++) { ?>
-                            <option value="<?= $i ?>"><?= $i ?> Years</option>
+                            <option value="<?= $i ?>" <?= $i == 65 ? ' selected' : '' ?>><?= $i ?> Years</option>
                         <?php } ?>
                     </select>
                 </div>
-                <div class="flex-1 ">
+                <div class="flex-1 my-2">
                     <select
                         class="form-select px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="gotra" name="gotra">
@@ -86,7 +86,7 @@
                     </select>
                 </div>
                 <button type="submit"
-                    class="btn btn-primary px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
                     Go</button>
             </div>
         </form>
