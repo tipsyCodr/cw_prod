@@ -1,4 +1,4 @@
-<div class="container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-1">
+<div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1">
     <a href="<?= base_url('about-samaj') ?>"
         class="flex flex-col items-center p-4 bg-white rounded shadow hover:scale-110 transition duration-300 ease-in-out hover:bg-accent hover:text-white">
         <i class="fas fa-users text-4xl"></i>
