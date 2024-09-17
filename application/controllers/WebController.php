@@ -65,6 +65,11 @@ class WebController extends CI_Controller
         // Load main layout with all data
         $this->load->view('/layouts/main', $data);
     }
+    public function about()
+    {
+        $data['slot'] = $this->load->view('about', "", TRUE);
+        $this->load->view('/layouts/main', $data);
+    }
     public function flyer()
     {
 

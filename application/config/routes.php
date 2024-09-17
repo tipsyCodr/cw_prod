@@ -51,6 +51,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $route['default_controller'] = 'WebController/index';
 
+//problematic
+$route['about_us'] = 'WebController/about';
+
 $route['home'] = 'WebController/home';
 $route['services'] = 'WebController/services';
 $route['social'] = 'WebController/social';
@@ -78,6 +81,7 @@ $route['services/post/business/store'] = 'ServiceController/postBusinessSave';
 
 //Social
 $route['social/all-post'] = 'SocialController/getAllPosts';
+$route['social/members'] = 'SocialController/getAllMembers';
 $route['social/post/(:num)'] = 'SocialController/view/$1';
 $route['social/post/comment/add'] = 'SocialController/add_comments';
 

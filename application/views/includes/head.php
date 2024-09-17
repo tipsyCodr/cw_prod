@@ -1,6 +1,7 @@
 <div class="fixed-top flex flex-row py-1.5 justify-between items-center bg-accent">
     <div class=" flex img-wrapper items-center px-1">
-        <a href="#"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>" alt="menu" width="40px"></a>
+        <a href="<?= base_url('about') ?>"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>"
+                alt="menu" width="40px"></a>
         <p class="px-1 font-light text-white text-xl uppercase text-nowrap">
             Patel Samaj
         </p>

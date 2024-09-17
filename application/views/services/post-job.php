@@ -1,4 +1,9 @@
 <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+	<a href="javascript:window.history.back()"
+		class="inline-block mt-32 mb-4 text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
+		<i class="fas fa-chevron-left"></i> Back
+	</a>
+
 	<form action="<?= base_url('services/post/job/store') ?>" method="POST" class="w-full"
 		enctype="multipart/form-data">
 		<h4 class="text-2xl font-bold mb-4">Post A New Job</h4>

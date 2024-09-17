@@ -1,4 +1,4 @@
-<div class="wrapper py-10">
+<div class="wrapper py-5">
 
     <div class="filter-wrapper hidden">
         <p class="font-bold text-xl text-center py-4">Looking For</p>
@@ -138,8 +138,12 @@
             </div>
         </div>
     </div>
-    <div class="result-wrapper px-2">
-        <div class="result-count font-black text-lg ">
+    <div class="result-wrapper px-2 ">
+        <a href="javascript:window.history.back()"
+            class="text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
+            <i class="fas fa-chevron-left"></i> Back
+        </a>
+        <div class="result-count font-black text-lg my-4">
             <p class="" style="color:#f92f60">(<?= count($profiles) ?>) Profile Matched 💞</p>
         </div>
         <hr>

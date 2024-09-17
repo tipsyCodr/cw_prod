@@ -1,4 +1,8 @@
 <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <a href="javascript:window.history.back()"
+        class="inline-block mt-32 mb-4 text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
+        <i class="fas fa-chevron-left"></i> Back
+    </a>
     <?php echo form_open_multipart('services/post/business/store'); ?>
 
     <h4 class="font-bold text-2xl  text-gray-800 mb-6">Post A New Business</h4>

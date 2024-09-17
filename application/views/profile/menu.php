@@ -72,10 +72,10 @@
         <div class="border p-2 rounded-sm w-3/4">
             <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
         </div>
-        <div class="flex justify-center items-center mt-4">
-            <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" download="flyer.jpg"
-                class=" flex justify-center items-center mx-2 p-2 rounded bg-accent hover:bg-accent-dark text-white">
-                <i class="fas fa-file-download p-2 fa-2x"></i>
+        <div class="px-6 py-1 w-full">
+            <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" dowSnload="flyer.jpg"
+                class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full">
+                <i class="fas fa-file-download px-2"></i>
                 Download & Share
             </a>
 
@@ -87,6 +87,11 @@
 
 
 <div class="menu-options mt-4">
+    <div class="mx-6 my-2">
+        <a class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full"
+            href="<?= base_url('social/members') ?>"><i class="fa fa-users"></i> All
+            Members</a>
+    </div>
     <div class="flex flex-col">
         <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-gray-300 hover:text-white"
             href="#">Profile</a>

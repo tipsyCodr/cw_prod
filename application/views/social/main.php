@@ -243,9 +243,13 @@
         </ul>
     </div>
     <div class="main px-3 pb-10">
+        <a href='<?= base_url('social/members') ?>'
+            class="block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
+            <i class="fa fa-users"></i> All Members</a>
+
         <div class="flex items-center justify-between my-3 top-bar">
             <div class="text-left">
-                <h2 class="text-2xl  font-black"> <i class="fas  fa-fire-alt text-red-600 mr-2"></i>
+                <h2 class="text-lg  font-black"> <i class="fas  fa-fire-alt text-red-600 "></i>
                     Trending Posts </h2>
             </div>
             <p class="font-bold lg:block hidden ">Recent Posts</p>
@@ -376,7 +380,7 @@
 
 <div class="side-bar right overflow-scroll">
     <div class="flex flex-col">
-        <div class="stories-wrapper">
+        <div class="stories-wrapper hidden">
             <h6 class="text-black font-black text-2xl p-2">Stories</h6>
             <div class="stories-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x" draggable="true">
                 <div class="story flex-1 h-150px min-w-100px overflow-hidden rounded-lg mr-2">

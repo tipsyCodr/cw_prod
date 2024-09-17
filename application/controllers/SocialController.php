@@ -19,7 +19,13 @@ class SocialController extends CI_Controller
 		// $data['slot'] = $this->load->view('social/index', $data, TRUE);
 		// $this->load->view('layouts/main', $data);
 	}
-
+	public function getAllMembers()
+	{
+		$this->load->model('Userregistrationmodel');
+		$data['members'] = $this->Userregistrationmodel->getAllMembers();
+		$data['slot'] = $this->load->view('social/members', $data, TRUE);
+		$this->load->view('layouts/main', $data);
+	}
 	public function view($post_id)
 	{
 		//		$post_id = $this->input->get('post_id');
