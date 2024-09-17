@@ -64,17 +64,17 @@
                             </p>
                         </div>
                         <div class="overflow-x-auto flex flex-nowrap py-2">
-                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap ">
+                            <p class="bg-gray-200 text-black rounded px-2 py-1 mx-1 text-xs text-nowrap ">
                                 Type: <?= $job['job_type'] ?? '' ?>
                             </p>
-                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap ">
+                            <p class="bg-gray-200 text-black rounded px-2 py-1 mx-1 text-xs text-nowrap ">
                                 Education: <?= $job['job_education_level'] ?? '' ?>
                             </p>
 
-                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap ">
+                            <p class="bg-gray-200 text-black rounded px-2 py-1 mx-1 text-xs text-nowrap ">
                                 Experience: <?= $job['job_experience'] ?? '' ?> Years
                             </p>
-                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap capitalize">
+                            <p class="bg-gray-200 text-black rounded px-2 py-1 mx-1 text-xs text-nowrap capitalize">
                                 Shift: <?= $job['job_shift'] ?? '' ?>
                             </p>
 
