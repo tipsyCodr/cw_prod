@@ -11,18 +11,18 @@
 			<label for="job_type" class="block text-gray-700 text-sm font-bold mb-2">Job Type</label>
 			<select id="job_type" name="job_type"
 				class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-				<option value="1">Full Time</option>
-				<option value="2">Part Time</option>
+				<option value="full time">Full Time</option>
+				<option value="part time">Part Time</option>
 			</select>
 		</div>
 		<div class="mb-4">
 			<label for="job_category" class="block text-gray-700 text-sm font-bold mb-2">Job Category</label>
 			<select id="job_category" name="job_category"
 				class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-				<option value="1">Web Developer</option>
-				<option value="2">PHP Developer</option>
-				<option value="3">Web Designer</option>
-				<option value="4">Graphic Designer</option>
+				<option value="web developer">Web Developer</option>
+				<option value="php developer">PHP Developer</option>
+				<option value="web designer">Web Designer</option>
+				<option value="graphic designer">Graphic Designer</option>
 			</select>
 		</div>
 		<div class="mb-4">

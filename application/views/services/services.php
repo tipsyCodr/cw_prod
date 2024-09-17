@@ -41,14 +41,14 @@
                             <img class='rounded self-start' src="uploads/job_listing/<?= $job['job_image'] ?? '' ?>" alt=""
                                 style="width: 50px;">
 
-                            <div class="flex flex-col overflow-hidden">
-                                <p class="block"
-                                    style="width: 100%; font-size: 1.5rem; font-weight: bold; margin: 0; padding: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                            <div class="flex flex-col overflow-hidden px-2">
+                                <p class="block text-lg"
+                                    style="width: 100%; font-weight: bold; margin: 0; padding: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                                     <?= $job['job_title'] ?? '' ?> -
-                                    <?= array_key_exists('job_company', $job) ? $job['job_company'] : 'N/A' ?>
+                                    <?= array_key_exists('company_name', $job) ? $job['company_name'] : 'N/A' ?>
                                 </p>
                                 <small
-                                    class="text-gray-500"><?= array_key_exists('job_company', $job) ? $job['job_company'] : 'N/A' ?></small>
+                                    class="text-gray-500"><?= array_key_exists('company_name', $job) ? $job['company_name'] : 'N/A' ?></small>
                             </div>
 
                         </div>
@@ -63,28 +63,40 @@
                                 <?= (isset($job['job_maximum_salary']) && is_numeric($job['job_maximum_salary']) ? number_format($job['job_maximum_salary'], 0, ',', ',') : 'N/A') ?>
                             </p>
                         </div>
-                        <div class="tags flex flex-row justify-between items-center">
-                            <div class="overflow-x-auto flex flex-nowrap gap-2">
-                                <p class="bg-accent text-white rounded-full px-3 py-1 text-sm text-nowrap ">
-                                    Type <?= $job['job_type'] ?? '' ?>
-                                </p>
-                                <p class="bg-accent text-white rounded-full px-3 py-1 text-sm text-nowrap ">
-                                    Education <?= $job['job_education_level'] ?? '' ?>
-                                </p>
+                        <div class="overflow-x-auto flex flex-nowrap py-2">
+                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap ">
+                                Type: <?= $job['job_type'] ?? '' ?>
+                            </p>
+                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap ">
+                                Education: <?= $job['job_education_level'] ?? '' ?>
+                            </p>
 
-                                <p class="bg-accent text-white rounded-full px-3 py-1 text-sm text-nowrap ">
-                                    Shift <?= $job['job_shift'] ?? '' ?>
-                                </p>
+                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap ">
+                                Experience: <?= $job['job_experience'] ?? '' ?> Years
+                            </p>
+                            <p class="bg-gray-200 text-black rounded px-2 py-0 mx-1 text-xs text-nowrap capitalize">
+                                Shift: <?= $job['job_shift'] ?? '' ?>
+                            </p>
 
 
-                            </div>
-                            <div class="p-2  text-nowrap hidden">
-                                <a class='p-2 mx-1 bg-accent rounded-full text-white'
-                                    href="mailto:<?= $job['job_number'] ?? '' ?>"><i class="fa fa-phone"></i> Call </a>
-                                <a class='p-2 mx-1 bg-secondary rounded-full text-white'
-                                    href="mailto:<?= $job['job_email'] ?? '' ?>"><i class="fa fa-envelope"></i> Email </a>
-                                <a class='p-2 mx-1 bg-green-500 rounded-full text-white'
-                                    href="mailto:<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i> Website </a>
+                        </div>
+                        <div class="flex items-center justify-end">
+
+                            <div class="p-2 flex justify-evenly items-center text-nowrap">
+                                <a class='px-2 py-1 mx-1 text-xl block bg-accent rounded-full text-white text-nowrap'
+                                    target="_blank" style="" href="mailto:<?= $job['job_number'] ?? '' ?>"><i
+                                        class="fa  fa-phone"></i><b class="hidden md:inline-block px-2">Call</b>
+                                </a>
+                                <a class='px-2 py-1 mx-1 text-xl block bg-green-500 rounded-full text-white text-nowrap'
+                                    style=""
+                                    href="https://api.whatsapp.com/send?phone=<?= $job['job_number'] ?? '' ?>&text=Hi%20I%20am%20interested%20in%20<?= $job['job_title'] ?? '' ?>"
+                                    target="_blank"><i class="fab   fa-whatsapp"></i><b
+                                        class="hidden md:inline-block px-2">Whatsapp</b>
+                                </a>
+                                <a class='px-2 py-1 mx-1 text-xl block bg-secondary rounded-full text-white text-nowrap'
+                                    target="_blank" href="<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i><b
+                                        class="hidden md:inline-block px-2">Website</b>
+                                </a>
                             </div>
                         </div>
                     </div>

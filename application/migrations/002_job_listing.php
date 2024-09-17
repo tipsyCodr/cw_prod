@@ -51,6 +51,10 @@ class Migration_job_listing extends CI_Migration
                     'type' => 'TEXT',
                     'null' => TRUE,
                 ),
+                'company_name' => array(
+                    'type' => 'TEXT',
+                    'null' => TRUE,
+                ),
                 'job_website' => array(
                     'type' => 'TEXT',
                     'null' => TRUE,
@@ -81,11 +85,11 @@ class Migration_job_listing extends CI_Migration
                 ),
                 'created_on' => array(
                     'type' => 'TEXT',
-                    'null' => TRUE,  
+                    'null' => TRUE,
                 ),
                 'created_by' => array(
                     'type' => 'TEXT',
-                    'null' => TRUE,    
+                    'null' => TRUE,
                 ),
                 'updated_on' => array(
                     'type' => 'TEXT',
@@ -97,8 +101,8 @@ class Migration_job_listing extends CI_Migration
                 ),
                 'status' => array(
                     'type' => 'INT',
-                    'default'=>1
-                    
+                    'default' => 1
+
 
                 )
             )
