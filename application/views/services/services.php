@@ -84,7 +84,7 @@
 
                             <div class="p-2 flex justify-evenly items-center text-nowrap">
                                 <a class='px-2 py-1 mx-1 text-xl block bg-accent rounded-full text-white text-nowrap'
-                                    target="_blank" style="" href="mailto:<?= $job['job_number'] ?? '' ?>"><i
+                                    target="_blank" style="" href="tel:<?= $job['job_number'] ?? '' ?>"><i
                                         class="fa  fa-phone"></i><b class="hidden md:inline-block px-2">Call</b>
                                 </a>
                                 <a class='px-2 py-1 mx-1 text-xl block bg-green-500 rounded-full text-white text-nowrap'
