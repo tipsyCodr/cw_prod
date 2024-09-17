@@ -175,11 +175,6 @@
                         </div>
                         <div class="traits">
                             <ul class="flex items-center overflow-scroll">
-                                <?php if (isset($profile['mother_tongue']) && $profile['mother_tongue'] != '') { ?>
-                                    <li class="text-nowrap text-sm"><?php echo $profile['mother_tongue'] ?> Speaking</li>
-                                    <li class="mx-1 pb-1 text-sm"><span class="bg-accent-dark inline-block rounded-full"
-                                            style="width:5px;height:5px;"></span></li>
-                                <?php } ?>
 
                                 <?php if (isset($profile['job_occupation']) && $profile['job_occupation'] != '') { ?>
                                     <li class="text-nowrap text-sm"><?= $profile['job_occupation'] ?> </li>
@@ -201,18 +196,20 @@
 
                             </ul>
                         </div>
-                        <div class="description pt-2 text-gray-700 "
-                            style="height: 62px;overflow: hidden;text-overflow: ellipsis;">
-                            <p class="text-md"><?php echo $profile['description'] ?></p>
+                        <div class="description  text-gray-900 "
+                            style="height: 100px;overflow: hidden;text-overflow: ellipsis;">
+                            <p class="text-sm"><b>Height: </b><?= ($profile['height']) ?? '' ?> ft</p>
+                            <p class="text-sm"><b>Qualification: </b><?= ($profile['education']) ?? '' ?></p>
+                            <p class="text-sm"><b>Mother Tongue: </b><?= ($profile['mother_tongue']) ?? '' ?></p>
+                            <p class="text-sm"><b>Gotra: </b><?= ($profile['gotram']) ?? '' ?></p>
+                            <p class="text-sm"><b>Zodiac: </b><?= ($profile['zodiac']) ?? '' ?></p>
                         </div>
-                        <div class="interaction p-2 flex justify-evenly items-center">
-                            <a href="#" class="p-2 bg-accent-dark rounded-full text-white text-sm text-nowrap px-3 py-2"><i
+                        <div class="interaction py-2  flex justify-evenly items-center">
+                            <a href="#"
+                                class="p-2 text-center border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full text-white text-sm text-nowrap px-3 py-2"><i
                                     class="fa text-secondary fa-bell pr-2"></i>Send
                                 Request</a>
-                            <a href="#" class="p-2 bg-accent-dark rounded-full text-white text-sm text-nowrap px-3 py-2"><i
-                                    class="fa fa-envelope text-secondary pr-2"></i>Chat</a>
-                            <!-- <a href="#" class=" p-2 "><i class="fas fa-message text-3xl text-secondary "></i></a> -->
-                            <a href="#" class=" p-2 "><i class="far fa-heart text-3xl text-pink-600 "></i></a>
+
                         </div>
                     </div>
                 </div>

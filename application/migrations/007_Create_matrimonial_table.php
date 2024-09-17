@@ -62,11 +62,11 @@ class Migration_Create_matrimonial_table extends CI_Migration
             'zodiac' => [
                 'type' => 'TEXT',
             ],
-            'education_id' => [
-                'type' => 'INT',
+            'education' => [
+                'type' => 'TEXT',
             ],
-            'employee_in_id' => [
-                'type' => 'INT',
+            'employee_in' => [
+                'type' => 'TEXT',
             ],
             'salary' => [
                 'type' => 'TEXT',

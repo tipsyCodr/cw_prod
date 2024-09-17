@@ -124,7 +124,11 @@ class WebController extends CI_Controller
     }
     public function matrimonial()
     {
-        $data['slot'] = $this->load->view('matrimonial/index', '', TRUE);
+        $this->db->select('gotra_name');
+        $this->db->from('gotra');
+        $query = $this->db->get();
+        $data['gotram'] = $query->result_array();
+        $data['slot'] = $this->load->view('matrimonial/index', $data, TRUE);
 
         $this->load->view('/layouts/main', $data);
     }
