@@ -1,0 +1,10 @@
+    {
+        "label": "npm: dev",
+        "type": "npm",
+        "script": "dev",
+        "isBackground": true,
+        "presentation": {
+            "reveal": "always"
+        },
+        "problemMatcher": []
+    },
