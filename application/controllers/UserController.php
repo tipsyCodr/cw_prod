@@ -201,9 +201,9 @@ class UserController extends CI_Controller
 
         $config['upload_path'] = './uploads/selfie/';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = '1000';
-        $config['max_width'] = '1024';
-        $config['max_height'] = '768';
+        // $config['max_size'] = '1000';
+        // $config['max_width'] = '1024';
+        // $config['max_height'] = '768';
         $config['file_name'] = time() . '_' . $_FILES['selfie']['name'];
 
         $this->upload->initialize($config);
