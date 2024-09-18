@@ -154,6 +154,12 @@ class MatriMonialRegistrationModel extends CI_Model
             throw $e;
         }
     }
-
+    public function getGotraLists()
+    {
+        $this->db->select('*');
+        $this->db->from('gotra');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }
 ?>

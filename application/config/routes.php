@@ -70,6 +70,9 @@ $route['google-auth'] = 'LoginController/googleAuthenticate';
 //test
 $route['flyer'] = 'WebController/flyer';
 
+//Verification
+$route['membership'] = 'UserController/verifyForm';
+$route['membership/verify'] = 'UserController/verifySave';
 
 //Subpages
 //Services

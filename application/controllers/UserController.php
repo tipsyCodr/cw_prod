@@ -164,4 +164,29 @@ class UserController extends CI_Controller
 
         $this->index();
     }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('login');
+        $this->session->sess_destroy();
+        redirect('/');
+    }
+
+    public function verifyForm()
+    {
+        $user_id = $this->session->userdata('login');
+        $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
+        $this->db->select('gotra_name');
+        $this->db->from('gotra');
+        $query = $this->db->get();
+        $data['gotra_list'] = $query->result_array();
+        $data['slot'] = $this->load->view('user/verification', $data, TRUE);
+        $this->load->view('layouts/main', $data);
+    }
+
+    public function verifySave()
+    {
+        $formData = $this->input->post();
+        var_dump($formData);
+    }
 }

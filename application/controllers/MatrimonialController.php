@@ -34,4 +34,5 @@ class MatrimonialController extends CI_Controller
         $data['slot'] = $this->load->view('matrimonial/search', $data, TRUE);
         $this->load->view('/layouts/main', $data);
     }
+
 }
