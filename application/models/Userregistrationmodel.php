@@ -51,7 +51,7 @@ class UserRegistrationModel extends CI_Model
             if (send_email($to, $subject, $message, $from, $from_name)) {
 
 
-                return true;
+                return $inserted_id;
             } else {
                 return false;
 
@@ -60,7 +60,6 @@ class UserRegistrationModel extends CI_Model
         } else {
             return false;
         }
-
 
     }
     public function saveGoogleUser($user_data)
@@ -91,7 +90,7 @@ class UserRegistrationModel extends CI_Model
 
     public function checkpassword($email, $password)
     {
-        $q = $this->db->where(['user_email' => $email, 'user_verified_status' => 1])->get('user_registration');
+        $q = $this->db->where(['user_email' => $email])->get('user_registration');
         // print_r($q->result_array());
         if ($q->num_rows() > 0) {
             $user = $q->row();

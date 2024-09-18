@@ -1,7 +1,8 @@
 <div class="container mx-auto p-4 pt-6 md:p-6 md:pt-12">
     <h2 class="text-3xl font-bold mb-4">Membership Verification Form</h2>
     <div class="bg-white rounded-lg shadow p-4 md:p-6">
-        <form action="<?= base_url('membership/verify') ?>" method="POST">
+        <form action="<?= base_url('membership/verify') ?>" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="user_id" value="<?= $user->uid ?>">
             <div class="mb-4">
                 <label for="selfie" class="block text-gray-700 text-sm font-bold mb-2">Take a Selfie</label>
                 <input type="file" name="selfie" id="selfie" capture="user" accept="image/*"
@@ -18,8 +19,9 @@
                 <span class="text-blue-500 text-sm italic"> <b>Note</b>: Make sure take full photo of aadhar card</span>
             </div>
 
-            <?php if (empty($user->user_mobile) || $user->user_mobile == 0 || $user->user_mobile == null) { ?>
+            <?php if ($this->session->userdata('login') && !empty($user->user_mobile) && $user->user_mobile != 0 && $user->user_mobile != null) { ?>
                 <?= $user->user_mobile ?>
+            <?php } else { ?>
                 <div class="mb-4">
                     <label for="mobile" class="block text-gray-700 text-sm font-bold mb-2">Mobile</label>
                     <input type="tel" id="mobile" value="" pattern="[0-9]{10}" name="mobile"

@@ -30,6 +30,8 @@ class LoginController extends CI_Controller
             $this->session->set_userdata('logged_in', TRUE);
             $this->session->set_userdata('login', $userData->uid);
             $this->session->set_userdata('logged_uname', $userData->user_name);
+            $this->session->set_userdata('verified', $user->user_verified_status);
+
 
             if (isset($_SESSION['intended_url']) && $_SESSION['intended_url'] != "") {
                 $url = $_SESSION['intended_url'];
@@ -70,6 +72,7 @@ class LoginController extends CI_Controller
                 $this->session->set_userdata('logged_in', TRUE);
                 $this->session->set_userdata('logged_uname', $username);
                 $this->session->set_userdata('login', $user->uid);
+                $this->session->set_userdata('verified', $user->user_verified_status);
 
                 // Set JavaScript local storage variable
                 echo '<script>localStorage.setItem("logged_in", "true");</script>';
@@ -107,11 +110,14 @@ class LoginController extends CI_Controller
             $user_data = $this->Userregistrationmodel->getSingleUserByEmail($email);
             $user_name = $user_data->user_name;
             $uid = $user_data->uid;
+            $verified = $user_data->user_verified_status;
 
             // Set session for the existing user
             $this->session->set_userdata('logged_in', TRUE);
             $this->session->set_userdata('logged_uname', $user_data->user_name);
             $this->session->set_userdata('login', $uid); // Store the UID in the session
+            $this->session->set_userdata('verified', $verified);
+
 
 
             // Return success response
@@ -137,6 +143,7 @@ class LoginController extends CI_Controller
                 $this->session->set_userdata('logged_in', TRUE);
                 $this->session->set_userdata('logged_uname', $name);
                 $this->session->set_userdata('login', $uid); // Store the UID in the session
+                $this->session->set_userdata('verified', $emailVerified);
 
 
                 // Return success response

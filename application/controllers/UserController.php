@@ -52,6 +52,7 @@ class UserController extends CI_Controller
         $this->form_validation->set_rules('user_address', 'User Address', 'required');
         $this->form_validation->set_rules('user_city', 'User City', 'required');
         $this->form_validation->set_rules('user_pincode', 'User Pincode', 'required|numeric|exact_length[6]');
+        $name = $this->input->post('user_name');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('header');
@@ -78,8 +79,12 @@ class UserController extends CI_Controller
 
             $reg_data['user_profile_pic'] = $uploaded_pic_data['file_name'];
             $isInserted = $this->userregistrationmodel->registeruser($reg_data);
-            if ($isInserted) {
+            if (isset($isInserted)) {
                 $this->session->set_flashdata('success', 'User Registered Successfully');
+                $this->session->set_userdata('logged_in', TRUE);
+                $this->session->set_userdata('logged_uname', $isInserted->user_name);
+                $this->session->set_userdata('login', $isInserted->uid); // Store the UID in the session
+                $this->session->set_userdata('verified', $isInserted->user_verified_status);
 
                 redirect('register/page');
             } else {
@@ -187,6 +192,25 @@ class UserController extends CI_Controller
     public function verifySave()
     {
         $formData = $this->input->post();
-        var_dump($formData);
+        $formData['user_id'] = $this->session->userdata('login');
+        $formData['status'] = 'pending';
+        // $formData['selfie'] = $this->input->post('selfie');
+        // $formData['aadhar_card'] = $this->input->post('aadhar_card');
+
+        $formData['created_on'] = date('Y-m-d H:i:s');
+        $formData['updated_on'] = date('Y-m-d H:i:s');
+
+        $this->db->insert('verification_requests', $formData);
+        $inserted = $this->db->insert_id();
+
+
+        if ($inserted) {
+            $this->session->set_flashdata('success', 'Registration successful.');
+            redirect('/');
+        } else {
+            $this->session->set_flashdata('error', 'Registration failed. Please try again.');
+            redirect('membership');
+        }
+
     }
 }
