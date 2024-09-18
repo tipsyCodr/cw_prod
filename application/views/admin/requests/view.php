@@ -28,10 +28,10 @@
 
                 </div>
                 <div class="interaction py-2  flex justify-evenly items-center">
-                    <a href="tel:<?= $verification->user_mobile ?>" target="_blank"
+                    <a href="#" target="_blank"
                         class="p-2 mx-2 text-center border-accent-dark border w-full bg-gradient-to-r from-green-600 to-green-400 rounded-full text-white text-sm text-nowrap px-3 py-2"><i
                             class="fa text-white fa-check pr-2"></i>Approve</a>
-                    <a href="https://wa.me/91<?= $verification->user_mobile ?>" target="_blank"
+                    <a href="#" target="_blank"
                         class="p-2 mx-2 text-center border-accent-dark border w-full bg-gradient-to-r from-red-600 to-red-400 rounded-full text-white text-sm text-nowrap px-3 py-2"><i
                             class="fa text-white fa-times  pr-2"></i> Reject</a>
 
