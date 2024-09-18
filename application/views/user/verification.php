@@ -3,14 +3,19 @@
     <div class="bg-white rounded-lg shadow p-4 md:p-6">
         <form action="<?= base_url('membership/verify') ?>" method="POST">
             <div class="mb-4">
-                <label for="selfie" class="block text-gray-700 text-sm font-bold mb-2">Take Your Selfie</label>
+                <label for="selfie" class="block text-gray-700 text-sm font-bold mb-2">Take a Selfie</label>
                 <input type="file" name="selfie" id="selfie" capture="user" accept="image/*"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <span class="text-blue-500 text-sm italic"><b> Note:</b> Make sure you are in a well lit enviroment, and
+                    make
+                    sure
+                    your face is clearly visible.</span>
             </div>
             <div class="mb-4">
                 <label for="aadhar_card" class="block text-gray-700 text-sm font-bold mb-2">Aadhar Card</label>
                 <input type="file" name="aadhar_card" id="aadhar_card" capture="enviroment" accept="image/*"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <span class="text-blue-500 text-sm italic"> <b>Note</b>: Make sure take full photo of aadhar card</span>
             </div>
 
             <?php if (empty($user->user_mobile) || $user->user_mobile == 0 || $user->user_mobile == null) { ?>

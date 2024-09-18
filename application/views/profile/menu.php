@@ -94,6 +94,8 @@
     </div>
     <div class="flex flex-col">
         <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-gray-300 hover:text-white"
+            href="<?= base_url('membership') ?>">Account CYP </a>
+        <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-gray-300 hover:text-white"
             href="#">Profile</a>
         <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-gray-300 hover:text-white"
             href="#">Settings</a>
