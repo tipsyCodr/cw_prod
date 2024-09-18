@@ -22,7 +22,9 @@ class UserController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('UserRegistrationModel');
+        $this->load->model('User');
     }
+
     public function index()
     {
         $user_id = $this->session->userdata('login');
@@ -180,6 +182,10 @@ class UserController extends CI_Controller
     public function verifyForm()
     {
         $user_id = $this->session->userdata('login');
+        if ($this->User->requestExist($user_id)) {
+            $this->session->set_flashdata('error', 'You have already submitted your request. Please wait While we complete your verification process.');
+            redirect('home');
+        }
         $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
         $this->db->select('gotra_name');
         $this->db->from('gotra');

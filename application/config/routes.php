@@ -70,6 +70,9 @@ $route['google-auth'] = 'LoginController/googleAuthenticate';
 //test
 $route['flyer'] = 'WebController/flyer';
 
+//Admin
+$route['admin/requests'] = 'AdminController/fetchRequests';
+
 //Verification
 $route['membership'] = 'UserController/verifyForm';
 $route['membership/verify'] = 'UserController/verifySave';
@@ -103,10 +106,7 @@ $route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm'
 $route['authenticate'] = 'LoginController/authenticate';
 $route['logout'] = 'LoginController/logout';
 
-
 //Backend Routes
-
-// $route['home'] = 'landing_page_controllers/LandingPagesController';
 
 
 //Old Routes ==============================================================================================================================
