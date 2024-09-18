@@ -7,6 +7,11 @@
                 <input type="file" name="selfie" id="selfie" capture="user" accept="image/*"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
+            <div class="mb-4">
+                <label for="aadhar_card" class="block text-gray-700 text-sm font-bold mb-2">Aadhar Card</label>
+                <input type="file" name="aadhar_card" id="aadhar_card" capture="enviroment" accept="image/*"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+            </div>
 
             <?php if (empty($user->user_mobile) || $user->user_mobile == 0 || $user->user_mobile == null) { ?>
                 <?= $user->user_mobile ?>
@@ -16,11 +21,7 @@
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
             <?php } ?>
-            <div class="mb-4">
-                <label for="aadhar_card" class="block text-gray-700 text-sm font-bold mb-2">Aadhar Card</label>
-                <input type="file" name="aadhar_card" id="aadhar_card" capture="enviroment" accept="image/*"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-            </div>
+
             <div class="mb-4">
                 <label for="gotra" class="block text-gray-700 text-sm font-bold mb-2">Gotra</label>
                 <select name="gotra" id="gotra" required
