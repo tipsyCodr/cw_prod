@@ -147,7 +147,7 @@
         <div class="search-bar my-6 ">
             <form action="<?= base_url('matrimonial/query') ?>" method="post" class="form">
                 <input type="hidden" name="global" value=true />
-                <input type="hidden" name="global" value=<?= $meta['gender'] ?> />
+                <input type="hidden" name="global" value=<?= $meta['gender'] !== null ? $meta['gender'] : '' ?> />
                 <label for="search"
                     class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
                     <input type="text" id="search "
