@@ -50,25 +50,25 @@
     <?php if ($old) { ?>
         <?php foreach ($old as $request) { ?>
             <div class="item flex justify-between bg-accent-lightest p-2 rounded">
-                <div class="flex">
-                    <img src="<?= base_url('uploads/matrimonial_img/user_images/' . $request['matrimonial']['images']) ?>"
-                        alt="<?= $request['matrimonial']['name'] ?>"
-                        class="rounded-lg w-20 h-20 mr-2 overflow-hidden object-cover">
-
-                    <div class="">
-                        <p class="font-bold text-lg"><?= $request['matrimonial']['name'] ?>,
-                            <?= (date('Y') - date('Y', strtotime($request['matrimonial']['dob']))) ?> years
-                        </p>
-                        <span class="font-md flex flex-col">
-                            <p class="font-bold">Gotra: <span
-                                    class="font-normal"><?= $request['matrimonial']['gotram'] ?></span>
+                <a href="<?= base_url('matrimonial/profile/') . $request['matrimonial']['matrimonial_id']; ?>">
+                    <div class="flex">
+                        <img src="<?= base_url('uploads/matrimonial_img/user_images/' . $request['matrimonial']['images']) ?>"
+                            alt="<?= $request['matrimonial']['name'] ?>"
+                            class="rounded-lg w-20 h-20 mr-2 overflow-hidden object-cover">
+                        <div class="">
+                            <p class="font-bold text-lg"><?= $request['matrimonial']['name'] ?>,
+                                <?= (date('Y') - date('Y', strtotime($request['matrimonial']['dob']))) ?> years
                             </p>
-                            <p class="font-bold">Height: <span class="font-normal"><?= $request['matrimonial']['height'] ?>
-                                    ft</span></p>
-                        </span>
+                            <span class="font-md flex flex-col">
+                                <p class="font-bold">Gotra: <span
+                                        class="font-normal"><?= $request['matrimonial']['gotram'] ?></span>
+                                </p>
+                                <p class="font-bold">Height: <span class="font-normal"><?= $request['matrimonial']['height'] ?>
+                                        ft</span></p>
+                            </span>
+                        </div>
                     </div>
-
-                </div>
+                </a>
                 <div id="btn_group" class="p-2 flex  items-center">
                     <div>
                         <a

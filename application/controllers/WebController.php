@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class WebController extends CI_Controller
+class WebController extends MY_Controller
 {
 
     /**

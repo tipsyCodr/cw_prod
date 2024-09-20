@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @property $input
  * @property $Blog_model
  */
-class SocialController extends CI_Controller
+class SocialController extends MY_Controller
 {
 
 	public function getAllPosts()

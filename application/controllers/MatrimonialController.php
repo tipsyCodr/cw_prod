@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class MatrimonialController extends CI_Controller
+class MatrimonialController extends MY_Controller
 {
     public function __construct()
     {

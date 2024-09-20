@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @property UserRegistrationModel $userregistrationmodel
  */
 
-class UserController extends CI_Controller
+class UserController extends MY_Controller
 {
     public function __construct()
     {

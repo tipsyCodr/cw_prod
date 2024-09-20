@@ -1,6 +1,6 @@
 <?php
 
-class ServiceController extends CI_Controller
+class ServiceController extends MY_Controller
 {
 
 	public function postJobForm()
