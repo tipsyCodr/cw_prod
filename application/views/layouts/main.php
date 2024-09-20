@@ -63,6 +63,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
 
+    <link rel="stylesheet" href="<?= base_url() ?>node_modules/flowbite/dist/flowbite.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/app.css" />
 
 
@@ -140,6 +141,8 @@
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
     integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="<?= base_url() ?>node_modules/flowbite/dist/flowbite.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var preloader = document.querySelector(".preloader");

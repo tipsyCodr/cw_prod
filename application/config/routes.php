@@ -97,6 +97,7 @@ $route['register/submit'] = 'UserController/store';
 
 //Matrimonial Registration
 $route['matrimonial/search'] = 'MatrimonialController/getProfiles';
+$route['matrimonial/query'] = 'MatrimonialController/queryProfiles';
 $route['matrimonial/register/page'] = 'WebController/matrimonialForm';
 $route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
 

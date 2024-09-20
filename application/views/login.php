@@ -1,17 +1,37 @@
 <div class="container mx-auto px-4 pt-16 md:pt-24 flex flex-col items-center">
     <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Login</h1>
     <form class="w-full max-w-md" action="<?php echo base_url('authenticate') ?>" method="POST">
+
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
-            <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="username" name="user_name" type="text" placeholder="Username" required>
+
+            <label for="username"
+                class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                <input type="text" id="username" name="user_name" required
+                    class="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+                    placeholder="Username" />
+
+                <span
+                    class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
+                    Username
+                </span>
+            </label>
+
+
+
         </div>
         <div class="mb-6">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
-            <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="password" name="user_pass" type="password" placeholder="******************" required>
+
+            <label for="password"
+                class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                <input type="password" id="password" name="user_pass"
+                    class="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+                    placeholder="Password" />
+
+                <span
+                    class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
+                    Password
+                </span>
+            </label>
         </div>
         <div class="flex items-center justify-center">
             <button
@@ -28,14 +48,14 @@
     </form>
     <div class="flex flex-col w-full  sm:flex-row sm:justify-center sm:space-x-4">
         <button type="button" id="google-login" name="google-login"
-            class="my-2 block w-full sm:w-auto px-4 py-2 text-xl font-bold text-white bg-red-500 rounded-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
+            class="transition-all my-2 block w-full sm:w-auto px-4 py-2 text-xl font-bold text-white bg-red-500 border-2 rounded-full shadow-sm hover:bg-white hover:border-red-500 hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
             style="width: 100%">
             <i class="fa-brands fa-google mx-2"></i>
             Login with Google
         </button>
 
-        <a href='<?= base_url('phone-login') ?>' type="button" id="google-phone-login" name="google-phone-login"
-            class="text-center my-2 block w-full sm:w-auto px-4 py-2 text-xl font-bold text-white bg-black rounded-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
+        <a href='<?= base_url('phone-login') ?>' id="google-phone-login" name="google-phone-login"
+            class="transition-all bg-black text-white border-2 hover:bg-white  hover:border-black hover:text-black text-center my-2 block w-full sm:w-auto px-4 py-2 text-xl font-bold  rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:px-6 sm:py-3 sm:text-base sm:rounded-md"
             style="width: 100%">
             <i class="fa-solid fa-phone mx-2"></i>
             Login with Phone

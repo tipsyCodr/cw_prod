@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tab-bar.active {
+	border-bottom: 2px solid theme("colors.secondary");
+	color: theme("colors.secondary");
+	font-weight: bold;
+}
+
+body {
+	/* background-color: #d1d1d1; */
+	font-family: "Suse", sans-serif;
+	/* font-family: "Inter", sans-serif; */
+}
+.section {
+	background-color: white;
+	/* margin-top: 7px;
+	margin-bottom: 7px; */
+}
+.section > .content {
+	padding: 5px 10px;
+}
+.scrollable {
+	overflow-x: scroll;
+}
+@media (min-width: 768px) {
+	.main-carousel {
+		width: 600px;
+		/* height: 300px; */
+	}
+}
+.divider {
+	margin: 20px 10px;
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+.post-wrapper {
+	height: 400px;
+}
+.cube {
+	/* background-image: linear-gradient(to bottom, #444444, #222222); */
+	background-color: #f6f6f6;
+	border-radius: 20px;
+	color: #313131;
+	padding: 10px;
+	margin: 10px;
+	width: 300px;
+	cursor: pointer;
+	transition: all 0.3s;
+	/* height: 300px; */
+}
+
+.cube img {
+	border-radius: 10px;
+}
+.cube:hover {
+	background-color: #aaaaaa;
+	/* color: white; */
+}
+.cube > .cube-body > .post-text {
+	padding-top: 10px;
+	font-size: 0.9rem;
+	height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.cube .fa-circle-chevron-up:hover,
+.cube .fa-circle-chevron-up:active {
+	color: #6dff34;
+}
+.cube .fa-circle-chevron-down:hover,
+.cube .fa-circle-chevron-down:active {
+	color: #ff3434;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.story {
+	min-width: 138px;
+}
+

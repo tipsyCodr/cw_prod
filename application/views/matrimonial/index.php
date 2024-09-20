@@ -50,7 +50,7 @@
             <div class="form-group flex flex-col sm:flex-row space-x-2">
                 <div class="flex-1 ml-2 my-2">
                     <select
-                        class="form-select bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                        class="border-0 bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="gender" name="looking">
                         <option value="">Gender</option>
                         <option value="M">Male</option>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="flex-1 my-2">
                     <select
-                        class="form-select bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                        class=" border-0 bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="from_age" name="from_age">
                         <?php for ($i = 18; $i <= 65; $i++) { ?>
                             <option value="<?= $i ?>"><?= $i ?> Years</option>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="flex-1 my-2">
                     <select
-                        class="form-select bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                        class=" border-0 bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="to_age" name="to_age">
                         <?php for ($i = 18; $i <= 65; $i++) { ?>
                             <option value="<?= $i ?>" <?= $i == 65 ? ' selected' : '' ?>><?= $i ?> Years</option>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="flex-1 my-2">
                     <select
-                        class="form-select bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                        class="border-0 bg-gray-200 px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="gotra" name="gotra">
                         <option value="">Select Gotra</option>
                         <?php foreach ($gotram as $gotra) { ?>

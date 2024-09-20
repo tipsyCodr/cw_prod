@@ -140,9 +140,44 @@
     </div>
     <div class="result-wrapper px-2 ">
         <a href="javascript:window.history.back()"
-            class="text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
+            class="text-accent-dark border-2 border-accent-dark  hover:bg-accent-dark hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
             <i class="fas fa-chevron-left"></i> Back
         </a>
+
+        <div class="search-bar my-6 ">
+            <form action="<?= base_url('matrimonial/query') ?>" method="post" class="form">
+                <input type="hidden" name="global" value=true />
+                <input type="hidden" name="global" value=<?= $meta['gender'] ?> />
+                <label for="search"
+                    class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                    <input type="text" id="search "
+                        class="peer w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+                        placeholder="Search By Name, Gotras" name="search" />
+
+                    <span
+                        class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
+                        Search By Name, Gotras
+                    </span>
+                </label>
+
+                <div class="mt-2">
+                    <!-- <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label> -->
+                    <!-- <select id="gender" name="gender"
+                        class="text-gray-700 text-sm mt-1 block w-full  my-4 border border-gray-200 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                        <option value="">Select Gender</option>
+                        <option value="M" <?= isset($meta['gender']) && $meta['gender'] == 'M' ? 'selected' : '' ?>>Groom
+                        </option> 
+                        <option value="F" <?= isset($meta['gender']) && $meta['gender'] == 'F' ? 'selected' : '' ?>>Bride
+                        </option>
+                    </select> -->
+                </div>
+                <button class="p-2 rounded-full w-full bg-accent text-white text-center" type="submit">
+                    <i class="fa fa-search"></i> Search
+                </button>
+            </form>
+
+        </div>
+
         <div class="result-count font-black text-lg my-4">
             <p class="" style="color:#f92f60">(<?= count($profiles) ?>) Profile Matched 💞</p>
         </div>
@@ -150,8 +185,6 @@
         <style>
             .matri_image {
                 width: 60%;
-
-
             }
 
             @media (min-width: 768px) {

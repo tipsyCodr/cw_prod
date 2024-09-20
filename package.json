@@ -1,5 +1,6 @@
 {
 	"devDependencies": {
+		"@tailwindcss/forms": "^0.5.9",
 		"autoprefixer": "^10.4.20",
 		"postcss": "^8.4.45",
 		"tailwindcss": "^3.4.10"
@@ -8,6 +9,7 @@
 		"dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --watch"
 	},
 	"dependencies": {
-		"firebase": "^10.13.1"
+		"firebase": "^10.13.1",
+		"flowbite": "^2.5.1"
 	}
 }
