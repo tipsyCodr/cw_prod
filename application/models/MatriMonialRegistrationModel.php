@@ -3,6 +3,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class MatriMonialRegistrationModel extends CI_Model
 {
+
+    public function get_matrimonial_profile_by_id($id)
+    {
+        $this->db->where('matrimonial_id', $id);
+        $query = $this->db->get('matrimonial');
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        }
+        return false;
+    }
+
     public function insert_matrimonial($formArray)
     {
         $matrimonialData = [
@@ -160,6 +171,84 @@ class MatriMonialRegistrationModel extends CI_Model
         $this->db->from('gotra');
         $query = $this->db->get();
         return $query->result_array();
+    }
+    public function storeRequest($sender, $receiver)
+    {
+        // Insert new request
+        try {
+            $this->db->insert('requests', [
+                'user_id' => $sender,
+                'matrimonial_id' => $receiver,
+                'status' => 'pending',
+                'created_on' => date('Y-m-d H:i:s')
+            ]);
+
+            $response = ['success' => true, 'message' => 'Request sent successfully.'];
+            echo json_encode($response);
+            return true;
+
+        } catch (Exception $e) {
+            // Log error (optional)
+            log_message('error', 'Error sending request: ' . $e->getMessage());
+
+            $response = ['success' => false, 'message' => 'Error sending request.'];
+            echo json_encode($response);
+            return false;
+        }
+    }
+    public function getPendingRequests($matrimonial_id)
+    {
+        $this->db->where('matrimonial_id', $matrimonial_id);
+        $this->db->where('status', 'pending');
+        $query = $this->db->get('requests');
+        return $query->result_array();
+    }
+    public function getOldRequests($matrimonial_id)
+    {
+        $this->db->where('matrimonial_id', $matrimonial_id);
+        $this->db->where('status !=', 'pending');
+        $query = $this->db->get('requests');
+        return $query->result_array();
+    }
+    public function acceptRequest($id)
+    {
+        if ($this->db->get_where('requests', ['request_id' => $id, 'status' => 'pending'])->row()) {
+            try {
+                $this->db->where('request_id', $id);
+                $this->db->set('status', 'accepted');
+                $this->db->update('requests');
+                // return true;
+                echo json_encode(['status' => true, 'message' => 'Request Accepted!']);
+                exit;
+
+            } catch (Exception $e) {
+                echo json_encode(['status' => false, 'message' => 'Failed to make change']);
+                exit;
+            }
+        }
+        echo json_encode(['status' => false, 'message' => 'Something Went Wrong']);
+        exit;
+
+    }
+    public function rejectRequest($id)
+    {
+        if ($this->db->get_where('requests', ['request_id' => $id, 'status' => 'pending'])->row()) {
+            try {
+                $this->db->where('request_id', $id);
+                $this->db->set('status', 'rejected');
+                $this->db->update('requests');
+                // return true;
+                echo json_encode(['status' => true, 'message' => 'Request Rejected!']);
+                exit;
+
+            } catch (Exception $e) {
+                echo json_encode(['status' => false, 'message' => 'Failed to make change']);
+                exit;
+
+            }
+        }
+        echo json_encode(['status' => false, 'message' => 'Something Went Wrong']);
+        exit;
     }
 }
 ?>

@@ -21,6 +21,12 @@ class MatrimonialController extends CI_Controller
      *
      * @throws Exception
      */
+    public function getFullProfile($id)
+    {
+        $data['profile'] = $this->MatriMonialRegistrationModel->get_matrimonial_profile_by_id($id);
+        $data['slot'] = $this->load->view('matrimonial/profile', $data, TRUE);
+        $this->load->view('/layouts/main', $data);
+    }
     public function getProfiles()
     {
         $data = [];
@@ -71,7 +77,7 @@ class MatrimonialController extends CI_Controller
 
         }
 
-        $this->db->select('name,hide_contact, hide_name , dob, height, weight, mother_tongue, marrital_status, zodiac, gotram, description, education, job_occupation,images')
+        $this->db->select('matrimonial_id, name, hide_contact, hide_name, dob, height, weight, mother_tongue, marrital_status, zodiac, gotram, description, education, job_occupation,images')
             ->like('name', $query)
             ->or_like('dob', $query)
             ->or_like('height', $query)
@@ -98,5 +104,87 @@ class MatrimonialController extends CI_Controller
         $data['slot'] = $this->load->view('matrimonial/search', $data, TRUE);
         $this->load->view('/layouts/main', $data);
     }
+
+    public function sendRequest()
+    {
+        // Validate input
+        $sender = $this->input->post('user_id', TRUE);  // Sanitize the input
+        $receiver = $this->input->post('matrimonial_id', TRUE);  // Sanitize the input
+
+        if (!$sender || !$receiver) {
+            $response = ['success' => false, 'message' => 'Invalid sender or receiver.'];
+            echo json_encode($response);
+            return false;
+        }
+
+        // Check if the sender has blocked the receiver or vice versa
+        // if ($this->isBlocked($sender, $receiver)) {
+        //     $response = ['success' => false, 'message' => 'Request cannot be sent. User is blocked.'];
+        //     echo json_encode($response);
+        //     return false;
+        // }
+
+        // Check if the request already exists
+        $this->db->where(['user_id' => $sender, 'matrimonial_id' => $receiver]);
+        $requestCount = $this->db->get('requests')->num_rows();
+
+        if ($requestCount > 0) {
+            $response = ['success' => true, 'message' => 'Request already sent.'];
+            echo json_encode($response);
+            return $requestCount;
+        }
+
+        $response = $this->MatriMonialRegistrationModel->storeRequest($sender, $receiver);
+        return $response;
+
+    }
+
+    public function fetchRequest()
+    {
+        $user = $this->session->userdata('login');
+        $recent = $this->MatriMonialRegistrationModel->getPendingRequests($user);
+        $old = $this->MatriMonialRegistrationModel->getOldRequests($user);
+
+        foreach ($recent as &$request) {  // Use reference (&) to modify the array in-place
+            $this->db->where('matrimonial_id', $request['matrimonial_id']);
+            $matrimonial = $this->db->get('matrimonial')->row_array();
+            $request['matrimonial'] = $matrimonial;  // Add matrimonial details to the request
+        }
+
+        unset($request);  // Break reference to avoid unexpected issues later
+
+        foreach ($old as &$request) {  // Use reference (&) to modify the array in-place
+            $this->db->where('matrimonial_id', $request['matrimonial_id']);
+            $matrimonial = $this->db->get('matrimonial')->row_array();
+            $request['matrimonial'] = $matrimonial;  // Add matrimonial details to the request
+        }
+        unset($request);  // Break reference to avoid unexpected issues later
+
+
+        $data['recent'] = $recent;
+        $data['old'] = $old;
+        $data['slot'] = $this->load->view('matrimonial/requests', $data, TRUE);
+        $this->load->view('/layouts/main', $data);
+
+        // If you want to return JSON-encoded response for debugging or API purposes:
+        // echo json_encode($response);  // This will now include the matrimonial data
+    }
+
+
+    public function acceptRequest()
+    {
+        $id = $this->input->post('request_id');
+
+        $response = $this->MatriMonialRegistrationModel->acceptRequest($id);
+        return json_encode($response);
+
+    }
+    public function rejectRequest()
+    {
+        $id = $this->input->post('request_id');
+        $response = $this->MatriMonialRegistrationModel->rejectRequest($id);
+        return json_encode($response);
+    }
+
 
 }

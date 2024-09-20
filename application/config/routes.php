@@ -97,9 +97,14 @@ $route['register/submit'] = 'UserController/store';
 
 //Matrimonial Registration
 $route['matrimonial/search'] = 'MatrimonialController/getProfiles';
+$route['matrimonial/profile/(:num)'] = 'MatrimonialController/getFullProfile/$1';
 $route['matrimonial/query'] = 'MatrimonialController/queryProfiles';
 $route['matrimonial/register/page'] = 'WebController/matrimonialForm';
 $route['matrimonial/register/submit'] = 'UserController/matrimonialRegisterForm';
+$route['matrimonial/request/send'] = 'MatrimonialController/sendRequest';
+$route['matrimonial/request/accept'] = 'MatrimonialController/acceptRequest';
+$route['matrimonial/request/reject'] = 'MatrimonialController/rejectRequest';
+$route['matrimonial/requests/get'] = 'MatrimonialController/fetchRequest';
 
 //Subpages
 

@@ -256,15 +256,56 @@
                                 <p class="text-sm"><b>Zodiac: </b><?= ($profile['zodiac']) ?? '' ?></p>
                             </div>
                             <div class="interaction py-2  flex justify-evenly items-center">
-                                <a href="#"
-                                    class="p-2 text-center border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full text-white text-sm text-nowrap px-3 py-2"><i
+                                <button data-matrimonial-id="<?= $profile['matrimonial_id'] ?>"
+                                    data-user-id="<?= $this->session->userdata('login') ?>"
+                                    class="p-2 text-center border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"><i
                                         class="fa text-secondary fa-bell pr-2"></i>Send
-                                    Request</a>
+                                    Request</button>
 
                             </div>
+
                         </div>
                     </div>
                 <?php } ?>
             <?php } ?>
 
         </div>
+
+        <script>
+            $(document).on('click', '.send-request', function () {
+                let matrimonial_id = $(this).data('matrimonial-id');
+                let user_id = $(this).data('user-id');
+                let $button = $(this); // Store a reference to the button
+
+                $.ajax({
+                    url: '<?= base_url('matrimonial/request/send') ?>',
+                    type: 'post',
+                    data: {
+                        matrimonial_id: matrimonial_id,
+                        user_id: user_id
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        response = JSON.parse(response);
+
+                        if (response.success) {
+                            // Change the button's content
+                            $button.text('Request Sent'); // Update text or add any new content
+                            $button.prop('disabled', true); // Disable the button
+
+                            // Change button styling
+                            $button.removeClass('bg-gradient-to-r from-accent-dark to-accent');
+                            $button.addClass('bg-gradient-to-r from-green-500 to-green-400');
+
+                            alert(response.message);
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while sending the request.');
+                    }
+                });
+            });
+
+        </script>
