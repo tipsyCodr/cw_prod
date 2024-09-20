@@ -38,20 +38,20 @@
                         </div>
                         <div class="flex justify-center py-4 lg:pt-4 pt-8">
                             <div class="mr-4 p-3 text-center">
-                                <span class="text-xl font-bold block capitalize tracking-wide text-blueGray-600">
+                                <span class="text-md font-bold block capitalize tracking-wide text-blueGray-600">
                                     Gotra
                                 </span>
                                 <span class="text-sm text-blueGray-600"><?= $profile['gotram'] ?></span>
                             </div>
                             <div class="mr-4 p-3 text-center">
-                                <span class="text-xl font-bold block capitalize tracking-wide text-blueGray-600">
+                                <span class="text-md font-bold block capitalize tracking-wide text-blueGray-600">
                                     Zodiac
                                 </span>
                                 <span class="text-sm text-blueGray-600"><?= $profile['zodiac'] ?></span>
                             </div>
                             <div class="lg:mr-4 p-3 text-center">
                                 <span
-                                    class="text-xl font-bold block capitalize tracking-wide text-blueGray-600 text-nowrap">
+                                    class="text-md font-bold block capitalize tracking-wide text-blueGray-600 text-nowrap">
                                     Mother Tongue
                                 </span>
                                 <span class="text-sm text-blueGray-600"><?= $profile['mother_tongue'] ?></span>
