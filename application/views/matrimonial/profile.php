@@ -36,7 +36,8 @@
                                 <?= $profile['education'] ?>
                             </div>
                         </div>
-                        <div class="flex justify-center py-4 lg:pt-4 pt-8">
+                        <div
+                            class="flex justify-center py-4 lg:pt-4 pt-8 sm:flex-row flex-col sm:space-x-4 space-x-0 sm:space-y-0 space-y-4">
                             <div class="mr-4 p-3 text-center">
                                 <span class="text-md font-bold block capitalize tracking-wide text-blueGray-600">
                                     Gotra
