@@ -41,7 +41,7 @@
             </div>
         <?php } ?>
     <?php } else { ?>
-        <p class="text-center py-4 text-gray-500">No Recent Requests</p>
+        <p class="text-center pb-2 text-gray-500">No Recent Requests</p>
     <?php } ?>
 
     <div class="px-2  mb-1 w-full bg-gray-100">
