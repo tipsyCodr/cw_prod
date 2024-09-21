@@ -10,7 +10,7 @@ class AdminController extends CI_Controller
         $this->load->model('User');
         $this->load->model('Admin');
         $this->load->model('Userregistrationmodel');
-        $this->load->model('MatrimonialRegistrationModel');
+        $this->load->model('MatriMonialRegistrationModel');
         $this->checkAdmin();
     }
     public function checkAdmin()
@@ -43,13 +43,13 @@ class AdminController extends CI_Controller
 
     public function matrimonialProfiles()
     {
-        $data['profiles'] = $this->MatrimonialRegistrationModel->getAllMatrimonialData();
+        $data['profiles'] = $this->MatriMonialRegistrationModel->getAllMatrimonialData();
         $data['slot'] = $this->load->view('admin/matrimonial/list', $data, true);
         $this->load->view('layouts/main', $data);
     }
     public function viewMatrimonialProfiles($id)
     {
-        $data['profile'] = $this->MatrimonialRegistrationModel->get_matrimonial_profile_by_id($id);
+        $data['profile'] = $this->MatriMonialRegistrationModel->get_matrimonial_profile_by_id($id);
         $data['slot'] = $this->load->view('admin/matrimonial/view', $data, true);
         $this->load->view('layouts/main', $data);
     }
