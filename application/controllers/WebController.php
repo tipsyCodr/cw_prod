@@ -161,4 +161,10 @@ class WebController extends MY_Controller
         $this->load->view('/layouts/main', $data);
 
     }
+
+
+    public function getSession()
+    {
+        echo json_encode($this->session->userdata());
+    }
 }

@@ -17,7 +17,7 @@ class MY_Controller extends CI_Controller
     protected function check_login()
     {
         // Assuming the user session data has a 'login' key
-        if (!$this->session->userdata('login')) {
+        if (!$this->session->userdata('login') || !$this->session->userdata('admin_logged_in')) {
             // If not logged in, redirect to login page
             redirect('splash-login'); // Replace 'auth/login' with your login URL
         }

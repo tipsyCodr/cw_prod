@@ -113,6 +113,20 @@ $route['authenticate'] = 'LoginController/authenticate';
 $route['logout'] = 'LoginController/logout';
 
 //Backend Routes
+$route['admin'] = 'Backend/index';
+$route['cw_yaris3556/admin/dashboard'] = 'AdminController/index';
+
+$route['cw_yaris3556/admin/users/list'] = 'AdminController/users';
+$route['cw_yaris3556/admin/matrimonial/list'] = 'AdminController/matrimonialProfiles';
+$route['cw_yaris3556/admin/matrimonial/view/(:num)'] = 'AdminController/viewMatrimonialProfiles/$1';
+
+$route['cw_yaris3556/admin/login'] = 'Backend/LoginAdminForm';
+$route['cw_yaris3556/admin/login/authorize'] = 'Backend/loginAsAdmin';
+$route['cw_yaris3556/admin/create'] = 'AdminController/createAdmin';
+$route['cw_yaris3556/admin/create/store'] = 'AdminController/addAdmin';
+
+//Just for testing. Delete on production
+$route['cw_yaris3556/admin/session'] = 'WebController/getSession';
 
 
 //Old Routes ==============================================================================================================================
