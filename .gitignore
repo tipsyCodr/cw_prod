@@ -31,6 +31,7 @@ application/config/config.php
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+
 /tests/tests/
 /tests/results/
 community_web_dev.code-workspace
@@ -39,6 +40,6 @@ application/config/config.php
 uploads/job_listing
 uploads/blog_images
 index.php
-.gitignore
+
 application/views/profile/menu.php
 node_modules
