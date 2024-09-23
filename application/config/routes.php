@@ -70,8 +70,7 @@ $route['google-auth'] = 'LoginController/googleAuthenticate';
 //test
 $route['flyer'] = 'WebController/flyer';
 
-//Admin
-$route['admin/requests'] = 'AdminController/fetchRequests';
+
 
 //Verification
 $route['membership'] = 'UserController/verifyForm';
@@ -112,14 +111,46 @@ $route['matrimonial/requests/get'] = 'MatrimonialController/fetchRequest';
 $route['authenticate'] = 'LoginController/authenticate';
 $route['logout'] = 'LoginController/logout';
 
-//Backend Routes
+//Backend Routes Admin Panel
 $route['admin'] = 'Backend/index';
 $route['cw_yaris3556/admin/dashboard'] = 'AdminController/index';
 
-$route['cw_yaris3556/admin/users/list'] = 'AdminController/users';
+
+//user
+$route['cw_yaris3556/admin/users/unverified/list'] = 'AdminController/unverifiedUsers';
+$route['cw_yaris3556/admin/users/verified/list'] = 'AdminController/verifiedUsers';
+$route['cw_yaris3556/admin/users/ban/(:num)'] = 'AdminController/banUser/$1';
+$route['cw_yaris3556/admin/users/unban/(:num)'] = 'AdminController/unBanUser/$1';
+
+$route['cw_yaris3556/admin/requests/list/pending'] = 'AdminController/fetchPendingRequests';
+$route['cw_yaris3556/admin/requests/list/processed'] = 'AdminController/fetchProcessedRequests';
+
+$route['cw_yaris3556/admin/requests/approve/(:num)'] = 'AdminController/approveMemberShip/$1';
+$route['cw_yaris3556/admin/requests/reject/(:num)'] = 'AdminController/rejectMemberShip/$1';
+//user
+
+
+
+//matrimonials
 $route['cw_yaris3556/admin/matrimonial/list'] = 'AdminController/matrimonialProfiles';
 $route['cw_yaris3556/admin/matrimonial/view/(:num)'] = 'AdminController/viewMatrimonialProfiles/$1';
 
+$route['cw_yaris3556/admin/matrimonial/profile/suspend/(:num)'] = 'AdminController/suspendMatrimonialProfile/$1';
+$route['cw_yaris3556/admin/matrimonial/profile/enable/(:num)'] = 'AdminController/enableMatrimonialProfile/$1';
+//matrimonials
+
+
+//social post
+$route['cw_yaris3556/admin/posts/list'] = 'AdminController/postList';
+$route['cw_yaris3556/admin/post/view/(:num)'] = 'AdminController/viewPost/$1';
+$route['cw_yaris3556/admin/post/ban/(:num)'] = 'AdminController/banPost/$1';
+$route['cw_yaris3556/admin/post/unban/(:num)'] = 'AdminController/unBanPost/$1';
+$route['cw_yaris3556/admin/comment/delete/(:num)'] = 'AdminController/deleteComment/$1';
+$route['cw_yaris3556/admin/comment/restore/(:num)'] = 'AdminController/restoreComment/$1';
+//social post
+
+
+//account management
 $route['cw_yaris3556/admin/login'] = 'Backend/LoginAdminForm';
 $route['cw_yaris3556/admin/login/authorize'] = 'Backend/loginAsAdmin';
 $route['cw_yaris3556/admin/create'] = 'AdminController/createAdmin';

@@ -13,7 +13,31 @@ class MatriMonialRegistrationModel extends CI_Model
         }
         return false;
     }
-
+    public function suspend_matrimonial_profile($id)
+    {
+        try {
+            $this->db->where('matrimonial_id', $id);
+            $this->db->set('flag_admin', 1);
+            $this->db->update('matrimonial');
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error suspending profile: ' . $e->getMessage());
+            echo json_encode(['status' => false, 'error' => $e->getMessage()]);
+            // return false;
+        }
+    }
+    public function enable_matrimonial_profile($id)
+    {
+        try {
+            $this->db->where('matrimonial_id', $id);
+            $this->db->set('flag_admin', 0);
+            $this->db->update('matrimonial');
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error enabling profile: ' . $e->getMessage());
+            return false;
+        }
+    }
     public function insert_matrimonial($formArray)
     {
         $matrimonialData = [

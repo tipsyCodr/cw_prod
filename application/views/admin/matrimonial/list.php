@@ -72,13 +72,24 @@
                             <p class="text-sm"><b>Mother Tongue: </b><?= ($profile['mother_tongue']) ?? '' ?></p>
                             <p class="text-sm"><b>Gotra: </b><?= ($profile['gotram']) ?? '' ?></p>
                             <p class="text-sm"><b>Zodiac: </b><?= ($profile['zodiac']) ?? '' ?></p>
+
                         </div>
-                        <div class="interaction py-2  flex justify-evenly items-center">
+                        <div class="interaction py-2 flex flex-col lg:flex-row justify-evenly items-center">
                             <a href="<?= base_url('cw_yaris3556/admin/matrimonial/view/' . $profile['matrimonial_id']) ?>"
-                                class="p-2 text-center border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"><i
+                                class="p-2 my-1  text-center border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"><i
                                     class="fa text-secondary fa-eye pr-2"></i>View
                                 Profile</a>
-
+                            <?php if ($profile['flag_admin'] == 0) { ?>
+                                <a class="p-2 m-1  text-center border-red-600 border w-full bg-gradient-to-r from-red-500 to-red-600 rounded-full text-white text-sm text-nowrap px-3 p-2 send-request"
+                                    href="<?= base_url('cw_yaris3556/admin/matrimonial/profile/suspend/' . $profile['matrimonial_id']) ?>">
+                                    <i class="fa fa-lock text-secondary pr-1"></i> Suspend Profile
+                                </a>
+                            <?php } else { ?>
+                                <a class="p-1 my-1 text-center border-green-600 border w-full bg-gradient-to-r from-green-500 to-green-600 rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"
+                                    href="<?= base_url('cw_yaris3556/admin/matrimonial/profile/enable/' . $profile['matrimonial_id']) ?>">
+                                    <i class="fa fa-lock-open text-secondary pr-2"></i> Enable Profile
+                                </a>
+                            <?php } ?>
                         </div>
 
                     </div>

@@ -38,6 +38,15 @@ class Migration_Create_posts_table extends CI_Migration
                     'constraint' => '255',
                     'null' => TRUE,
                 ),
+                'hidden' => array(
+                    'type' => 'INT',
+                ),
+                'delete' => array(
+                    'type' => 'INT',
+                ),
+                'admin_ban' => array(
+                    'type' => 'INT',
+                ),
                 'created_at' => array(
                     'type' => 'TIMESTAMP',
                     // 'default' => 'CURRENT_TIMESTAMP',

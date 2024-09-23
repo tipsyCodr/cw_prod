@@ -248,4 +248,5 @@ class UserController extends MY_Controller
         }
 
     }
+
 }

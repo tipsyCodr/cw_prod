@@ -27,7 +27,31 @@ class Blog_model extends CI_Model
         }
 
     }
+    public function banPost($id)
+    {
+        try {
+            $this->db->where('post_id', $id);
+            $this->db->update('posts', array('admin_ban' => 1));
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error banning post: ' . $e->getMessage());
+            return false;
+        }
 
+    }
+    public function unBanPost($id)
+    {
+
+        try {
+            $this->db->where('post_id', $id);
+            $this->db->update('posts', array('admin_ban' => 0));
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error banning post: ' . $e->getMessage());
+            return false;
+        }
+
+    }
     // function to get all blog posts
     public function get_all_blog_posts()
     {
@@ -122,7 +146,39 @@ class Blog_model extends CI_Model
         $comment_data = $query->result_array();
         return $comment_data;
     }
-
+    public function adminDeleteComment($id)
+    {
+        try {
+            $this->db->where('comment_id', $id);
+            $this->db->set('admin_delete', 1);
+            $this->db->update('comments');
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    public function adminRestoreComment($id)
+    {
+        try {
+            $this->db->where('comment_id', $id);
+            $this->db->set('admin_delete', 0);
+            $this->db->update('comments');
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    public function userDeleteComment($id)
+    {
+        try {
+            $this->db->where('comment_id', $id);
+            $this->db->set('admin_delete', 0);
+            $this->db->update('comments');
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
     public function getAllComments()
     {
         $this->db->select('comments.*, user_registration.*');

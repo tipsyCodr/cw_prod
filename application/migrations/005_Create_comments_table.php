@@ -1,8 +1,9 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Migration_Create_comments_table extends CI_Migration {
+class Migration_Create_comments_table extends CI_Migration
+{
 
     public function up()
     {
@@ -24,16 +25,24 @@ class Migration_Create_comments_table extends CI_Migration {
                 'constraint' => 11,
                 'unsigned' => TRUE
             ),
+            'delete' => array(
+                'type' => 'INT',
+                'unsigned' => TRUE
+            ),
+            'admin_delete' => array(
+                'type' => 'INT',
+                'unsigned' => TRUE
+            ),
             'comment_text' => array(
                 'type' => 'TEXT',
             ),
             'created_at' => array(
                 'type' => 'TIMESTAMP',
-               
+
             ),
             'updated_at' => array(
                 'type' => 'TIMESTAMP',
-              
+
             ),
         ));
 

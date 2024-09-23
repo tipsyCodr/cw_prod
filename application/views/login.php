@@ -7,7 +7,7 @@
             <label for="username"
                 class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
                 <input type="text" id="username" name="user_name" required
-                    class="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+                    class="w-full peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
                     placeholder="Username" />
 
                 <span
@@ -24,7 +24,7 @@
             <label for="password"
                 class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
                 <input type="password" id="password" name="user_pass"
-                    class="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
+                    class="w-full peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0"
                     placeholder="Password" />
 
                 <span

@@ -59,11 +59,23 @@
                     </div>
                 </div>
 
-
+                <div class="flex justify-evenly items-center">
+                    <?php if ($profile['flag_admin'] == 0) { ?>
+                        <a class="p-2 text-center border-red-600 border w-full bg-gradient-to-r from-red-500 to-red-600 rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"
+                            href="<?= base_url('cw_yaris3556/admin/matrimonial/profile/suspend/' . $profile['matrimonial_id']) ?>">
+                            Suspend Profile
+                        </a>
+                    <?php } else { ?>
+                        <a class="p-2 text-center border-green-600 border w-full bg-gradient-to-r from-green-500 to-green-600 rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"
+                            href="<?= base_url('cw_yaris3556/admin/matrimonial/profile/enable/' . $profile['matrimonial_id']) ?>">
+                            Enable Profile
+                        </a>
+                    <?php } ?>
+                </div>
                 <div class="mt-2 py-10 border-t border-blueGray-200 text-center">
                     <div class="flex flex-wrap justify-center">
                         <div class="w-full lg:w-9/12 px-4">
-                            <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
+                            <p class="mb-4 text-lg leading-relaxed text-blueGray-700 text-center columns-3xs">
                                 <?= $profile['description'] ?>
 
                             </p>

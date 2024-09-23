@@ -143,6 +143,29 @@ class UserRegistrationModel extends CI_Model
             return false;
         }
     }
+    public function banUser($id)
+    {
+        try {
+            $this->db->where('uid', $id);
+            $this->db->update('user_registration', array('status' => 0));
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error banning user: ' . $e->getMessage());
+            return false;
+        }
+    }
+    public function unBanUser($id)
+    {
+        try {
+            $this->db->where('uid', $id);
+            $this->db->update('user_registration', array('status' => 1));
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error banning user: ' . $e->getMessage());
+            return false;
+        }
+    }
+
     // verify the token which is sent to user 
     public function isVerifiedToken($token, $id)
     {
