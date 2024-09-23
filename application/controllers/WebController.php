@@ -54,7 +54,7 @@ class WebController extends MY_Controller
         $data['blogs'] = $this->Blog_model->get_all_blog_posts_with_user();
 
         $this->load->model('Businesslistingmodel');
-        $data['business_list'] = $this->BusinessListingModel->getAllBusinessData();
+        $data['business_list'] = $this->Businesslistingmodel->getAllBusinessData();
 
         $this->load->model('joblistingmodel');
         $data['job_list'] = $this->joblistingmodel->getAllJobData();
