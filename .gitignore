@@ -10,12 +10,8 @@ application/logs/*
 !application/*/.htaccess
 
 composer.lock
-tests/mocks/database/ci_test.sqlite
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+
 application/config/database.php
 application/config/config.php
 /vendor/
@@ -25,18 +21,11 @@ application/config/config.php
 /nbproject/
 .idea/*
 
-## Sublime Text cache files
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
 
-/tests/tests/
-/tests/results/
 community_web_dev.code-workspace
 application/config/config.php
-application/config/config.php
+
+
 uploads/job_listing
 uploads/blog_images
 index.php
