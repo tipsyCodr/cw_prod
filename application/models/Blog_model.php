@@ -70,6 +70,46 @@ class Blog_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function getPostLikes($post_id)
+    {
+        $this->db->select('like_id');
+        $this->db->from('likes');
+        $this->db->where('post_id', $post_id);
+        $q = $this->db->get();
+        return (int) $q->num_rows();
+    }
+    public function isLikedByUser($post_id, $user_id)
+    {
+        return (bool) $this->db
+            ->select('like_id')
+            ->from('likes')
+            ->where(['user_id' => $user_id, 'post_id' => $post_id])
+            ->get()
+            ->num_rows();
+
+    }
+    public function likePost($post_id, $user_id)
+    {
+        $this->db->select('like_id');
+        $this->db->from('likes');
+        $this->db->where(['user_id' => $user_id, 'post_id' => $post_id]);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            $like = $query->row_array();
+            $this->db->delete('likes', ['like_id' => $like['like_id']]);
+            return array("status" => "unliked");
+
+        } else {
+            $data = array(
+                'user_id' => $user_id,
+                'post_id' => $post_id
+            );
+            $this->db->insert('likes', $data);
+            return array("status" => "liked");
+        }
+        return 'failed';
+
+    }
     public function getSinglePost($post_id)
     {
         $this->db->select('*');

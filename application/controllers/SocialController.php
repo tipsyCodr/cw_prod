@@ -7,7 +7,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class SocialController extends MY_Controller
 {
-
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Blog_model');
+	}
 	public function getAllPosts()
 	{
 		$this->load->model('Blog_model');
@@ -37,6 +41,14 @@ class SocialController extends MY_Controller
 		$data['slot'] = $this->load->view('social/post', $data, TRUE);
 		$this->load->view('layouts/main', $data);
 
+	}
+	public function toggleLike($post_id, $user_id)
+	{
+		$like = $this->Blog_model->likePost($post_id, $user_id);
+		// Set the header to return a JSON response
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode($like));
 	}
 
 	public function add_comments()

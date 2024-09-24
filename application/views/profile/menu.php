@@ -39,13 +39,14 @@
                         </p>
                     </div>
                     <div class="p-2 user-img mt-[-30px] flex justify-end col-span-2">
-                        <?php if (isset($user) && !empty($user->user_profile_pic)): ?>
-                            <i class="fas fa-user-circle fa-4x text-accent bg-white rounded-full"></i>
-
-                        <?php elseif (isset($user->user_profile_pic) && !empty($user->user_profile_pic)): ?>
-                            <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
-                                class="rounded-full">
-                        <?php endif; ?>
+                        <a href="<?= base_url('profile-pic') ?>" class="">
+                            <?php if (isset($user) && empty($user->user_profile_pic)): ?>
+                                <i class="fas fa-user-circle fa-4x text-accent bg-white rounded-full"></i>
+                            <?php elseif (isset($user->user_profile_pic) && !empty($user->user_profile_pic)): ?>
+                                <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
+                                    class="rounded-full w-[70px] h-[70px]">
+                            <?php endif; ?>
+                        </a>
                     </div>
                 </div>
 

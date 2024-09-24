@@ -249,4 +249,52 @@ class UserController extends MY_Controller
 
     }
 
+    public function profilePic()
+    {
+        $user_id = $this->session->userdata('login');
+        if (!$user_id) {
+            redirect('splash-login');
+        }
+        $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
+        $data['slot'] = $this->load->view('user/profile', $data, TRUE);
+        $this->load->view('layouts/main', $data);
+    }
+    public function updateDetails()
+    {
+        $formData = $this->input->post('user_mobile');
+
+        var_dump($formData);
+    }
+    public function updateProfilePic()
+    {
+        $user_id = $this->session->userdata('login');
+        $query = $this->db->query("SELECT user_profile_pic FROM user_registration WHERE `uid` = '$user_id'");
+        $result = $query->row_array();
+        $filename = $result['user_profile_pic'];
+        if (empty($filename)) {
+            $user = $this->UserRegistrationModel->getUserById($user_id);
+            $filename = $user->user_name . '_' . substr(str_shuffle(MD5(microtime())), 0, 8) . '.jpg';
+        }
+        $formData = $this->input->post(null, true);
+        if (!empty($_FILES['user_profile_pic']['name'])) {
+            $config['upload_path'] = './uploads/user_profiles/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['file_name'] = $filename;
+            $config['overwrite'] = true;
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('user_profile_pic')) {
+                $error = $this->upload->display_errors();
+                $response = array('success' => false, 'message' => $error);
+            } else {
+                $uploadData = $this->upload->data();
+                $formData['user_profile_pic'] = $uploadData['file_name'];
+                $response = array('success' => true, 'image_path' => base_url('uploads/user_profiles/' . $uploadData['file_name']));
+            }
+        } else {
+            $response = array('success' => false, 'message' => 'No image uploaded.');
+        }
+
+        echo json_encode($response);
+    }
 }

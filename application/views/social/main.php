@@ -315,9 +315,14 @@
                     </a>
                     <div class="card-body mb-5">
                         <div class='py-2 border-b-2 bg-gray-100 flex justify-evenly items-center'>
-                            <a class='flex like-btn items-center block cursor-pointer ' data-id="<?= $blog_id; ?>"> <i
-                                    class="fa-regular fa-2x fa-heart hover:text-red-500 transition-all "></i>
+                            <a class='flex like-btn items-center block cursor-pointer ' data-id="<?= $blog_id; ?>"
+                                onclick="likePost(this)">
+                                <?php if ($likedstatus == true) { ?>
+                                    <i class="fa-solid fa-2x fa-heart text-red-500 hover:text-gray-500 transition-all "></i>
+                                <?php } else { ?>
+                                    <i class="fa-regular fa-2x fa-heart hover:text-red-500 transition-all "></i>
 
+                                <?php } ?>
                                 <span class="p-2">Like</span>
                             </a>
                             <a class='flex  items-center block cursor-pointer '
@@ -334,16 +339,10 @@
 
                         <div class="flex justify-start my-2">
                             <div class="flex items-center gap-x-2">
-                                <?php if ($likedstatus) { ?>
-                                    <p class=" " id='like-<?= $blog_id; ?>' data-id="<?= $blog_id; ?>"><i
-                                            class="fa fa-heart text-red-400"></i></p>
 
-                                <?php } else { ?>
-                                    <p class=" rounded-full text-white" data-id="<?= $blog_id; ?>"><i
-                                            class="fa fa-heart text-red-400 "></i>
-                                    </p>
-                                <?php } ?>
-                                <span><?= $like_count ?></span>
+                                <p class=" rounded-full"><i class="fa fa-heart text-red-400 "></i>
+                                    <span id='like-<?= $blog_id; ?>' data-id="<?= $blog_id; ?>"><?= $blog['likes'] ?></span>
+                                </p>
                             </div>
                             <div class="flex items-center px-2">
                                 <a href="social/post/<?= $blog_id; ?>" class="btn btn-outline-secondary btn-sm me-2">
@@ -441,6 +440,39 @@
 
 
 <script>
+    window.onload = function () {
+        window.likePost = function (el) {
+            const $this = $(el);
+            const dataId = $this.attr('data-id');
+            const likeIcon = $this.children('i');
+            const likeCountSpan = $('#like-' + dataId);
+
+            $.ajax({
+                url: "<?= base_url('social/post/like') ?>/" + dataId + "/" + <?= $this->session->userdata('login') ?>,
+                method: 'POST',
+                success: function (response) {
+                    console.log(response);
+                    console.log(likeCountSpan.text());
+
+                    const responseData = response;
+                    if (responseData.status === 'liked') {
+                        likeIcon.removeClass('fa-regular').addClass('fa-solid text-red-500')
+                        likeCountSpan.text(parseInt(likeCountSpan.text()) + 1);
+                    } else if (responseData.status === 'unliked') {
+                        likeIcon.removeClass('fa-solid text-red-500').addClass('fa-regular');
+                        likeCountSpan.text(parseInt(likeCountSpan.text()) - 1);
+                        // likeCountSpan.text(responseData.likes);
+                    }
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                }
+            })
+        }
+
+    }
     // Open/Close popup functions
     function closePopup() {
         $('#add_blog')[0].reset();
@@ -547,32 +579,31 @@
 
 
         // Like button handler (Repeated from earlier)
-        $(document).on('click', '.like-btn', function () {
-            const $this = $(this);
-            const dataId = $this.attr('data-id');
-            const likeIcon = $this.children('i');
-            const likeCountSpan = $('#like-' + dataId);
+        // $(document).on('click', '.like-btn', function () {
+        //     const $this = $(this);
+        //     const dataId = $this.attr('data-id');
+        //     const likeIcon = $this.children('i');
+        //     const likeCountSpan = $('#like-' + dataId);
 
-            fetch('<?= base_url(); ?>increaseLike', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: dataId })
-            })
-                .then(response => response.json())
-                .then(response => {
-                    // const likeCountSpan = $this.nextElementSibling;
-                    if (response.status === 'liked') {
-                        console.log(response)
-                        likeIcon.removeClass('fa-regular').addClass('fa-solid text-red-500')
-                    } else if (response.status === 'disliked') {
-                        console.log('Like disliked')
-                        likeIcon.removeClass('fa-solid text-red-500').addClass('fa-regular');
+        //     fetch('<?= base_url(); ?>increaseLike', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({ id: dataId })
+        //     })
+        //         .then(response => response.json())
+        //         .then(response => {
+        //             // const likeCountSpan = $this.nextElementSibling;
+        //             if (response.status === 'liked') {
+        //                 console.log(response)
+        //                 likeIcon.removeClass('fa-regular').addClass('fa-solid text-red-500')
+        //             } else if (response.status === 'disliked') {
+        //                 console.log('Like disliked')
+        //                 likeIcon.removeClass('fa-solid text-red-500').addClass('fa-regular');
 
-                    }
-                });
-        });
-
+        //             }
+        //         });
     });
+
 
 
 

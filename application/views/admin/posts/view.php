@@ -1,5 +1,5 @@
-<div class="wrapper ">
-    <div class="post-wrapper">
+<div class="wrapper flex flex-col items-center justify-center">
+    <div class="post-wrapper " style="max-width:600px">
         <div class="img-wrapper p-3">
             <img src="<?= base_url() . 'uploads/blog_images/' . $post->image_url ?>" alt="">
 

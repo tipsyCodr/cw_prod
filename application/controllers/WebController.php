@@ -23,6 +23,7 @@ class WebController extends MY_Controller
     {
         parent::__construct();
         $this->load->library('session');
+        $this->load->model('Blog_model');
     }
     public function index()
     {
@@ -100,7 +101,6 @@ class WebController extends MY_Controller
 
         // Get all user_ids from blog posts
         $user_ids = array_column($data['blogs'], 'user_id');
-
         if (!empty($user_ids)) {
             // Fetch all users in one query
             $this->db->where_in('uid', $user_ids);
@@ -115,6 +115,8 @@ class WebController extends MY_Controller
             // Assign the username to each blog post
             foreach ($data['blogs'] as $key => $blog) {
                 $data['blogs'][$key]['username'] = isset($users[$blog['user_id']]) ? $users[$blog['user_id']] : 'Unknown';
+                $data['blogs'][$key]['likes'] = $this->Blog_model->getPostLikes($blog['post_id']);
+                $data['blogs'][$key]['likedstatus'] = (bool) $this->Blog_model->isLikedByUser($blog['post_id'], $this->session->userdata('login'));
             }
         }
 

@@ -68,13 +68,18 @@ $route['phone-login'] = 'LoginController/phoneRegister';
 $route['google-auth'] = 'LoginController/googleAuthenticate';
 
 //test
-$route['flyer'] = 'WebController/flyer';
 
 
 
-//Verification
+// User 
+// Verification
 $route['membership'] = 'UserController/verifyForm';
 $route['membership/verify'] = 'UserController/verifySave';
+
+$route['profile-pic'] = 'UserController/profilePic';
+$route['profile-pic/update'] = 'UserController/updateProfilePic';
+$route['update'] = 'UserController/updateDetails';
+
 
 //Subpages
 //Services
@@ -88,6 +93,8 @@ $route['services/post/business/store'] = 'ServiceController/postBusinessSave';
 $route['social/all-post'] = 'SocialController/getAllPosts';
 $route['social/members'] = 'SocialController/getAllMembers';
 $route['social/post/(:num)'] = 'SocialController/view/$1';
+$route['social/post/like/(:num)/(:num)'] = 'SocialController/toggleLike/$1/$2';
+
 $route['social/post/comment/add'] = 'SocialController/add_comments';
 
 //User registration
