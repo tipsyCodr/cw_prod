@@ -139,8 +139,8 @@
             <div
                 class="matrimonial-wrapper flex flex-row  py-2  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <div class="p-2">
-                    <a href="<?= base_url('matrimonial') ?>">
-                        <div class=" relative img-wrapper rounded-[30px]  overflow-hidden"
+                    <a href="<?= base_url('matrimonial') ?>" class="">
+                        <div class=" relative img-wrapper rounded-[30px] hover:scale-95 transition-all overflow-hidden"
                             style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/bride.jpg') ?>); background-size: cover; overflow:hidden;">
                             <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
                                 <p class="font-bold text-xl p-2">Bride</p>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial') ?>">
-                        <div class=" relative img-wrapper rounded-[30px]  overflow-hidden"
+                        <div class=" relative img-wrapper rounded-[30px] hover:scale-95 transition-all overflow-hidden"
                             style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/groom.jpg') ?>); background-size: cover; overflow:hidden;">
                             <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
                                 <p class="font-bold text-xl p-2">Groom</p>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial_form') ?>">
-                        <div class=" relative img-wrapper rounded-[30px]  overflow-hidden"
+                        <div class=" relative img-wrapper rounded-[30px] hover:scale-95 transition-all overflow-hidden"
                             style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/couple.jpg') ?>); background-size: cover; overflow:hidden;">
                             <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
                                 <p class="font-bold text-xl p-2">Register</p>
