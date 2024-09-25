@@ -63,7 +63,7 @@ class Blog_model extends CI_Model
     }
     public function get_all_blog_posts_with_user()
     {
-        $this->db->select('posts.*, user_registration.user_name,user_registration.user_profile_pic');
+        $this->db->select('posts.*, user_registration.user_name,user_registration.user_profile_pic,user_registration.user_verified_status');
         $this->db->from('posts');
         $this->db->join('user_registration', 'user_registration.uid = posts.user_id');
         $this->db->order_by('post_id', 'DESC');

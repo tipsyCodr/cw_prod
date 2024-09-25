@@ -43,7 +43,7 @@ const communitySwiper = new Swiper(".comm-carousel", {
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
-			slidesPerView: 1,
+			slidesPerView: 1.7,
 			spaceBetween: 20,
 		},
 		// when window width is >= 480px

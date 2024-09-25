@@ -64,6 +64,7 @@ class WebController extends MY_Controller
 
         $user = $this->Userregistrationmodel->getSingleUser($this->session->userdata('login'));
         $data['profile_pic'] = $user->user_profile_pic;
+        $data['is_verified'] = ($user->user_verified_status == 1) ? true : false;
 
         // Pass the blog data when loading the 'home' view
         $data['slot'] = $this->load->view('/home', $data, TRUE);
