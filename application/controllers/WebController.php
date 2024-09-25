@@ -24,6 +24,7 @@ class WebController extends MY_Controller
         parent::__construct();
         $this->load->library('session');
         $this->load->model('Blog_model');
+        $this->load->model('Userregistrationmodel');
     }
     public function index()
     {
@@ -54,11 +55,15 @@ class WebController extends MY_Controller
         $this->load->model('Blog_model');
         $data['blogs'] = $this->Blog_model->get_all_blog_posts_with_user();
 
+
         $this->load->model('Businesslistingmodel');
         $data['business_list'] = $this->Businesslistingmodel->getAllBusinessData();
 
         $this->load->model('joblistingmodel');
         $data['job_list'] = $this->joblistingmodel->getAllJobData();
+
+        $user = $this->Userregistrationmodel->getSingleUser($this->session->userdata('login'));
+        $data['profile_pic'] = $user->user_profile_pic;
 
         // Pass the blog data when loading the 'home' view
         $data['slot'] = $this->load->view('/home', $data, TRUE);

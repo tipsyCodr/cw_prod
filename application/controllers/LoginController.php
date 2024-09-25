@@ -31,6 +31,7 @@ class LoginController extends CI_Controller
             $this->session->set_userdata('login', $userData->uid);
             $this->session->set_userdata('logged_uname', $userData->user_name);
             $this->session->set_userdata('verified', $user->user_verified_status);
+            $this->session->set_userdata('profile_pic', $user->user_profile_pic);
 
 
             if (isset($_SESSION['intended_url']) && $_SESSION['intended_url'] != "") {
@@ -73,6 +74,8 @@ class LoginController extends CI_Controller
                 $this->session->set_userdata('logged_uname', $username);
                 $this->session->set_userdata('login', $user->uid);
                 $this->session->set_userdata('verified', $user->user_verified_status);
+                $this->session->set_userdata('profile_pic', $user->user_profile_pic);
+
 
                 // Set JavaScript local storage variable
                 echo '<script>localStorage.setItem("logged_in", "true");</script>';

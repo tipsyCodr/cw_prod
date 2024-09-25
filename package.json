@@ -1,5 +1,8 @@
 {
 	"devDependencies": {
+		"@egoist/tailwindcss-icons": "^1.8.1",
+		"@iconify/json": "^2.2.252",
+		"@iconify/tailwind": "^1.1.3",
 		"@tailwindcss/forms": "^0.5.9",
 		"autoprefixer": "^10.4.20",
 		"postcss": "^8.4.45",
@@ -9,6 +12,9 @@
 		"dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --watch"
 	},
 	"dependencies": {
+		"@iconify-json/basil": "^1.2.0",
+		"@iconify-json/iconamoon": "^1.2.0",
+		"@iconify-json/mingcute": "^1.2.0",
 		"firebase": "^10.13.1",
 		"flowbite": "^2.5.1"
 	}

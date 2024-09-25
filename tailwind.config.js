@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+const {
+	iconsPlugin,
+	dynamicIconsPlugin,
+} = require("@egoist/tailwindcss-icons");
 module.exports = {
 	content: [
 		"./assets/**/*.{html,js}",
@@ -22,5 +26,10 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("flowbite/plugin"), require("@tailwindcss/forms")],
+	plugins: [
+		require("flowbite/plugin"),
+		require("@tailwindcss/forms"),
+		iconsPlugin(),
+		dynamicIconsPlugin(),
+	],
 };

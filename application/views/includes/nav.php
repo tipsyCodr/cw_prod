@@ -8,63 +8,81 @@
     }
 
     .nav-item.active {
-        border-top: 4px solid #5c6ac4;
-        background-color: rgb(92 106 196 / 15%);
+        /* border-top: 4px solid #5c6ac4; */
+        background-color: white;
+        /* background-color: rgb(92 106 196 / 15%); */
     }
 
     /* .nav-item.active {
         filter: invert(0.5) sepia(46) saturate(61) hue-rotate(190deg);
     } */
 </style>
-<div class=" nav-bar navigation-bar border-t border-gray-200 bg-gray-100 fixed bottom-0 left-0 w-full shadow-lg">
-    <div class="wrapper ">
+<div class=" nav-bar navigation-bar flex justify-center w-full  fixed bottom-5 left-0 mx-auto  shadow-lg ">
+    <div class="wrapper p-1 max-w-[410px] bg-black filter bg-opacity-70 rounded-full">
         <ul class="flex text-center  justify-evenly items-center ">
             <li
-                class="p-2 nav-item <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' active' : '' ?>">
-                <a href="<?= base_url('home') ?>" class=" nav-item w-full text-decoration-none  hover:translate-y-1">
-                    <img src="<?= base_url('assets/images/icons/home.png') ?>" alt="home icon" width="30em"
-                        height="30em" />
-                    <!-- <i
-                        class="fas fa-2x fa-home "></i> -->
+                class="p-2 nav-item <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' active' : '' ?> rounded-full w-[76.86px] h-[76.86px] flex items-center justify-center">
+                <a href="<?= base_url('home') ?>" class=" nav-item text-decoration-none ">
+                    <!-- <img src="<?= base_url('assets/images/icons/home.png') ?>" class="mx-auto" alt="home icon"
+                        width="24.30px" height="24.30px" /> -->
+                    <span
+                        class="i-[teenyicons--home-solid] <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' text-accent' : 'text-white' ?>  w-[21.30px] h-[21.30px]"></span>
+
+
+
                 </a>
             </li>
-            <li class="p-2 nav-item <?= (current_url() === base_url('services')) ? 'text-activeItem active' : '' ?>"><a
-                    href="<?= base_url('services') ?>" class=" nav-item w-full text-decoration-none ">
-                    <img src="<?= base_url('assets/images/icons/services.png') ?>" alt="services icon" width="33em"
-                        height="31em" />
+            <li
+                class="p-2 nav-item <?= (current_url() === base_url('services')) ? 'text-activeItem active' : '' ?> rounded-full w-[76.86px] h-[76.86px] flex items-center justify-center">
+                <a href="<?= base_url('services') ?>" class=" nav-item w-full text-decoration-none ">
+                    <!-- <img src="<?= base_url('assets/images/icons/services.png') ?>" class="mx-auto" alt="services icon"
+                        width="24.30px" height="24.30px" /> -->
+                    <span
+                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('services')) ? 'i-[basil--bag-solid]  text-accent' : 'i-[basil--bag-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
+
                     <!-- <i
                         class="fa fa-2x fa-suitcase ">
                     </i> -->
-
-                </a></li>
-            <li class="p-2 nav-item <?= (current_url() === base_url('social')) ? 'text-activeItem active' : '' ?>"><a
-                    href="<?= base_url('social') ?>" class=" nav-item w-full text-decoration-none">
-                    <img src="<?= base_url('assets/images/icons/social.png') ?>" alt="post icon" width="35em"
-                        height="55em" />
-
+                </a>
+            </li>
+            <li
+                class="p-2 nav-item <?= (current_url() === base_url('social')) ? 'text-activeItem active' : '' ?> rounded-full w-[76.86px] h-[76.86px] flex items-center justify-center">
+                <a href="<?= base_url('social') ?>" class=" nav-item w-full text-decoration-none">
+                    <!-- <img src="<?= base_url('assets/images/icons/social.png') ?>" class="mx-auto" alt="post icon"
+                        width="24.30px" height="24.30px" /> -->
+                    <span
+                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('social')) ? 'i-[iconamoon--discover-fill]  text-accent' : 'i-[iconamoon--discover-thin] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
                     <!-- <i
                         class="fa-solid fa-3x fa-square-plus ">
                     </i> -->
                 </a>
             </li>
-            <li class="p-2 nav-item <?= (current_url() === base_url('matrimonial')) ? 'text-activeItem active' : '' ?>">
+            <li
+                class="p-2 nav-item <?= (current_url() === base_url('matrimonial')) ? 'text-activeItem active' : '' ?> rounded-full w-[76.86px] h-[76.86px] flex items-center justify-center">
                 <a href="<?= base_url('matrimonial') ?>" class=" nav-item w-full text-decoration-none">
-                    <img src="<?= base_url('assets/images/icons/matrimonial.png') ?>" alt="matrimony icon" width="38em"
-                        height="38em" />
+                    <!-- <img src="<?= base_url('assets/images/icons/matrimonial.png') ?>" class="mx-auto"
+                        alt="matrimony icon" width="24.30px" height="24.30px" /> -->
+                    <!-- <span class="i-[mingcute--love-fill] text-white w-[24.30px] h-[24.30px]"></span> -->
+                    <span
+                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('matrimonial')) ? 'i-[teenyicons--heart-circle-solid]  text-accent' : 'i-[teenyicons--heart-circle-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
+
                     <!-- <i
                         class="fa-brands fa-2x fa-gratipay ">
                     </i> -->
-
                 </a>
             </li>
-            <li class="p-2 nav-item <?= (current_url() === base_url('profile')) ? 'text-activeItem active' : '' ?>">
+            <li
+                class="p-2 nav-item <?= (current_url() === base_url('profile')) ? 'text-activeItem active' : '' ?> rounded-full w-[76.86px] h-[76.86px] flex items-center justify-center">
                 <a href="<?php if (!$this->session->userdata('logged_in')) {
                     echo base_url('login');
                 } else {
                     echo base_url('profile');
                 } ?>" class="nav-item w-full text-decoration-none">
-                    <img src="<?= base_url('assets/images/icons/user-line.png') ?>" alt="profile icon" width="37em"
-                        height="37em" />
+                    <img class='w-[24.30px] h-[24.30px] object-cover rounded-full m-auto' src="<?php if ($this->session->userdata('logged_in')) {
+                        echo base_url('uploads/user_profiles/' . $this->session->userdata('profile_pic'));
+                    } else {
+                        echo base_url('assets/images/icons/user.png');
+                    } ?>" alt="profile icon" />
                     <!-- <i
                         class="fa fa-2x fa-user ">
                     </i> -->
