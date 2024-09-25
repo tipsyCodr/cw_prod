@@ -2042,6 +2042,22 @@ select {
   height: 100vh;
 }
 
+.h-\[224px\] {
+  height: 224px;
+}
+
+.h-\[150px\] {
+  height: 150px;
+}
+
+.h-\[350px\] {
+  height: 350px;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -2101,6 +2117,26 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[226px\] {
+  width: 226px;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[350px\] {
+  width: 350px;
+}
+
+.w-\[320px\] {
+  width: 320px;
 }
 
 .min-w-0 {
@@ -2798,6 +2834,11 @@ select {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover {
