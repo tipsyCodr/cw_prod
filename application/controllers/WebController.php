@@ -88,8 +88,8 @@ class WebController extends MY_Controller
         $this->load->model('joblistingmodel');
         $data['job_list'] = $this->joblistingmodel->getAllJobData();
 
-        $this->load->model('BusinessListingModel');
-        $data['business_list'] = $this->BusinessListingModel->getAllBusinessData();
+        $this->load->model('Businesslistingmodel');
+        $data['business_list'] = $this->Businesslistingmodel->getAllBusinessData();
 
         $data['slot'] = $this->load->view('services/services', $data, TRUE);
 
