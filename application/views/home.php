@@ -110,6 +110,7 @@
                     <?php foreach ($blogs as $blog): ?>
                         <!-- new design -->
                         <div class="swiper-slide rounded-[30px] relative overflow-hidden my-2 "
+                            onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
                             style="width: 224px; height:224px; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: cover;">
                             <div class="absolute top-0 -left-3 ">
                                 <span
@@ -148,7 +149,8 @@
                                 </p>
                                 <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3"
                                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                    <?= $blog['content']; ?></p>
+                                    <?= $blog['content']; ?>
+                                </p>
                             </div>
                         </div>
                         <!-- new design -->
