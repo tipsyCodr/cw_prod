@@ -227,7 +227,7 @@
     </div>
 
 
-    <div class="section">
+    <div class="section pb-10">
         <div class="content">
             <div class=" px-2 flex  w-full">
                 <a class='block flex justify-between items-center w-full' href="<?= base_url('services/#jobs') ?>">
