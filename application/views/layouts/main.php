@@ -148,7 +148,7 @@
         var preloader = document.querySelector(".preloader");
         setTimeout(function () {
             preloader.style.display = "none";
-        }, 1000);
+        }, 10);
     });
 </script>
 <script type="module" src="<?= base_url() ?>assets/js/app.js" crossorigin="anonymous"></script>
