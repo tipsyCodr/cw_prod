@@ -184,7 +184,7 @@
         <div class="py-2 bussiness-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
             <?php foreach ($business_list as $business) { ?>
 
-                <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400 w-[320px] h-[300px]">
+                <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400 w-[320px] h-[320px]">
                     <div class="cube-head flex justify-center items-center">
                         <div class=" img-wrapper overflow-hidden bg-white w-[200px] h-[150px]">
                             <img class="m-auto w-full h-full object-contain "
@@ -200,10 +200,12 @@
                         </div>
                         <div class="interaction flex justify-evenly items-center pt-2">
                             <!-- <p class="font-bold">Contact:</p> -->
-                            <a class="px-4 py-2 flex items-center mx-2 bg-brightBlue text-white rounded-full"
-                                href="tel:<?= $business['phone_number'] ?>">
-                                <i class="fa-solid fa-phone px-2"></i> Call
+
+                            <a class="px-4 py-2 mx-2 flex items-center bg-brightBlue text-white rounded-full"
+                                href="tel:<?= $business['phone_number'] ?>/" target="_blank">
+                                <i class="fa-solid fa-phone text-xl px-2"></i> Call
                             </a>
+
                             <a class="px-4 py-2 mx-2 flex items-center bg-brightGreen text-white rounded-full"
                                 href="https://wa.me/91<?= $business['phone_number'] ?>/?text=I'm%20inquiring%20about%20your%20listings"
                                 target="_blank">
