@@ -65,6 +65,7 @@ class WebController extends MY_Controller
         $user = $this->Userregistrationmodel->getSingleUser($this->session->userdata('login'));
         $data['profile_pic'] = $user->user_profile_pic;
         $data['is_verified'] = ($user->user_verified_status == 1) ? true : false;
+        $data['title'] = 'Home';
 
         // Pass the blog data when loading the 'home' view
         $data['slot'] = $this->load->view('/home', $data, TRUE);
@@ -74,6 +75,8 @@ class WebController extends MY_Controller
     }
     public function about()
     {
+        $data['title'] = 'About';
+
         $data['slot'] = $this->load->view('about', "", TRUE);
         $this->load->view('/layouts/main', $data);
     }
@@ -86,6 +89,8 @@ class WebController extends MY_Controller
     }
     public function services()
     {
+        $data['title'] = 'Services';
+
         $this->load->model('joblistingmodel');
         $data['job_list'] = $this->joblistingmodel->getAllJobData();
 
@@ -99,6 +104,8 @@ class WebController extends MY_Controller
     }
     public function social()
     {
+        $data['title'] = 'Community Hub';
+
         $this->load->model('Blog_model');
         $this->load->model('joblistingmodel');
 
@@ -137,6 +144,8 @@ class WebController extends MY_Controller
     }
     public function matrimonial()
     {
+        $data['title'] = 'Matrimonial';
+
         $this->db->select('gotra_name');
         $this->db->from('gotra');
         $query = $this->db->get();

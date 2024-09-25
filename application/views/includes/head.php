@@ -4,7 +4,7 @@
                 alt="menu" width="40px"></a>
     </div>
     <p class="font-monaSans  text-lg text-center">
-        Home
+        <?= $title ?>
     </p>
     <div class="user p-0 flex flex-row justify-evenly">
         <!-- If there is notification then show colored icon for attention -->
