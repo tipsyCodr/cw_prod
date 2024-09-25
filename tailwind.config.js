@@ -26,6 +26,10 @@ module.exports = {
 				brightBlue: "#0b51d3",
 				secondary: "#ecc94b",
 				activeItem: "#5c6ac4",
+				backgroundImage: {
+					"lucid-gradient":
+						"linear-gradient(180deg, rgba(235,214,245,1) 0%, rgba(212,207,245,1) 23%, rgba(212,230,246,1) 70%, rgba(255,255,255,1) 95%)",
+				},
 			},
 		},
 	},

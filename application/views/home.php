@@ -129,7 +129,7 @@
     <!-- Community Hub -->
 
 
-    <div class="section">
+    <div class="">
         <div class=" content">
             <div class="px-2 flex justify-between items-center">
                 <h5 class="m-0 text-xl font-bold">Matrimonial</h5><i class="fa fa-arrow-right"></i>
@@ -173,7 +173,7 @@
     </div>
 
 
-    <div class="section">
+    <div class="">
         <div class="content">
             <div class=" px-2 flex  w-full">
                 <a class='block flex justify-between items-center w-full' href="<?= base_url('services/#business') ?>">
@@ -227,7 +227,7 @@
     </div>
 
 
-    <div class="section pb-10">
+    <div class=" pb-10">
         <div class="content">
             <div class=" px-2 flex  w-full">
                 <a class='block flex justify-between items-center w-full' href="<?= base_url('services/#jobs') ?>">
