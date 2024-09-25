@@ -17,20 +17,7 @@
 </style>
 
 <div class="">
-    <div class="section bg-white">
-        <div class="container mx-auto px-0">
-            <div class="border border-gray-200 rounded">
-                <form action="<?php echo site_url('matrimonial/search'); ?>" method="GET" class="flex items-center m-0">
-                    <i class="p-2 fa fa-search text-gray-400"></i>
-                    <input class="p-2 w-full text-xl" type="text" name="search"
-                        placeholder="Search Jobs, Bussiness, Matrimony">
-                    <button type="submit" class="p-2">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
+
     <!-- main Carousel -->
     <div class="swiper main-carousel ">
         <!-- Additional required wrapper -->

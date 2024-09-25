@@ -115,7 +115,7 @@
                 <?php include_once(APPPATH . "views/includes/head.php"); ?>
             </nav>
         </header>
-        <section class="pb-16 main-content" style="margin-top: 58px;">
+        <section class="pb-16 main-content" style="margin-top: 56px;">
             <?php if ($this->session->flashdata('success')): ?>
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
                     role="alert">
