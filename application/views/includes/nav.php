@@ -19,7 +19,6 @@
                 <a href="<?= base_url('home') ?>" class=" nav-item text-decoration-none ">
                     <span
                         class=" <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? 'i-[teenyicons--home-solid]  text-accent' : 'i-[teenyicons--home-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
-
                 </a>
             </li>
             <li
