@@ -76,11 +76,10 @@
                 } else {
                     echo base_url('profile');
                 } ?>" class="nav-item w-full text-decoration-none">
-                    <img class='w-[24.30px] h-[24.30px] object-cover rounded-full m-auto' src="<?php if ($this->session->userdata('logged_in')) {
-                        echo base_url('uploads/user_profiles/' . $this->session->userdata('profile_pic'));
-                    } else {
-                        echo base_url('assets/images/icons/user.png');
-                    } ?>" alt="profile icon" />
+                    <span
+                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('profile')) ? 'i-[teenyicons--user-circle-solid]  text-accent' : 'i-[teenyicons--user-circle-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
+
+
                     <!-- <i
                         class="fa fa-2x fa-user ">
                     </i> -->
