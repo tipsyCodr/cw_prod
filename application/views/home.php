@@ -188,7 +188,7 @@
                     <div class="cube-head">
                         <div
                             class="flex justify-center items-center img-wrapper overflow-hidden bg-white w-[200px] h-[150px]">
-                            <img class="w-full object-contain "
+                            <img class="m-auto w-full h-full object-contain "
                                 src="uploads/business_listing/<?= $business['business_image'] ?>" alt="">
                         </div>
                     </div>
