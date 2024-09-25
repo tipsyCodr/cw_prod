@@ -187,7 +187,8 @@
                 <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400">
                     <div class="cube-head">
                         <div class="img-wrapper overflow-hidden bg-white">
-                            <img src="uploads/business_listing/<?= $business['business_image'] ?>" width="160px" alt="">
+                            <img class="w-full object-cover "
+                                src="uploads/business_listing/<?= $business['business_image'] ?>" alt="">
                         </div>
                     </div>
                     <div class="cube-body">
