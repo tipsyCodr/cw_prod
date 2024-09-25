@@ -120,6 +120,8 @@ class LoginController extends CI_Controller
             $this->session->set_userdata('logged_uname', $user_data->user_name);
             $this->session->set_userdata('login', $uid); // Store the UID in the session
             $this->session->set_userdata('verified', $verified);
+            $this->session->set_userdata('profile_pic', $user_data->user_profile_pic);
+
 
 
 
@@ -147,6 +149,8 @@ class LoginController extends CI_Controller
                 $this->session->set_userdata('logged_uname', $name);
                 $this->session->set_userdata('login', $uid); // Store the UID in the session
                 $this->session->set_userdata('verified', $emailVerified);
+                $this->session->set_userdata('profile_pic', $photoURL);
+
 
 
                 // Return success response
