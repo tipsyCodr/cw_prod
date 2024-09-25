@@ -200,11 +200,11 @@
                         </div>
                         <div class="interaction flex justify-evenly items-center pt-2">
                             <!-- <p class="font-bold">Contact:</p> -->
-                            <a class="px-3 py-2 m-2 bg-brightBlue text-white rounded-full"
+                            <a class="px-3 py-2 mx-2 bg-brightBlue text-white rounded-full"
                                 href="tel:<?= $business['phone_number'] ?>">
                                 <i class="fa-solid fa-phone"></i> Call
                             </a>
-                            <a class="px-3 py-2 m-2  bg-brightGreen text-white rounded-full"
+                            <a class="px-3 py-2 mx-2  bg-brightGreen text-white rounded-full"
                                 href="https://wa.me/91<?= $business['phone_number'] ?>/?text=I'm%20inquiring%20about%20your%20listings"
                                 target="_blank">
                                 <i class="fa-brands fa-whatsapp"></i> Chat
@@ -256,14 +256,11 @@
                             </div>
                             <div class="interaction flex justify-end items-center pt-2">
                                 <!-- <p class="font-bold">Interested?</p> -->
-                                <a class="px-3 py-2 m-2 bg-accent text-white rounded-full"
+                                <a class="w-full px-3 py-2 m-2 bg-accent text-white rounded-full"
                                     href="tel:<?= $job['job_number'] ?>">
-                                    <i class="fa fa-phone"> </i>
+                                    <i class="fa fa-phone"> </i> Call
                                 </a>
-                                <a class="px-3 py-2 m-2 bg-secondary text-white rounded-full"
-                                    href="mailto:<?= $job['job_email'] ?>">
-                                    <i class="fa fa-envelope"> </i>
-                                </a>
+
                             </div>
                         </div>
                     </div>
