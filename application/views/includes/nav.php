@@ -12,7 +12,7 @@
     }
 </style>
 <div class="  nav-bar navigation-bar flex justify-center w-full  fixed bottom-5 left-0 mx-auto  shadow-lg ">
-    <div class="scale-90 wrapper p-1 max-w-[410px] bg-black filter bg-opacity-70 rounded-full">
+    <div class="scale-90 wrapper p-1 max-w-[410px] bg-black filter bg-opacity-70 backdrop-blur-sm rounded-full">
         <ul class="flex text-center  justify-evenly items-center ">
             <li
                 class="p-2 nav-item <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' active' : '' ?> rounded-full w-[76.86px] h-[76.86px] flex items-center justify-center">
