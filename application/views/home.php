@@ -143,7 +143,7 @@
                         <div class=" relative img-wrapper rounded-[30px] hover:scale-95 transition-all overflow-hidden"
                             style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/bride.jpg') ?>); background-size: cover; overflow:hidden;">
                             <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
-                                <p class="font-bold text-xl p-2">Bride</p>
+                                <p class="font-bold text-xl p-3">Bride</p>
                             </div>
                         </div>
                     </a>
@@ -153,7 +153,7 @@
                         <div class=" relative img-wrapper rounded-[30px] hover:scale-95 transition-all overflow-hidden"
                             style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/groom.jpg') ?>); background-size: cover; overflow:hidden;">
                             <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
-                                <p class="font-bold text-xl p-2">Groom</p>
+                                <p class="font-bold text-xl p-3">Groom</p>
                             </div>
                         </div>
                     </a>
@@ -163,7 +163,7 @@
                         <div class=" relative img-wrapper rounded-[30px] hover:scale-95 transition-all overflow-hidden"
                             style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/couple.jpg') ?>); background-size: cover; overflow:hidden;">
                             <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
-                                <p class="font-bold text-xl p-2">Register</p>
+                                <p class="font-bold text-xl p-3">Register</p>
                             </div>
                         </div>
                     </a>
@@ -201,17 +201,20 @@
                             <!-- <p class="font-bold">Contact:</p> -->
                             <a class="px-3 py-2 m-2 bg-accent text-white rounded-full"
                                 href="tel:<?= $business['phone_number'] ?>">
-                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-solid fa-phone"></i> Call
                             </a>
-                            <a class="px-3 py-2 m-2  bg-green-500 text-white rounded-full"
+                            <a class="px-3 py-2 m-2  bg-green-400 text-white rounded-full"
                                 href="https://wa.me/91<?= $business['phone_number'] ?>/?text=I'm%20inquiring%20about%20your%20listings"
                                 target="_blank">
-                                <i class="fa-brands fa-whatsapp"></i>
+                                <i class="fa-brands fa-whatsapp"></i> Chat
                             </a>
-                            <a class="px-3 py-2 m-2  bg-secondary text-white rounded-full"
-                                href="<?= $business['website'] ?>" target="_blank">
-                                <i class="fa-solid fa-globe"></i>
-                            </a>
+
+                            <!-- Website -->
+                            <!-- <a class="px-3 py-2 m-2  bg-secondary text-white rounded-full"
+                            href="<?= $business['website'] ?>" target="_blank">
+                            <i class="fa-solid fa-globe"></i>
+                        </a> -->
+                            <!-- Website -->
                         </div>
                     </div>
                 </div>
