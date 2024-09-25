@@ -256,7 +256,7 @@
                             </div>
                             <div class="interaction flex justify-end items-center pt-2">
                                 <!-- <p class="font-bold">Interested?</p> -->
-                                <a class="w-full px-3 py-2 m-2 bg-accent text-white text-center rounded-full"
+                                <a class="w-full px-3 py-2 m-2 bg-brightBlue text-white text-center rounded-full"
                                     href="tel:<?= $job['job_number'] ?>">
                                     <i class="fa fa-phone"> </i> Call
                                 </a>
