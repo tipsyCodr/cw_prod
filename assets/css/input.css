@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .tab-bar.active {
-	border-bottom: 2px solid theme("colors.secondary");
-	color: theme("colors.secondary");
+	border-bottom: 2px solid theme("colors.accent.DEFAULT");
+	color: theme("colors.accent.DEFAULT");
 	font-weight: bold;
 }
 

@@ -10,15 +10,14 @@
         </div> -->
 
 
-        <nav class="sticky top-0 z-10 flex justify-center text-center pt-4 bg-white shadow-md"
-            aria-label="Jobs or Business">
+        <nav class="sticky top-0 z-10 flex justify-center text-center pt-4  shadow-md" aria-label="Jobs or Business">
 
-            <a class=" py-2 px-4 tab-bar flex-1 text-gray-300 cursor-pointer " id="jobs-tab" data-bs-toggle="tab"
+            <a class=" py-2 px-4 tab-bar flex-1 text-black cursor-pointer " id="jobs-tab" data-bs-toggle="tab"
                 data-bs-target="#jobs" type="button" role="tab" aria-controls="jobs" aria-selected="true"> <i
                     class="fa-solid fa-person-digging"></i>
                 Jobs</a>
 
-            <a class=" py-2 px-4 tab-bar flex-1 text-gray-300 cursor-pointer" id="business-tab" data-bs-toggle="tab"
+            <a class=" py-2 px-4 tab-bar flex-1 text-black cursor-pointer" id="business-tab" data-bs-toggle="tab"
                 data-bs-target="#business" type="button" role="tab" aria-controls="business" aria-selected="false"> <i
                     class="fa-regular fa-building"></i> Business</a>
         </nav>

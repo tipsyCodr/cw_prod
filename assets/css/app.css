@@ -3087,10 +3087,6 @@ select {
   vertical-align: middle;
 }
 
-.font-inter {
-  font-family: Inter;
-}
-
 .font-monaSans {
   font-family: Mona Sans, sans-serif;
 }
@@ -3458,8 +3454,8 @@ select {
 }
 
 .tab-bar.active {
-  border-bottom: 2px solid #ecc94b;
-  color: #ecc94b;
+  border-bottom: 2px solid #5c6ac4;
+  color: #5c6ac4;
   font-weight: bold;
 }
 
