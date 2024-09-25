@@ -102,7 +102,7 @@
 </style>
 
 <body>
-    <div class="preloader">
+    <div class="preloader hidden">
         <div class="spinner flex flex-col h-full justify-center items-center">
             <img class="spinner-img " src="<?= base_url() ?>assets/images/logo.png" width="200" alt="">
             <p class="text-center font-bold py-4">Loading...</p>
