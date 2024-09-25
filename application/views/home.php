@@ -61,7 +61,7 @@
         </style>
 
 
-        <div class="swiper comm-carousel py-4">
+        <div class="swiper comm-carousel ">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
