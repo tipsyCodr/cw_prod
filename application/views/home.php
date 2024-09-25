@@ -200,14 +200,14 @@
                         </div>
                         <div class="interaction flex justify-evenly items-center pt-2">
                             <!-- <p class="font-bold">Contact:</p> -->
-                            <a class="px-4 py-2 mx-2 bg-brightBlue text-white rounded-full"
+                            <a class="px-4 py-2 flex items-center mx-2 bg-brightBlue text-white rounded-full"
                                 href="tel:<?= $business['phone_number'] ?>">
                                 <i class="fa-solid fa-phone px-2"></i> Call
                             </a>
-                            <a class="px-4 py-2 mx-2  bg-brightGreen text-white rounded-full"
+                            <a class="px-4 py-2 mx-2 flex items-center bg-brightGreen text-white rounded-full"
                                 href="https://wa.me/91<?= $business['phone_number'] ?>/?text=I'm%20inquiring%20about%20your%20listings"
                                 target="_blank">
-                                <i class="fa-brands fa-whatsapp px-2"></i> Chat
+                                <i class="fa-brands fa-whatsapp text-xl px-2"></i> Chat
                             </a>
 
                             <!-- Website -->
