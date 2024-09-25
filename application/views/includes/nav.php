@@ -28,8 +28,6 @@
                     <span
                         class="i-[teenyicons--home-solid] <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' text-accent' : 'text-white' ?>  w-[21.30px] h-[21.30px]"></span>
 
-
-
                 </a>
             </li>
             <li
