@@ -3,7 +3,7 @@
         <a href="<?= base_url('about_us') ?>"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>"
                 alt="menu" width="40px"></a>
         <p class="px-1 font-light text-white text-xl uppercase text-nowrap">
-            Patel Samaj
+
         </p>
     </div>
     <div class="user p-0 flex flex-row justify-evenly">
