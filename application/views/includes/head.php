@@ -3,7 +3,7 @@
         <a href="<?= base_url('about_us') ?>"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>"
                 alt="menu" width="40px"></a>
     </div>
-    <p class="font-monaSans font-thin text-lg">
+    <p class="font-monaSans font-bold text-2xl">
         Home
     </p>
     <div class="user p-0 flex flex-row justify-evenly">
