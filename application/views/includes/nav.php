@@ -27,7 +27,7 @@
                         width="24.30px" height="24.30px" /> -->
 
                     <span
-                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('services')) ? 'i-[teenyicons--home-solid]  text-accent' : 'i-[teenyicons--home-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
+                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? 'i-[teenyicons--home-solid]  text-accent' : 'i-[teenyicons--home-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
 
                 </a>
             </li>
