@@ -97,8 +97,6 @@
 
                                 </span>
                             </div>
-
-
                             <div class="absolute bottom-0 w-full dark-gradient  content text-white px-2 pt-6">
                                 <p class="text-xs"> <span class="px-1"><i class="i-[teenyicons--heart-outline]"></i>
                                         <?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?>
@@ -115,52 +113,6 @@
                         </div>
                         <!-- new design -->
 
-                        <div
-                            class="hidden swiper-slide bg-accent-lightest p-2 rounded-lg transition-all hover:bg-accent-light hover:-translate-y-2">
-                            <div class="item-head">
-                                <div class="post-head flex justify-start items-center">
-                                    <?php if (!empty($blog['user_profile_pic'])): ?>
-                                        <img class=" object-cover rounded-full h-12 w-12 mr-2"
-                                            src="<?= base_url() . 'uploads/user_profiles/' . $blog['user_profile_pic'] ?>" alt="" />
-                                    <?php else: ?>
-                                        <i class="py-1 fa fa-user-circle h-12 w-12  text-4xl text-accent-dark"></i>
-                                    <?php endif; ?>
-                                    <span class="font-bold text-lg"><?= $blog['user_name'] ?></span>
-
-                                </div>
-                                <div class="img-wrapper ">
-                                </div>
-                                <div class="img-wrapper pt-2">
-                                    <!-- <img class='img-fluid' src='uploads/matrimonial_img/banner/wedding_image.webp' alt=""> -->
-                                    <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
-                                        <img class='object-cover h-96 w-full'
-                                            src='<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>' alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item-body">
-                                <div class="interaction flex justify-evenly items-center pt-2 border-bottom "
-                                    style="border-top:1px solid #dfdfdf">
-                                    <a class="flex justify-evenly items-center like-btn" href="#"><i
-                                            class="p-2 fa-regular fa-heart "
-                                            style="font-size:1.5rem"></i><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?>
-                                    </a>
-                                    <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-message "
-                                            style="font-size:1.5rem"></i>
-                                        <?= $data['comment_count'][$blog['post_id']] ?? 0 ?> </a>
-                                    <a class="flex justify-evenly items-center" href="#"><i class="p-2 fa-solid fa-share "
-                                            style="font-size:1.5rem"></i></a>
-                                </div>
-
-                                <div class="post-text p-4 overflow-hidden" style="max-height: 6rem;">
-                                    <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
-                                        <p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                            <?= $blog['content']; ?>
-                                        </p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <p>No blogs available.</p>
@@ -183,49 +135,39 @@
                 <h5 class="m-0 text-xl font-bold">Matrimonial</h5><i class="fa fa-arrow-right"></i>
             </div>
             <p class="px-2">I am searching for..</p>
+
             <div
                 class="matrimonial-wrapper flex flex-row  py-2  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial') ?>">
-                        <div class="matrimonial-card">
-                            <div class="img-wrapper  overflow-hidden">
-                                <img class="img-fluid rounded-lg transition-all hover:scale-90"
-                                    src="<?= base_url('assets/images/bride.jpg') ?>" alt="" width="138px">
-                            </div>
-                            <div class="matrimonial-card-body">
-                                <p class="font-bold text-xl ">Bride</p>
+                        <div class=" relative img-wrapper rounded-[30px]  overflow-hidden"
+                            style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/bride.jpg') ?>); background-size: cover; overflow:hidden;">
+                            <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
+                                <p class="font-bold text-xl p-2">Bride</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial') ?>">
-                        <div class="matrimonial-card">
-                            <div class="img-wrapper  overflow-hidden">
-                                <img class="img-fluid rounded-lg transition-all hover:scale-90"
-                                    src="<?= base_url('assets/images/groom.jpg') ?>" alt="">
-                            </div>
-                            <div class="matrimonial-card-body">
-                                <p class="font-bold text-xl ">Groom</p>
+                        <div class=" relative img-wrapper rounded-[30px]  overflow-hidden"
+                            style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/groom.jpg') ?>); background-size: cover; overflow:hidden;">
+                            <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
+                                <p class="font-bold text-xl p-2">Groom</p>
                             </div>
                         </div>
                     </a>
                 </div>
-
                 <div class="p-2">
                     <a href="<?= base_url('matrimonial_form') ?>">
-                        <div class="matrimonial-card">
-                            <div class="img-wrapper  overflow-hidden">
-                                <img class="img-fluid rounded-lg transition-all hover:scale-90"
-                                    src="<?= base_url('assets/images/couple.jpg') ?>" alt="">
-                            </div>
-                            <div class="matrimonial-card-body">
-                                <p class="font-bold text-xl ">Register</p>
+                        <div class=" relative img-wrapper rounded-[30px]  overflow-hidden"
+                            style="width: 224px; height:224px;background-image: url(<?= base_url('assets/images/couple.jpg') ?>); background-size: cover; overflow:hidden;">
+                            <div class="absolute bottom-0 left-0 w-full dark-gradient  content text-white px-2 pt-6">
+                                <p class="font-bold text-xl p-2">Register</p>
                             </div>
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
     </div>

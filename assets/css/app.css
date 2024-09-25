@@ -1660,6 +1660,10 @@ select {
   top: 0.5rem;
 }
 
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2446,6 +2450,10 @@ select {
 
 .rounded-sm {
   border-radius: 0.125rem;
+}
+
+.rounded-\[30\] {
+  border-radius: 30;
 }
 
 .rounded-b-lg {
