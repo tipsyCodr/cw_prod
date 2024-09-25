@@ -184,7 +184,7 @@
         <div class="py-2 bussiness-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
             <?php foreach ($business_list as $business) { ?>
 
-                <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400 w-[320px] h-[320px]">
+                <div class="p-2 mx-2 bg-white shadow  rounded-[23px]  transition-all hover:bg-gray-50 w-[320px] h-[320px]">
                     <div class="cube-head flex justify-center items-center">
                         <div class=" img-wrapper overflow-hidden bg-white w-[200px] h-[150px]">
                             <img class="m-auto w-full h-full object-contain "
@@ -239,7 +239,7 @@
             <div class="py-2 job-item-wrapper  flex flex-row overflow-x-auto flex-nowrap text-nowrap snap-x">
                 <?php foreach ($job_list as $job) { ?>
 
-                    <div class="p-2 mx-2 bg-gray-50 rounded-lg transition-all hover:bg-gray-400">
+                    <div class="p-2 mx-2 bg-white shadow rounded-[23px] transition-all hover:bg-gray-50">
                         <div class="cube-head overflow-hidden">
                             <div class="img-wrapper overflow-hidden bg-white">
                                 <img class="object-cover" src="uploads/job_listing/<?= $job['job_image'] ?>" width="160px"
