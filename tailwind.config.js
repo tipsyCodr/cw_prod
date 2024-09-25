@@ -22,6 +22,8 @@ module.exports = {
 					lightest: "rgb(242 244 255)",
 				},
 				badgeColor: "#1c9bf2",
+				brightGreen: "#3ad30b",
+				brightBlue: "#0b51d3",
 				secondary: "#ecc94b",
 				activeItem: "#5c6ac4",
 			},
