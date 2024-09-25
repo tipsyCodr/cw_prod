@@ -50,7 +50,7 @@
             <div class="form-group flex flex-col sm:flex-row space-x-2">
                 <div class="flex-1 ml-2 my-2">
                     <select
-                        class="border-0 bg-white px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                        class="border-0 bg-white px-4 py-2 d rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
                         id="gender" name="looking">
                         <option value="">Gender</option>
                         <option value="M">Male</option>
