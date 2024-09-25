@@ -1,11 +1,11 @@
-<div class="fixed-top flex flex-row py-1.5 justify-between items-center bg-accent">
+<div class=" flex flex-row py-1.5 justify-between items-center">
     <div class=" flex img-wrapper items-center px-1">
         <a href="<?= base_url('about_us') ?>"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>"
                 alt="menu" width="40px"></a>
-        <p class="px-1 font-light text-white text-xl uppercase text-nowrap">
-
-        </p>
     </div>
+    <p class="font-monaSans font-thin text-lg">
+        Home
+    </p>
     <div class="user p-0 flex flex-row justify-evenly">
         <!-- If there is notification then show colored icon for attention -->
         <?php $noti = $this->session->userdata('notification');

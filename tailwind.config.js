@@ -14,6 +14,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				inter: ["Inter"],
+				monaSans: ["Mona Sans", "sans-serif"],
+			},
 			colors: {
 				accent: {
 					DEFAULT: "#5c6ac4",

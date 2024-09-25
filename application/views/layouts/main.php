@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=SUSE:wght@100..800&display=swap"
         rel="stylesheet">
-
+    <link rel="preload" href="assets/fonts/mona-sans/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -101,7 +101,9 @@
     }
 </style>
 
-<body>
+<body
+    style=" background: rgb(235,214,245);
+background: linear-gradient(180deg, rgba(235,214,245,1) 0%, rgba(212,207,245,1) 23%, rgba(212,230,246,1) 70%, rgba(255,255,255,1) 95%);">
     <div class="preloader hidden">
         <div class="spinner flex flex-col h-full justify-center items-center">
             <img class="spinner-img " src="<?= base_url() ?>assets/images/logo.png" width="200" alt="">
@@ -115,9 +117,7 @@
                 <?php include_once(APPPATH . "views/includes/head.php"); ?>
             </nav>
         </header>
-        <section class="pb-16 main-content lucid-gradient"
-            style="margin-top: 56px; background: rgb(235,214,245);
-background: linear-gradient(180deg, rgba(235,214,245,1) 0%, rgba(212,207,245,1) 23%, rgba(212,230,246,1) 70%, rgba(255,255,255,1) 95%);">
+        <section class="pb-16 main-content lucid-gradient" style="margin-top: 56px;">
             <?php if ($this->session->flashdata('success')): ?>
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
                     role="alert">
