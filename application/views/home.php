@@ -58,7 +58,6 @@
     </div>
 
     <!-- Community Hub -->
-    <!-- new design -->
     <div class="px-4">
         <div class="px-2 ">
             <a class=" flex justify-between items-center " href="<?= site_url('blog') ?>">
@@ -74,32 +73,6 @@
             }
         </style>
 
-        <div class="rounded-[41px] relative overflow-hidden my-2 "
-            style="width: 224px; height:224px; background-image:url('<?= base_url() . 'uploads/blog_images/1.jpg'; ?>'); background-size: cover;">
-            <div class="absolute top-2 left-3  ">
-                <span class="bg-gray-700 flex rounded-full p-1 filter bg-opacity-70 backdrop-blur-sm">
-                    <img class="w-10 h-10 object-cover rounded-full " src="<?= base_url('uploads/blog_images/1.jpg') ?>"
-                        alt="">
-                    <p class=" flex flex-col justify-start items-start my-auto text-white "><span class="my-auto">Rahul
-                            Kumar <i class="my-auto i-[mage--verified-check-fill] text-blue-500"></i></span><span
-                            class="text-xs">@Member</span>
-                    </p>
-
-                </span>
-            </div>
-
-
-            <div class="absolute bottom-0 w-full dark-gradient  content text-white px-2 py-2">
-                <p class="text-xs"> <span class="px-1"><i class="i-[teenyicons--heart-outline]"></i> 1234 </span>
-                    <span class="px-1"><i class="i-[iconamoon--comment-fill]"></i> 1234 </span>
-                    <span class="px-1"><i class="fab fa-whatsapp"></i> 1234 </span>
-                </p>
-                <p class="text-sm h-10 overflow-hidden text-ellipsis"
-                    style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Voluptas, dolor!</p>
-            </div>
-        </div>
-        <!-- new design -->
 
         <div class="swiper comm-carousel py-4">
             <!-- Additional required wrapper -->
@@ -109,7 +82,7 @@
                 <?php if (!empty($blogs)): ?>
                     <?php foreach ($blogs as $blog): ?>
                         <!-- new design -->
-                        <div class="swiper-slide rounded-[30px] relative overflow-hidden my-2 "
+                        <div class="swiper-slide rounded-[30px] relative overflow-hidden my-2 cursor-pointer"
                             onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
                             style="width: 224px; height:224px; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: cover;">
                             <div class="absolute top-0 -left-3 ">
