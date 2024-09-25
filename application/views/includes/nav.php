@@ -25,8 +25,9 @@
                 <a href="<?= base_url('home') ?>" class=" nav-item text-decoration-none ">
                     <!-- <img src="<?= base_url('assets/images/icons/home.png') ?>" class="mx-auto" alt="home icon"
                         width="24.30px" height="24.30px" /> -->
+
                     <span
-                        class="i-[teenyicons--home-solid] <?= (current_url() === base_url('/') || current_url() === base_url('home')) ? ' text-accent' : 'text-white' ?>  w-[21.30px] h-[21.30px]"></span>
+                        class=" <?= (current_url() === base_url('/') || current_url() === base_url('services')) ? 'i-[teenyicons--home-solid]  text-accent' : 'i-[teenyicons--home-outline] text-white' ?>  w-[24.30px] h-[24.30px]"></span>
 
                 </a>
             </li>
