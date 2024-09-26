@@ -28,7 +28,7 @@ class UserController extends MY_Controller
     public function index()
     {
         $user_id = $this->session->userdata('login');
-        $data['title'] = 'Profile';
+        $data['title'] = 'Your Profile';
 
         if ($user_id) {
             $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
