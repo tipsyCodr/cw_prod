@@ -3381,6 +3381,11 @@ select {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .outline {
   outline-style: solid;
 }
@@ -3884,6 +3889,11 @@ a {
 
 .peer:focus ~ .peer-focus\:top-0 {
   top: 0px;
+}
+
+.peer:focus ~ .peer-focus\:bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .peer:focus ~ .peer-focus\:text-xs {
