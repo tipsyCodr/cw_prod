@@ -1976,6 +1976,18 @@ select {
   margin-bottom: -100px;
 }
 
+.mt-\[-40px\] {
+  margin-top: -40px;
+}
+
+.mt-\[-450px\] {
+  margin-top: -450px;
+}
+
+.mt-\[-50px\] {
+  margin-top: -50px;
+}
+
 .block {
   display: block;
 }

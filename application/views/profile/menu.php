@@ -29,8 +29,8 @@
 
         </div>
 
-        <div class="id-wrapper shadow-lg  mx-4  p-2" style="min-width: 376px; min-height:213px ">
-            <div class="flex  flex-col justify-start items-center rounded-lg border ">
+        <div class="id-wrapper shadow-lg  mx-4  " style="min-width: 376px; min-height:213px ">
+            <div class="flex p-2 flex-col justify-start items-center rounded-lg border ">
                 <div class=" p-2 flex logo items-center bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t">
                     <img class="img-fluid" src="<?= base_url('assets/images/logo.png') ?>" style="width: 25%;" alt="">
                     <div class="px-4">
@@ -39,7 +39,7 @@
                         <p class="font-thin text-2xl text-white">Address: Bhilai</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-5 gap-4 w-full">
+                <div class="grid grid-cols-5 gap-4 w-full bg-white p-2">
                     <div class="qr-code flex  items-center justify-center col-span-1">
                         <img style="width: 70px;" src="<?= base_url('assets/images/user_profile/main_site.png') ?>"
                             alt="">
@@ -58,13 +58,13 @@
                             <?= isset($user) && isset($user->user_address) ? $user->user_address : '<a href="#add-number">< Add Address ></a>' ?>
                         </p>
                     </div>
-                    <div class="p-2 user-img mt-[-30px] flex justify-end col-span-2">
+                    <div class="p-2 user-img mt-[-50px] flex justify-end col-span-2">
                         <a href="<?= base_url('profile-pic') ?>" class="">
                             <?php if (isset($user) && empty($user->user_profile_pic)): ?>
                                 <i class="fas fa-user-circle fa-4x text-accent bg-white rounded-full"></i>
                             <?php elseif (isset($user->user_profile_pic) && !empty($user->user_profile_pic)): ?>
                                 <img src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt=""
-                                    class="rounded-full w-[70px] h-[70px]">
+                                    class="object-cover rounded-full w-[70px] h-[70px]">
                             <?php endif; ?>
                         </a>
                     </div>
