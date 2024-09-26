@@ -10,7 +10,8 @@
         </div> -->
 
 
-        <nav class="sticky top-0 z-10 flex justify-center text-center pt-4  shadow-md" aria-label="Jobs or Business">
+        <nav class="sticky top-0 z-10 flex justify-center text-center pt-4 bg-[#e2d3f5] shadow-md"
+            aria-label="Jobs or Business">
 
             <a class=" py-2 px-4 tab-bar flex-1 text-black cursor-pointer " id="jobs-tab" data-bs-toggle="tab"
                 data-bs-target="#jobs" type="button" role="tab" aria-controls="jobs" aria-selected="true"> <i
@@ -53,8 +54,7 @@
                         </div>
                         <div class="bottom py-4">
                             <p class="text-sm text-gray-500"><i class=" px-2 fa fa-location-dot"></i>
-                                <?= $job['job_city'] ?? '' ?>,
-                                <?= $job['job_country'] ?? '' ?>
+                                <?php echo (isset($job['job_city']) ? $job['job_city'] : '') . ', ' . (isset($job['job_country']) ? $job['job_country'] : ''); ?>
                             </p>
                             <p class="text-sm text-gray-500"><i class="px-2 fa-solid fa-indian-rupee-sign"></i>
                                 <?= (isset($job['job_minimum_salary']) && is_numeric($job['job_minimum_salary']) ? number_format($job['job_minimum_salary'], 0, ',', ',') : 'N/A') ?>
@@ -82,19 +82,18 @@
                         <div class="flex items-center justify-end">
 
                             <div class="p-2 flex justify-evenly items-center text-nowrap">
-                                <a class='px-2 py-1 mx-1 text-xl block bg-accent rounded-full text-white text-nowrap'
+                                <a class='px-3 py-1 mx-1 text-xl block bg-accent rounded-full text-white text-nowrap'
                                     target="_blank" style="" href="tel:<?= $job['job_number'] ?? '' ?>"><i
-                                        class="fa  fa-phone"></i><b class="hidden md:inline-block px-2">Call</b>
+                                        class="fa  fa-phone"></i><span class=" px-2">Call</span>
                                 </a>
-                                <a class='px-2 py-1 mx-1 text-xl block bg-green-500 rounded-full text-white text-nowrap'
+                                <a class='px-3 py-1 mx-1 text-xl block bg-green-500 rounded-full text-white text-nowrap'
                                     style=""
                                     href="https://api.whatsapp.com/send?phone=<?= $job['job_number'] ?? '' ?>&text=Hi%20I%20am%20interested%20in%20<?= $job['job_title'] ?? '' ?>"
-                                    target="_blank"><i class="fab   fa-whatsapp"></i><b
-                                        class="hidden md:inline-block px-2">Whatsapp</b>
+                                    target="_blank"><i class="fab   fa-whatsapp"></i><span class=" px-2">Whatsapp</span>
                                 </a>
-                                <a class='px-2 py-1 mx-1 text-xl block bg-secondary rounded-full text-white text-nowrap'
-                                    target="_blank" href="<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i><b
-                                        class="hidden md:inline-block px-2">Website</b>
+                                <a class='px-3 py-1 mx-1 text-xl block bg-secondary rounded-full text-white text-nowrap'
+                                    target="_blank" href="<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i><span
+                                        class=" px-2">Website</span>
                                 </a>
                             </div>
                         </div>

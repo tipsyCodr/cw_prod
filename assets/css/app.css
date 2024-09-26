@@ -2810,6 +2810,21 @@ select {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-\[\#dad1f5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 209 245 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e9d5f5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 213 245 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e2d3f5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 211 245 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-30 {
   --tw-bg-opacity: 0.3;
 }
