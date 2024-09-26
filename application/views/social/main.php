@@ -314,7 +314,7 @@
                 <div class=" bottom-0 w-full flex items-center content text-black px-4 ">
                     <p>
                         <!-- <span class="px-1"><i class="text-xl i-[teenyicons--heart-outline]"></i></span> -->
-                        <a class='like-btn  cursor-pointer ' data-id="<?= $blog_id; ?>" onclick="likePost(this)">
+                        <a class='like-btn  mx-2 my-auto cursor-pointer ' data-id="<?= $blog_id; ?>" onclick="likePost(this)">
                             <?= $likedstatus ?>
                             <?php if ($likedstatus == true) { ?>
                                 <i class="text-2xl text-red-500  i-[teenyicons--heart-solid]"></i>
@@ -325,8 +325,8 @@
 
                             <?php } ?>
                         </a>
-                        <a class="px-1"><i class="text-2xl i-[uil--comment]"></i></a>
-                        <a class="pb-1"><i class="text-2xl fab fa-whatsapp"></i></a>
+                        <a class="mx-2 my-auto"><i class="text-2xl i-[uil--comment]"></i></a>
+                        <a class="mx-2 my-auto"><i class="text-2xl fab fa-whatsapp"></i></a>
                     </p>
                 </div>
                 <div class="flex px-2">

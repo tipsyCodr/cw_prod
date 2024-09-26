@@ -2456,6 +2456,14 @@ select {
   border-radius: 0.125rem;
 }
 
+.rounded-\[31\] {
+  border-radius: 31;
+}
+
+.rounded-\[31px\] {
+  border-radius: 31px;
+}
+
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
