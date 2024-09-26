@@ -31,7 +31,7 @@
 
         </div>
 
-        <div class="id-wrapper shadow-lg  mx-4  " style="min-width: 376px; min-height:213px;max-width:722px">
+        <div class="id-wrapper shadow-lg" style="min-width: 376px; min-height:213px;max-width:722px">
             <div class="flex p-2 flex-col w-full justify-start items-center rounded-lg border ">
                 <div class=" p-2 flex logo items-center bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t">
                     <img class="img-fluid" src="<?= base_url('assets/images/logo.png') ?>" style="width: 25%;" alt="">
