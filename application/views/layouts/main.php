@@ -127,7 +127,7 @@ background: linear-gradient(180deg, rgba(235,214,245,1) 0%, rgba(212,207,245,1) 
                 <?php include_once(APPPATH . "views/includes/head.php"); ?>
             </nav>
         </header>
-        <section class="pb-16 main-content lucid-gradient">
+        <section class="mb-[100px] main-content lucid-gradient">
             <?php if ($this->session->flashdata('success')): ?>
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
                     role="alert">

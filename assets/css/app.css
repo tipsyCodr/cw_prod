@@ -1996,6 +1996,10 @@ select {
   margin-left: 0px;
 }
 
+.mb-\[100px\] {
+  margin-bottom: 100px;
+}
+
 .block {
   display: block;
 }
