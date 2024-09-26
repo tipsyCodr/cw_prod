@@ -11,6 +11,7 @@
 
 
     <div class="user-details mt-32">
+
         <div class="details text-center">
             <h1 class="text-black font-bold text-3xl flex justify-center items-center">
                 <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
@@ -20,17 +21,18 @@
             </h1>
             <p>@Member</p>
         </div>
+
         <div class="id-card">
             <div class=" ">
                 <div class="">
-                    <div class="py-6 px-4 font-bold text-3xl">Community ID Card</div>
+                    <div class="py-6 px-4 font-bold text-center text-3xl">Community ID Card</div>
                 </div>
             </div>
 
         </div>
 
-        <div class="id-wrapper shadow-lg  mx-4  " style="min-width: 376px; min-height:213px ">
-            <div class="flex p-2 flex-col justify-start items-center rounded-lg border ">
+        <div class="id-wrapper shadow-lg  mx-4  " style="min-width: 376px; min-height:213px;max-width:722px">
+            <div class="flex p-2 flex-col w-full justify-start items-center rounded-lg border ">
                 <div class=" p-2 flex logo items-center bg-gradient-to-r from-orange-500 to-yellow-500 rounded-t">
                     <img class="img-fluid" src="<?= base_url('assets/images/logo.png') ?>" style="width: 25%;" alt="">
                     <div class="px-4">
@@ -69,13 +71,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- <div class="flex-1">
-                    <a class="text-white border border-white px-2 py-1 rounded-full hover:bg-accent hover:text-white transition-colors"
-                        href="#">View</a>
-                </div> -->
             </div>
-            <!-- <h1 class="text-white font-bold text-2xl text-center  ">Sahu Samaaj</h1> -->
         </div>
     </div>
 
