@@ -5,6 +5,7 @@ class ServiceController extends MY_Controller
 
 	public function postJobForm()
 	{
+		$data['title'] = 'Post Job Form';
 		$data['slot'] = $this->load->view('services/post-job', '', true);
 		$this->load->view('layouts/main', $data);
 	}
