@@ -25,6 +25,11 @@ module.exports = {
 					light: "rgb(187 196 255)",
 					lightest: "rgb(242 244 255)",
 				},
+				magiColor: {
+					DEFAULT: "#ff15e5",
+					blue: "#143eff",
+				},
+
 				badgeColor: "#1c9bf2",
 				brightGreen: "#3ad30b",
 				brightBlue: "#0b51d3",

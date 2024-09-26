@@ -283,47 +283,61 @@
                 $images = explode(',', $images);
                 ?>
                 <!-- new design -->
-                <div class="swiper-slide rounded-[30px] relative overflow-hidden my-2 cursor-pointer hover:scale-95 transition-all"
-                    onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
-                    style="max-width: 800px; max-height:1000px; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: cover;">
-                    <div class="absolute top-2 left-2 ">
-                        <span class=" bg-gray-400 flex rounded-full p-1.5 filter bg-opacity-30 backdrop-blur-sm">
+                <div class=" top-2 left-2 ">
+                    <span class=" flex  p-1.5 rounded-full">
+                        <span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[2px] rounded-full mr-2">
                             <?php if (!empty($blog['profile_pic'])): ?>
-                                <img class=" object-cover rounded-full w-10 h-10 mr-2"
+                                <img class=" object-cover rounded-full w-10 h-10 "
                                     src="<?= base_url() . 'uploads/user_profiles/' . $blog['profile_pic'] ?>" alt="" />
                             <?php else: ?>
                                 <i class="py-1 fa fa-user-circle w-10 h-10  text-4xl text-accent-dark"></i>
                             <?php endif; ?>
-
-                            <img class="hidden w-10 h-10 object-cover rounded-full "
-                                src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="">
-                            <p class=" flex flex-col justify-start items-start my-auto text-white ">
-                                <span class="my-auto flex flex-row items-start"><?= $blog['username'] ?>
-                                    <?php if ($blog['is_verified'] == 1) { ?>
-                                        <i class="my-auto i-[mage--verified-check-fill] text-badgeColor m-1"></i>
-                                    <?php } ?>
-                                </span>
-                                <span class="text-xs">@Member</span>
-
-
-                            </p>
-
                         </span>
-                    </div>
-                    <div class="absolute bottom-0 w-full dark-gradient  content text-white px-2 pt-6">
-                        <p class="text-xs"> <span class="px-1"><i class="i-[teenyicons--heart-outline]"></i>
-                                <?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?>
+
+                        <img class="hidden w-10 h-10 object-cover rounded-full "
+                            src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="">
+                        <p class=" flex flex-col justify-start items-start my-auto text-black ">
+                            <span class="my-auto flex flex-row items-start"><?= $blog['username'] ?>
+                                <?php if ($blog['is_verified'] == 1) { ?>
+                                    <i class="my-auto i-[mage--verified-check-fill] text-badgeColor m-1"></i>
+                                <?php } ?>
                             </span>
-                            <span class="px-1"><i class="text-sm i-[uil--comment]"></i>
-                                <?= $data['comment_count'][$blog['post_id']] ?? 0 ?> </span>
-                            <span class="px-1"><i class="text-sm fab fa-whatsapp"></i> </span>
+                            <span class="text-xs">@Member</span>
                         </p>
-                        <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3"
-                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                            <?= $blog['content']; ?>
-                        </p>
-                    </div>
+                    </span>
                 </div>
+
+                <div class="swiper-slide rounded-[30px] relative overflow-hidden mb-2 cursor-pointer border-bottom "
+                    onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
+                    style="max-width: 800px; max-height:900px; background-color: #000; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: contain; background-repeat: no-repeat;background-position: center">
+                </div>
+
+                <div class=" bottom-0 w-full flex items-center content text-black px-2 ">
+                    <p>
+                        <!-- <span class="px-1"><i class="text-xl i-[teenyicons--heart-outline]"></i></span> -->
+                        <a class='like-btn  cursor-pointer ' data-id="<?= $blog_id; ?>" onclick="likePost(this)">
+                            <?= $likedstatus ?>
+                            <?php if ($likedstatus == true) { ?>
+                                <i class="text-xl text-red-500  i-[teenyicons--heart-solid]"></i>
+                                <!-- <i class="fa-solid fa-2x fa-heart text-red-500 hover:text-gray-500 transition-all "></i> -->
+                            <?php } else { ?>
+                                <i class="text-xl i-[teenyicons--heart-outline]"></i>
+                                <!-- <i class="fa-regular fa-2x fa-heart hover:text-red-500 transition-all "></i> -->
+
+                            <?php } ?>
+                        </a>
+                        <span class="px-1"><i class="text-xl i-[uil--comment]"></i></span>
+                        <span class="px-1"><i class="text-xl fab fa-whatsapp"></i></span>
+                    </p>
+                </div>
+                <div class="flex">
+                    <span class="text-md px-1"><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?> Likes </span>
+                    <span class="text-md px-1"><?= $data['comment_count'][$blog['post_id']] ?? 0 ?> Comments</span>
+                </div>
+                <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3"
+                    style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                    <span><?= $blog['username'] ?> </span><?= $blog['content']; ?>
+                </p>
                 <!-- new design -->
 
                 <div class="py-6 border-y hidden">
