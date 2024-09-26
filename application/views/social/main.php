@@ -242,7 +242,7 @@
             </li>
         </ul>
     </div>
-    <div class="main px-1 pb-28">
+    <div class="main px-2 pb-28">
         <a href='<?= base_url('social/members') ?>'
             class="block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
             <i class="fa fa-users"></i> All Members</a>
