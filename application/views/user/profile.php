@@ -15,8 +15,8 @@
             </div>
         </label>
         <p class="text-accent text-center py-6"> Note: Click on your profile picture to change it.</p>
-        <input class="text-center hidden" type="file" name="user_profile_pic" id="user_profile_pic" class=""
-            onchange="updateImage()">
+        <input class="text-center hidden" type="file" name="user_profile_pic" id="user_profile_pic" accept="image/*"
+            class="" onchange="updateImage()">
     </form>
 </div>
 <div class="space-y-4 px-4">
