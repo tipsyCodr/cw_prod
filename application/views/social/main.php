@@ -242,7 +242,7 @@
             </li>
         </ul>
     </div>
-    <div class="main px-3 pb-10">
+    <div class="main px-1 pb-28">
         <a href='<?= base_url('social/members') ?>'
             class="block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
             <i class="fa fa-users"></i> All Members</a>
@@ -312,7 +312,7 @@
                     style="max-width: 800px; max-height:900px; min-height:350px; min-width:200px; background-color: #000; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: contain; background-repeat: no-repeat;background-position: center">
                 </div>
 
-                <div class=" bottom-0 w-full flex items-center content text-black px-2 ">
+                <div class=" bottom-0 w-full flex items-center content text-black px-4 ">
                     <p>
                         <!-- <span class="px-1"><i class="text-xl i-[teenyicons--heart-outline]"></i></span> -->
                         <a class='like-btn  cursor-pointer ' data-id="<?= $blog_id; ?>" onclick="likePost(this)">
@@ -330,7 +330,7 @@
                         <span class="px-1"><i class="text-xl fab fa-whatsapp"></i></span>
                     </p>
                 </div>
-                <div class="flex">
+                <div class="flex px-2">
                     <p class="text-md px-1"><span id="like-<?= $blog_id; ?>"
                             class=""><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?></span> Likes
                     </p>

@@ -3140,6 +3140,10 @@ select {
   padding-top: 2rem;
 }
 
+.pb-28 {
+  padding-bottom: 7rem;
+}
+
 .text-left {
   text-align: left;
 }
