@@ -283,9 +283,9 @@
                 $images = explode(',', $images);
                 ?>
                 <!-- new design -->
-                <div class=" top-2 left-2 ">
+                <div class=" top-2 left-2  ">
                     <span class=" flex  p-1.5 rounded-full">
-                        <span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[2px] rounded-full mr-2">
+                        <span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[4px] rounded-full mr-2">
                             <?php if (!empty($blog['profile_pic'])): ?>
                                 <img class=" object-cover rounded-full w-10 h-10 "
                                     src="<?= base_url() . 'uploads/user_profiles/' . $blog['profile_pic'] ?>" alt="" />
@@ -294,8 +294,7 @@
                             <?php endif; ?>
                         </span>
 
-                        <img class="hidden w-10 h-10 object-cover rounded-full "
-                            src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="">
+
                         <p class=" flex flex-col justify-start items-start my-auto text-black ">
                             <span class="my-auto flex flex-row items-start"><?= $blog['username'] ?>
                                 <?php if ($blog['is_verified'] == 1) { ?>
@@ -336,7 +335,7 @@
                     </p>
                     <span class="text-md px-1"><?= $data['comment_count'][$blog['post_id']] ?? 0 ?> Comments</span>
                 </div>
-                <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3"
+                <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3 px-4"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                     <span><?= $blog['username'] ?> </span><?= $blog['content']; ?>
                 </p>
