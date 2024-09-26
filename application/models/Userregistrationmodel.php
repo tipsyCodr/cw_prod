@@ -130,7 +130,7 @@ class UserRegistrationModel extends CI_Model
         }
 
     }
-    public function getSingleUser($id): mixed
+    public function getSingleUser($id)
     {
 
 

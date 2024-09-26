@@ -26,6 +26,7 @@ class WebController extends MY_Controller
         $this->load->model('Blog_model');
         $this->load->model('Userregistrationmodel');
     }
+
     public function index()
     {
         // Check if user is already logged in

@@ -30,22 +30,19 @@ class LoginController extends CI_Controller
             $this->session->set_userdata('logged_in', TRUE);
             $this->session->set_userdata('login', $userData->uid);
             $this->session->set_userdata('logged_uname', $userData->user_name);
-            $this->session->set_userdata('verified', $user->user_verified_status);
-            $this->session->set_userdata('profile_pic', $user->user_profile_pic);
+            $this->session->set_userdata('verified', $userData->user_verified_status);
+            $this->session->set_userdata('profile_pic', $userData->user_profile_pic);
 
-
-            if (isset($_SESSION['intended_url']) && $_SESSION['intended_url'] != "") {
-                $url = $_SESSION['intended_url'];
-                unset($_SESSION['intended_url']);
+            if ($this->session->userdata('intended_url') && $this->session->userdata('intended_url') != "") {
+                $url = $this->session->userdata('intended_url');
+                $this->session->unset_userdata('intended_url');
                 redirect($url);
             } else {
                 redirect(base_url());
             }
-
         } else {
             $this->session->set_flashdata('error', 'Incorrect Username or Password.');
             redirect(base_url('login'));
-
         }
     }
     public function authenticate()
