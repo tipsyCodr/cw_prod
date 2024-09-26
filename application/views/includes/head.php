@@ -3,7 +3,7 @@
         <a href="<?= base_url('about_us') ?>"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>"
                 alt="menu" width="40px"></a>
     </div>
-    <p class="font-monaSans  text-lg text-center">
+    <p class="font-monaSans  text-lg text-center" style="margin-left:48px;">
         <?= $title ?>
     </p>
     <div class="user p-0 flex flex-row justify-evenly">
