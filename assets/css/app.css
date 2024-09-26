@@ -1960,6 +1960,10 @@ select {
   margin-top: -30px;
 }
 
+.mb-\[500px\] {
+  margin-bottom: 500px;
+}
+
 .block {
   display: block;
 }
