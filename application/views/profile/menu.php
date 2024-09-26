@@ -89,7 +89,7 @@
         <div class="border p-2 rounded-sm w-3/4">
             <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
         </div>
-        <div class="px-6 py-1 w-full">
+        <div class="px-6 py-1 w-full" style="max-width:722px;">
             <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" dowSnload="flyer.jpg" target="_blank"
                 class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full">
                 <i class="fas fa-file-download px-2"></i>
