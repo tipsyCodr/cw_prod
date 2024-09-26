@@ -244,7 +244,7 @@
     </div>
     <div class="main  m-auto">
         <a href='<?= base_url('social/members') ?>'
-            class="block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
+            class=" hidden block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
             <i class="fa fa-users"></i> All Members</a>
 
         <div class="flex items-center justify-between my-3 top-bar">
