@@ -52,7 +52,7 @@
 				<span class="text-md px-1"><?= count($comments) ?> Comments</span>
 
 			</div>
-			<p class="text-sm h-10 overflow-hidden text-ellipsis mt-3 px-4"
+			<p class="text-sm h-10 overflow-hidden text-ellipsis mt-3 px-3"
 				style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
 				<span><?= $user->user_name ?> </span><?= $blog->content; ?>
 			</p>
