@@ -1,10 +1,11 @@
 <div class="wrapper ">
     <div class="relative profile-hero flex justify-center items-center  "
         style="height:30vh;background-image: url(<?= base_url('uploads/user_profiles/cover/rahul.jpg') ?>); background-position: top; background-size:cover;">
-        <div class="border-4 border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
-            style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
-
-        </div>
+        <a href="<?= base_url('profile-pic') ?>">
+            <div class="border-4 border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
+                style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
+            </div>
+        </a>
 
     </div>
 

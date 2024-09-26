@@ -256,6 +256,7 @@ class UserController extends MY_Controller
         if (!$user_id) {
             redirect('splash-login');
         }
+        $data['title'] = 'Profile Setting';
         $data['user'] = $this->UserRegistrationModel->getUserById($user_id);
         $data['slot'] = $this->load->view('user/profile', $data, TRUE);
         $this->load->view('layouts/main', $data);
