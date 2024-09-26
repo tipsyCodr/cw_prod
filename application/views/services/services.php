@@ -81,20 +81,14 @@
                         </div>
                         <div class="flex items-center justify-end">
 
-                            <div class="p-2 flex justify-evenly items-center text-nowrap">
-                                <a class='px-3 py-1 mx-1 text-xl block bg-accent rounded-full text-white text-nowrap'
-                                    target="_blank" style="" href="tel:<?= $job['job_number'] ?? '' ?>"><i
-                                        class="fa  fa-phone"></i><span class=" px-2">Call</span>
-                                </a>
-                                <a class='px-3 py-1 mx-1 text-xl block bg-green-500 rounded-full text-white text-nowrap'
-                                    style=""
-                                    href="https://api.whatsapp.com/send?phone=<?= $job['job_number'] ?? '' ?>&text=Hi%20I%20am%20interested%20in%20<?= $job['job_title'] ?? '' ?>"
-                                    target="_blank"><i class="fab   fa-whatsapp"></i><span class=" px-2">Whatsapp</span>
-                                </a>
-                                <a class='px-3 py-1 mx-1 text-xl block bg-secondary rounded-full text-white text-nowrap'
-                                    target="_blank" href="<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i><span
-                                        class=" px-2">Website</span>
-                                </a>
+                            <div class="p-2 flex justify-evenly w-full">
+                                <a class="bg-brightBlue rounded-full text-white px-3 py-1" target="_blank"
+                                    href="tel:<?= $job['job_number'] ?? '' ?>"><i class="fa fa-phone"></i> Call</a>
+                                <a class="bg-brightGreen rounded-full text-white px-3 py-1" target="_blank"
+                                    href="https://api.whatsapp.com/send?phone=<?= $job['job_number'] ?? '' ?>&text=Hi%20I%20am%20interested%20in%20<?= $job['job_title'] ?? '' ?>"><i
+                                        class="fab fa-whatsapp"></i> Whatsapp</a>
+                                <a class="bg-yellow-300 rounded-full text-white px-3 py-1" target="_blank"
+                                    href="<?= $job['job_website'] ?? '' ?>"><i class="fa fa-globe"></i> Website</a>
                             </div>
                         </div>
                     </div>
