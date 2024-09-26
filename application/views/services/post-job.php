@@ -1,6 +1,6 @@
-<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div class=" shadow-md rounded pt-6 px-8 pb-8 mb-4">
 	<a href="javascript:window.history.back()"
-		class="inline-block mt-32 mb-4 text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
+		class="inline-block  mb-4 text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
 		<i class="fas fa-chevron-left"></i> Back
 	</a>
 
@@ -114,7 +114,7 @@
 			<input id="job_image" name="job_image" type="file"
 				class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 		</div>
-		<button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Post a
-			Job</button>
+		<button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Post
+			Your Job Listing</button>
 	</form>
 </div>

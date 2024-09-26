@@ -5,7 +5,7 @@ class ServiceController extends MY_Controller
 
 	public function postJobForm()
 	{
-		$data['title'] = 'Post Job Form';
+		$data['title'] = 'Post Job Listing';
 		$data['slot'] = $this->load->view('services/post-job', '', true);
 		$this->load->view('layouts/main', $data);
 	}
@@ -47,6 +47,8 @@ class ServiceController extends MY_Controller
 	}
 	public function postBusinessForm()
 	{
+		$data['title'] = 'Post Business Listing ';
+
 		$data['slot'] = $this->load->view('services/post-business', '', true);
 		$this->load->view('layouts/main', $data);
 	}

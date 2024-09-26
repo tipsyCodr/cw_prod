@@ -1,4 +1,4 @@
-<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div class=" shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <a href="javascript:window.history.back()"
         class="inline-block mt-6 mb-4 text-white bg-accent <hover:bg-accent-dark></hover:bg-accent-dark> focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 py-2 px-4 rounded-md">
         <i class="fas fa-chevron-left"></i> Back
@@ -105,7 +105,7 @@
     <?php echo form_error('business_image', '<div class="text-red-500 mt-1">', '</div>'); ?>
 
     <button type="submit" class="bg-blue-500 text-white p-2 mt-6 w-full rounded hover:bg-blue-600">Submit
-        Business</button>
+        Your Listing Request</button>
 
     <?php echo form_close(); ?>
 </div>
