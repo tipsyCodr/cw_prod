@@ -41,7 +41,9 @@
 
 				<a class="px-1  my-auto mx-2"><i class="text-2xl i-[uil--comment]"></i></a>
 
-				<a class="pb-1 my-auto mx-2"><i class="text-2xl fab fa-whatsapp"></i></a>
+				<a class="pb-1 my-auto mx-2"
+					href="https://api.whatsapp.com/send/?link=<?= base_url('social/post/' . $blog->post_id . '?share=true'); ?>/&type=custom_url&app_absent=0"
+					target="_blank"><i class="text-2xl fab fa-whatsapp"></i></a>
 			</div>
 
 			<div class="flex px-2">
