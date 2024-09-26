@@ -194,7 +194,7 @@
 <!-- popup box -->
 
 
-<div class="post-wrapper flex flex-row">
+<div class="post-wrapper flex flex-row ">
     <div class="side-bar left sticky-left ">
 
         <ul class="space-y-2">
@@ -242,7 +242,7 @@
             </li>
         </ul>
     </div>
-    <div class="main  m-auto">
+    <div class="main  m-auto px-2">
         <a href='<?= base_url('social/members') ?>'
             class=" hidden block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
             <i class="fa fa-users"></i> All Members</a>
