@@ -430,8 +430,8 @@
             ?>
     <h1 class="text-center font-black">There is No Post yet..</h1>
 <?php } ?>
-<div>
-    <p class="block text-center text-gray-700 mb-[500px]">End Of Post</p>
+<div class="mb-[500px]">
+    <p class="block text-center text-gray-700 ">End Of Post</p>
 </div>
 <!-- loop ends -->
 </div>
