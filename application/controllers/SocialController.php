@@ -37,7 +37,7 @@ class SocialController extends MY_Controller
 		$data['blog'] = $this->Blog_model->getSinglePost($post_id);
 		$data['comments'] = $this->Blog_model->getComments($post_id);
 		$data['user'] = $this->Blog_model->postedBy($post_id);
-
+		$data['title'] = 'View Post';
 		$data['slot'] = $this->load->view('social/post', $data, TRUE);
 		$this->load->view('layouts/main', $data);
 
