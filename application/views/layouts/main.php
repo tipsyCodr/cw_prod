@@ -85,6 +85,12 @@
         animation: fadeinOut 1s linear infinite;
     }
 
+    .dark-gradient {
+
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9540148823201156) 23%, rgba(0, 0, 0, 0.03524737531731448) 87%);
+    }
+
     @keyframes fadeinOut {
         0% {
             transform: translateY(5px);

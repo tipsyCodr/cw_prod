@@ -282,13 +282,57 @@
                 $like_count = $likes ? count(array_filter(explode(',', $likes))) : 0;
                 $images = explode(',', $images);
                 ?>
-                <div class="py-6 border-y ">
+                <!-- new design -->
+                <div class="swiper-slide rounded-[30px] relative overflow-hidden my-2 cursor-pointer hover:scale-95 transition-all"
+                    onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
+                    style="max-width: 800px; max-height:1000px; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: cover;">
+                    <div class="absolute top-2 left-2 ">
+                        <span class=" bg-gray-400 flex rounded-full p-1.5 filter bg-opacity-30 backdrop-blur-sm">
+                            <?php if (!empty($blog['profile_pic'])): ?>
+                                <img class=" object-cover rounded-full w-10 h-10 mr-2"
+                                    src="<?= base_url() . 'uploads/user_profiles/' . $blog['profile_pic'] ?>" alt="" />
+                            <?php else: ?>
+                                <i class="py-1 fa fa-user-circle w-10 h-10  text-4xl text-accent-dark"></i>
+                            <?php endif; ?>
+
+                            <img class="hidden w-10 h-10 object-cover rounded-full "
+                                src="<?= base_url('uploads/blog_images/1.jpg') ?>" alt="">
+                            <p class=" flex flex-col justify-start items-start my-auto text-white ">
+                                <span class="my-auto flex flex-row items-start"><?= $blog['username'] ?>
+                                    <?php if ($blog['is_verified'] == 1) { ?>
+                                        <i class="my-auto i-[mage--verified-check-fill] text-badgeColor m-1"></i>
+                                    <?php } ?>
+                                </span>
+                                <span class="text-xs">@Member</span>
+
+
+                            </p>
+
+                        </span>
+                    </div>
+                    <div class="absolute bottom-0 w-full dark-gradient  content text-white px-2 pt-6">
+                        <p class="text-xs"> <span class="px-1"><i class="i-[teenyicons--heart-outline]"></i>
+                                <?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?>
+                            </span>
+                            <span class="px-1"><i class="text-sm i-[uil--comment]"></i>
+                                <?= $data['comment_count'][$blog['post_id']] ?? 0 ?> </span>
+                            <span class="px-1"><i class="text-sm fab fa-whatsapp"></i> </span>
+                        </p>
+                        <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3"
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            <?= $blog['content']; ?>
+                        </p>
+                    </div>
+                </div>
+                <!-- new design -->
+
+                <div class="py-6 border-y hidden">
                     <div class="flex items-center ">
                         <a href="profile/<?= $blog['user_id']; ?>" class="flex ">
-                            <?php if (empty($blog['user_image'])): ?>
+                            <?php if (empty($blog['profile_pic'])): ?>
                                 <i class="fas fa-2x fa-user-circle h-10 w-10 rounded-full  text-accent"></i>
                             <?php else: ?>
-                                <img src="<?= base_url() ?>/uploads/user_images/<?= $blog['user_image']; ?>" alt=""
+                                <img src="<?= base_url() ?>/uploads/user_profiles/<?= $blog['profile_pic']; ?>" alt=""
                                     class="h-10 w-10 rounded-full " />
                             <?php endif; ?>
                             <div class="">

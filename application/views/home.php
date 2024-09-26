@@ -52,13 +52,7 @@
                 <i class="fa fa-arrow-right"></i>
             </a>
         </div>
-        <style>
-            .dark-gradient {
 
-                background: rgb(0, 0, 0);
-                background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9540148823201156) 23%, rgba(0, 0, 0, 0.03524737531731448) 87%);
-            }
-        </style>
 
 
         <div class="swiper comm-carousel ">

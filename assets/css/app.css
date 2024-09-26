@@ -1638,6 +1638,18 @@ select {
   top: 3.5rem;
 }
 
+.left-3 {
+  left: 0.75rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
