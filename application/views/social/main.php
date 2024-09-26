@@ -249,7 +249,7 @@
 
         <div class="flex items-center justify-between my-3 top-bar">
             <div class="text-left">
-                <h2 class="text-lg  font-black"> <i class="fas  fa-fire-alt text-red-600 "></i>
+                <h2 class="hidden text-lg  font-black"> <i class="fas  fa-fire-alt text-red-600 "></i>
                     Trending Posts </h2>
             </div>
             <p class="font-bold lg:block hidden ">Recent Posts</p>
