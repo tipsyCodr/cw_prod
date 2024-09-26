@@ -101,6 +101,8 @@ class MatrimonialController extends MY_Controller
         }
 
         $data['meta'] = ['gender' => $gender];
+        $data['title'] = 'Search Result';
+
         $data['profiles'] = $profiles;
         $data['slot'] = $this->load->view('matrimonial/search', $data, TRUE);
         $this->load->view('/layouts/main', $data);
