@@ -309,7 +309,7 @@
 
                 <div class=" rounded-[30px] relative overflow-hidden mb-2 cursor-pointer border-bottom "
                     onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
-                    style="max-width: 800px; max-height:900px; min-height:350px; min-width:200px; background-color: #000; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: contain; background-repeat: no-repeat;background-position: center">
+                    style="max-width: 800px; max-height:900px; min-height:415px; min-width:200px; background-color: #000; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: contain; background-repeat: no-repeat;background-position: center">
                 </div>
 
                 <div class=" bottom-0 w-full flex items-center content text-black px-4 ">
@@ -318,16 +318,16 @@
                         <a class='like-btn  cursor-pointer ' data-id="<?= $blog_id; ?>" onclick="likePost(this)">
                             <?= $likedstatus ?>
                             <?php if ($likedstatus == true) { ?>
-                                <i class="text-xl text-red-500  i-[teenyicons--heart-solid]"></i>
+                                <i class="text-2xl text-red-500  i-[teenyicons--heart-solid]"></i>
                                 <!-- <i class="fa-solid fa-2x fa-heart text-red-500 hover:text-gray-500 transition-all "></i> -->
                             <?php } else { ?>
-                                <i class="text-xl i-[teenyicons--heart-outline]"></i>
+                                <i class="text-2xl i-[teenyicons--heart-outline]"></i>
                                 <!-- <i class="fa-regular fa-2x fa-heart hover:text-red-500 transition-all "></i> -->
 
                             <?php } ?>
                         </a>
-                        <span class="px-1"><i class="text-xl i-[uil--comment]"></i></span>
-                        <span class="px-1"><i class="text-xl fab fa-whatsapp"></i></span>
+                        <a class="px-1"><i class="text-2xl i-[uil--comment]"></i></a>
+                        <a class="pb-1"><i class="text-2xl fab fa-whatsapp"></i></a>
                     </p>
                 </div>
                 <div class="flex px-2">
