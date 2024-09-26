@@ -1,5 +1,19 @@
 <div class="wrapper ">
-    <div class="user-details">
+    <div class="relative profile-hero flex justify-center items-center  "
+        style="height:30vh;background-image: url(<?= base_url('uploads/user_profiles/cover/rahul.jpg') ?>); background-position: top; background-size:cover;">
+        <div class="border-4 border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
+            style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
+
+        </div>
+
+    </div>
+
+
+    <div class="user-details mt-32">
+        <div class="details text-center">
+            <h1 class="text-black font-bold text-3xl">Rahul Kumar</h1>
+            <p>@Member</p>
+        </div>
         <div class="id-card">
             <div class=" ">
                 <div class="">

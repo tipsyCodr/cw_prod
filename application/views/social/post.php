@@ -64,7 +64,7 @@
 		<form action="<?= base_url('social/post/comment/add') ?>" method="POST" id='comment_form' class="mt-3">
 			<div class="comment-form">
 				<div class="form-group ">
-					<textarea name="comment" id="comment" class="w-full border p-1"
+					<textarea name="comment" id="comment" class="w-full border p-1 rounded-2xl bg-transparent p-2"
 						placeholder="Write your comment here..." rows="4" required></textarea>
 				</div>
 				<input type="hidden" name="blog_id" value="<?= $blog->post_id; ?>">

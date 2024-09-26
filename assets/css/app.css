@@ -1660,6 +1660,10 @@ select {
   top: 0.5rem;
 }
 
+.bottom-\[-100px\] {
+  bottom: -100px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1832,6 +1836,10 @@ select {
   margin-bottom: 2rem;
 }
 
+.mb-\[500px\] {
+  margin-bottom: 500px;
+}
+
 .mb-\[50px\] {
   margin-bottom: 50px;
 }
@@ -1960,8 +1968,12 @@ select {
   margin-top: -30px;
 }
 
-.mb-\[500px\] {
-  margin-bottom: 500px;
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+
+.mb-\[-100px\] {
+  margin-bottom: -100px;
 }
 
 .block {
@@ -2432,12 +2444,20 @@ select {
   border-radius: 0.25rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-\[23px\] {
   border-radius: 23px;
 }
 
 .rounded-\[30px\] {
   border-radius: 30px;
+}
+
+.rounded-\[31px\] {
+  border-radius: 31px;
 }
 
 .rounded-full {
@@ -2454,14 +2474,6 @@ select {
 
 .rounded-sm {
   border-radius: 0.125rem;
-}
-
-.rounded-\[31\] {
-  border-radius: 31;
-}
-
-.rounded-\[31px\] {
-  border-radius: 31px;
 }
 
 .rounded-b-lg {
@@ -2923,10 +2935,6 @@ select {
   padding: 1.5rem;
 }
 
-.p-\[2px\] {
-  padding: 2px;
-}
-
 .p-\[4px\] {
   padding: 4px;
 }
@@ -3045,10 +3053,6 @@ select {
 
 .pb-2 {
   padding-bottom: 0.5rem;
-}
-
-.pb-28 {
-  padding-bottom: 7rem;
 }
 
 .pb-3 {

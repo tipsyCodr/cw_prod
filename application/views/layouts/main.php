@@ -110,6 +110,10 @@
 <body
     style=" background: rgb(235,214,245);
 background: linear-gradient(180deg, rgba(235,214,245,1) 0%, rgba(212,207,245,1) 23%, rgba(212,230,246,1) 70%, rgba(255,255,255,1) 95%); background-attachment: fixed;">
+    <!-- 
+<body
+    style="background-image:url(<?= base_url() ?>assets/images/g3.png);background-attachment:fixed;background-size: cover;background-repeat: no-repeat"> -->
+
     <div class="preloader hidden">
         <div class="spinner flex flex-col h-full justify-center items-center">
             <img class="spinner-img " src="<?= base_url() ?>assets/images/logo.png" width="200" alt="">
