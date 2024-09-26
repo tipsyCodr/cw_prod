@@ -331,7 +331,9 @@
                     </p>
                 </div>
                 <div class="flex">
-                    <span class="text-md px-1"><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?> Likes </span>
+                    <p class="text-md px-1"><span id="like-<?= $blog_id; ?>"
+                            class=""><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?></span> Likes
+                    </p>
                     <span class="text-md px-1"><?= $data['comment_count'][$blog['post_id']] ?? 0 ?> Comments</span>
                 </div>
                 <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3"
@@ -514,10 +516,10 @@
 
                     const responseData = response;
                     if (responseData.status === 'liked') {
-                        likeIcon.removeClass('fa-regular').addClass('fa-solid text-red-500')
+                        likeIcon.removeClass('i-[teenyicons--heart-outline]').addClass('i-[teenyicons--heart-solid] text-red-500 ')
                         likeCountSpan.text(parseInt(likeCountSpan.text()) + 1);
                     } else if (responseData.status === 'unliked') {
-                        likeIcon.removeClass('fa-solid text-red-500').addClass('fa-regular');
+                        likeIcon.removeClass('i-[teenyicons--heart-solid] text-red-500').addClass('i-[teenyicons--heart-outline]');
                         likeCountSpan.text(parseInt(likeCountSpan.text()) - 1);
                         // likeCountSpan.text(responseData.likes);
                     }
