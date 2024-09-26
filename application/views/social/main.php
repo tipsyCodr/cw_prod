@@ -309,7 +309,7 @@
 
                 <div class=" rounded-[30px] relative overflow-hidden mb-2 cursor-pointer border-bottom "
                     onclick="window.location.href='<?= site_url() . 'social/post/' . $blog['post_id'] ?>'"
-                    style="max-width: 800px; max-height:900px; min-height:415px; min-width:200px; background-color: #000; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: contain; background-repeat: no-repeat;background-position: center">
+                    style="max-width: 800px; max-height:900px; min-height:415px; min-width:200px; background-color: #000; background-image:url('<?= base_url() . 'uploads/blog_images/' . $blog['image_url']; ?>'); background-size: cover; background-repeat: no-repeat;background-position: center">
                 </div>
 
                 <div class=" bottom-0 w-full flex items-center content text-black px-4 ">
