@@ -21,7 +21,6 @@
             </h1>
             <p>@Member</p>
         </div>
-        <hr class="px-96 border-gray-400">
 
         <div class="sm:flex block justify-center pt-5 border-top border-gray-600 ">
 
