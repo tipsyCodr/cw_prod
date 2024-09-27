@@ -179,8 +179,8 @@
 
                     <div class="text-right">
                         <button type="submit" id="post-btn"
-                            class="py-1 text-md font-bold bg-accent bg-gray-300 text-white w-full rounded-lg" disabled>
-                            Post
+                            class="py-1 text-md font-bold bg-accent  text-white w-full rounded-lg" disabled>
+                            Post <i id="spinner" class="fas fa-circle-notch animate-spin ml-2"></i>
                         </button>
                     </div>
 

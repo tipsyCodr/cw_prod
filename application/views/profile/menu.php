@@ -103,34 +103,41 @@
 
                     ?>
                     <div class="flyer-wrapper  p-2 ">
+                        <div class="button">
+                            <button
+                                class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
+                                type="button" onclick="saveAsImage()"><i class="fas fa-file-download px-2"></i> Download
+                                & Share
+                            </button>
+                        </div>
                         <div class="px-6 py-1 w-full">
-                            <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" dowSnload="flyer.jpg"
+                            <!-- <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" dowSnload="flyer.jpg"
                                 target="_blank"
                                 class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full">
                                 <i class="fas fa-file-download px-2"></i>
                                 Download & Share
-                            </a>
+                            </a> -->
                         </div>
 
-                        <div class="relative border rounded-sm overflow-hidden "
-                            style="min-height:40px; width: 100%;height:0;padding-bottom:100%;background-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
-                            <!-- <img src="" alt=""> -->
-
-                            <div
-                                class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
-                                <div class="flex justify-between text-black">
-                                    <div class=" mt-[-36px]  rounded-full px-2">
-                                        <img class="object-cover rounded-full w-20 h-20 border-4"
-                                            src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
-                                            alt="">
+                        <div id="capture">
+                            <div class="relative border rounded-sm overflow-hidden "
+                                style="min-height:40px; width: 100%;height:0;padding-bottom:100%;background-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
+                                <!-- <img src="" alt=""> -->
+                                <div
+                                    class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
+                                    <div class="flex justify-between text-black">
+                                        <div class=" mt-[-36px]  rounded-full px-2">
+                                            <img class="object-cover rounded-full w-20 h-20 border-4"
+                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                alt="">
+                                        </div>
+                                        <div class=" flex flex-col ">
+                                            <p class="text-md font-bold ">
+                                                <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                            </p>
+                                            <p class="text-left text-xs">Member</p>
+                                        </div>
                                     </div>
-                                    <div class=" flex flex-col ">
-                                        <p class="text-md font-bold ">
-                                            <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
-                                        </p>
-                                        <p class="text-left text-xs">Member</p>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -203,6 +210,30 @@
             error: function (xhr, status, error) {
                 alert(error);
             }
+        });
+    }
+
+
+
+    function saveAsImage() {
+        const findEl = document.getElementById('capture');
+
+        // Ensure html2canvas is loaded correctly
+        if (typeof html2canvas !== 'function') {
+            console.error('html2canvas is not defined correctly.');
+            return;
+        }
+
+        // Capture the element as an image
+        html2canvas(findEl).then((canvas) => {
+            const link = document.createElement('a');
+            document.body.appendChild(link);
+            link.download = "cmp-image.jpg";
+            link.href = canvas.toDataURL();
+            link.click();
+            link.remove();
+        }).catch((error) => {
+            console.error('Error capturing image:', error);
         });
     }
 </script>
