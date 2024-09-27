@@ -85,15 +85,23 @@
                         <?php } ?>
                     </select>
                 </div>
-                <button type="submit"
-                    class="px-4 py-2 rounded-lg mt-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
-                    Go</button>
+                <div class="flex justify-evenly items-center text-center">
+                    <button type="submit"
+                        class="w-full px-4 py-2 rounded-lg mx-1 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                        <i class="fa fa-search p-2"></i> Go</button>
+
+                    <a href="<?= base_url('kundli/form') ?>"
+                        class="w-full py-2 mx-1 rounded-lg bg-orange-400 text-white"><i class="fa fa-infinity p-2"></i>
+                        Match Your Kundli </a>
+                </div>
+
             </div>
         </form>
         <a href="<?= base_url('matrimonial/register/page') ?>"
             class="w-full my-4 px-4  my-4 block font-bold rounded-lg text-indigo-600 ">
             Don't have a Matrimonial account? Create one now
         </a>
+
         <!-- create a or seperator -->
         <div
             class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
@@ -101,12 +109,7 @@
         </div>
         <!-- create a or seperator -->
 
-        <div class="flex flex-col items-center mb-8 mt-2 text-center">
 
-            <a href="#" class="w-full py-2 mx-2 my-4  rounded-lg bg-magiColor text-white"> Match Your Kundli <i
-                    class="fa fa-long-arrow-right"></i></a>
-
-        </div>
     </div>
 
 

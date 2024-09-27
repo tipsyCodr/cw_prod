@@ -188,6 +188,26 @@ class MatrimonialController extends MY_Controller
         $response = $this->MatriMonialRegistrationModel->rejectRequest($id);
         return json_encode($response);
     }
-
+    public function kundliForm()
+    {
+        // $data['profile'] = $this->MatriMonialRegistrationModel->getMatrimonialData($id);
+        $data['title'] = "Match Your Kundli";
+        $data['slot'] = $this->load->view('matrimonial/kundli/search', '', TRUE);
+        $this->load->view('/layouts/main', $data);
+    }
+    public function kundliResult()
+    {
+        $data['boy'] = array(
+            'name' => $this->input->post('boy_name', TRUE),
+            'dob' => $this->input->post('boy_dob', TRUE),
+        );
+        $data['girl'] = array(
+            'name' => $this->input->post('girl_name', TRUE),
+            'dob' => $this->input->post('girl_dob', TRUE),
+        );
+        $data['title'] = "Match Your Kundli";
+        $data['slot'] = $this->load->view('matrimonial/kundli/result', $data, TRUE);
+        $this->load->view('/layouts/main', $data);
+    }
 
 }

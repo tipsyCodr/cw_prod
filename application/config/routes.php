@@ -111,6 +111,8 @@ $route['matrimonial/request/send'] = 'MatrimonialController/sendRequest';
 $route['matrimonial/request/accept'] = 'MatrimonialController/acceptRequest';
 $route['matrimonial/request/reject'] = 'MatrimonialController/rejectRequest';
 $route['matrimonial/requests/get'] = 'MatrimonialController/fetchRequest';
+$route['kundli/form'] = "MatrimonialController/kundliForm";
+$route['kundli/result'] = "MatrimonialController/kundliResult";
 
 //Subpages
 

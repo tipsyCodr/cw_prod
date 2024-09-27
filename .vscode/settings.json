@@ -15,5 +15,8 @@
             "password": ""
         }
     ],
-    "CodeGPT.apiKey": "Ollama"
+    "CodeGPT.apiKey": "Ollama",
+    "cSpell.words": [
+        "Kundli"
+    ]
 }
