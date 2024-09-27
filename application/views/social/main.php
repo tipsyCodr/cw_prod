@@ -305,25 +305,27 @@
                         </p>
                     </span>
                     <div class="d px-4">
-                        <i class="fa fa-ellipsis-h cursor-pointer" onclick="openMenu(<?= $blog['post_id'] ?>)"></i>
-                        <div id="menu-<?= $blog['post_id'] ?>"
-                            class="menu hidden absolute z-10 right-5 bg-white  rounded-2xl overflow-hidden">
-                            <ul>
-                                <li
-                                    class="cursor-pointer border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors">
-                                    <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
-                                        <i class="fa fa-edit"></i> Edit
-                                    </a>
-                                </li>
-                                <li
-                                    class="cursor-pointer  border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors ">
-                                    <a href="javascript:void(0)" onclick="deletePost(<?= $blog_id ?>)" class="text-red-600"> <i
-                                            class="  fa fa-trash"></i> Delete
+                        <?php if ($this->session->userdata('login') == $blog['user_id']) { ?>
+                            <i class="fa fa-ellipsis-h cursor-pointer" onclick="openMenu(<?= $blog['post_id'] ?>)"></i>
+                            <div id="menu-<?= $blog['post_id'] ?>"
+                                class="menu hidden absolute z-10 right-5 bg-white  rounded-2xl overflow-hidden">
+                                <ul>
+                                    <li
+                                        class="cursor-pointer border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors">
+                                        <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
+                                            <i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="cursor-pointer  border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors ">
+                                        <a href="javascript:void(0)" onclick="deletePost(<?= $blog_id ?>)" class="text-red-600"> <i
+                                                class="  fa fa-trash"></i> Delete
 
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
 
