@@ -1,7 +1,7 @@
 <div class="wrapper ">
     <label for="user_cover_pic">
         <div id="coverPreview" class="relative profile-hero flex justify-center items-center  sm:h-[55vh] h-[30vh]"
-            style="background-image: url(<?= base_url('uploads/user_profiles/cover/' . $user->user_cover_pic) ?>); background-position: top; background-size:cover;">
+            style="background-image: url(<?= (isset($user->user_cover_pic) && !empty($user->user_cover_pic)) ? base_url('uploads/user_profiles/cover/' . $user->user_cover_pic) : base_url('assets/images/default.jpg') ?>); background-position: top; background-size:cover;">
 
             <form id="profile_pic_form">
                 <label for="user_profile_pic">
