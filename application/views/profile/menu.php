@@ -105,7 +105,7 @@
                     <div class="flyer-wrapper  p-2 ">
                         <div class="button">
                             <button
-                                class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
+                                class="my-4 block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
                                 type="button" onclick="saveAsImage()"><i class="fas fa-file-download px-2"></i> Download
                                 & Share
                             </button>
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                         <button
-                            class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
+                            class=" my-4 block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
                             type="button" onclick="location.reload()"><i class="fas fa-arrows-rotate px-2"></i>New
                             Image
                         </button>
