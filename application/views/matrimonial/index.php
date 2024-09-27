@@ -94,10 +94,13 @@
             class="w-full my-4 px-4  my-4 block font-bold rounded-lg text-indigo-600 ">
             Don't have a Matrimonial account? Create one now
         </a>
+        <!-- create a or seperator -->
         <div
             class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
             <p class="text-center font-semibold mx-4 mb-0">OR</p>
         </div>
+        <!-- create a or seperator -->
+
         <div class="flex flex-col items-center mb-8 mt-2 text-center">
 
             <a href="#" class="w-full py-2 mx-2  rounded-lg bg-magiColor text-white"> Match Your Kundli <i
