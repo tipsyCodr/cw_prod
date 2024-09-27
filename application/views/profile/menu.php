@@ -125,7 +125,7 @@
                                         </p>
                                         <p class="text-right text-white">Member</p>
                                     </div>
-                                    <div class=" mt-[-100px] shadow-lg rounded-full ">
+                                    <div class=" mt-[-100px]  rounded-full ">
                                         <img class="object-cover rounded-full w-32 h-32 border-4"
                                             src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
                                             alt="">
