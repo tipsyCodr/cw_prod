@@ -57,9 +57,9 @@
                             <img class="img-fluid" src="<?= base_url('assets/images/logo.png') ?>" style="width: 25%;"
                                 alt="">
                             <div class="px-4">
-                                <p class="font-black text-2xl text-white uppercase  ">Patel Samaaj</p>
+                                <p class="font-black text-2xl text-white uppercase  ">Aghariya Samaj</p>
                                 <hr>
-                                <p class="font-thin text-2xl text-white">Address: Bhilai</p>
+                                <!-- <p class="font-thin text-2xl text-white">Address: Bhilai</p> -->
                             </div>
                         </div>
                         <div class="grid grid-cols-5 gap-4 w-full bg-white p-2">
