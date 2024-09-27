@@ -110,18 +110,11 @@
                                 & Share
                             </button>
                         </div>
-                        <div class="px-6 py-1 w-full">
-                            <!-- <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" dowSnload="flyer.jpg"
-                                target="_blank"
-                                class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full">
-                                <i class="fas fa-file-download px-2"></i>
-                                Download & Share
-                            </a> -->
-                        </div>
+
 
                         <div id="capture">
                             <div class="relative border rounded-sm overflow-hidden "
-                                style="min-height:40px; width: 100%;height:0;padding-bottom:100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
+                                style="min-height:40px; width: 100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
                                 <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
                                 <div
                                     class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
@@ -141,9 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                        <canvas id="flyer">
 
-                        </canvas>
                     </div>
 
                 </div>
