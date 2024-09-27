@@ -115,9 +115,7 @@
                         <div class="relative border rounded-sm overflow-hidden "
                             style="min-height:40px; width: 100%;height:0;padding-bottom:100%;background-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
                             <!-- <img src="" alt=""> -->
-                            <div class="hidden top-bar w-full bg-orange-500 absolute top-0 left-0 text-white ">
-                                <p class="p-2">Follow us on social media</p>
-                            </div>
+
                             <div
                                 class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
                                 <div class="flex justify-between text-black">
@@ -136,6 +134,9 @@
                                 </div>
                             </div>
                         </div>
+                        <canvas id="flyer">
+
+                        </canvas>
                     </div>
 
                 </div>

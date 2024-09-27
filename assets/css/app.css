@@ -1664,18 +1664,6 @@ select {
   top: 0.5rem;
 }
 
-.left-10 {
-  left: 2.5rem;
-}
-
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
-.bottom-2 {
-  bottom: 0.5rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1801,11 +1789,6 @@ select {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .-ml-20 {
@@ -1980,16 +1963,12 @@ select {
   margin-top: 2rem;
 }
 
-.mt-\[-50px\] {
-  margin-top: -50px;
-}
-
-.mt-\[-100px\] {
-  margin-top: -100px;
-}
-
 .mt-\[-36px\] {
   margin-top: -36px;
+}
+
+.mt-\[-50px\] {
+  margin-top: -50px;
 }
 
 .block {
@@ -2038,6 +2017,10 @@ select {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .h-20 {
@@ -2108,22 +2091,6 @@ select {
   height: 100vh;
 }
 
-.h-40 {
-  height: 10rem;
-}
-
-.h-36 {
-  height: 9rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
 .max-h-96 {
   max-height: 24rem;
 }
@@ -2191,22 +2158,6 @@ select {
 
 .w-full {
   width: 100%;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-36 {
-  width: 9rem;
-}
-
-.w-28 {
-  width: 7rem;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .min-w-0 {
@@ -2528,10 +2479,6 @@ select {
   border-radius: 0.125rem;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -2565,16 +2512,6 @@ select {
 .rounded-t-lg {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-}
-
-.rounded-l-xl {
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-}
-
-.rounded-r-xl {
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
 }
 
 .rounded-tr-xl {
@@ -2815,6 +2752,11 @@ select {
   background-color: rgb(88 80 236 / var(--tw-bg-opacity));
 }
 
+.bg-orange-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 186 140 / var(--tw-bg-opacity));
+}
+
 .bg-orange-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 138 76 / var(--tw-bg-opacity));
@@ -2866,11 +2808,6 @@ select {
 .bg-yellow-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 202 21 / var(--tw-bg-opacity));
-}
-
-.bg-orange-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 186 140 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-30 {
@@ -3196,6 +3133,10 @@ select {
   padding-right: 0.5rem;
 }
 
+.pr-4 {
+  padding-right: 1rem;
+}
+
 .ps-3 {
   padding-inline-start: 0.75rem;
 }
@@ -3234,14 +3175,6 @@ select {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .text-left {
