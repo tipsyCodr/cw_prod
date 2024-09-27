@@ -120,7 +120,7 @@
                             <div
                                 class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
                                 <div class="flex justify-between text-black">
-                                    <div class=" mt-[-50px]  rounded-full px-2">
+                                    <div class=" mt-[-36px]  rounded-full px-2">
                                         <img class="object-cover rounded-full w-20 h-20 border-4"
                                             src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
                                             alt="">

@@ -1988,6 +1988,10 @@ select {
   margin-top: -100px;
 }
 
+.mt-\[-36px\] {
+  margin-top: -36px;
+}
+
 .block {
   display: block;
 }
