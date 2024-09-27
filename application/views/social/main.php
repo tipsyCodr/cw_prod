@@ -565,7 +565,7 @@
                 method: 'POST',
                 success: function (response) {
                     console.log(response);
-                    // location.reload();
+                    location.reload();
 
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
