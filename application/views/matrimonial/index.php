@@ -86,18 +86,23 @@
                     </select>
                 </div>
                 <button type="submit"
-                    class="px-4 py-2 rounded-lg my-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    class="px-4 py-2 rounded-lg mt-2 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
                     Go</button>
             </div>
         </form>
+        <a href="<?= base_url('matrimonial/register/page') ?>"
+            class="w-full my-4 px-4  my-4 block font-bold rounded-lg text-indigo-600 ">
+            Don't have a Matrimonial account? Create one now
+        </a>
+        <div
+            class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+            <p class="text-center font-semibold mx-4 mb-0">OR</p>
+        </div>
         <div class="flex flex-col items-center mb-8 mt-2 text-center">
-            <a href="<?= base_url('matrimonial/register/page') ?>"
-                class="w-full px-4 font-bold rounded-lg text-indigo-600 ">
-                Don't have a Matrimonial account? Create one now
-            </a>
 
-            <a href="#" class="w-full py-2 mx-2 my-4 rounded-lg bg-magiColor text-white"> Match Your Kundli <i
+            <a href="#" class="w-full py-2 mx-2  rounded-lg bg-magiColor text-white"> Match Your Kundli <i
                     class="fa fa-long-arrow-right"></i></a>
+
         </div>
     </div>
 
