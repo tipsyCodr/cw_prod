@@ -114,22 +114,23 @@
                         <div class="relative border rounded-sm overflow-hidden "
                             style="min-height:40px; width: 100%;height:0;padding-bottom:100%;background-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
                             <!-- <img src="" alt=""> -->
-                            <div class="top-bar w-full bg-accent absolute top-0 left-0 text-white ">
+                            <div class="hidden top-bar w-full bg-accent absolute top-0 left-0 text-white ">
                                 <p class="p-2">Follow us on social media</p>
                             </div>
-                            <div class="bottom-bar bg-accent h-16 shadow absolute bottom-0 left-0 w-full">
-                                <div class="flex justify-end">
-                                    <div class="">
-                                        <p class="text-xl font-bold text-white">
+                            <div class="bottom-bar bg-accent h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
+                                <div class="flex justify-between">
+                                    <div class=" mt-[-50px]  rounded-full px-2">
+                                        <img class="object-cover rounded-full w-20 h-20 border-4"
+                                            src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                            alt="">
+                                    </div>
+                                    <div class=" flex flex-col ">
+                                        <p class="text-md font-bold text-white">
                                             <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
                                         </p>
                                         <p class="text-right text-white">Member</p>
                                     </div>
-                                    <div class=" mt-[-100px]  rounded-full ">
-                                        <img class="object-cover rounded-full w-28 h-w-28 border-4"
-                                            src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
-                                            alt="">
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
