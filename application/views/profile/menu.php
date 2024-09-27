@@ -213,6 +213,7 @@
                     // Update the image source to the new uploaded image
                     preview.src = response.image_path + '?' + new Date().getTime(); // Add timestamp to force browser cache refresh
                     alert('Profile Picture Updated!');
+                    location.reload();
                 } else {
                     alert(response.message);
                     console.log(response);
@@ -245,6 +246,7 @@
                     // Update the image source to the new uploaded image
                     preview.style.backgroundImage = 'url("' + response.image_path + '?' + new Date().getTime() + '")'; // Add timestamp to force browser cache refresh
                     alert('Cover Picture Updated!');
+                    location.reload();
                 } else {
                     alert(response.message);
                     console.log(response);
