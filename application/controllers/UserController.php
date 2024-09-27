@@ -279,6 +279,9 @@ class UserController extends MY_Controller
         }
         $formData = $this->input->post(null, true);
         if (!empty($_FILES['user_profile_pic']['name'])) {
+            $filename = basename($filename);
+            return $filename;
+            die();
             $config['upload_path'] = './uploads/user_profiles/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['file_name'] = $filename;
@@ -290,8 +293,10 @@ class UserController extends MY_Controller
                 $response = array('success' => false, 'message' => $error);
             } else {
                 $uploadData = $this->upload->data();
-                $formData['user_profile_pic'] = $uploadData['file_name'];
-                $response = array('success' => true, 'image_path' => base_url('uploads/user_profiles/' . $uploadData['file_name']));
+                $this->db->set('user_profile_pic', $uploadData['file_name'] . '?v=' . time());
+                $this->db->where('uid', $user_id);
+                $this->db->update('user_registration');
+                $response = array('success' => true, 'image_path' => base_url('uploads/user_profiles/' . $formData['user_profile_pic']));
             }
         } else {
             $response = array('success' => false, 'message' => 'No image uploaded.');

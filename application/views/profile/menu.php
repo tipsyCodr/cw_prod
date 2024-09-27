@@ -1,8 +1,25 @@
 <div class="wrapper ">
     <div class="relative profile-hero flex justify-center items-center  sm:h-[55vh] h-[30vh]"
         style="background-image: url(<?= base_url('uploads/user_profiles/cover/rahul.jpg') ?>); background-position: top; background-size:cover;">
+
+        <form id="profile_pic_form">
+            <label for="user_profile_pic">
+                <div class="flex flex-col items-center w-full m-2">
+                    <?php if (isset($user->user_profile_pic) && !empty($user->user_profile_pic)) { ?>
+                        <img id='preview'
+                            class="border-4 object-cover border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
+                            src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt="">
+                    <?php } else { ?>
+                        <i class="fas fa-user-circle fa-8x text-accent"></i>
+                    <?php } ?>
+                </div>
+            </label>
+            <input class="text-center hidden" type="file" name="user_profile_pic" id="user_profile_pic" accept="image/*"
+                class="" onchange="updateImage()">
+        </form>
+
         <a href="<?= base_url('profile-pic') ?>">
-            <div class="border-4 border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
+            <div class="hidden"
                 style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
             </div>
         </a>
@@ -132,3 +149,38 @@
         </div>
     </div>
 </div>
+
+<script>
+    function updateImage() {
+        const preview = document.getElementById('preview');
+        const file = document.getElementById('user_profile_pic').files[0];
+
+        const formData = new FormData();
+        formData.append('user_profile_pic', file);
+        $.ajax({
+            url: '<?= base_url('profile-pic/update') ?>',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'Cache-Control': 'no-cache'
+            },
+            success: function (response) {
+                console.log(response);
+                response = JSON.parse(response);
+                if (response.success) {
+                    // Update the image source to the new uploaded image
+                    preview.src = response.image_path + '?' + new Date().getTime(); // Add timestamp to force browser cache refresh
+                    alert('Profile Picture Updated!');
+                } else {
+                    alert(response.message);
+                    console.log(response);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert(error);
+            }
+        });
+    }
+</script>

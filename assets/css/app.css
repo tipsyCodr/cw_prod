@@ -1620,6 +1620,10 @@ select {
   bottom: 1.25rem;
 }
 
+.bottom-\[-100px\] {
+  bottom: -100px;
+}
+
 .bottom-\[60px\] {
   bottom: 60px;
 }
@@ -1658,10 +1662,6 @@ select {
 
 .top-2 {
   top: 0.5rem;
-}
-
-.bottom-\[-100px\] {
-  bottom: -100px;
 }
 
 .z-10 {
@@ -1751,11 +1751,6 @@ select {
   margin-right: 1rem;
 }
 
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1836,6 +1831,10 @@ select {
   margin-bottom: 2rem;
 }
 
+.mb-\[100px\] {
+  margin-bottom: 100px;
+}
+
 .mb-\[500px\] {
   margin-bottom: 500px;
 }
@@ -1858,6 +1857,10 @@ select {
 
 .me-auto {
   margin-inline-end: auto;
+}
+
+.ml-0 {
+  margin-left: 0px;
 }
 
 .ml-2 {
@@ -1964,40 +1967,8 @@ select {
   margin-top: 2rem;
 }
 
-.mt-\[-30px\] {
-  margin-top: -30px;
-}
-
-.mt-\[100px\] {
-  margin-top: 100px;
-}
-
-.mb-\[-100px\] {
-  margin-bottom: -100px;
-}
-
-.mt-\[-40px\] {
-  margin-top: -40px;
-}
-
-.mt-\[-450px\] {
-  margin-top: -450px;
-}
-
 .mt-\[-50px\] {
   margin-top: -50px;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.ml-0 {
-  margin-left: 0px;
-}
-
-.mb-\[100px\] {
-  margin-bottom: 100px;
 }
 
 .block {
@@ -2088,6 +2059,10 @@ select {
   height: 24.30px;
 }
 
+.h-\[30vh\] {
+  height: 30vh;
+}
+
 .h-\[320px\] {
   height: 320px;
 }
@@ -2110,14 +2085,6 @@ select {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[30vh\] {
-  height: 30vh;
-}
-
-.h-\[20vh\] {
-  height: 20vh;
 }
 
 .max-h-96 {
@@ -2614,6 +2581,11 @@ select {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+
 .border-green-400 {
   --tw-border-opacity: 1;
   border-color: rgb(49 196 141 / var(--tw-border-opacity));
@@ -2648,19 +2620,14 @@ select {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-gray-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-
 .\!bg-gray-50 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-\[\#e2d3f5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 211 245 / var(--tw-bg-opacity));
 }
 
 .bg-accent {
@@ -2810,24 +2777,14 @@ select {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[\#dad1f5\] {
+.bg-yellow-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(218 209 245 / var(--tw-bg-opacity));
+  background-color: rgb(250 202 21 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#e9d5f5\] {
+.bg-magiColor {
   --tw-bg-opacity: 1;
-  background-color: rgb(233 213 245 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#e2d3f5\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 211 245 / var(--tw-bg-opacity));
-}
-
-.bg-yellow-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(194 120 3 / var(--tw-bg-opacity));
+  background-color: rgb(255 21 229 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-30 {
@@ -3101,11 +3058,6 @@ select {
   padding-bottom: 1.5rem;
 }
 
-.px-96 {
-  padding-left: 24rem;
-  padding-right: 24rem;
-}
-
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -3186,16 +3138,16 @@ select {
   padding-top: 1rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-5 {
-  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -3208,10 +3160,6 @@ select {
 
 .text-right {
   text-align: right;
-}
-
-.text-justify {
-  text-align: justify;
 }
 
 .text-start {
@@ -4173,29 +4121,12 @@ a {
 }
 
 @media (min-width: 640px) {
-  .sm\:m-auto {
-    margin: auto;
-  }
-
-  .sm\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .sm\:ml-10 {
     margin-left: 2.5rem;
   }
 
   .sm\:flex {
     display: flex;
-  }
-
-  .sm\:h-\[30vh\] {
-    height: 30vh;
-  }
-
-  .sm\:h-\[50vh\] {
-    height: 50vh;
   }
 
   .sm\:h-\[55vh\] {
@@ -4251,10 +4182,6 @@ a {
     text-align: left;
   }
 
-  .sm\:text-center {
-    text-align: center;
-  }
-
   .sm\:text-justify {
     text-align: justify;
   }
@@ -4271,10 +4198,6 @@ a {
 }
 
 @media (min-width: 768px) {
-  .md\:inline-block {
-    display: inline-block;
-  }
-
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -4340,10 +4263,6 @@ a {
 
   .lg\:flex-row {
     flex-direction: row;
-  }
-
-  .lg\:text-center {
-    text-align: center;
   }
 }
 

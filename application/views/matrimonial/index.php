@@ -90,14 +90,18 @@
                     Go</button>
             </div>
         </form>
+        <div class="flex flex-col items-center mb-8 mt-2 text-center">
+            <a href="<?= base_url('matrimonial/register/page') ?>"
+                class="w-full px-4 font-bold rounded-lg text-indigo-600 ">
+                Don't have a Matrimonial account? Create one now
+            </a>
+
+            <a href="#" class="w-full py-2 mx-2 my-4 rounded-lg bg-magiColor text-white"> Match Your Kundli <i
+                    class="fa fa-long-arrow-right"></i></a>
+        </div>
     </div>
 
-    <div class="mb-8 mt-2 text-center">
-        <a href="<?= base_url('matrimonial/register/page') ?>"
-            class="text-indigo-600 hover:text-indigo-900 font-semibold">
-            Don't have a Matrimonial account? Create one now
-        </a>
-    </div>
+
 
 
 </div>
