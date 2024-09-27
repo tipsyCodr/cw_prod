@@ -1,7 +1,7 @@
 <div class="post-wrapper pb-44" style="margin:0 auto; min-width:300px; max-width: 800px;">
 	<div class="p-4  shadow min-w-[300px] ">
 		<div class=" top-2 left-2 relative flex justify-between items-center">
-			<span class=" flex  p-1.5 rounded-full">
+			<span class=" flex my-2  p-1.5 rounded-full">
 				<span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[4px] rounded-full mr-2">
 					<?php if (!empty($user->user_profile_pic)): ?>
 						<img class=" object-cover rounded-full w-10 h-10 "
