@@ -99,7 +99,8 @@
                         Today's Flyer
                     </div>
                     <?php
-                    $flyer = rand(1, 3);
+                    $flyer = rand(1, 13);
+
                     ?>
                     <div class="flyer-wrapper  p-2 ">
                         <div class="px-6 py-1 w-full">

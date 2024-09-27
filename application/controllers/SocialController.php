@@ -26,6 +26,7 @@ class SocialController extends MY_Controller
 	public function getAllMembers()
 	{
 		$this->load->model('Userregistrationmodel');
+		$data['title'] = 'All Members';
 		$data['members'] = $this->Userregistrationmodel->getAllMembers();
 		$data['slot'] = $this->load->view('social/members', $data, TRUE);
 		$this->load->view('layouts/main', $data);

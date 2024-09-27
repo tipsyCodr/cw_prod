@@ -165,6 +165,7 @@ class MatrimonialController extends MY_Controller
 
 
         $data['recent'] = $recent;
+        $data['title'] = 'My Requests';
         $data['old'] = $old;
         $data['slot'] = $this->load->view('matrimonial/requests', $data, TRUE);
         $this->load->view('/layouts/main', $data);

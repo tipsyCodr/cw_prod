@@ -182,6 +182,7 @@ class UserController extends MY_Controller
 
     public function verifyForm()
     {
+
         $user_id = $this->session->userdata('login');
         if ($this->User->requestExist($user_id)) {
             $this->session->set_flashdata('error', 'You have already submitted your request. Please wait While we complete your verification process.');
@@ -191,6 +192,7 @@ class UserController extends MY_Controller
         $this->db->select('gotra_name');
         $this->db->from('gotra');
         $query = $this->db->get();
+        $data['title'] = 'Verify Yourself';
         $data['gotra_list'] = $query->result_array();
         $data['slot'] = $this->load->view('user/verification', $data, TRUE);
         $this->load->view('layouts/main', $data);
