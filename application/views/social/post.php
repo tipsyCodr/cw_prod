@@ -52,7 +52,7 @@
 			<div class="social-bar flex items-center">
 				<a class='like-btn  cursor-pointer my-auto mx-2' data-id="<?= $blog->post_id; ?>"
 					onclick="likePost(this)">
-					<?= $likedstatus ?>
+
 					<?php if ($likedstatus == true) { ?>
 						<i class="text-2xl text-red-500  i-[teenyicons--heart-solid]"></i>
 						<!-- <i class="fa-solid fa-2x fa-heart text-red-500 hover:text-gray-500 transition-all "></i> -->
@@ -71,8 +71,8 @@
 
 			<div class="flex px-2">
 				<p class="text-md px-1"><span id="like-<?= $blog->post_id; ?>"
-						class=""><?= $blog->post_id == null ? 0 : $blog->post_id; ?></span> Likes
-					<!-- class=""><?= $likes == null ? 0 : $likes; ?></span> Likes -->
+						class=""><?= $likes == null ? 0 : $likes; ?></span> Likes
+
 				</p>
 				<span class="text-md px-1"><?= count($comments) ?> Comments</span>
 

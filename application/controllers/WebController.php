@@ -137,6 +137,7 @@ class WebController extends MY_Controller
                 $data['blogs'][$key]['is_verified'] = isset($users[$user_id]['is_verified']) ? $users[$user_id]['is_verified'] : false;
                 $data['blogs'][$key]['profile_pic'] = isset($users[$user_id]['profile_pic']) ? $users[$user_id]['profile_pic'] : false;
                 $data['blogs'][$key]['likes'] = $this->Blog_model->getPostLikes($blog['post_id']);
+                $data['blogs'][$key]['comments'] = $this->Blog_model->getComments($blog['post_id']);
                 $data['blogs'][$key]['likedstatus'] = (bool) $this->Blog_model->isLikedByUser($blog['post_id'], $this->session->userdata('login'));
             }
         }

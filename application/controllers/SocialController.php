@@ -48,7 +48,7 @@ class SocialController extends MY_Controller
 		$data['blog'] = $this->Blog_model->getSinglePost($post_id);
 		$data['comments'] = $this->Blog_model->getComments($post_id);
 		$data['likes'] = $this->Blog_model->getPostLikes($post_id);
-		$data['likedstatus'] = $this->Blog_model->isLikedByUser($post_id, $this->session->userdata('user_id'));
+		$data['likedstatus'] = $this->Blog_model->isLikedByUser($post_id, $this->session->userdata('login'));
 		$data['user'] = $this->Blog_model->postedBy($post_id);
 		$data['title'] = 'View Post';
 		$data['slot'] = $this->load->view('social/post', $data, TRUE);

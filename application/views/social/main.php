@@ -356,7 +356,7 @@
                     <p class="text-md px-1"><span id="like-<?= $blog_id; ?>"
                             class=""><?= $blog['likes'] == null ? 0 : $blog['likes']; ?></span> Likes
                     </p>
-                    <span class="text-md px-1"><?= $data['comment_count'][$blog['post_id']] ?? 0 ?> Comments</span>
+                    <span class="text-md px-1"><?= count($blog['comments']) ?? 0 ?> Comments</span>
                 </div>
                 <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3 px-4"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
