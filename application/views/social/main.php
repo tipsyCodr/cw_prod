@@ -284,7 +284,7 @@
                 ?>
                 <!-- new design -->
                 <div class=" top-2 left-2  ">
-                    <span class=" flex  p-1.5 rounded-full">
+                    <span class=" flex   p-1.5 rounded-full">
                         <span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[4px] rounded-full mr-2">
                             <?php if (!empty($blog['profile_pic'])): ?>
                                 <img class=" object-cover rounded-full w-10 h-10 "
@@ -304,6 +304,7 @@
                             <span class="text-xs">@Member</span>
                         </p>
                     </span>
+                    <div class="d">das</div>
                 </div>
 
                 <div class=" rounded-[30px] relative overflow-hidden mb-2 cursor-pointer border-bottom "
