@@ -91,6 +91,7 @@ $route['services/post/business/store'] = 'ServiceController/postBusinessSave';
 
 //Social
 $route['social/all-post'] = 'SocialController/getAllPosts';
+$route['social/post/delete/(:num)'] = 'SocialController/deletePost/$1';
 $route['social/members'] = 'SocialController/getAllMembers';
 $route['social/post/(:num)'] = 'SocialController/view/$1';
 $route['social/post/like/(:num)/(:num)'] = 'SocialController/toggleLike/$1/$2';

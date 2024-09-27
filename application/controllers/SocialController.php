@@ -23,6 +23,16 @@ class SocialController extends MY_Controller
 		// $data['slot'] = $this->load->view('social/index', $data, TRUE);
 		// $this->load->view('layouts/main', $data);
 	}
+	public function deletePost($post_id)
+	{
+		$this->load->model('Blog_model');
+		$result = $this->Blog_model->deletePost($post_id);
+		if ($result) {
+			echo json_encode(array('success' => 'Post deleted successfully'));
+		} else {
+			echo json_encode(array('error' => 'Something went wrong'));
+		}
+	}
 	public function getAllMembers()
 	{
 		$this->load->model('Userregistrationmodel');

@@ -57,6 +57,7 @@ class Blog_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('posts');
+        $this->db->where('delete', 0);
         $this->db->order_by('post_id', 'DESC');
         $query = $this->db->get();
         return $query->result_array();
@@ -65,6 +66,7 @@ class Blog_model extends CI_Model
     {
         $this->db->select('posts.*, user_registration.user_name,user_registration.user_profile_pic,user_registration.user_verified_status');
         $this->db->from('posts');
+        $this->db->where('delete', 0);
         $this->db->join('user_registration', 'user_registration.uid = posts.user_id');
         $this->db->order_by('post_id', 'DESC');
         $query = $this->db->get();
@@ -86,7 +88,18 @@ class Blog_model extends CI_Model
             ->where(['user_id' => $user_id, 'post_id' => $post_id])
             ->get()
             ->num_rows();
-
+    }
+    public function deletePost($post_id)
+    {
+        try {
+            $this->db->where('post_id', $post_id);
+            $this->db->set('delete', 1);
+            $this->db->update('posts');
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Error deleting post: ' . $e->getMessage());
+            return false;
+        }
     }
     public function likePost($post_id, $user_id)
     {

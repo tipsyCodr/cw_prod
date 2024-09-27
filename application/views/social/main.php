@@ -557,6 +557,25 @@
         const $menu = $('#menu-' + id).toggleClass('hidden');
     }
 
+    function deletePost(id) {
+        const result = confirm('Are you sure you want to delete this post?');
+        if (result) {
+            $.ajax({
+                url: "<?= base_url('social/post/delete/') ?>" + id,
+                method: 'POST',
+                success: function (response) {
+                    console.log(response);
+                    // location.reload();
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                }
+            })
+        }
+        return false;
+    }
 
     // Open/Close popup functions
     function closePopup() {
