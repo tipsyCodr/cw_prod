@@ -103,7 +103,7 @@
 
         <div class="flex flex-col items-center mb-8 mt-2 text-center">
 
-            <a href="#" class="w-full py-2 mx-2  rounded-lg bg-magiColor text-white"> Match Your Kundli <i
+            <a href="#" class="w-full py-2 mx-2 my-4  rounded-lg bg-magiColor text-white"> Match Your Kundli <i
                     class="fa fa-long-arrow-right"></i></a>
 
         </div>
