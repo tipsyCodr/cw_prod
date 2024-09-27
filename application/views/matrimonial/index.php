@@ -87,7 +87,7 @@
                 </div>
                 <div class="flex justify-evenly items-center text-center">
                     <button type="submit"
-                        class="w-full px-4 py-2 rounded-lg mx-1 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                        class="w-1/2 px-2 py-2 rounded-lg mx-1 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
                         <i class="fa fa-search p-2"></i> Go</button>
 
                     <a href="<?= base_url('kundli/form') ?>"
