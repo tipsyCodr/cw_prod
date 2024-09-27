@@ -58,7 +58,7 @@
                                 alt="">
                             <div class="px-4">
                                 <p class="font-black text-2xl text-white uppercase  ">Aghariya Samaj</p>
-                                <hr>
+                                <!-- <hr> -->
                                 <!-- <p class="font-thin text-2xl text-white">Address: Bhilai</p> -->
                             </div>
                         </div>
