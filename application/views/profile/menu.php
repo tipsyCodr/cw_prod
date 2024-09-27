@@ -24,7 +24,8 @@
                     style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
                 </div>
             </a>
-            <input class="hidden" type="file" name="user_cover_pic" id="user_cover_pic" onchange="updateCoverImage()">
+            <input class="hidden" type="file" accept="image/*" name="user_cover_pic" id="user_cover_pic"
+                onchange="updateCoverImage()">
 
         </div>
     </label>
