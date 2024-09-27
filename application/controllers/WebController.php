@@ -123,16 +123,19 @@ class WebController extends MY_Controller
             // Map users by their uid
             $users = [];
             foreach ($user_query->result() as $user) {
-                $users[$user->uid] = $user->user_name;
-                $users['is_verified'] = ($user->user_verified_status == 1) ? true : false;
-                $users['profile_pic'] = $user->user_profile_pic;
+                $users[$user->uid] = [
+                    'username' => $user->user_name,
+                    'is_verified' => ($user->user_verified_status == 1) ? true : false,
+                    'profile_pic' => $user->user_profile_pic,
+                ];
             }
 
-            // Assign the username to each blog post
+            // Assign the user details to each blog post
             foreach ($data['blogs'] as $key => $blog) {
-                $data['blogs'][$key]['username'] = isset($users[$blog['user_id']]) ? $users[$blog['user_id']] : 'Unknown';
-                $data['blogs'][$key]['is_verified'] = isset($users['is_verified']) ? $users['is_verified'] : false;
-                $data['blogs'][$key]['profile_pic'] = isset($users['profile_pic']) ? $users['profile_pic'] : false;
+                $user_id = $blog['user_id'];
+                $data['blogs'][$key]['username'] = isset($users[$user_id]['username']) ? $users[$user_id]['username'] : 'Unknown';
+                $data['blogs'][$key]['is_verified'] = isset($users[$user_id]['is_verified']) ? $users[$user_id]['is_verified'] : false;
+                $data['blogs'][$key]['profile_pic'] = isset($users[$user_id]['profile_pic']) ? $users[$user_id]['profile_pic'] : false;
                 $data['blogs'][$key]['likes'] = $this->Blog_model->getPostLikes($blog['post_id']);
                 $data['blogs'][$key]['likedstatus'] = (bool) $this->Blog_model->isLikedByUser($blog['post_id'], $this->session->userdata('login'));
             }
@@ -147,6 +150,7 @@ class WebController extends MY_Controller
         // Render the main layout view
         $this->load->view('/layouts/main', $data);
     }
+
     public function matrimonial()
     {
         $data['title'] = 'Matrimonial';
