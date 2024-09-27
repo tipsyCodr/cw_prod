@@ -1,6 +1,6 @@
 <div class="post-wrapper pb-44" style="margin:0 auto; min-width:300px; max-width: 800px;">
 	<div class="p-4  shadow min-w-[300px] ">
-		<div class=" top-2 left-2  ">
+		<div class=" top-2 left-2 relative flex justify-between items-center">
 			<span class=" flex  p-1.5 rounded-full">
 				<span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[4px] rounded-full mr-2">
 					<?php if (!empty($user->user_profile_pic)): ?>
@@ -21,6 +21,29 @@
 					<span class="text-xs">@Member</span>
 				</p>
 			</span>
+			<div class="d px-4">
+				<?php if ($this->session->userdata('login') == $user->uid) { ?>
+					<i class="fa fa-ellipsis-h cursor-pointer" onclick="openMenu(<?= $blog->post_id ?>)"></i>
+					<div id="menu-<?= $blog->post_id ?>"
+						class="menu hidden absolute z-10 right-5 bg-white  rounded-2xl overflow-hidden">
+						<ul>
+							<li
+								class="cursor-pointer border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors">
+								<a href="<?= site_url() . 'social/post/' . $blog->post_id ?>">
+									<i class="fa fa-edit"></i> Edit
+								</a>
+							</li>
+							<li
+								class="cursor-pointer  border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors ">
+								<a href="javascript:void(0)" onclick="deletePost(<?= $blog->post_id ?>)"
+									class="text-red-600"> <i class="  fa fa-trash"></i> Delete
+
+								</a>
+							</li>
+						</ul>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
 		<div class="img-wrapper rounded-[31px] overflow-hidden">
 			<img src="<?= base_url() . "uploads/blog_images/" . $blog->image_url ?>" alt="">
@@ -107,7 +130,31 @@
 	</div>
 </div>
 <script>
+	function openMenu(id) {
+		const $menu = $('#menu-' + id).toggleClass('hidden');
+	}
+
+	function deletePost(id) {
+		const result = confirm('Are you sure you want to delete this post?');
+		if (result) {
+			$.ajax({
+				url: "<?= base_url('social/post/delete/') ?>" + id,
+				method: 'POST',
+				success: function (response) {
+					console.log(response);
+					window.history.back();
+
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+					console.log(xhr.status);
+					console.log(thrownError);
+				}
+			})
+		}
+		return false;
+	}
 	window.onload = function () {
+
 		window.likePost = function (el) {
 			const $this = $(el);
 			const dataId = $this.attr('data-id');
