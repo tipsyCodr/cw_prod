@@ -225,10 +225,12 @@
         }
 
         // Capture the element as an image
-        html2canvas(findEl).then((canvas) => {
+        html2canvas(findEl, { scale: 2 }).then((canvas) => {
             const link = document.createElement('a');
             document.body.appendChild(link);
-            link.download = "cmp-image.jpg";
+            const today = new Date();
+            const dateStr = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            link.download = `flyer-${dateStr}.jpg`;
             link.href = canvas.toDataURL();
             link.click();
             link.remove();
