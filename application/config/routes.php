@@ -78,6 +78,7 @@ $route['membership/verify'] = 'UserController/verifySave';
 
 $route['profile-pic'] = 'UserController/profilePic';
 $route['profile-pic/update'] = 'UserController/updateProfilePic';
+$route['cover-pic/update'] = 'UserController/updateCoverPic';
 $route['update'] = 'UserController/updateDetails';
 
 

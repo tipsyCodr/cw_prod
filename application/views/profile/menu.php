@@ -1,31 +1,33 @@
 <div class="wrapper ">
-    <div class="relative profile-hero flex justify-center items-center  sm:h-[55vh] h-[30vh]"
-        style="background-image: url(<?= base_url('uploads/user_profiles/cover/rahul.jpg') ?>); background-position: top; background-size:cover;">
+    <label for="user_cover_pic">
+        <div id="coverPreview" class="relative profile-hero flex justify-center items-center  sm:h-[55vh] h-[30vh]"
+            style="background-image: url(<?= base_url('uploads/user_profiles/cover/' . $user->user_cover_pic) ?>); background-position: top; background-size:cover;">
 
-        <form id="profile_pic_form">
-            <label for="user_profile_pic">
-                <div class="flex flex-col items-center w-full m-2">
-                    <?php if (isset($user->user_profile_pic) && !empty($user->user_profile_pic)) { ?>
-                        <img id='preview'
-                            class="border-4 object-cover border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
-                            src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt="">
-                    <?php } else { ?>
-                        <i class="fas fa-user-circle fa-8x text-accent"></i>
-                    <?php } ?>
+            <form id="profile_pic_form">
+                <label for="user_profile_pic">
+                    <div class="flex flex-col items-center w-full m-2">
+                        <?php if (isset($user->user_profile_pic) && !empty($user->user_profile_pic)) { ?>
+                            <img id='preview'
+                                class="border-4 object-cover border-white  shadow-lg rounded-full w-[200px] h-[200px]  absolute bottom-[-100px]"
+                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>" alt="">
+                        <?php } else { ?>
+                            <i class="fas fa-user-circle fa-8x text-accent"></i>
+                        <?php } ?>
+                    </div>
+                </label>
+                <input class="text-center hidden" type="file" name="user_profile_pic" id="user_profile_pic"
+                    accept="image/*" class="" onchange="updateImage()">
+            </form>
+
+            <a href="<?= base_url('profile-pic') ?>">
+                <div class="hidden"
+                    style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
                 </div>
-            </label>
-            <input class="text-center hidden" type="file" name="user_profile_pic" id="user_profile_pic" accept="image/*"
-                class="" onchange="updateImage()">
-        </form>
+            </a>
+            <input class="hidden" type="file" name="user_cover_pic" id="user_cover_pic" onchange="updateCoverImage()">
 
-        <a href="<?= base_url('profile-pic') ?>">
-            <div class="hidden"
-                style="background-image:url('<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>');background-position: top; background-size:cover;margin-left: auto; margin-right: auto; left: 0; right: 0;">
-            </div>
-        </a>
-
-    </div>
-
+        </div>
+    </label>
 
     <div class="user-details mt-32">
 
@@ -211,6 +213,38 @@
                     // Update the image source to the new uploaded image
                     preview.src = response.image_path + '?' + new Date().getTime(); // Add timestamp to force browser cache refresh
                     alert('Profile Picture Updated!');
+                } else {
+                    alert(response.message);
+                    console.log(response);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert(error);
+            }
+        });
+    }
+    function updateCoverImage() {
+        const preview = document.getElementById('coverPreview');
+        const file = document.getElementById('user_cover_pic').files[0];
+
+        const formData = new FormData();
+        formData.append('user_cover_pic', file);
+        $.ajax({
+            url: '<?= base_url('cover-pic/update') ?>',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'Cache-Control': 'no-cache'
+            },
+            success: function (response) {
+                console.log(response);
+                response = JSON.parse(response);
+                if (response.success) {
+                    // Update the image source to the new uploaded image
+                    preview.style.backgroundImage = 'url("' + response.image_path + '?' + new Date().getTime() + '")'; // Add timestamp to force browser cache refresh
+                    alert('Cover Picture Updated!');
                 } else {
                     alert(response.message);
                     console.log(response);

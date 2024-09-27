@@ -305,4 +305,40 @@ class UserController extends MY_Controller
 
         echo json_encode($response);
     }
+    public function updateCoverPic()
+    {
+        $user_id = $this->session->userdata('login');
+        $query = $this->db->query("SELECT user_cover_pic FROM user_registration WHERE `uid` = '$user_id'");
+        $result = $query->row_array();
+        $filename = $result['user_cover_pic'];
+        if (empty($filename)) {
+            $user = $this->UserRegistrationModel->getUserById($user_id);
+            $filename = $user->user_name . '_' . substr(str_shuffle(MD5(microtime())), 0, 8) . '.jpg';
+        }
+        $formData = $this->input->post(null, true);
+        if (!empty($_FILES['user_cover_pic']['name'])) {
+            $file_with_query = basename($filename);
+            $filename = parse_url($file_with_query, PHP_URL_PATH);
+            $config['upload_path'] = './uploads/user_profiles/cover/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['file_name'] = $filename;
+            $config['overwrite'] = true;
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('user_cover_pic')) {
+                $error = $this->upload->display_errors();
+                $response = array('success' => false, 'message' => $error);
+            } else {
+                $uploadData = $this->upload->data();
+                $this->db->set('user_cover_pic', $uploadData['file_name'] . '?v=' . time());
+                $this->db->where('uid', $user_id);
+                $this->db->update('user_registration');
+                $response = array('success' => true, 'image_path' => base_url('uploads/user_profiles/cover/' . $config['file_name']));
+            }
+        } else {
+            $response = array('success' => false, 'message' => 'No image uploaded.');
+        }
+
+        echo json_encode($response);
+    }
 }

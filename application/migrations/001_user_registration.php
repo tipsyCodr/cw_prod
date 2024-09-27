@@ -62,6 +62,10 @@ class Migration_user_registration extends CI_Migration
                     'type' => 'TEXT',
                     'null' => TRUE,
                 ),
+                'user_cover_pic' => array(
+                    'type' => 'TEXT',
+                    'null' => TRUE,
+                ),
                 'user_created_on' => array(
                     'type' => 'TEXT',
                     'null' => TRUE,
