@@ -338,8 +338,7 @@
                     <p>
                         <!-- <span class="px-1"><i class="text-xl i-[teenyicons--heart-outline]"></i></span> -->
                         <a class='like-btn  mx-2 my-auto cursor-pointer ' data-id="<?= $blog_id; ?>" onclick="likePost(this)">
-                            <?= $likedstatus ?>
-                            <?php if ($likedstatus == true) { ?>
+                            <?php if ($blog['likedstatus'] == true) { ?>
                                 <i class="text-2xl text-red-500  i-[teenyicons--heart-solid]"></i>
                                 <!-- <i class="fa-solid fa-2x fa-heart text-red-500 hover:text-gray-500 transition-all "></i> -->
                             <?php } else { ?>
@@ -353,8 +352,9 @@
                     </p>
                 </div>
                 <div class="flex px-2">
+                    <?php //var_dump($blog); ?>
                     <p class="text-md px-1"><span id="like-<?= $blog_id; ?>"
-                            class=""><?= $blog['post_likes'] == null ? 0 : $blog['post_likes']; ?></span> Likes
+                            class=""><?= $blog['likes'] == null ? 0 : $blog['likes']; ?></span> Likes
                     </p>
                     <span class="text-md px-1"><?= $data['comment_count'][$blog['post_id']] ?? 0 ?> Comments</span>
                 </div>
