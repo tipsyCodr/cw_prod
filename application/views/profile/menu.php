@@ -129,7 +129,7 @@
                                         <p class="text-md font-bold ">
                                             <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
                                         </p>
-                                        <p class="text-right ">Member</p>
+                                        <p class="text-left ">Member</p>
                                     </div>
 
                                 </div>
