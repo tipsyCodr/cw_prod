@@ -110,13 +110,11 @@
                                 & Share
                             </button>
                         </div>
-
-
                         <div id="capture">
                             <div class="relative border rounded-sm overflow-hidden "
                                 style="min-height:40px; width: 100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
                                 <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
-                                <div
+                                <div id="bottom-bar"
                                     class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
                                     <div class="flex justify-between text-black">
                                         <div class=" mt-[-36px]  rounded-full px-2">
@@ -125,10 +123,10 @@
                                                 alt="">
                                         </div>
                                         <div class=" flex flex-col ">
-                                            <p class="text-md font-bold ">
+                                            <p class="flyer-text text-md font-bold ">
                                                 <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
                                             </p>
-                                            <p class="text-left text-xs">Member</p>
+                                            <p class="flyer-text text-left text-xs">Member</p>
                                         </div>
                                     </div>
                                 </div>
@@ -139,6 +137,21 @@
                             type="button" onclick="location.reload()"><i class="fas fa-arrows-rotate px-2"></i>New
                             Image
                         </button>
+                        <div class="flex justify-evenly">
+
+                            <input type="color" name="back-color" id="bg-color-picker" class="hidden" value="#fdba8c"
+                                onchange="colorPicker()">
+                            <label for="bg-color-picker"
+                                class="block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                Background Color
+                            </label>
+                            <input type="color" name="back-color" id="name-color-picker" class="hidden" value="#000000"
+                                onchange="nameColorPicker()">
+                            <label for="name-color-picker"
+                                class="block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                Name Color
+                            </label>
+                        </div>
                     </div>
                 </div>
 
@@ -233,5 +246,17 @@
         }).catch((error) => {
             console.error('Error capturing image:', error);
         });
+    }
+    function colorPicker() {
+        const colorPicker = document.getElementById('bg-color-picker');
+        const bottomBar = document.getElementById('bottom-bar');
+        const chosenColor = colorPicker.value;
+        bottomBar.style.backgroundColor = chosenColor;
+    }
+    function nameColorPicker() {
+        const colorPicker = document.getElementById('name-color-picker');
+        const texts = document.querySelectorAll('.flyer-text');
+        const chosenColor = colorPicker.value;
+        texts.forEach(text => text.style.color = chosenColor);
     }
 </script>
