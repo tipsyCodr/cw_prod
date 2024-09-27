@@ -360,7 +360,7 @@
                 </div>
                 <p class="text-sm h-10 overflow-hidden text-ellipsis mt-3 px-4"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                    <span><?= $blog['username'] ?> </span><?= $blog['content']; ?>
+                    <span><b class="text-xs"><?= $blog['username'] ?></b> </span><?= $blog['content']; ?>
                 </p>
                 <!-- new design -->
 
