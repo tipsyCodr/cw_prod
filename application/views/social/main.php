@@ -242,7 +242,7 @@
             </li>
         </ul>
     </div>
-    <div class="main  m-auto px-2">
+    <div class="main  mx-auto px-2 max-w-[800px]">
         <a href='<?= base_url('social/members') ?>'
             class=" hidden block my-4 p-2 text-center bg-gradient-to-r from-accent-dark to-accent  text-white w-full rounded-full ">
             <i class="fa fa-users"></i> All Members</a>
@@ -283,8 +283,8 @@
                 $images = explode(',', $images);
                 ?>
                 <!-- new design -->
-                <div class=" top-2 left-2  ">
-                    <span class=" flex   p-1.5 rounded-full">
+                <div class=" relative top-2 left-2 flex justify-between items-center ">
+                    <span class=" flex my-2 p-1.5 rounded-full">
                         <span class=" bg-gradient-to-tr from-magiColor-blue to-magiColor p-[4px] rounded-full mr-2">
                             <?php if (!empty($blog['profile_pic'])): ?>
                                 <img class=" object-cover rounded-full w-10 h-10 "
@@ -304,7 +304,27 @@
                             <span class="text-xs">@Member</span>
                         </p>
                     </span>
-                    <div class="d">das</div>
+                    <div class="d px-4">
+                        <i class="fa fa-ellipsis-h cursor-pointer" onclick="openMenu(<?= $blog['post_id'] ?>)"></i>
+                        <div id="menu-<?= $blog['post_id'] ?>"
+                            class="menu hidden absolute z-10 right-5 bg-white  rounded-2xl overflow-hidden">
+                            <ul>
+                                <li
+                                    class="cursor-pointer border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors">
+                                    <a href="<?= site_url() . 'social/post/' . $blog['post_id'] ?>">
+                                        <i class="fa fa-edit"></i> Edit
+                                    </a>
+                                </li>
+                                <li
+                                    class="cursor-pointer  border-bottom border-gray-300 px-4 py-2 hover:bg-gray-200  transition-colors ">
+                                    <a href="javascript:void(0)" onclick="deletePost(<?= $blog_id ?>)" class="text-red-600"> <i
+                                            class="  fa fa-trash"></i> Delete
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div class=" rounded-[30px] relative overflow-hidden mb-2 cursor-pointer border-bottom "
@@ -533,6 +553,11 @@
         }
 
     }
+    function openMenu(id) {
+        const $menu = $('#menu-' + id).toggleClass('hidden');
+    }
+
+
     // Open/Close popup functions
     function closePopup() {
         $('#add_blog')[0].reset();
