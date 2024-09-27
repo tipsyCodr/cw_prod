@@ -134,40 +134,45 @@
                                 </div>
                             </div>
                         </div>
-
+                        <button
+                            class=" block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
+                            type="button" onclick="location.reload()"><i class="fas fa-arrows-rotate px-2"></i>New
+                            Image
+                        </button>
                     </div>
-
                 </div>
+
             </div>
+        </div>
 
-            <div class="menu-options ml-0 sm:ml-10  ">
-                <div class="py-6 px-4 font-bold text-3xl sm:text-justify text-center">
-                    <h2>Options</h2>
-                </div>
-                <div class="flex flex-col bg-transparent sm:bg-white rounded-lg">
-                    <a class=" px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white "
-                        href="<?= base_url('social/members') ?>"><i class="fa fa-users  p-1"></i> All
-                        Members</a>
-                    <?php if (isset($_SESSION['verified']) && $_SESSION['verified'] == 0) { ?>
-                        <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                            href="<?= base_url('membership') ?>"> <i class="fa fa-user  p-1"></i> Complete Your Profile
-                            (CYP)
-                        </a>
-                    <?php } ?>
+        <div class="menu-options ml-0 sm:ml-10  ">
+            <div class="py-6 px-4 font-bold text-3xl sm:text-justify text-center">
+                <h2>Options</h2>
+            </div>
+            <div class="flex flex-col bg-transparent sm:bg-white rounded-lg">
+                <a class=" px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white "
+                    href="<?= base_url('social/members') ?>"><i class="fa fa-users  p-1"></i> All
+                    Members</a>
+                <?php if (isset($_SESSION['verified']) && $_SESSION['verified'] == 0) { ?>
                     <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                        href="<?= base_url('matrimonial/requests/get') ?>"><i class="fa fa-eye p-1"> </i> Profile View
-                        Requests</a>
-                    <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                        href="<?= base_url('profile-pic') ?>"><i class="fa fa-edit  p-2"></i>Update Profile</a>
-                    <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                        href="#"><i class="fa fa-cog  p-2"></i>Settings</a>
-                    <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                        href="<?= base_url('logout') ?>"> <i class="fa fa-sign-out  p-2"></i> Log
-                        Out</a>
-                </div>
+                        href="<?= base_url('membership') ?>"> <i class="fa fa-user  p-1"></i> Complete Your Profile
+                        (CYP)
+                    </a>
+                <?php } ?>
+                <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
+                    href="<?= base_url('matrimonial/requests/get') ?>"><i class="fa fa-eye p-1"> </i> Profile View
+                    Requests</a>
+                <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
+                    href="<?= base_url('profile-pic') ?>"><i class="fa fa-edit  p-2"></i>Update Profile</a>
+                <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
+                    href="#"><i class="fa fa-cog  p-2"></i>Settings</a>
+                <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
+                    href="<?= base_url('logout') ?>"> <i class="fa fa-sign-out  p-2"></i> Log
+                    Out</a>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script>
