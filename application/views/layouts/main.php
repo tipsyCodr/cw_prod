@@ -62,6 +62,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
     <link rel="stylesheet" href="<?= base_url() ?>node_modules/flowbite/dist/flowbite.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/app.css" />

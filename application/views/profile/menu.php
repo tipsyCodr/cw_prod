@@ -101,7 +101,7 @@
                     <?php
                     $flyer = rand(1, 3);
                     ?>
-                    <div class="flyer-wrapper   ">
+                    <div class="flyer-wrapper  p-2 ">
                         <div class="px-6 py-1 w-full">
                             <a href="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" dowSnload="flyer.jpg"
                                 target="_blank"
@@ -110,15 +110,33 @@
                                 Download & Share
                             </a>
                         </div>
-                        <div class="border p-2 rounded-sm ">
-                            <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
+
+                        <div class="relative border rounded-sm overflow-hidden "
+                            style="min-height:40px; width: 100%;height:0;padding-bottom:100%;background-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
+                            <!-- <img src="" alt=""> -->
+                            <div class="top-bar w-full bg-accent absolute top-0 left-0 text-white ">
+                                <p class="p-2">Follow us on social media</p>
+                            </div>
+                            <div class="bottom-bar bg-accent h-16 shadow absolute bottom-0 left-0 w-full">
+                                <div class="flex justify-end">
+                                    <div class="">
+                                        <p class="text-xl font-bold text-white">
+                                            <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                        </p>
+                                        <p class="text-right text-white">Member</p>
+                                    </div>
+                                    <div class=" mt-[-100px] shadow-lg rounded-full ">
+                                        <img class="object-cover rounded-full w-32 h-32 border-4"
+                                            src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-
             </div>
-
 
             <div class="menu-options ml-0 sm:ml-10  ">
                 <div class="py-6 px-4 font-bold text-3xl sm:text-justify text-center">

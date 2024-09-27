@@ -26,8 +26,8 @@ body {
 }
 @media (min-width: 768px) {
 	.main-carousel {
-		width: 600px;
-		/* height: 300px; */
+		/* width: 600px; */
+		height: 600px;
 	}
 }
 .divider {

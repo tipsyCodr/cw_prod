@@ -279,9 +279,8 @@ class UserController extends MY_Controller
         }
         $formData = $this->input->post(null, true);
         if (!empty($_FILES['user_profile_pic']['name'])) {
-            $filename = basename($filename);
-            return $filename;
-            die();
+            $file_with_query = basename($filename);
+            $filename = parse_url($file_with_query, PHP_URL_PATH);
             $config['upload_path'] = './uploads/user_profiles/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['file_name'] = $filename;
@@ -296,7 +295,7 @@ class UserController extends MY_Controller
                 $this->db->set('user_profile_pic', $uploadData['file_name'] . '?v=' . time());
                 $this->db->where('uid', $user_id);
                 $this->db->update('user_registration');
-                $response = array('success' => true, 'image_path' => base_url('uploads/user_profiles/' . $formData['user_profile_pic']));
+                $response = array('success' => true, 'image_path' => base_url('uploads/user_profiles/' . $config['file_name']));
             }
         } else {
             $response = array('success' => false, 'message' => 'No image uploaded.');
