@@ -121,8 +121,8 @@
 
                         <div id="capture">
                             <div class="relative border rounded-sm overflow-hidden "
-                                style="min-height:40px; width: 100%;height:0;padding-bottom:100%;background-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
-                                <!-- <img src="" alt=""> -->
+                                style="min-height:40px; width: 100%;height:0;padding-bottom:100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
+                                <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
                                 <div
                                     class="bottom-bar bg-orange-300 h-12 shadow absolute bottom-0 left-0 rounded-tr-xl pr-4">
                                     <div class="flex justify-between text-black">
