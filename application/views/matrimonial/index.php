@@ -1,7 +1,73 @@
 <div class="matrimonial-wrapper ">
     <!-- <h1>Matrimonial</h1> -->
-    <h2 class=" pt-2 pb-1 font-bold text-xl text-center">Find Your Perfect Pair</h2>
-    <div class="matrimonial-wrapper grid grid-cols-2 gap-4 py-0 px-4">
+    <div class="flex items-center justify-center">
+        <div class="relative mx-auto w-full" style="background-image:url('assets/images/banner/1.jpg');background-size: cover; background-position:center; background-repeat: no-repeat; height: 700px;margin-top: -58px;
+  z-index: 1;
+">
+            <style>
+                .title {
+                    color: white;
+                }
+            </style>
+            <div
+                class="absolute bottom-5 left-1/2 transform -translate-x-1/2 bottom-bar p-6 bg-gray-900 filter bg-opacity-70 backdrop-blur-sm ">
+                <form action="<?= base_url('matrimonial/search') ?>" method="POST" enctype="multipart/form-data">
+                    <div class="form-group flex flex-col sm:flex-row space-x-2">
+                        <div class="flex-1 ml-2 my-2">
+                            <select
+                                class="border-0 bg-white px-4 py-2 d rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                                id="gender" name="looking">
+                                <option value="">Gender</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div>
+                        <div class="flex-1 my-2">
+                            <select
+                                class=" border-0 bg-white px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                                id="from_age" name="from_age">
+                                <?php for ($i = 18; $i <= 65; $i++) { ?>
+                                    <option value="<?= $i ?>"><?= $i ?> Years</option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="flex-1 my-2">
+                            <select
+                                class=" border-0 bg-white px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                                id="to_age" name="to_age">
+                                <?php for ($i = 18; $i <= 65; $i++) { ?>
+                                    <option value="<?= $i ?>" <?= $i == 65 ? ' selected' : '' ?>><?= $i ?> Years</option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="flex-1 my-2">
+                            <select
+                                class="border-0 bg-white px-4 py-2 rounded-lg  focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"
+                                id="gotra" name="gotra">
+                                <option value="">Select Gotra</option>
+                                <?php foreach ($gotram as $gotra) { ?>
+                                    <option value="<?= strtolower($gotra['gotra_name']) ?>"><?= $gotra['gotra_name'] ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="flex justify-evenly items-center text-center">
+                            <button type="submit"
+                                class="w-1/2 px-2 py-2 rounded-lg mx-1 bg-indigo-600 text-white font-semibold hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 text-nowrap">
+                                <i class="fa fa-search p-2"></i> Go</button>
+                            <a href="<?= base_url('kundli/form') ?>"
+                                class="w-full px-4 py-2 mx-1 rounded-lg bg-orange-400 text-white text-nowrap"><i
+                                    class="fa fa-infinity p-2"></i>
+                                Match Your Kundli </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h2 class=" hidden pt-2 pb-1 font-bold text-xl text-center">Find Your Perfect Pair</h2>
+    <div class="hidden matrimonial-wrapper grid grid-cols-2 gap-4 py-0 px-4">
 
         <div class="col-span-1">
             <button type="submit" form="form_bride" formaction="<?= base_url('matrimonial/search') ?>"
@@ -45,7 +111,7 @@
 
 
     </div>
-    <div class="search-wrapper mx-auto max-w-md px-4 py-0 space-y-4  rounded-lg ">
+    <div class="hidden  search-wrapper mx-auto max-w-md px-4 py-0 space-y-4  rounded-lg ">
         <form action="<?= base_url('matrimonial/search') ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group flex flex-col sm:flex-row space-x-2">
                 <div class="flex-1 ml-2 my-2">

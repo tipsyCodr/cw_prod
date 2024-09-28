@@ -1,9 +1,9 @@
-<div class=" flex flex-row py-1.5 justify-between items-center">
+<div class=" flex flex-row py-1.5 justify-between items-center relative z-10">
     <div class=" flex img-wrapper items-center px-1">
         <a href="<?= base_url('about_us') ?>"><img class='m-0' src="<?= base_url() . 'assets/images/logo.png' ?>"
                 alt="menu" width="40px"></a>
     </div>
-    <p class="font-monaSans font-bold text-lg text-center" style="margin-left:48px;">
+    <p class="title font-monaSans font-bold text-lg text-center" style="margin-left:48px;">
         <?= $title ?>
     </p>
     <div class="user p-0 flex flex-row justify-evenly">
