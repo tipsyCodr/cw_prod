@@ -2059,10 +2059,6 @@ select {
   height: 1.75rem;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-9 {
   height: 2.25rem;
 }
@@ -3510,11 +3506,6 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-gray-50 {
-  --tw-text-opacity: 1;
-  color: rgb(249 250 251 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -3652,33 +3643,49 @@ select {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-input:invalid:not(:-moz-placeholder-shown) {
+input[type="text"]:invalid:not(:-moz-placeholder-shown), input[type="number"]:invalid:not(:-moz-placeholder-shown), input[type="password"]:invalid:not(:-moz-placeholder-shown), input[type="tel"]:invalid:not(:-moz-placeholder-shown), input[type="email"]:invalid:not(:-moz-placeholder-shown) {
   border: 2px solid red;
   background-image: url("../../assets/images/icons/wrong.png");
 }
 
-input:invalid:not(:placeholder-shown) {
+input[type="text"]:invalid:not(:placeholder-shown),
+input[type="number"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown),
+input[type="tel"]:invalid:not(:placeholder-shown),
+input[type="email"]:invalid:not(:placeholder-shown) {
   border: 2px solid red;
   background-image: url("../../assets/images/icons/wrong.png");
 }
 
-input:valid:not(:-moz-placeholder-shown) {
+input[type="text"]:valid:not(:-moz-placeholder-shown), input[type="number"]:valid:not(:-moz-placeholder-shown), input[type="password"]:valid:not(:-moz-placeholder-shown), input[type="tel"]:valid:not(:-moz-placeholder-shown), input[type="email"]:valid:not(:-moz-placeholder-shown) {
   border: 2px solid green;
-  background-image: url("../../assets/images/icons/right.png");
+  background-image: url("../../assets/images/icons/check.png");
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: calc(100% - 10px);
 }
 
-input:valid:not(:placeholder-shown) {
+input[type="text"]:valid:not(:placeholder-shown),
+input[type="number"]:valid:not(:placeholder-shown),
+input[type="password"]:valid:not(:placeholder-shown),
+input[type="tel"]:valid:not(:placeholder-shown),
+input[type="email"]:valid:not(:placeholder-shown) {
   border: 2px solid green;
-  background-image: url("../../assets/images/icons/right.png");
+  background-image: url("../../assets/images/icons/check.png");
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: calc(100% - 10px);
 }
 
-input:invalid + span {
+input[type="text"]:invalid:not(:-moz-placeholder-shown) + span, input[type="number"]:invalid:not(:-moz-placeholder-shown) + span, input[type="password"]:invalid:not(:-moz-placeholder-shown) + span, input[type="tel"]:invalid:not(:-moz-placeholder-shown) + span {
+  color: red;
+}
+
+input[type="text"]:invalid:not(:placeholder-shown) + span,
+input[type="number"]:invalid:not(:placeholder-shown) + span,
+input[type="password"]:invalid:not(:placeholder-shown) + span,
+input[type="tel"]:invalid:not(:placeholder-shown) + span,
+input[type="email"]:invalid + span {
   color: red;
 }
 

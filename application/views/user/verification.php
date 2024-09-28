@@ -6,7 +6,8 @@
             <div class="mb-4">
                 <label for="selfie" class="block text-gray-700 text-sm font-bold mb-2">Take a Selfie</label>
                 <input type="file" name="selfie" id="selfie" capture="user" accept="image/*"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    required />
                 <span class="text-blue-500 text-sm italic"><b> Note:</b> Make sure you are in a well lit enviroment, and
                     make
                     sure
