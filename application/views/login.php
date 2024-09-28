@@ -62,21 +62,25 @@
             <div class="mt-4">
                 <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
                     for="LoggingEmailAddress">Email Address</label>
-                <input id="LoggingEmailAddress" name="user_name"
+                <input id="LoggingEmailAddress" name="user_name" placeholder="Email Address"
                     class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                     type="email" />
+                <span class="text-xs text-white">Please use a valid email address.</span>
+
             </div>
 
-            <div class="mt-4">
+            <div class="mt-2">
                 <div class="flex justify-between">
                     <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
                         for="loggingPassword">Password</label>
                     <a href="#" class="text-xs text-gray-500 dark:text-gray-300 hover:underline">Forget Password?</a>
                 </div>
 
-                <input id="loggingPassword" name="user_pass"
+                <input id="loggingPassword" name="user_pass" placeholder="Password"
                     class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-                    type="password" />
+                    type="password" minlength="8" />
+                <span class="text-xs text-gray-500">Password should be at least 8 characters and contain atleast a
+                    number, a special character and an uppercase</span>
             </div>
 
             <div class="mt-6">
@@ -87,13 +91,13 @@
             </div>
 
         </form>
-        <div class="flex items-center justify-between mt-4">
+        <!-- <div class="flex items-center justify-between mt-4">
             <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
 
             <a href="#" class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">or sign up</a>
 
             <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-        </div>
+        </div> -->
     </div>
 </div>
 

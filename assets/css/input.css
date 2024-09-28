@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+input:invalid:not(:placeholder-shown) {
+	border: 2px solid red;
+	background-image: url("../../assets/images/icons/wrong.png");
+}
+
+input:valid:not(:placeholder-shown) {
+	border: 2px solid green;
+	background-image: url("../../assets/images/icons/right.png");
+}
+input:valid:not(:placeholder-shown) {
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 10px);
+}
+
+input:invalid + span {
+	color: red;
+}
+
 .tab-bar.active {
 	border-bottom: 2px solid theme("colors.accent.DEFAULT");
 	color: theme("colors.accent.DEFAULT");

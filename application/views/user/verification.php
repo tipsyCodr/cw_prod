@@ -20,12 +20,17 @@
             </div>
 
             <?php if ($this->session->userdata('login') && !empty($user->user_mobile) && $user->user_mobile != 0 && $user->user_mobile != null) { ?>
-                <?= $user->user_mobile ?>
+
+                <label for="mobile" class="block text-gray-700 text-sm font-bold mb-2"> Your Mobile No:</label>
+                <input type="tel" id="mobile" value="<?= $user->user_mobile ?>" pattern="[0-9]{10}" name="mobile"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <span class="text-gray-500">The mobile number should be 10 digits.</span>
             <?php } else { ?>
                 <div class="mb-4">
                     <label for="mobile" class="block text-gray-700 text-sm font-bold mb-2">Mobile</label>
                     <input type="tel" id="mobile" value="" pattern="[0-9]{10}" name="mobile"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                    <span class="text-gray-500">The mobile number should be 10 digits.</span>
                 </div>
             <?php } ?>
 
@@ -38,6 +43,7 @@
                         <option value="<?= strtolower($gotra['gotra_name']) ?>"><?= $gotra['gotra_name'] ?></option>
                     <?php } ?>
                 </select>
+                <span class="text-gray-500">Select a gotra</span>
             </div>
             <button type="submit"
                 class="bg-accent hover:bg-accent-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
