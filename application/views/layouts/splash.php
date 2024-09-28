@@ -108,12 +108,8 @@
 
     </div> -->
     <main>
-        <header>
-            <div class="flex items-center justify-center pt-6">
-                <img src="<?= base_url() ?>assets/images/logo.png" width="200" alt="Patel Samaj" class="mx-auto">
-            </div>
-        </header>
-        <section class="pb-16 main-content" style="">
+
+        <section class="flex justify-center items-center main-content" style="">
             <?php if ($this->session->flashdata('success')): ?>
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
                     role="alert">
@@ -133,7 +129,7 @@
             <div
                 class="container-fluid  text-gray-400 py-4 text-center sm:text-left flex flex-col sm:flex-row justify-between">
 
-                <p class="mb-0">
+                <p class="mb-0 w-full text-center">
                     Designed with ❤️ By <a target="_blank" href="https://pathideamultiskill.com"
                         class="text-gray-400 hover:underline">Path Idea
                         Multiskill</a>

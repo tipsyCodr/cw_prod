@@ -179,9 +179,7 @@
                     href="<?= base_url('matrimonial/requests/get') ?>"><i class="fa fa-eye p-1"> </i> Profile View
                     Requests</a>
                 <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                    href="<?= base_url('profile-pic') ?>"><i class="fa fa-edit  p-2"></i>Update Profile</a>
-                <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
-                    href="#"><i class="fa fa-cog  p-2"></i>Settings</a>
+                    href="<?= base_url('profile-pic') ?>"><i class="fa fa-edit  p-2"></i>Profile Setting</a>
                 <a class="px-6 font-bold text-md py-4 border-y border-gray-200 hover:bg-accent hover:text-white"
                     href="<?= base_url('logout') ?>"> <i class="fa fa-sign-out  p-2"></i> Log
                     Out</a>
