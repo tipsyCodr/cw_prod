@@ -55,10 +55,10 @@
             <input type="password" autocomplete="new-password" name="user_password" id="new_password"
                 class="my-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent"
                 placeholder="New Password" minlength="8">
-            <span id="error_pass" class="text-red-500"></span>
             <input type="password" autocomplete="new-password" name="confirm_password" id="confirm_password"
                 class="my-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent"
                 placeholder="Confirm Password" onchange="checkPass(this);">
+            <span id="error_pass" class="text-xs text-red-500"></span>
             <button type="submit"
                 class="my-2 text-white bg-accent hover:bg-accent-dark focus:ring-4 focus:outline-none focus:ring-accent font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-accent dark:hover:bg-accent dark:focus:ring-accent">Update
                 <i id="password_loader" class="fa fa-circle animate-ping pl-2"></i></button>
@@ -117,8 +117,10 @@
                 data: $('#email_form').serialize() + "&column_name=user_email",
                 success: function (response) {
                     hideLoader('email_loader');
-                    console.log(response);
+                    // console.log(response);
                     if (response.success) {
+                        alert('Updated Successfully!');
+                        hideLoader('password_loader');
 
                     }
                 }
@@ -136,8 +138,10 @@
                 data: $('#mobile_form').serialize() + "&column_name=user_mobile",
                 success: function (response) {
                     hideLoader('mobile_loader');
-                    console.log(response);
+                    // console.log(response);
                     if (response.success) {
+                        alert('Updated Successfully!');
+                        hideLoader('password_loader');
 
                     }
                 }
@@ -148,37 +152,42 @@
 
         $('#password_form').submit(function (e) {
             e.preventDefault();
-            showLoader('password_loader');
-            $.ajax({
-                type: "POST",
-                url: '<?= base_url('update') ?>',
-                data: $('#password_form').serialize() + "&column_name=user_password",
-                success: function (response) {
-                    hideLoader('password_loader');
-                    console.log(response);
-                    if (response.success) {
 
+            if (checkPass()) {
+                showLoader('password_loader');
+                $.ajax({
+                    type: "POST",
+                    url: '<?= base_url('update') ?>',
+                    data: $('#password_form').serialize() + "&column_name=user_password",
+                    success: function (response) {
+                        hideLoader('password_loader');
+                        // console.log(response);
+                        if (response.success) {
+                            alert('Updated Successfully!');
+                            hideLoader('password_loader');
+
+                        }
                     }
-                }
 
-            })
+                })
+            }
 
         });
-        function checkPass() {
-            const new_pass = $('#new_password').val();
-            const conf_pass = $('#confirm_password').val();
-            console.log(new_pass, conf_pass);
 
-            if (new_pass !== conf_pass) {
-                console.log("Both password does not match");
-
-                $('#error_pass').html('Both password does not match');
-            } else {
-                $('#error_pass').html('Password Match!');
-
-            }
-        }
 
     });
+    function checkPass() {
+        const new_pass = $('#new_password').val();
+        const conf_pass = $('#confirm_password').val();
+        // console.log(new_pass, conf_pass);
 
+        if (new_pass !== conf_pass) {
+            console.log("Both password does not match");
+
+            $('#error_pass').html('Both password does not match');
+        } else {
+            $('#error_pass').html('');
+
+        }
+    }
 </script>

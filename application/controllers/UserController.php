@@ -273,7 +273,7 @@ class UserController extends MY_Controller
         $column = $this->input->post('column_name');
         $value = $this->input->post($column);
         if ($column == 'user_password') {
-            $value = password_hash($value, BCRYPT);
+            $value = password_hash($value, PASSWORD_BCRYPT);
         }
         try {
             $this->db->set($column, $value);
