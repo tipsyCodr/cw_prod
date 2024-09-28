@@ -265,9 +265,25 @@ class UserController extends MY_Controller
     }
     public function updateDetails()
     {
-        $formData = $this->input->post('user_mobile');
+        if (!$this->session->userdata('login')) {
+            redirect('splash-login');
+        }
 
-        var_dump($formData);
+        $user_id = $this->session->userdata('login');
+        $column = $this->input->post('column_name');
+        $value = $this->input->post($column);
+        if ($column == 'user_password') {
+            $value = password_hash($value, BCRYPT);
+        }
+        try {
+            $this->db->set($column, $value);
+            $this->db->where('uid', $user_id);
+            $this->db->update('user_registration');
+            echo $column . "updated";
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
     }
     public function updateProfilePic()
     {
