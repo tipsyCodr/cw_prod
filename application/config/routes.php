@@ -80,9 +80,7 @@ $route['profile-pic'] = 'UserController/profilePic';
 $route['profile-pic/update'] = 'UserController/updateProfilePic';
 $route['cover-pic/update'] = 'UserController/updateCoverPic';
 $route['update'] = 'UserController/updateDetails';
-// $route['update/email'] = 'UserController/updateEmail';
-// $route['update/mobile'] = 'UserController/updateMobile';
-// $route['update/password'] = 'UserController/updatePassword';
+
 
 
 
