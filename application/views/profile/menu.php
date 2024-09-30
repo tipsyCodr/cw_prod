@@ -137,14 +137,14 @@
                                                             <div
                                                                 class="flex gap-2 flex-nowrap justify-between items-center w-full">
                                                                 <p
-                                                                    class="text-nowrap flyer-text text-white text-lg font-bold ">
+                                                                    class="text-nowrap flyer-text text-white text-sm font-bold ">
                                                                     <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
                                                                 </p>
                                                                 <div class="flex gap-4 flex-nowrap">
-                                                                    <p
+                                                                    <!-- <p
                                                                         class="text-nowrap flyer-text text-white text-left text-xs scale-90 sm:scale-100">
                                                                         <i class="fa  fa-at "></i> Member
-                                                                    </p>
+                                                                    </p> -->
                                                                     <p
                                                                         class="text-nowrap flyer-text text-white text-left text-xs scale-90 sm:scale-100">
                                                                         <i class="fa  fa-envelope "></i>
