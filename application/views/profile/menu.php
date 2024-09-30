@@ -48,7 +48,7 @@
                 <div class="id-card">
                     <div class=" ">
                         <div class="">
-                            <div class="py-6 px-4 font-bold  sm:text-justify text-center text-3xl">Community ID Card
+                            <div class="py-6 px-4 font-bold  sm:text-justify text-center text-2xl">Community ID Card
                             </div>
                         </div>
                     </div>
@@ -97,15 +97,252 @@
                         </div>
                     </div>
                 </div>
-                <div class="flyer-section " style="min-width: 376px; min-height:213px;max-width:722px;">
-                    <div class="py-6 px-4 font-bold text-3xl sm:text-justify text-center     ">
+                <div class="flyer-section " style="max-width:722px;">
+
+                    <div class="pt-6 px-4 font-bold text-2xl sm:text-justify text-center     ">
                         Today's Flyer
                     </div>
-                    <?php
-                    $flyer = rand(1, 13);
+                    <?php $flyer = rand(1, 13); ?>
 
-                    ?>
+                    <!-- test -->
                     <div class="flyer-wrapper  p-2 ">
+                        <div class="button">
+                            <button
+                                class="my-4 block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
+                                type="button" onclick="saveAsImage()"><i class="fas fa-file-download px-2"></i> Download
+                                & Share
+                            </button>
+                        </div>
+                        <div id="capture" style="min-width: 444px;">
+                            <div class="relative border rounded-sm overflow-hidden "
+                                style="min-height:40px; width: 100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
+                                <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
+                                <!-- Slider main container -->
+                                <div class="mt-[-94px]">
+                                    <div class="swiper bottombarSlider  ">
+                                        <!-- Additional required wrapper -->
+                                        <div class="swiper-wrapper h-[6.5rem]">
+                                            <!-- Slides -->
+                                            <div class="swiper-slide">
+                                                <div class=" one-line-thin full-width ">
+                                                    <div class=" footer">
+                                                        <div id=""
+                                                            class="bottom-bar  pr-2 mt-[4.7rem] bg-blue-500 flex justify-between items-center gap-2 w-full  rounded-t">
+                                                            <div class="">
+                                                                <img class="mt-[-31px] object-cover rounded-full w-[70px] h-[60px] border-4"
+                                                                    src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                    alt="">
+                                                            </div>
+
+                                                            <div
+                                                                class="flex gap-2 flex-nowrap justify-between items-center w-full">
+                                                                <p
+                                                                    class="text-nowrap flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+                                                                <div class="flex gap-4 flex-nowrap">
+                                                                    <p
+                                                                        class="text-nowrap flyer-text text-white text-left text-xs scale-90 sm:scale-100">
+                                                                        <i class="fa  fa-at "></i> Member
+                                                                    </p>
+                                                                    <p
+                                                                        class="text-nowrap flyer-text text-white text-left text-xs scale-90 sm:scale-100">
+                                                                        <i class="fa  fa-envelope "></i>
+                                                                        <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <div class="left-half-two-line ">
+                                                    <div class=" footer pt-2 ">
+                                                        <div id=""
+                                                            class="bottom-bar pb-3 px-4 mt-10 bg-blue-500 flex flex-row items-center gap-2 w-fit  rounded-t">
+                                                            <img class="mt-[-31px] object-cover rounded-full w-20 h-20 border-4"
+                                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                alt="">
+                                                            <div class=" flex flex-col ">
+                                                                <p class="flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+
+                                                                <div class="flex gap-2">
+                                                                    <p class="flyer-text text-white text-left text-xs">
+                                                                        <i class="fa  fa-at "></i> Member
+                                                                    </p>
+                                                                    <p class="flyer-text text-white text-left text-xs">
+                                                                        <i class="fa  fa-envelope "></i>
+                                                                        <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class=" right-half-two-line ">
+                                                    <div class="  absolute footer pt-2 right-0">
+                                                        <div id=" " class="bottom-bar flex flex-row-reverse items-center gap-2 w-fit pb-3 px-4
+                                                            mt-10 bg-blue-500 rounded-t">
+                                                            <img class="mt-[-31px] object-cover rounded-full w-20
+                                                                h-20 border-4"
+                                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                alt="">
+                                                            <div class=" flex flex-col ">
+                                                                <p class="flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+
+                                                                <div class="flex gap-2">
+                                                                    <p class="flyer-text text-white text-left text-xs">
+                                                                        <i class="fa  fa-at "></i> Member
+                                                                    </p>
+                                                                    <p class="flyer-text text-white text-left text-xs">
+                                                                        <i class="fa  fa-envelope "></i>
+                                                                        <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide ">
+                                                <div class=" left-half-three-line ">
+                                                    <div class=" footer py-2 ">
+                                                        <div id=""
+                                                            class="bottom-bar p-2 px-4 bg-blue-500 flex flex-row items-center gap-2 w-fit ">
+                                                            <img class="object-cover rounded-full w-20 h-20 border-4"
+                                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                alt="">
+                                                            <div class=" flex flex-col ">
+                                                                <p class="flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+
+                                                                <p class="flyer-text text-white text-left text-xs"><i
+                                                                        class="fa  fa-at "></i> Member</p>
+                                                                <p class="flyer-text text-white text-left text-xs">
+                                                                    <i class="fa  fa-envelope "></i>
+                                                                    <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide ">
+                                                <div class=" right-half-three-line ">
+                                                    <div class=" absolute  right-0 footer py-2 ">
+                                                        <div id=" " class=" p-2 px-4 bg-blue-500 flex flex-row-reverse
+                                                        items-center bottom-bar  gap-2 w-fit ">
+                                                            <img class=" object-cover rounded-full w-20 h-20 border-4"
+                                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                alt="">
+                                                            <div class=" flex flex-col ">
+                                                                <p class="flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+
+                                                                <p class="flyer-text text-white text-left text-xs"><i
+                                                                        class="fa  fa-at "></i> Member</p>
+                                                                <p class="flyer-text text-white text-left text-xs">
+                                                                    <i class="fa  fa-envelope "></i>
+                                                                    <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class=" full-three-line ">
+                                                    <div class=" footer py-2 ">
+                                                        <div id=""
+                                                            class="bottom-bar p-2 px-4 bg-blue-500 flex flex-row items-center gap-2 w-full ">
+                                                            <img class="object-cover rounded-full w-20 h-20 border-4"
+                                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                alt="">
+                                                            <div class=" flex flex-col ">
+                                                                <p class="flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+
+                                                                <p class="flyer-text text-white text-left text-xs"><i
+                                                                        class="fa  fa-at "></i> Member</p>
+                                                                <p class="flyer-text text-white text-left text-xs">
+                                                                    <i class="fa  fa-envelope "></i>
+                                                                    <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class=" full-three-line-reverse ">
+                                                    <div class=" footer py-2 ">
+                                                        <div id=""
+                                                            class="bottom-bar p-2 px-4 bg-blue-500 flex flex-row-reverse items-center gap-2 w-full ">
+                                                            <img class="object-cover rounded-full w-20 h-20 border-4"
+                                                                src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
+                                                                alt="">
+                                                            <div class=" flex flex-col ">
+                                                                <p class="flyer-text text-white text-lg font-bold ">
+                                                                    <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
+                                                                </p>
+
+                                                                <p class="flyer-text text-white text-left text-xs"><i
+                                                                        class="fa  fa-at "></i> Member</p>
+                                                                <p class="flyer-text text-white text-left text-xs">
+                                                                    <i class="fa  fa-envelope "></i>
+                                                                    <?= isset($user) && is_object($user) ? $user->user_email : '' ?>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <button
+                            class=" my-4 block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
+                            type="button" onclick="location.reload()"><i class="fas fa-arrows-rotate px-2"></i>New
+                            Image
+                        </button>
+                        <div class="flex justify-evenly">
+
+                            <input type="color" name="back-color" id="bg-color-picker" class="hidden" value="#fdba8c"
+                                onchange="colorPicker()">
+                            <label for="bg-color-picker"
+                                class="block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                Background Color
+                            </label>
+                            <input type="color" name="back-color" id="name-color-picker" class="hidden" value="#000000"
+                                onchange="nameColorPicker()">
+                            <label for="name-color-picker"
+                                class="block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                Name Color
+                            </label>
+                        </div>
+                    </div>
+                    <!-- test -->
+
+
+                    <div class="hidden flyer-wrapper  p-2 ">
                         <div class="button">
                             <button
                                 class="my-4 block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
@@ -156,6 +393,8 @@
                             </label>
                         </div>
                     </div>
+
+
                 </div>
 
             </div>
@@ -269,7 +508,7 @@
         }
 
         // Capture the element as an image
-        html2canvas(findEl, { scale: 2 }).then((canvas) => {
+        html2canvas(findEl, { scale: 3 }).then((canvas) => {
             const link = document.createElement('a');
             document.body.appendChild(link);
             const today = new Date();
@@ -284,9 +523,9 @@
     }
     function colorPicker() {
         const colorPicker = document.getElementById('bg-color-picker');
-        const bottomBar = document.getElementById('bottom-bar');
+        const bottomBar = document.querySelectorAll('.bottom-bar');
         const chosenColor = colorPicker.value;
-        bottomBar.style.backgroundColor = chosenColor;
+        bottomBar.forEach(bar => bar.style.backgroundColor = chosenColor);
     }
     function nameColorPicker() {
         const colorPicker = document.getElementById('name-color-picker');

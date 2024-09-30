@@ -74,3 +74,24 @@ const communitySwiper = new Swiper(".comm-carousel", {
 		el: ".swiper-scrollbar",
 	},
 });
+
+const bottombarSlider = new Swiper(".bottombarSlider", {
+	// Optional parameters
+	// direction: "vertical",
+	loop: false,
+	freeMode: false,
+	// If we need pagination
+
+	// Navigation arrows
+	navigation: {
+		nextEl: ".bottombar-next",
+		prevEl: ".bottombar-prev",
+	},
+	slidesPerView: 1,
+	spaceBetween: 10,
+
+	// And if we need scrollbar
+	scrollbar: {
+		el: ".bottombar-scroll",
+	},
+});

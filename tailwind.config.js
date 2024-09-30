@@ -19,6 +19,12 @@ module.exports = {
 				monaSans: ["Mona Sans", "sans-serif"],
 			},
 			colors: {
+				themeGreen: "#00FF7F",
+				themeRed: "#ED2939",
+				themeBlack: "#010B13",
+				themeGray: "#708090",
+				themeWhite: "#FFFFFF",
+
 				accent: {
 					DEFAULT: "#5c6ac4",
 					dark: "#363b75",
