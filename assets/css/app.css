@@ -2131,6 +2131,10 @@ img {
   height: 100vh;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -2214,6 +2218,14 @@ img {
 
 .w-full {
   width: 100%;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .min-w-0 {

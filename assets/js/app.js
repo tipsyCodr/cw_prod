@@ -84,8 +84,8 @@ const bottombarSlider = new Swiper(".bottombarSlider", {
 
 	// Navigation arrows
 	navigation: {
-		nextEl: ".bottombar-next",
-		prevEl: ".bottombar-prev",
+		nextEl: ".bottom-next",
+		prevEl: ".bottom-prev",
 	},
 	slidesPerView: 1,
 	spaceBetween: 10,
