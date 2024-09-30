@@ -159,7 +159,7 @@
 
                                             <div class="swiper-slide">
                                                 <div class="left-half-two-line ">
-                                                    <div class=" footer pt-2 ">
+                                                    <div class=" absolute bottom-0 footer pt-2 ">
                                                         <div id=""
                                                             class="bottom-bar pb-3 px-4 mt-3 bg-blue-500 flex flex-row items-center gap-2 w-fit  rounded-t">
                                                             <img class="mt-[-31px] object-cover rounded-full w-20 h-20 border-4"
@@ -186,7 +186,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class=" right-half-two-line ">
-                                                    <div class="  absolute footer pt-2 right-0">
+                                                    <div class="  absolute bottom-0 footer pt-2 right-0">
                                                         <div id=" " class="bottom-bar flex flex-row-reverse items-center gap-2 w-fit pb-3 px-4
                                                             mt-3 bg-blue-500 rounded-t">
                                                             <img class="mt-[-31px] object-cover rounded-full w-20
@@ -214,7 +214,7 @@
                                             </div>
                                             <div class="swiper-slide ">
                                                 <div class=" left-half-three-line ">
-                                                    <div class=" footer ">
+                                                    <div class=" absolute bottom-0 footer ">
                                                         <div id=""
                                                             class="bottom-bar  mt-7 px-4 bg-blue-500 flex flex-row items-center gap-2 w-fit ">
                                                             <img class="object-cover rounded-full w-14 h-14 border-4"
@@ -238,7 +238,7 @@
                                             </div>
                                             <div class="swiper-slide ">
                                                 <div class=" right-half-three-line ">
-                                                    <div class=" absolute  right-0 footer pt-1 ">
+                                                    <div class=" absolute bottom-0 right-0 footer pt-1 ">
                                                         <div id=" " class=" px-4 bg-blue-500 flex flex-row-reverse
                                                         items-center bottom-bar mt-7 gap-2 w-fit ">
                                                             <img class=" object-cover rounded-full w-14 h-14 border-4"
@@ -263,7 +263,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class=" full-three-line-left ">
-                                                    <div class=" footer  pt-1">
+                                                    <div class="absolute bottom-0 footer  pt-1">
                                                         <div id=""
                                                             class="bottom-bar px-4 mt-7 bg-blue-500 flex flex-row items-center gap-2 w-full ">
                                                             <img class="object-cover rounded-full w-14 h-14  border-4"
@@ -287,7 +287,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class=" full-three-line-reverse ">
-                                                    <div class=" footer pt-2 ">
+                                                    <div class="absolute bottom-0 footer pt-2 ">
                                                         <div id=""
                                                             class="bottom-bar mt-7 px-4 bg-blue-500 flex flex-row-reverse items-center gap-2 w-full ">
                                                             <img class="object-cover rounded-full w-14 h-14 border-4"
