@@ -33,7 +33,7 @@
     <div class="user-details mt-32">
 
         <div class="details text-center">
-            <h1 class="text-black font-bold text-3xl flex justify-center items-center">
+            <h1 class="text-black font-bold text-xl flex justify-center items-center">
                 <?= isset($user) && is_object($user) ? $user->user_name : '' ?>
                 <?php if ($user->user_verified_status == 1) { ?>
                     <i class="my-auto i-[mage--verified-check-fill] text-badgeColor m-1"></i>
