@@ -105,7 +105,7 @@
                     <?php $flyer = rand(1, 13); ?>
 
                     <!-- test -->
-                    <div class="flyer-wrapper  p-2 ">
+                    <div class="flyer-wrapper  py-2 ">
                         <div class="button">
                             <button
                                 class="my-4 block text-center text-white p-2 border-accent-dark border w-full bg-gradient-to-r from-secondary to-orange-500 rounded-full"
@@ -113,7 +113,7 @@
                                 & Share
                             </button>
                         </div>
-                        <div id="capture" style="min-width: 400px;">
+                        <div id="capture" style="min-width: 400 px;">
                             <div class="relative border rounded-sm overflow-hidden "
                                 style="min-height:40px; width: 100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
                                 <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
