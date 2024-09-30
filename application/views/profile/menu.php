@@ -129,8 +129,7 @@
                                                         <div id=""
                                                             class="bottom-bar  pr-2 mt-[4.7rem] bg-blue-500 flex justify-between items-center gap-2 w-full  rounded-t">
                                                             <div class="">
-                                                                <img class="mt-[-31px] object-cover rounded-full w-20
-                                                                h-20 border-4"
+                                                                <img class="mt-[-31px] object-cover rounded-full w-[70px] h-[60px] border-4"
                                                                     src="<?= base_url('uploads/user_profiles/' . $user->user_profile_pic) ?>"
                                                                     alt="">
                                                             </div>
