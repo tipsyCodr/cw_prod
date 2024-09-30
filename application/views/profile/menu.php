@@ -113,7 +113,7 @@
                                 & Share
                             </button>
                         </div>
-                        <div id="capture" style="min-width: 444px;">
+                        <div id="capture" style="min-width: 400px;">
                             <div class="relative border rounded-sm overflow-hidden "
                                 style="min-height:40px; width: 100%;backaground-image: url(<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>);background-size: contain ;background-repeat: no-repeat; background-position: center">
                                 <img src="<?= base_url('uploads/flyers/' . $flyer . '.jpg') ?>" alt="">
