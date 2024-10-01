@@ -243,6 +243,7 @@ class MatrimonialController extends MY_Controller
         $url = "https://geocode.maps.co/search?q=" . urlencode($boy['cities']) . "&api_key=66fba7903028b471845537pjwe8f2cc";
         $response = $client->request('GET', $url);
         $boy_location = json_decode($response->getBody()->getContents(), true);
+        echo 'boy: ';
 
         var_dump($boy_location);
 
@@ -250,6 +251,7 @@ class MatrimonialController extends MY_Controller
         $url = "https://geocode.maps.co/search?q=" . urlencode($girl['cities']) . "&api_key=66fba7903028b471845537pjwe8f2cc";
         $response = $client->request('GET', $url);
         $girl_location = json_decode($response->getBody()->getContents(), true);
+        echo 'girl: ';
 
         var_dump($girl_location);
 
