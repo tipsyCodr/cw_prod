@@ -1,14 +1,19 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+require_once APPPATH . 'third_party/client.php';
+
+use Prokerala\Api\Sample\Exception\ValidationError;
+use Prokerala\Api\Sample\ApiClient;
 
 class MatrimonialController extends MY_Controller
 {
     public function __construct()
     {
         parent::__construct();
+        $this->input = new CI_Input();
+        $this->load->database();
         $this->load->library('session');
         $this->load->model('MatriMonialRegistrationModel');
-
     }
 
     /**
@@ -189,26 +194,120 @@ class MatrimonialController extends MY_Controller
         $response = $this->MatriMonialRegistrationModel->rejectRequest($id);
         return json_encode($response);
     }
+
     public function kundliForm()
     {
-        // $data['profile'] = $this->MatriMonialRegistrationModel->getMatrimonialData($id);
+        $matrimonial_id = $this->input->post('matrimonial_id');
+        $user_id = $this->input->post('user_id');
         $data['title'] = "Match Your Kundli";
-        $data['slot'] = $this->load->view('matrimonial/kundli/search', '', TRUE);
+        $data['profile'] = $this->MatriMonialRegistrationModel->getMatrimonialDataById($matrimonial_id);
+        $data['user_profiles'] = $this->MatriMonialRegistrationModel->getUsersProfiles($user_id);
+        $data['slot'] = $this->load->view('matrimonial/kundli/search', $data, TRUE);
         $this->load->view('/layouts/main', $data);
     }
+
     public function kundliResult()
     {
-        $data['boy'] = array(
-            'name' => $this->input->post('boy_name', TRUE),
-            'dob' => $this->input->post('boy_dob', TRUE),
-        );
-        $data['girl'] = array(
-            'name' => $this->input->post('girl_name', TRUE),
-            'dob' => $this->input->post('girl_dob', TRUE),
-        );
-        $data['title'] = "Match Your Kundli";
-        $data['slot'] = $this->load->view('matrimonial/kundli/result', $data, TRUE);
-        $this->load->view('/layouts/main', $data);
+
+        $clientId = 'bf90eac6-4056-43d3-826d-787b8a492eeb';
+        $clientSecret = 'EdTR4YvNzGYIsuxhXtO7oqbbckbIiUOkMnfP6GI0';
+        $this->load->library('ApiClient', ['clientId' => $clientId, 'clientSecret' => $clientSecret]);
+
+        $match_with_id = $this->input->post('match_with');
+        $for_id = $this->input->post('for');
+        $ayanamsa = $this->input->post('ayanamsa');
+
+
+        $this->load->model('MatriMonialRegistrationModel');
+        $match_with = $this->MatriMonialRegistrationModel->getMatrimonialDataById($match_with_id);
+        $for = $this->MatriMonialRegistrationModel->getMatrimonialDataById($for_id);
+
+        if ($match_with['gender'] == "M") {
+            $boy = $match_with;
+        } else {
+            $girl = $match_with;
+        }
+        if ($for['gender'] == "M") {
+            $boy = $for;
+        } else {
+            $girl = $for;
+        }
+
+        // Initialize Guzzle client
+        $client = new \GuzzleHttp\Client();
+        // echo 'boy: ';
+        // var_dump($boy);
+        // echo 'girl: ';
+        // var_dump($girl);
+        // die();
+        // Request for boy's coordinates
+        $url = "https://geocode.maps.co/search?q=" . urlencode($boy['cities']) . "&api_key=66fba7903028b471845537pjwe8f2cc";
+        $response = $client->request('GET', $url);
+        $boy_location = json_decode($response->getBody()->getContents(), true);
+
+
+        // Request for girl's coordinates
+        $url = "https://geocode.maps.co/search?q=" . urlencode($girl['cities']) . "&api_key=66fba7903028b471845537pjwe8f2cc";
+        $response = $client->request('GET', $url);
+        $girl_location = json_decode($response->getBody()->getContents(), true);
+
+
+
+        // Fill boy details
+        $detail['boy_dob'] = date('c', strtotime($boy['dob']));
+        $detail['boy_name'] = $boy['name'];
+        $detail['boy_coordinates'] = $boy_location[0]['lon'] . ',' . $boy_location[0]['lat'];
+        // var_dump($detail['boy_coordinates']);
+
+        // Fill girl details
+        $detail['girl_dob'] = date('c', strtotime($girl['dob']));
+        $detail['girl_name'] = $girl['name'];
+        $detail['girl_coordinates'] = $girl_location[0]['lon'] . ',' . $girl_location[0]['lat'];
+
+        $detail['la'] = 'en';
+        $detail['ayanamsa'] = $ayanamsa;
+
+        $this->load->library('ApiClient');
+        //Now the kumdli matching between boy girl started
+        $client = new ApiClient('bf90eac6-4056-43d3-826d-787b8a492eeb', 'EdTR4YvNzGYIsuxhXtO7oqbbckbIiUOkMnfP6GI0');
+
+        try {
+            // Call the API
+            $data['response'] = $client->get('v2/astrology/kundli-matching', [
+                'ayanamsa' => $detail['ayanamsa'],
+                'girl_coordinates' => $detail['girl_coordinates'],
+                'girl_dob' => $detail['girl_dob'],
+                'boy_coordinates' => $detail['boy_coordinates'],
+                'boy_dob' => $detail['boy_dob'],
+                'la' => $detail['la'],
+            ]);
+
+            // Output the result
+            echo '<pre>';
+            print_r($data);
+            echo '</pre>';
+            $data['msg_type'] = $data['response']['data']['message']['type'];
+            $data['msg_description'] = $data['response']['data']['message']['description'];
+            $data['total_points'] = $data['response']['data']['guna_milan']['total_points'];
+            $data['max_points'] = $data['response']['data']['guna_milan']['maximum_points'];
+            $data['result'] = $data['response'];
+
+            $data['boy_name'] = $detail['boy_name'];
+            $data['girl_name'] = $detail['girl_name'];
+
+            $data['title'] = "Match Your Kundli";
+            $data['slot'] = $this->load->view('matrimonial/kundli/result', $data, TRUE);
+            $this->load->view('/layouts/main', $data);
+
+        } catch (ValidationError $error) {
+            print_r($error->getValidationMessages());
+        } catch (\Exception $error) {
+            echo 'Errors: ' . $error->getMessage();
+        }
+        //Now the kumdli matching between boy girl ends
+
+
     }
+
 
 }

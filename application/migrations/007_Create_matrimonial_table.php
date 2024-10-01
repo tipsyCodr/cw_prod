@@ -38,6 +38,14 @@ class Migration_Create_matrimonial_table extends CI_Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255
             ],
+            'states' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'city' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
             'dob' => [
                 'type' => 'DATETIME',
             ],

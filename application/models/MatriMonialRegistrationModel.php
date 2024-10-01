@@ -4,15 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class MatriMonialRegistrationModel extends CI_Model
 {
 
-    public function get_matrimonial_profile_by_id($id)
-    {
-        $this->db->where('matrimonial_id', $id);
-        $query = $this->db->get('matrimonial');
-        if ($query->num_rows() > 0) {
-            return $query->row_array();
-        }
-        return false;
-    }
+
     public function suspend_matrimonial_profile($id)
     {
         try {
@@ -67,14 +59,7 @@ class MatriMonialRegistrationModel extends CI_Model
         }
     }
 
-    public function getAllMatrimonialData()
-    {
-        $this->db->select('*');
-        $this->db->from('matrimonial');
-        $this->db->order_by('matrimonial_id', 'DESC');
-        $query = $this->db->get();
-        return $query->result_array();
-    }
+
     public function getMatrimonialDataById($id)
     {
         try {
@@ -82,16 +67,14 @@ class MatriMonialRegistrationModel extends CI_Model
             $this->db->select('matrimonial.*, 
                 (YEAR(CURDATE()) - YEAR(DATE(dob))) -   
                 (DATE_FORMAT(CURDATE(), "%m-%d") < DATE_FORMAT(DATE(dob), "%m-%d")) AS age,
-                user_registration.*, state.*, city.*, mother_tongue.mother_tongue, education.education');
+                user_registration.*, state.*, city.*, mother_tongue.mother_tongue');
 
             // Define the main table and join related tables
             $this->db->from('matrimonial');
             $this->db->join('user_registration', 'matrimonial.user_id = user_registration.uid', 'left');
             $this->db->join('state', 'user_registration.user_state = state.state_id', 'left');
             $this->db->join('city', 'user_registration.user_city = city.city_id', 'left');
-            $this->db->join('mother_tongue', 'matrimonial.mother_tongue_id = mother_tongue.mother_tongue_id', 'left');
-            $this->db->join('education', 'matrimonial.education_id = education.education_id', 'left');
-            $this->db->join('employee_in', 'matrimonial.employee_in_id = employee_in.employee_in_id', 'left');
+            $this->db->join('mother_tongue', 'matrimonial.mother_tongue = mother_tongue.mother_tongue_id', 'left');
 
             // Apply the filter
             $this->db->where('matrimonial.matrimonial_id', $id);
@@ -106,6 +89,7 @@ class MatriMonialRegistrationModel extends CI_Model
             throw $e;
         }
     }
+
 
     public function get_matches($gender, $from_age, $to_age, $limit = 10, $offset = 0)
     {
@@ -189,6 +173,25 @@ class MatriMonialRegistrationModel extends CI_Model
             throw $e;
         }
     }
+
+    public function getAllMatrimonialData()
+    {
+        $this->db->select('*');
+        $this->db->from('matrimonial');
+        $this->db->order_by('matrimonial_id', 'DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function get_matrimonial_profile_by_id($id)
+    {
+        $this->db->where('matrimonial_id', $id);
+        $query = $this->db->get('matrimonial');
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        }
+        return false;
+    }
+
     public function getGotraLists()
     {
         $this->db->select('*');
@@ -274,5 +277,13 @@ class MatriMonialRegistrationModel extends CI_Model
         echo json_encode(['status' => false, 'message' => 'Something Went Wrong']);
         exit;
     }
+    public function getUsersProfiles($user_id)
+    {
+        $this->db->select('*');
+        $this->db->where('user_id', $user_id);
+        $this->db->from('matrimonial');
+        $q = $this->db->get();
+        return $q->result();
+
+    }
 }
-?>

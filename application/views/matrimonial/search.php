@@ -255,13 +255,23 @@
                                 <p class="text-sm"><b>Gotra: </b><?= ($profile['gotram']) ?? '' ?></p>
                                 <p class="text-sm"><b>Zodiac: </b><?= ($profile['zodiac']) ?? '' ?></p>
                             </div>
-                            <div class="interaction py-2  flex justify-evenly items-center">
+                            <div class="interaction py-2  flex gap-4 justify-evenly items-center">
                                 <button data-matrimonial-id="<?= $profile['matrimonial_id'] ?>"
                                     data-user-id="<?= $this->session->userdata('login') ?>"
                                     class="p-2 text-center border-accent-dark border w-full bg-gradient-to-r from-accent-dark to-accent rounded-full text-white text-sm text-nowrap px-3 py-2 send-request"><i
                                         class="fa text-secondary fa-bell pr-2"></i>Send
                                     Request</button>
+                                <form action="<?= base_url('kundli/form') ?>" method="post">
+                                    <input type="hidden" name="dob" value="<?= $profile['dob'] ?>">
+                                    <input type="hidden" name="matrimonial_id" value="<?= $profile['matrimonial_id'] ?>">
+                                    <input type="hidden" name="user_id" value="<?= $this->session->userdata('login') ?>">
 
+                                    <button type="submit" data-matrimonial-id="<?= $profile['matrimonial_id'] ?>"
+                                        data-user-id="<?= $this->session->userdata('login') ?>"
+                                        class="p-2 text-center border-accent-dark border w-full bg-gradient-to-r from-orange-400 to-orange-600 rounded-full text-white text-sm text-nowrap px-3 py-2 "><i
+                                            class="fa text-secondary fa-infinity pr-2"></i> Match Kundli </button>
+
+                                </form>
                             </div>
 
                         </div>
