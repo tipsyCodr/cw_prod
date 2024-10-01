@@ -251,6 +251,7 @@ class MatrimonialController extends MY_Controller
         $response = $client->request('GET', $url);
         $girl_location = json_decode($response->getBody()->getContents(), true);
 
+        var_dump($girl_location);
 
         die();
 
