@@ -235,10 +235,10 @@ class MatrimonialController extends MY_Controller
 
         // Initialize Guzzle client
         $client = new \GuzzleHttp\Client();
-        echo 'boy: ';
-        var_dump($boy);
-        echo 'girl: ';
-        var_dump($girl);
+        // echo 'boy: ';
+        // var_dump($boy);
+        // echo 'girl: ';
+        // var_dump($girl);
         // Request for boy's coordinates
         $url = "https://geocode.maps.co/search?q=" . urlencode($boy['cities']) . "&api_key=66fba7903028b471845537pjwe8f2cc";
         $response = $client->request('GET', $url);
