@@ -253,7 +253,7 @@ class MatrimonialController extends MY_Controller
         $girl_location = json_decode($response->getBody()->getContents(), true);
         echo 'girl: ';
 
-        var_dump($girl_location);
+        var_dump($girl['cities']);
 
         die();
 
