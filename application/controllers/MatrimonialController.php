@@ -260,16 +260,16 @@ class MatrimonialController extends MY_Controller
         // Fill boy details
         $detail['boy_dob'] = date('c', strtotime($boy['dob']));
         $detail['boy_name'] = $boy['name'];
-        $detail['boy_coordinates'] = $boy_location[0]['lon'] . ',' . $boy_location[0]['lat'];
+        $detail['boy_coordinates'] = number_format((float) $boy_location[0]['lon'], 2, '.', '') . ',' . number_format((float) $boy_location[0]['lat'], 2, '.', '');
         // var_dump($detail['boy_coordinates']);
 
         // Fill girl details
         $detail['girl_dob'] = date('c', strtotime($girl['dob']));
         $detail['girl_name'] = $girl['name'];
-        $detail['girl_coordinates'] = $girl_location[0]['lon'] . ',' . $girl_location[0]['lat'];
-
+        $detail['girl_coordinates'] = number_format((float) $girl_location[0]['lon'], 2, '.', '') . ',' . number_format((float) $girl_location[0]['lat'], 2, '.', '');
         $detail['la'] = 'en';
         $detail['ayanamsa'] = $ayanamsa;
+
 
         $this->load->library('ApiClient');
         //Now the kumdli matching between boy girl started
@@ -285,8 +285,7 @@ class MatrimonialController extends MY_Controller
                 'boy_dob' => $detail['boy_dob'],
                 'la' => $detail['la'],
             ]);
-            var_dump($data);
-            die();
+
             // Output the result
             echo '<pre>';
             print_r($data);
