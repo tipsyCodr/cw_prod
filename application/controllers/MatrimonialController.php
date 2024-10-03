@@ -285,7 +285,8 @@ class MatrimonialController extends MY_Controller
                 'boy_dob' => $detail['boy_dob'],
                 'la' => $detail['la'],
             ]);
-
+            var_dump($data);
+            die();
             // Output the result
             echo '<pre>';
             print_r($data);
